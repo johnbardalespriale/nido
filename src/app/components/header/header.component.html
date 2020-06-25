@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+</head>
+<body>
+    <div class="menu-area">
+        <nav class="navbar navbar-light navbar-expand-lg">
+          <a class="navbar-brand" routerLink="/actividades"><img id="logo" src="assets/Img/logo2.png" alt="imagen del menú"></a>
+          <!--botón para el responsive del menú -->
+          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav text-center">
+              <li routerLinkActive="active" class="nav-item">
+                  <a routerLink="/actividades">Nosotros</a>
+              </li>
+              <!--Menú desplegable -->
+              <li class="nav-item dropdown">
+                <a class="dropdown-toggle" routerLink="/actividades">Consolas</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" routerLink="/actividades">Primera Generación</a></li>
+                  <li><a class="dropdown-item" routerLink="/actividades">Segunda Generación</a></li>
+                  <li><a class="dropdown-item" routerLink="/actividades">Tercera Generación</a></li>
+                  <li><a class="dropdown-item" routerLink="/actividades">Cuarta Generación</a></li>
+                  <li><a class="dropdown-item" routerLink="/actividades">Quinta Generación</a></li>
+                  <li><a class="dropdown-item" routerLink="/actividades">Sexta Generación</a></li>
+                  <li><a class="dropdown-item" routerLink="/actividades">Séptima Generación</a></li>
+                  <li><a class="dropdown-item" routerLink="/actividades">Octava Generación</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a routerLink="/actividades">VideoJuegos</a></li>
+              <li class="nav-item"><a routerLink="/actividades">Contacto</a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    
+</body>
+</html>

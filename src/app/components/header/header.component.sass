@@ -1,0 +1,84 @@
+@mixin condicional($color)
+  @if $color == purple
+      background-color: #f5b425
+
+a
+  text-decoration: none
+  color: black
+
+#logo
+  width: 200px
+
+/*Color del fondo del menú*/
+.menu-area
+  background-color: #ff9406
+
+/*estilo del menú*/
+.navbar-nav > li > a
+  color: #fff
+  text-decoration: none
+  font-size: 17px
+  /*le da a la primera letra de cada palabra, mayuscula*/
+  text-transform: capitalize
+  padding: 20px 27px
+  font-family: 'Arial', sans-serif
+  /*Para que se respete el espacio de cada elemento, al momento del collapse*/
+  display: block !important
+
+/*menu desplegable*/
+.dropdown-menu
+    background-color: #969594
+    .dropdown-item
+      color: white
+
+
+ul > li.nav-item.dropdown > ul
+  position: absolute
+  left: 0
+  min-width: 250px
+  display: block
+  /*esconde el submenu*/
+  visibility: hidden
+  opacity: 0
+  -webkit-transition: 0.5s ease all
+  transition: 0.5s ease all
+
+/*hace visible el submenu, debido a que el sass anterior lo hace invisible*/
+.collapse ul li:hover> ul
+  visibility: visible
+  opacity: 1
+  li:hover > a
+    /*Color de fondo del menú desplegable al acercar el cursor*/
+    @include condicional(purple)
+
+ul > li:hover > a
+  @include condicional(purple)
+  color: white
+
+/*le quita la flecha abajo que aparece en el dropdown-menu*/
+ul li a.dropdown-toggle::after
+  display: none
+
+
+.img-fluid1
+  margin-top: 50px
+  color: #3278C5
+.linea
+  margin-top: 0
+.intro
+  margin-top: 20px
+  font-family: 'Aleo'
+  font-size: 20px
+.mision
+  margin-top: 20px
+  font-family: 'Aleo'
+  font-size: 20px
+.vision
+  margin-top: 20px
+  margin-bottom: 20px
+  font-family: 'Aleo'
+  font-size: 20px
+body
+  background-color: #f2f2f2
+.img-fluid4
+  margin-bottom: 60px
