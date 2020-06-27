@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <title>Nosotros</title>
+      </head>
+<body>
+	<section>
+		<article class="article">
+			
+			<h1>Memoria</h1>
+
+			<h3 style="text-align: justify;">
+                El objetivo del juego es conseguir todas las fichas volteadas boca arriba (es decir, encontrar todos 
+                los pares de imágenes que coincidan) en el menor número de intentos. Eso significa que el menor número de intentos es una 
+                mejor puntuación.
+            </h3>
+
+            <!--<h3> Para empezar escoge el nivel del juego</h3>-->
+				
+			<div>
+			    <input type="button" value="Iniciar" (click)="iniciarJuego()" />	
+			    <input type="button" value="Reset" (click)="resetearJuego()" />
+			</div>
+		</article>
+		<article class="article background">
+			<div id="juego">
+				<table>
+			        <tr>
+			          <td><img id="0" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="1" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="2" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="3" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			        </tr>
+			        <tr>
+			          <td><img id="4" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="5" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="6" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="7" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			        </tr>
+			        <tr>
+			          <td><img id="8" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="9" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="10" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="11" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			        </tr>
+			        <tr>
+			          <td><img id="12" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="13" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="14" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			          <td><img id="15" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+			        </tr>
+		        </table>
+		    </div>
+		</article>
+	</section>
+</body>
+</html>

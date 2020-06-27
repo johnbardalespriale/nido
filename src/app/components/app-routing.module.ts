@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { AgrupacionComponent } from './agrupacion/agrupacion.component';
 import { ActividadesComponent } from './actividades/actividades.component';
+import { MemoriaComponent } from './memoria/memoria.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'agrupacion',
     component: AgrupacionComponent
+  },
+  {
+    path: 'memoria',
+    component: MemoriaComponent
   }
 ];
 
