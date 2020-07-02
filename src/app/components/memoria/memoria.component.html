@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <title>Nosotros</title>
-      </head>
+<head>
+	<title>Nosotros</title>
+</head>
+
 <body>
 	<section>
 		<article class="article">
+			<h2> Para empezar escoge el nivel del juego, y luego haz clic en el boton iniciar juego.</h2>
 			
-			<h1>Memoria</h1>
+			<label id="example-radio-group-label">Escoge el nivel del juego:</label>
+			<mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group"
+			[(ngModel)]="favoriteSeason">
+			<mat-radio-button *ngFor="let nivel of nivels" [value]="nivel.nivel">
+				{{nivel.nivel}}
+			</mat-radio-button>
+			</mat-radio-group>
 
-			<h3 style="text-align: justify;">
-                El objetivo del juego es conseguir todas las fichas volteadas boca arriba (es decir, encontrar todos 
-                los pares de imágenes que coincidan) en el menor número de intentos. Eso significa que el menor número de intentos es una 
-                mejor puntuación.
-            </h3>
-
-            <!--<h3> Para empezar escoge el nivel del juego</h3>-->
-				
 			<div>
-			    <input type="button" value="Iniciar" (click)="iniciarJuego()" />	
-			    <input type="button" value="Reset" (click)="resetearJuego()" />
+				<input type="button" value="Iniciar juego" (click)="iniciarJuego()" />
+				<input type="button" value="Resetear" (click)="resetearJuego()" />
 			</div>
 		</article>
 		<article class="article background">
 			<div id="juego">
 				<table>
-			        <tr>
-			          <td><img id="0" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="1" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="2" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="3" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			        </tr>
-			        <tr>
-			          <td><img id="4" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="5" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="6" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="7" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			        </tr>
-			        <tr>
-			          <td><img id="8" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="9" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="10" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="11" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			        </tr>
-			        <tr>
-			          <td><img id="12" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="13" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="14" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			          <td><img id="15" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
-			        </tr>
-		        </table>
-		    </div>
+					<tr *ngIf="favoriteSeason == 'Nivel 1' || favoriteSeason == 'Nivel 2' || favoriteSeason == 'Nivel 3'">
+						<td><img id="0" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="1" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="2" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="3" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+					</tr>
+					<tr *ngIf="favoriteSeason == 'Nivel 1' || favoriteSeason == 'Nivel 2' || favoriteSeason == 'Nivel 3'">
+						<td><img id="4" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="5" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="6" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="7" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+					</tr>
+					<tr *ngIf="favoriteSeason == 'Nivel 1' || favoriteSeason == 'Nivel 2' || favoriteSeason == 'Nivel 3'">
+						<td><img id="8" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="9" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="10" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+						<td><img id="11" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'></td>
+					</tr>
+					<tr *ngIf="favoriteSeason == 'Nivel 2' || favoriteSeason == 'Nivel 3'">
+						<td><img id="12" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+						<td><img id="13" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+						<td><img id="14" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+						<td><img id="15" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+					</tr>
+					<tr *ngIf="favoriteSeason == 'Nivel 3'">
+						<td><img id="16" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+						<td><img id="17" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+						<td><img id="18" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+						<td><img id="19" (click)="girarCarta()" data-valor="valor" src='assets/Img/Pioneras-00.jpg'>
+						</td>
+					</tr>
+				</table>
+			</div>
 		</article>
 	</section>
 </body>
+
 </html>
