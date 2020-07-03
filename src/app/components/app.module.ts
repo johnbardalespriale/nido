@@ -13,6 +13,8 @@ import { AgrupacionComponent } from './agrupacion/agrupacion.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { MemoriaComponent } from './memoria/memoria.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SecuenciaComponent } from './secuencia/secuencia.component';
+import { SilabasComponent } from './silabas/silabas.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     AgrupacionComponent,
     ActividadesComponent,
-    MemoriaComponent
+    MemoriaComponent,
+    SecuenciaComponent,
+    SilabasComponent
   ],
   imports: [
     BrowserModule,

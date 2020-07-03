@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { AgrupacionComponent } from './agrupacion/agrupacion.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { MemoriaComponent } from './memoria/memoria.component';
+import { SecuenciaComponent } from './secuencia/secuencia.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'memoria',
     component: MemoriaComponent
+  },
+  {
+    path: 'secuencia',
+    component: SecuenciaComponent
   }
 ];
 
