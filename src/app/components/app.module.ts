@@ -5,6 +5,7 @@ import { MDBBootstrapModule } from  'angular-bootstrap-md';
 import {FormsModule} from '@angular/forms';
 import {MatRadioModule} from '@angular/material/radio';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import {MatButtonModule} from '@angular/material/button';
 
 /*Components*/
 import { AppComponent } from './app/app.component';
@@ -33,7 +34,8 @@ import { SilabasComponent } from './silabas/silabas.component';
     BrowserAnimationsModule,
     FormsModule,
     MatRadioModule,
-    DragDropModule
+    DragDropModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

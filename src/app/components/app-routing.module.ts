@@ -6,6 +6,7 @@ import { AgrupacionComponent } from './agrupacion/agrupacion.component';
 import { ActividadesComponent } from './actividades/actividades.component';
 import { MemoriaComponent } from './memoria/memoria.component';
 import { SecuenciaComponent } from './secuencia/secuencia.component';
+import { SilabasComponent } from './silabas/silabas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'secuencia',
     component: SecuenciaComponent
+  },
+  {
+    path: 'silabas',
+    component: SilabasComponent
   }
 ];
 
