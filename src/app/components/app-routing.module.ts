@@ -7,6 +7,8 @@ import { ActividadesComponent } from './actividades/actividades.component';
 import { MemoriaComponent } from './memoria/memoria.component';
 import { SecuenciaComponent } from './secuencia/secuencia.component';
 import { SilabasComponent } from './silabas/silabas.component';
+import { IgualDiferenteComponent } from './igual-diferente/igual-diferente.component';
+import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -33,6 +35,14 @@ const routes: Routes = [
   {
     path: 'silabas',
     component: SilabasComponent
+  },
+  {
+    path: 'igual-diferente',
+    component: IgualDiferenteComponent
+  },
+  {
+    path: 'figura-geometrica',
+    component: FiguraGeometricaComponent
   }
 ];
 

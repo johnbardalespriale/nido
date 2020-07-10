@@ -16,6 +16,8 @@ import { MemoriaComponent } from './memoria/memoria.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SecuenciaComponent } from './secuencia/secuencia.component';
 import { SilabasComponent } from './silabas/silabas.component';
+import { IgualDiferenteComponent } from './igual-diferente/igual-diferente.component';
+import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { SilabasComponent } from './silabas/silabas.component';
     ActividadesComponent,
     MemoriaComponent,
     SecuenciaComponent,
-    SilabasComponent
+    SilabasComponent,
+    IgualDiferenteComponent,
+    FiguraGeometricaComponent
   ],
   imports: [
     BrowserModule,

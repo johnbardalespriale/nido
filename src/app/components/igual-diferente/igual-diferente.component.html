@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container wrapper">
+        <h2>Realice clic sobre el animalito igual al de la imagen mostrada para descubrir la animación oculta.</h2>
+        <div class="row">
+          <div class="col-sm">
+           
+          </div>
+          <div class="col-sm" style="text-align:center;">
+           <img class="card-img-top img-main" src="assets/Img/perro.png" style="width: 30%; margin:0px auto;">
+          </div>
+          <div class="col-sm">
+           
+          </div>
+        </div>
+        <div id="nivel1" class="parent" style="background-image: url('assets/Img/cesped.jpg')">
+
+            <div class="row">
+                <div class="col-12 col-md-8" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/oso.png" style="width: 15%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img class="card-img-top" src="assets/Img/loro.png" style="width: 30%;cursor: pointer;" (click)="errorChoice()">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6 col-md-4" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/mono.png" style="width: 30%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/cuy.png" style="width: 30%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4 player" style="text-align:center;" [class.voted]="flipped"
+                *ngIf="habilitar1 != 'perrito'">
+                    <img class="card-img-top" src="assets/Img/perro.png" style="width: 30%; margin:0px auto;cursor: pointer;"
+                    (click)="flipIt('perrito')">
+                </div>
+                <div class="col-6 col-md-4 player" *ngIf="habilitar1 == 'perrito'"  style="text-align:center;">
+                    <img src="assets/Img/perrito.gif" alt="Funny image" style="width: 50%; border-radius: 30%;margin:0px auto;
+                    cursor: pointer;">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/elefante.png" style="width: 19%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/gato.png" style="width: 19%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px;">
+        <div class="row">
+          <div class="col-sm">
+           
+          </div>
+          <div class="col-sm" style="text-align:center;">
+           <img class="card-img-top img-main" src="assets/Img/hipopotamo.png" style="width: 30%; margin:0px auto;">
+          </div>
+          <div class="col-sm">
+           
+          </div>
+        </div>
+        <div id="nivel2" class="parent" style="background-image: url('assets/Img/pasto.jpg')">
+
+            <div class="row">
+                <div class="col-12 col-md-8" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/cuy.png" style="width: 15%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4" *ngIf="habilitar2 != 'hipopotamo'">
+                    <img class="card-img-top" src="assets/Img/hipopotamo.png" style="width: 30%;cursor: pointer;" [class.voted]="flipped" 
+                    (click)="flipIt('hipopotamo')">
+                </div>
+                <div class="col-6 col-md-4 player" *ngIf="habilitar2 == 'hipopotamo'">
+                    <img src="assets/Img/hipopotamo.gif" alt="Funny image" style="width: 50%;cursor: pointer; border-radius: 30%;">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6 col-md-4" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/hipopotamo_alterno.png" style="width: 30%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/alpaca.png" style="width: 30%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4" style="text-align:center;" (click)="errorChoice()">
+                    <img class="card-img-top" src="assets/Img/mono.png" style="width: 30%; margin:0px auto;cursor: pointer;">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/gato.png" style="width: 19%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/elefante.png" style="width: 19%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px;">
+        <div class="row">
+          <div class="col-sm">
+           
+          </div>
+          <div class="col-sm" style="text-align:center;">
+           <img class="card-img-top img-main" src="assets/Img/loro.png" style="width: 30%; margin:0px auto;">
+          </div>
+          <div class="col-sm">
+           
+          </div>
+        </div>
+        <div id="nivel3" class="parent" style="background-image: url('assets/Img/cesped-2.jpg')">
+
+            <div class="row">
+                <div class="col-12 col-md-8" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/murcielago.png" style="width: 23%; height: 79px; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img class="card-img-top" src="assets/Img/cuy.png" style="width: 30%;cursor: pointer;" (click)="errorChoice()">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6 col-md-4" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/jirafa.png" style="width: 23%;height: 114px; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/conejo.png" style="width: 30%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4" style="text-align:center;" (click)="errorChoice()">
+                    <img class="card-img-top" src="assets/Img/loro_alterno.png" style="width: 30%; margin:0px auto;cursor: pointer;">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6" style="text-align:center;" *ngIf="habilitar3 != 'loro'">
+                    <img class="card-img-top" src="assets/Img/loro.png" style="width: 19%; margin:0px auto;cursor: pointer;"
+                    (click)="flipIt('loro')" [class.voted]="flipped">
+                </div>
+                <div class="col-6 player" style="text-align:center;" *ngIf="habilitar3 == 'loro'">
+                    <img src="assets/Img/loro.gif" alt="Funny image" style="width: 30%; margin:0px auto;cursor: pointer; border-radius: 30%;">
+                </div>
+                <div class="col-6" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/alpaca.png" style="width: 19%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+        <div class="row">
+          <div class="col-sm">
+           
+          </div>
+          <div class="col-sm" style="text-align:center;">
+           <img class="card-img-top img-main" src="assets/Img/pulpo.png" style="width: 30%; margin:0px auto;">
+          </div>
+          <div class="col-sm">
+           
+          </div>
+        </div>
+        <div id="nivel4" class="parent" style="background-image: url('assets/Img/cesped.jpg')">
+
+            <div class="row">
+                <div class="col-12 col-md-8" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/jirafa.png" style="width: 14%;height: 142px; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4">
+                    <img class="card-img-top" src="assets/Img/conejo.png" style="width: 30%;cursor: pointer;" (click)="errorChoice()">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6 col-md-4" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/gato.png" style="width: 23%;height: 114px; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6 col-md-4" style="text-align:center;" *ngIf="habilitar4 != 'pulpo'">
+                    <img class="card-img-top" src="assets/Img/pulpo.png" style="width: 30%; margin:0px auto;cursor: pointer;"
+                     (click)="flipIt('pulpo')" [class.voted]="flipped">
+                </div>
+                <div class="col-6 col-md-4 player" style="text-align:center;" *ngIf="habilitar4 == 'pulpo'">
+                    <img src="assets/Img/pulpo.gif" alt="Funny image" style="width: 60%; margin:0px auto;cursor: pointer; border-radius: 30%;">
+                </div>
+                <div class="col-6 col-md-4" style="text-align:center;" (click)="errorChoice()">
+                    <img class="card-img-top" src="assets/Img/pulpo_alterno.png" style="width: 30%; margin:0px auto;cursor: pointer;">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-6" style="text-align:center;" >
+                    <img class="card-img-top" src="assets/Img/murcielago.png" style="width: 28%; height: 79px;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+                <div class="col-6" style="text-align:center;">
+                    <img class="card-img-top" src="assets/Img/serpiente.png" style="width: 19%; margin:0px auto;cursor: pointer;"
+                    (click)="errorChoice()">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
