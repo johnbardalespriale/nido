@@ -59,19 +59,20 @@ export class FiguraGeometricaComponent implements OnInit {
 
     this.nivel3 = [
       {imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul', answer: 'error'},
-      {imagen:'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde', answer: 'error'},
+      {imagen:'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde', answer: 'correcta'},
       {imagen:'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo', answer: 'error'},
-      {imagen:'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo', answer: 'correcta'},
+      {imagen:'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo', answer: 'error'},
       {imagen:'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul', answer: 'correcta'},
       {imagen:'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde', answer: 'error'},
       {imagen:'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo', answer: 'error'},
-      {imagen:'assets/Img/triangulo-verde.png', name: 'triangulo-verde', answer: 'error'},
-      {imagen:'assets/Img/triangulo-azul.png', name: 'triangulo-azul', answer: 'correcta'},
-      {imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul', answer: 'error'},
-      {imagen:'assets/Img/circulo-verde.png', name: 'circulo-verde', answer: 'correcta'},
-      {imagen:'assets/Img/circulo-rojo.png', name: 'rombo-rojo', answer: 'correcta'},
-      {imagen:'assets/Img/circulo-rojo.png', name: 'rombo-azul', answer: 'error'},
-      {imagen:'assets/Img/circulo-rojo.png', name: 'rombo-verde', answer: 'error'}
+      {imagen:'assets/Img/triangulo-verde.png', name: 'triangulo-verde', answer: 'correcta'},
+      {imagen:'assets/Img/triangulo-azul.png', name: 'triangulo-azul', answer: 'error'},
+      {imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul', answer: 'correcta'},
+      {imagen:'assets/Img/circulo-verde.png', name: 'circulo-verde', answer: 'error'},
+      {imagen:'assets/Img/circulo-rojo.png', name: 'circulo-rojo', answer: 'error'},
+      {imagen:'assets/Img/rombo-rojo.png', name: 'rombo-rojo', answer: 'correcta'},
+      {imagen:'assets/Img/rombo-azul.png', name: 'rombo-azul', answer: 'error'},
+      {imagen:'assets/Img/rombo-verde.png', name: 'rombo-verde', answer: 'error'}
     ];
 
    
@@ -118,19 +119,20 @@ export class FiguraGeometricaComponent implements OnInit {
 
     this.nivel3 = [
       {imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul', answer: 'error'},
-      {imagen:'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde', answer: 'error'},
+      {imagen:'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde', answer: 'correcta'},
       {imagen:'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo', answer: 'error'},
-      {imagen:'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo', answer: 'correcta'},
+      {imagen:'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo', answer: 'error'},
       {imagen:'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul', answer: 'correcta'},
       {imagen:'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde', answer: 'error'},
       {imagen:'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo', answer: 'error'},
-      {imagen:'assets/Img/triangulo-verde.png', name: 'triangulo-verde', answer: 'error'},
-      {imagen:'assets/Img/triangulo-azul.png', name: 'triangulo-azul', answer: 'correcta'},
-      {imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul', answer: 'error'},
-      {imagen:'assets/Img/circulo-verde.png', name: 'circulo-verde', answer: 'correcta'},
-      {imagen:'assets/Img/circulo-rojo.png', name: 'rombo-rojo', answer: 'correcta'},
-      {imagen:'assets/Img/circulo-rojo.png', name: 'rombo-azul', answer: 'error'},
-      {imagen:'assets/Img/circulo-rojo.png', name: 'rombo-verde', answer: 'error'}
+      {imagen:'assets/Img/triangulo-verde.png', name: 'triangulo-verde', answer: 'correcta'},
+      {imagen:'assets/Img/triangulo-azul.png', name: 'triangulo-azul', answer: 'error'},
+      {imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul', answer: 'correcta'},
+      {imagen:'assets/Img/circulo-verde.png', name: 'circulo-verde', answer: 'error'},
+      {imagen:'assets/Img/circulo-rojo.png', name: 'circulo-rojo', answer: 'error'},
+      {imagen:'assets/Img/rombo-rojo.png', name: 'rombo-rojo', answer: 'correcta'},
+      {imagen:'assets/Img/rombo-azul.png', name: 'rombo-azul', answer: 'error'},
+      {imagen:'assets/Img/rombo-verde.png', name: 'rombo-verde', answer: 'error'}
     ];
 
     this.todo.sort(function() {return Math.random() - 0.5});
@@ -157,6 +159,13 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.pointerEvents = "none";
   
         alert("has ganado");
+      }else if(this.done[0].name === "cuadrado-verde" && this.done[1].name === "rectangulo-azul" && this.done[2].name === "rombo-rojo"
+      && this.done[3].name === "circulo-azul" && this.done[4].name === "triangulo-verde"){
+        var figuras = document.getElementById("figuras");
+        figuras.style.opacity = "0.3";
+        figuras.style.pointerEvents = "none";
+  
+        alert("has ganado");
       }
 
     } else {
@@ -178,39 +187,17 @@ export class FiguraGeometricaComponent implements OnInit {
           figuras.style.pointerEvents = "none";
     
           alert("has ganado");
+        }else if(this.done[0].name === "cuadrado-verde" && this.done[1].name === "rectangulo-azul" && this.done[2].name === "rombo-rojo"
+        && this.done[3].name === "circulo-azul" && this.done[4].name === "triangulo-verde"){
+          var figuras = document.getElementById("figuras");
+          figuras.style.opacity = "0.3";
+          figuras.style.pointerEvents = "none";
+    
+          alert("has ganado");
         }
       
     }
   }
-
-  /*dropNivel2(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(this.done, event.previousIndex, event.currentIndex);
-      console.log(event.container.data, "data1");
-      console.log(event.previousIndex, "data1-index1");
-      console.log(event.currentIndex, "data1-index2");
-      if(this.done[0].name === "circulo-verde" && this.done[1].name === "rectangulo-azul" && this.done[2].name === "triangulo-azul"
-      && this.done[0].name === "rectangulo-rojo"){
-        var figuras = document.getElementById("figuras");
-        figuras.style.opacity = "0.3";
-        figuras.style.pointerEvents = "none";
-  
-        alert("has ganado");
-      }
-
-    } else {
-      transferArrayItem(event.previousContainer.data, this.done, event.previousIndex, event.currentIndex);
-      if(this.done[0].name === "circulo-verde" && this.done[1].name === "rectangulo-azul" && this.done[2].name === "triangulo-azul"
-      && this.done[0].name === "rectangulo-rojo"){
-        var figuras = document.getElementById("figuras");
-        figuras.style.opacity = "0.3";
-        figuras.style.pointerEvents = "none";
-  
-        alert("has ganado");
-      }
-    }
-  }*/
-
   /** Predicate function that only allows even numbers to be dropped into a list. */
   evenPredicate(items: CdkDrag<any>) {
 
