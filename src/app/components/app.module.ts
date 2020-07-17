@@ -18,6 +18,7 @@ import { SecuenciaComponent } from './secuencia/secuencia.component';
 import { SilabasComponent } from './silabas/silabas.component';
 import { IgualDiferenteComponent } from './igual-diferente/igual-diferente.component';
 import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica.component';
+import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabilidad-numerica.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica
     SecuenciaComponent,
     SilabasComponent,
     IgualDiferenteComponent,
-    FiguraGeometricaComponent
+    FiguraGeometricaComponent,
+    ContabilidadNumericaComponent
   ],
   imports: [
     BrowserModule,

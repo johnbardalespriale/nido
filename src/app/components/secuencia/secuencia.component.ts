@@ -29,7 +29,7 @@ export class SecuenciaComponent implements OnInit {
       {nivel:'Nivel 3', selected: false}
     ];
 
-    this.selectedNivel = 'Nivel 1';
+    //this.selectedNivel = 'Nivel 1';
 
     this.peinados = [
       {imagen:'assets/Img/peinado-1.png', posicion:0, disabled: false},
