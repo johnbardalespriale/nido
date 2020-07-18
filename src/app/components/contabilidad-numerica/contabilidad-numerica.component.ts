@@ -73,7 +73,7 @@ export class ContabilidadNumericaComponent implements OnInit {
         var end = $(event.target).position();
         if(_end&&end)  
         $(event.target).parent().data('line')
-                                                       .attr('x2',end.left+_end.left+5).attr('y2',end.top+_end.top+2);
+        .attr('x2',end.left+_end.left+5).attr('y2',end.top+_end.top+2);
    },stop: function(event,ui) {
            if(!ui.helper.closest('.ui-item').data('line')) return;
            ui.helper.css({top:-2,left:-2});
@@ -98,11 +98,15 @@ export class ContabilidadNumericaComponent implements OnInit {
    
        connector.append(cur_con);
        var start = cur_ui_item.position();
-        cur_con.attr('x1',start.left).attr('y1',start.top+1);
-        cur_con.attr('x2',start.left+1).attr('y2',start.top+1);
+        cur_con.attr('x1',start.left+200).attr('y1',start.top+33);
+        cur_con.attr('x2',start.left+200).attr('y2',start.top+33);
    });
   }
-  constructor() { }
+  
+  answer: number;
+  constructor() { 
+   this.answer = 0;
+  }
 
   ngOnInit(): void {
     this.nivels = [
@@ -111,6 +115,20 @@ export class ContabilidadNumericaComponent implements OnInit {
       {nivel:'Nivel 3', selected: false}
     ];
     
+  }
+
+  match(number){
+    this.answer = number;
+    console.log("respuesta", this.answer);
+  }
+
+  matchCorrect(answer){
+    console.log("respuesta", answer);
+    if(this.answer === answer){
+      alert("Respuesta correcta");
+    }else if(this.answer != 0){
+      alert("Respuesta erronea, vuelva a 'iniciar el juego'");
+    }
   }
 
   errorChoice(){
@@ -128,7 +146,10 @@ export class ContabilidadNumericaComponent implements OnInit {
     if(show === 'Nivel 1'){
       this.habilitar = 1;
     }else if(show === 'Nivel 2'){
-      this.habilitar = 2;
+      this.habilitar = 0;
+      setTimeout(() => {
+        this.habilitar = 2;
+       }, 500);
       setTimeout(() => {
         this.javascript()
        }, 1000);

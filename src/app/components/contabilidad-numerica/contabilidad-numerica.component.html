@@ -162,35 +162,65 @@
         <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
        
         <div class="container">
+
+            <div class="row">
+                <div class="col-md-2">
+                        
+                </div>
+                <div class="col-md-7"  style="padding: 0px;">
+                    <label style="margin: 0px 0px 27px;">
+                        <b style="font-size: 20px;">Una el <span style="color: #47cf73;">punto verde</span> de cada imagen, con el número que represente
+                        la cantidad de elementos que contiene</b>
+                    </label>    
+                </div>
+                <div class="col-md-3">
+                        
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-2">
                     
                 </div>
-                <div class="col-md-10" style="padding: 0px;">
-                    <svg id='connector_canvas'></svg>
-                    <div class="ui-item item-1">
-                        <div class="con_anchor">
-                            <img src="assets/Img/contar_moras_15.png" alt="">
+                <div class="col-md-7" style="padding: 0px;display: flex;flex-direction: row;">
+                    <div class="col-md-10" style="padding: 0px;">
+                        <svg id='connector_canvas'></svg>
+                        <div class="ui-item item-1" style="display: flex; flex-direction:row; align-items: center">
+                            <img src="assets/Img/contar_moras_15.png" alt="" width="260px">
+                            <div class="con_anchor"  (mouseover)="match(15)">
+                            </div>
+                        </div>
+                        <div class="ui-item item-2" style="display: flex; flex-direction:row; align-items: center;">
+                            <img src="assets/Img/contar_moras_12.png" alt="" width="260px">
+                            <div class="con_anchor" (mouseover)="match(12)">
+                            </div>
+                        </div>
+                        <div class="ui-item item-3" style="display: flex; flex-direction:row; align-items: center;">
+                            <img src="assets/Img/contar_moras_16.png" alt="" width="260px">
+                            <div class="con_anchor" (mouseover)="match(16)">
+                            </div>
                         </div>
                     </div>
-                    <div class="ui-item item-2">
-                        <div class="con_anchor">
-                            <img src="assets/Img/contar_moras_12.png" alt="">
+                    <div class="col-md-2" style="display: grid; align-content: space-around; padding: 0px;">
+                        <div (mouseover)="matchCorrect(16)">
+                            <div class="ui-item item-1" style="pointer-events: none;">
+                                <div class="con_anchor"></div>
+                                <div>16</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ui-item item-3">
-                        <div class="con_anchor">
-                            <img src="assets/Imgcontar_moras_16.png" alt="">
+                        <div (mouseover)="matchCorrect(15)">
+                            <div class="ui-item item-2" style="pointer-events: none;"> 
+                                <div class="con_anchor"></div>
+                                <div>15</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="ui-item item-1">
-                        <div class="con_anchor"></div>
-                    </div>
-                    <div class="ui-item item-2">
-                        <div class="con_anchor"></div>
-                    </div>
-                    <div class="ui-item item-3">
-                        <div class="con_anchor"></div>
+                        
+                        <div  (mouseover)="matchCorrect(12)">
+                            <div class="ui-item item-3" style="pointer-events: none;">
+                                <div class="con_anchor"></div>
+                                <div>12</div>
+                            </div>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -199,6 +229,5 @@
         </div>
         
     </div>
-    
 </body>
 </html>
