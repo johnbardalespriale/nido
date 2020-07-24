@@ -10,49 +10,54 @@ import { SilabasComponent } from './silabas/silabas.component';
 import { IgualDiferenteComponent } from './igual-diferente/igual-diferente.component';
 import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica.component';
 import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabilidad-numerica.component';
+import { MenorMayorComponent } from './menor-mayor/menor-mayor.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
   {
     path: 'home',
-    component: HeaderComponent
+    component: HeaderComponent,
   },
   {
     path: 'actividades',
-    component: ActividadesComponent
+    component: ActividadesComponent,
   },
   {
     path: 'agrupacion',
-    component: AgrupacionComponent
+    component: AgrupacionComponent,
   },
   {
     path: 'memoria',
-    component: MemoriaComponent
+    component: MemoriaComponent,
   },
   {
     path: 'secuencia',
-    component: SecuenciaComponent
+    component: SecuenciaComponent,
   },
   {
     path: 'silabas',
-    component: SilabasComponent
+    component: SilabasComponent,
   },
   {
     path: 'igual-diferente',
-    component: IgualDiferenteComponent
+    component: IgualDiferenteComponent,
   },
   {
     path: 'figura-geometrica',
-    component: FiguraGeometricaComponent
+    component: FiguraGeometricaComponent,
   },
   {
     path: 'contabilidad-numerica',
-    component: ContabilidadNumericaComponent
-  }
+    component: ContabilidadNumericaComponent,
+  },
+  {
+    path: 'menor-mayor',
+    component: MenorMayorComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
