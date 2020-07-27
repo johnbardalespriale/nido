@@ -159,6 +159,7 @@ export class ContabilidadNumericaComponent implements OnInit {
   }
 
   resetear(show) {
+    this.answer = 0;
     if (show === 'Nivel 1') {
       this.habilitar = 1;
     } else if (show === 'Nivel 2') {

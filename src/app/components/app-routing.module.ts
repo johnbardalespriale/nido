@@ -11,6 +11,7 @@ import { IgualDiferenteComponent } from './igual-diferente/igual-diferente.compo
 import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica.component';
 import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabilidad-numerica.component';
 import { MenorMayorComponent } from './menor-mayor/menor-mayor.component';
+import { CuantificadoresComponent } from './cuantificadores/cuantificadores.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'menor-mayor',
     component: MenorMayorComponent,
+  },
+  {
+    path: 'cuantificadores',
+    component: CuantificadoresComponent,
   },
 ];
 
