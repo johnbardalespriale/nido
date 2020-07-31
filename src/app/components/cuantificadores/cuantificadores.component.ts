@@ -50,6 +50,19 @@ export class CuantificadoresComponent implements OnInit {
       { imagen: 'assets/Img/vacia_cesta.png', name: 'cesta' },
       { imagen: 'assets/Img/mucho_panes.png', name: 'panes' },
     ];
+
+    this.nivel1.sort(function () {
+      return Math.random() - 0.5;
+    });
+    this.nivel2.sort(function () {
+      return Math.random() - 0.5;
+    });
+    this.nivel3.sort(function () {
+      return Math.random() - 0.5;
+    });
+    this.nivel4.sort(function () {
+      return Math.random() - 0.5;
+    });
   }
 
   choice(name) {

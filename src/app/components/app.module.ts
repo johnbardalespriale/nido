@@ -21,6 +21,7 @@ import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica
 import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabilidad-numerica.component';
 import { MenorMayorComponent } from './menor-mayor/menor-mayor.component';
 import { CuantificadoresComponent } from './cuantificadores/cuantificadores.component';
+import { PertenenciaComponent } from './pertenencia/pertenencia.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CuantificadoresComponent } from './cuantificadores/cuantificadores.comp
     FiguraGeometricaComponent,
     ContabilidadNumericaComponent,
     MenorMayorComponent,
-    CuantificadoresComponent
+    CuantificadoresComponent,
+    PertenenciaComponent
   ],
   imports: [
     BrowserModule,

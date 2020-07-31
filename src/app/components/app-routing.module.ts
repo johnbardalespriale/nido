@@ -12,6 +12,7 @@ import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica
 import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabilidad-numerica.component';
 import { MenorMayorComponent } from './menor-mayor/menor-mayor.component';
 import { CuantificadoresComponent } from './cuantificadores/cuantificadores.component';
+import { PertenenciaComponent } from './pertenencia/pertenencia.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'cuantificadores',
     component: CuantificadoresComponent,
+  },
+  {
+    path: 'pertenencia',
+    component: PertenenciaComponent,
   },
 ];
 
