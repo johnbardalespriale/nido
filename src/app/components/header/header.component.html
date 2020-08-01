@@ -1,43 +1,441 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Header</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="menu-area">
-        <nav class="navbar navbar-light navbar-expand-lg">
-          <a class="navbar-brand" routerLink="/actividades"><img id="logo" src="assets/Img/logo2.png" alt="imagen del menú"></a>
-          <!--botón para el responsive del menú -->
-          <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!--<div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav text-center">
-              <li routerLinkActive="active" class="nav-item">
-                  <a routerLink="/actividades">Nosotros</a>
-              </li>
-              <Menú desplegable>
-              <li class="nav-item dropdown">
-                <a class="dropdown-toggle" routerLink="/actividades">Consolas</a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" routerLink="/actividades">Primera Generación</a></li>
-                  <li><a class="dropdown-item" routerLink="/actividades">Segunda Generación</a></li>
-                  <li><a class="dropdown-item" routerLink="/actividades">Tercera Generación</a></li>
-                  <li><a class="dropdown-item" routerLink="/actividades">Cuarta Generación</a></li>
-                  <li><a class="dropdown-item" routerLink="/actividades">Quinta Generación</a></li>
-                  <li><a class="dropdown-item" routerLink="/actividades">Sexta Generación</a></li>
-                  <li><a class="dropdown-item" routerLink="/actividades">Séptima Generación</a></li>
-                  <li><a class="dropdown-item" routerLink="/actividades">Octava Generación</a></li>
-                </ul>
-              </li>
-              <li class="nav-item"><a routerLink="/actividades">VideoJuegos</a></li>
-              <li class="nav-item"><a routerLink="/actividades">Contacto</a></li>
-            </ul>
-          </div>-->
-        </nav>
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <a class="navbar-brand" routerLink="/actividades"
+          ><img id="logo" src="assets/Img/logo2.png" alt="imagen del menú"
+        /></a>
+        <!--botón para el responsive del menú -->
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav text-center">
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_e.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Memoria</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/actividades">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Trazos</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!--Menú desplegable>-->
+            <li class="nav-item dropdown links">
+              <a class="dropdown-toggle" routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_x.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Secuencia Temporal</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_p.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Descompongo palabras</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/actividades">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Identifica los absurdos</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_l.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Igual - Diferente</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/actividades">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Diferente</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_o.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Figuras Geométricas</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/actividades">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Figuras - Cuadro doble entrada</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_r.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Agrupaciones</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_a.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Contabilidad Numérica</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_n.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Menor - Mayor</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_d.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Cuantificadores</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown links">
+              <a routerLink="/actividades">
+                <img
+                  src="assets/Img/letra_o.png"
+                  alt="Card image"
+                  style="align-self: center; width: 75%;"
+                />
+              </a>
+              <ul class="dropdown-menu left" style="display: flex;">
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/memoria">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>Pertenencia</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a class="dropdown-item subLink" routerLink="/actividades">
+                    <div class="card zoom" style="width: 140px;">
+                      <img
+                        class="card-img-top"
+                        src="assets/Img/letra_e.png"
+                        alt="Card image"
+                        style="align-self: center; width: 70%;"
+                      />
+                      <div class="card-body" style="padding: 0px;">
+                        <p
+                          style="text-align: center; margin: 0px;"
+                          class="card-title"
+                        >
+                          <b>¿Qué hora es?</b>
+                        </p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
-    
-</body>
+  </body>
 </html>

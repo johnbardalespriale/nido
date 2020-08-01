@@ -1,7 +1,3 @@
-@mixin condicional($color)
-  @if $color == purple
-      background-color: #7ba8d6
-
 a
   text-decoration: none
   color: black
@@ -20,40 +16,49 @@ a
   font-size: 17px
   /*le da a la primera letra de cada palabra, mayuscula*/
   text-transform: capitalize
-  padding: 20px 27px
+  padding: 5px 0px
   font-family: 'Arial', sans-serif
   /*Para que se respete el espacio de cada elemento, al momento del collapse*/
   display: block !important
 
 /*menu desplegable*/
 .dropdown-menu
-    background-color: #969594
-    .dropdown-item
-      color: white
-
+  background-color: #57728c
+  .dropdown-item
+    color: black
+    white-space: initial
 
 ul > li.nav-item.dropdown > ul
   position: absolute
   left: 0
-  min-width: 250px
+  min-width: 180px
   display: block
   /*esconde el submenu*/
   visibility: hidden
   opacity: 0
   -webkit-transition: 0.5s ease all
   transition: 0.5s ease all
+  
+
+.left
+  left: -263px !important
 
 /*hace visible el submenu, debido a que el sass anterior lo hace invisible*/
 .collapse ul li:hover> ul
   visibility: visible
   opacity: 1
-  li:hover > a
-    /*Color de fondo del menú desplegable al acercar el cursor*/
-    @include condicional(purple)
+  /*li:hover > a
+   Color de fondo del menú desplegable al acercar el cursor
+   background-color: #7ba8d6*/
 
-ul > li:hover > a
-  @include condicional(purple)
-  color: white
+.links:hover
+  background-color: #8bafd2
+
+.links
+  width: 9%
+
+.subLink:hover
+  background-color: #57728c
 
 /*le quita la flecha abajo que aparece en el dropdown-menu*/
 ul li a.dropdown-toggle::after
@@ -78,7 +83,5 @@ ul li a.dropdown-toggle::after
   margin-bottom: 20px
   font-family: 'Aleo'
   font-size: 20px
-body
-  background-color: #f2f2f2
 .img-fluid4
   margin-bottom: 60px
