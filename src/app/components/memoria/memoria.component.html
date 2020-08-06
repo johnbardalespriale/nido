@@ -4,6 +4,36 @@
     <title>Nosotros</title>
   </head>
 
+  <style>
+    .flip-vertical-left {
+      -webkit-animation: flip-vertical-left 0.4s
+        cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+      animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+        both;
+    }
+
+    @-webkit-keyframes flip-vertical-left {
+      0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+      }
+      100% {
+        -webkit-transform: rotateY(-10deg);
+        transform: rotateY(-180deg);
+      }
+    }
+    @keyframes flip-vertical-left {
+      0% {
+        -webkit-transform: rotateY(0);
+        transform: rotateY(0);
+      }
+      100% {
+        -webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+      }
+    }
+  </style>
+
   <body>
     <section>
       <article class="article">
@@ -43,34 +73,34 @@
                 favoriteSeason == 'Nivel 3'
               "
             >
-              <td>
+              <td id="card1">
                 <img
                   id="0"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card1')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card2">
                 <img
                   id="1"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card2')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card3">
                 <img
                   id="2"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card3')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card4">
                 <img
                   id="3"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card4')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
@@ -83,34 +113,34 @@
                 favoriteSeason == 'Nivel 3'
               "
             >
-              <td>
+              <td id="card5">
                 <img
                   id="4"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card5')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card6">
                 <img
                   id="5"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card6')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card7">
                 <img
                   id="6"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card7')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card8">
                 <img
                   id="7"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card8')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
@@ -123,34 +153,34 @@
                 favoriteSeason == 'Nivel 3'
               "
             >
-              <td>
+              <td id="card9">
                 <img
                   id="8"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card9')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card10">
                 <img
                   id="9"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card10')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card11">
                 <img
                   id="10"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card11')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card12">
                 <img
                   id="11"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card12')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
@@ -159,68 +189,68 @@
             <tr
               *ngIf="favoriteSeason == 'Nivel 2' || favoriteSeason == 'Nivel 3'"
             >
-              <td>
+              <td id="card13">
                 <img
                   id="12"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card13')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card14">
                 <img
                   id="13"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card14')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card15">
                 <img
                   id="14"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card15')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card16">
                 <img
                   id="15"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card16')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
             </tr>
             <tr *ngIf="favoriteSeason == 'Nivel 3'">
-              <td>
+              <td id="card17">
                 <img
                   id="16"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card17')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card18">
                 <img
                   id="17"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card18')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card19">
                 <img
                   id="18"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card19')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
               </td>
-              <td>
+              <td id="card20">
                 <img
                   id="19"
-                  (click)="girarCarta()"
+                  (click)="girarCarta('card20')"
                   data-valor="valor"
                   src="assets/Img/Pioneras-00.jpg"
                 />
