@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container wrapper">
+      <h2>
+        Realice clic sobre el animalito diferente al de la imagen mostrada.
+      </h2>
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm" style="text-align: center;">
+          <img
+            class="card-img-top img-main"
+            src="assets/Img/alpaca.png"
+            style="width: 30%; margin: 0px auto;"
+          />
+        </div>
+        <div class="col-sm"></div>
+      </div>
+      <div
+        id="nivel1"
+        class="parent"
+        style="background-image: url('assets/Img/pasto.jpg');"
+      >
+        <div class="row">
+          <div
+            class="col-md-4"
+            style="text-align: center;"
+            *ngFor="let item of nivel1"
+          >
+            <img
+              class="card-img-top"
+              [src]="item.imagen"
+              style="
+                width: 30%;
+                margin: 0px auto;
+                cursor: pointer;
+                margin-top: 5px;
+              "
+              (click)="correctChoice(item.name)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container parent">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm" style="text-align: center;">
+          <img
+            class="card-img-top img-main"
+            src="assets/Img/conejo.png"
+            style="width: 30%; margin: 0px auto;"
+          />
+        </div>
+        <div class="col-sm"></div>
+      </div>
+      <div
+        id="nivel2"
+        class="parent"
+        style="background-image: url('assets/Img/pasto.jpg');"
+      >
+        <div class="row">
+          <div
+            class="col-md-4"
+            style="text-align: center;"
+            *ngFor="let item of nivel2"
+          >
+            <img
+              class="card-img-top"
+              [src]="item.imagen"
+              style="
+                width: 30%;
+                margin: 0px auto;
+                cursor: pointer;
+                margin-top: 5px;
+              "
+              (click)="correctChoice(item.name)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container parent">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm" style="text-align: center;">
+          <img
+            class="card-img-top img-main"
+            src="assets/Img/oso.png"
+            style="width: 30%; margin: 0px auto;"
+          />
+        </div>
+        <div class="col-sm"></div>
+      </div>
+      <div
+        id="nivel3"
+        class="parent"
+        style="background-image: url('assets/Img/pasto.jpg');"
+      >
+        <div class="row">
+          <div
+            class="col-md-4"
+            style="text-align: center;"
+            *ngFor="let item of nivel3"
+          >
+            <img
+              class="card-img-top"
+              [src]="item.imagen"
+              style="
+                width: 30%;
+                margin: 0px auto;
+                cursor: pointer;
+                margin-top: 5px;
+              "
+              (click)="correctChoice(item.name)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container parent">
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm" style="text-align: center;">
+          <img
+            class="card-img-top img-main"
+            src="assets/Img/serpiente.png"
+            style="width: 30%; margin: 0px auto;"
+          />
+        </div>
+        <div class="col-sm"></div>
+      </div>
+      <div
+        id="nivel4"
+        class="parent"
+        style="background-image: url('assets/Img/pasto.jpg');"
+      >
+        <div class="row">
+          <div
+            class="col-md-4"
+            style="text-align: center;"
+            *ngFor="let item of nivel4"
+          >
+            <img
+              class="card-img-top"
+              [src]="item.imagen"
+              style="
+                width: 30%;
+                margin: 0px auto;
+                cursor: pointer;
+                margin-top: 5px;
+              "
+              (click)="correctChoice(item.name)"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

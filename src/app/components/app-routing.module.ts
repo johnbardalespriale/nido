@@ -13,6 +13,9 @@ import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabili
 import { MenorMayorComponent } from './menor-mayor/menor-mayor.component';
 import { CuantificadoresComponent } from './cuantificadores/cuantificadores.component';
 import { PertenenciaComponent } from './pertenencia/pertenencia.component';
+import { HoraComponent } from './hora/hora.component';
+import { DiferenteComponent } from './diferente/diferente.component';
+import { AbsurdosComponent } from './absurdos/absurdos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -63,6 +66,18 @@ const routes: Routes = [
   {
     path: 'pertenencia',
     component: PertenenciaComponent,
+  },
+  {
+    path: 'hora',
+    component: HoraComponent,
+  },
+  {
+    path: 'diferente',
+    component: DiferenteComponent,
+  },
+  {
+    path: 'absurdos',
+    component: AbsurdosComponent,
   },
 ];
 

@@ -30,13 +30,18 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
                   <a class="dropdown-item subLink" routerLink="/memoria">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/memoria_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -56,7 +61,7 @@
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/trazos_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -82,13 +87,18 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu2"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a class="dropdown-item subLink" routerLink="/secuencia">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/secuencia_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -113,13 +123,18 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu3"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a class="dropdown-item subLink" routerLink="/silabas">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/descompongo_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -135,11 +150,11 @@
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/actividades">
+                  <a class="dropdown-item subLink" routerLink="/absurdos">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/absurdos_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -164,13 +179,21 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu4"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a
+                    class="dropdown-item subLink"
+                    routerLink="/igual-diferente"
+                  >
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/igual_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -179,18 +202,18 @@
                           style="text-align: center; margin: 0px;"
                           class="card-title"
                         >
-                          <b>Igual - Diferente</b>
+                          <b>Igual</b>
                         </p>
                       </div>
                     </div>
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/actividades">
+                  <a class="dropdown-item subLink" routerLink="/diferente">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/diferente_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -215,13 +238,21 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu5"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a
+                    class="dropdown-item subLink"
+                    routerLink="/figura-geometrica"
+                  >
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/figuras_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -266,9 +297,14 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu6"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a class="dropdown-item subLink" routerLink="/agrupacion">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
@@ -297,13 +333,21 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu7"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a
+                    class="dropdown-item subLink"
+                    routerLink="/contabilidad-numerica"
+                  >
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/numerica_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -328,13 +372,18 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu11"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a class="dropdown-item subLink" routerLink="/menor-mayor">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/mayor_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -359,13 +408,21 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu" style="display: flex;">
+              <ul
+                id="submenu8"
+                class="dropdown-menu"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a
+                    class="dropdown-item subLink"
+                    routerLink="/cuantificadores"
+                  >
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/cuantificadores_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -390,13 +447,18 @@
                   style="align-self: center; width: 75%;"
                 />
               </a>
-              <ul class="dropdown-menu left" style="display: flex;">
+              <ul
+                id="submenu9"
+                class="dropdown-menu left"
+                style="display: flex;"
+                (click)="clicked()"
+              >
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/memoria">
+                  <a class="dropdown-item subLink" routerLink="/pertenencia">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/pertenencia_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />
@@ -412,11 +474,11 @@
                   </a>
                 </li>
                 <li>
-                  <a class="dropdown-item subLink" routerLink="/actividades">
+                  <a class="dropdown-item subLink" routerLink="/hora">
                     <div class="card zoom" style="width: 140px;">
                       <img
                         class="card-img-top"
-                        src="assets/Img/letra_e.png"
+                        src="assets/Img/hora_menu.png"
                         alt="Card image"
                         style="align-self: center; width: 70%;"
                       />

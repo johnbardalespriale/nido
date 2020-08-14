@@ -22,6 +22,9 @@ import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabili
 import { MenorMayorComponent } from './menor-mayor/menor-mayor.component';
 import { CuantificadoresComponent } from './cuantificadores/cuantificadores.component';
 import { PertenenciaComponent } from './pertenencia/pertenencia.component';
+import { HoraComponent } from './hora/hora.component';
+import { DiferenteComponent } from './diferente/diferente.component';
+import { AbsurdosComponent } from './absurdos/absurdos.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { PertenenciaComponent } from './pertenencia/pertenencia.component';
     ContabilidadNumericaComponent,
     MenorMayorComponent,
     CuantificadoresComponent,
-    PertenenciaComponent
+    PertenenciaComponent,
+    HoraComponent,
+    DiferenteComponent,
+    AbsurdosComponent
   ],
   imports: [
     BrowserModule,
