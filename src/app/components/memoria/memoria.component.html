@@ -48,19 +48,28 @@
           class="radio-group"
           [(ngModel)]="favoriteSeason"
         >
-          <mat-radio-button *ngFor="let nivel of nivels" [value]="nivel.nivel">
+          <mat-radio-button
+            *ngFor="let nivel of nivels"
+            [value]="nivel.nivel"
+            (mouseup)="iniciar()"
+          >
             {{ nivel.nivel }}
           </mat-radio-button>
         </mat-radio-group>
 
         <div>
-          <input
+          <!--input
             style="margin: auto;"
             type="button"
             value="Iniciar juego"
             (click)="iniciarJuego()"
+          /-->
+          <input
+            style="margin: 0px;"
+            type="button"
+            value="Resetear"
+            (click)="resetearJuego()"
           />
-          <input type="button" value="Resetear" (click)="resetearJuego()" />
         </div>
       </article>
       <article class="article background">

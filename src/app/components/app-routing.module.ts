@@ -16,6 +16,8 @@ import { PertenenciaComponent } from './pertenencia/pertenencia.component';
 import { HoraComponent } from './hora/hora.component';
 import { DiferenteComponent } from './diferente/diferente.component';
 import { AbsurdosComponent } from './absurdos/absurdos.component';
+import { CuadroDobleComponent } from './cuadro-doble/cuadro-doble.component';
+import { ConjuntoComponent } from './conjunto/conjunto.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -78,6 +80,14 @@ const routes: Routes = [
   {
     path: 'absurdos',
     component: AbsurdosComponent,
+  },
+  {
+    path: 'cuadro-doble',
+    component: CuadroDobleComponent,
+  },
+  {
+    path: 'conjunto',
+    component: ConjuntoComponent,
   },
 ];
 

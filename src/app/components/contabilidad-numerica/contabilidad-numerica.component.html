@@ -57,25 +57,25 @@
           <div class="col-md-2"></div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(9)"
           >
             <img class="numero" src="assets/Img/numero_9.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice('numbers')"
+            (click)="correctChoice(6)"
           >
             <img class="numero" src="assets/Img/numero_6.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(3)"
           >
             <img class="numero" src="assets/Img/numero_3.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(5)"
           >
             <img class="numero" src="assets/Img/numero_5.png" alt="" />
           </div>
@@ -84,11 +84,7 @@
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-8" style="padding: 0px;">
-            <img
-              src="assets/Img/contar_ovejas.png"
-              alt=""
-              style="width: inherit;"
-            />
+            <img [src]="getImage()" alt="" style="width: inherit;" />
           </div>
           <div class="col-md-2"></div>
         </div>
@@ -110,25 +106,25 @@
           <div class="col-md-2"></div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(7)"
           >
             <img class="numero" src="assets/Img/numero_7.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(4)"
           >
             <img class="numero" src="assets/Img/numero_4.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(2)"
           >
             <img class="numero" src="assets/Img/numero_2.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice('numbers2')"
+            (click)="correctChoice(8)"
           >
             <img class="numero" src="assets/Img/numero_8.png" alt="" />
           </div>
@@ -137,11 +133,7 @@
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-8" style="padding: 0px;">
-            <img
-              src="assets/Img/contar_pajaros.png"
-              alt=""
-              style="width: inherit;"
-            />
+            <img [src]="getImage2()" alt="" style="width: inherit;" />
           </div>
           <div class="col-md-2"></div>
         </div>
@@ -163,25 +155,25 @@
           <div class="col-md-2"></div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(3)"
           >
             <img class="numero" src="assets/Img/numero_3.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice('numbers3')"
+            (click)="correctChoice(7)"
           >
             <img class="numero" src="assets/Img/numero_7.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(1)"
           >
             <img class="numero" src="assets/Img/numero_1.png" alt="" />
           </div>
           <div
             class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="errorChoice()"
+            (click)="correctChoice(5)"
           >
             <img class="numero" src="assets/Img/numero_5.png" alt="" />
           </div>
@@ -190,11 +182,7 @@
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-8" style="padding: 0px;">
-            <img
-              src="assets/Img/contar_peces.png"
-              alt=""
-              style="width: inherit;"
-            />
+            <img [src]="getImage3()" alt="" style="width: inherit;" />
           </div>
           <div class="col-md-2"></div>
         </div>

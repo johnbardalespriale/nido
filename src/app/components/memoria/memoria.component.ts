@@ -13,6 +13,7 @@ import {
   styleUrls: ['./memoria.component.sass'],
 })
 export class MemoriaComponent implements OnInit {
+  aciertos: number;
   cartas: any;
   intentos: number;
   validator: number;
@@ -98,6 +99,7 @@ export class MemoriaComponent implements OnInit {
     this.idDeLaJugada2 = '';
     this.intentos = 0;
     this.validator = 0;
+    this.aciertos = 0;
   }
 
   iniciarJuego() {
@@ -144,8 +146,18 @@ export class MemoriaComponent implements OnInit {
     }
   }
 
+  iniciar() {
+    setTimeout(() => {
+      this.iniciarJuego();
+    }, 1000);
+  }
+
   //Reinicia el juego
   resetearJuego() {
+    setTimeout(() => {
+      this.iniciarJuego();
+    }, 1000);
+    this.aciertos = 0;
     this.habilitar = 0;
     var juego = document.getElementById('juego');
     juego.style.opacity = '0.3';
@@ -273,28 +285,28 @@ export class MemoriaComponent implements OnInit {
 
   //Comprobamos si ya se finalizó el juego para mostrar el mensaje que ganaron
   comprobarSiHaGanadoElJuego() {
-    var aciertos = 0;
+    this.aciertos = 0;
     if (this.favoriteSeason === 'Nivel 1') {
       //Cuenta cuántos aciertos llevan
       for (var i = 0; i < 12; i++) {
         if (this.cartas[i].seleccion === true) {
-          aciertos++;
+          this.aciertos++;
         }
       }
       //Muestra el mensaje de victoria
-      if (aciertos === 12) {
+      if (this.aciertos === 12) {
         alert('Tuviste ' + this.intentos + ' intentos. ¡Que bien! ganaste ;)');
       }
     } else {
       //Cuenta cuántos aciertos llevan
       for (var i = 0; i < 16; i++) {
         if (this.cartas[i].seleccion === true) {
-          aciertos++;
+          this.aciertos++;
         }
       }
     }
     //Muestra el mensaje de victoria
-    if (aciertos === 16) {
+    if (this.aciertos === 16) {
       alert('Tuviste ' + this.intentos + ' intentos. ¡Que bien! ganaste ;)');
     }
   }

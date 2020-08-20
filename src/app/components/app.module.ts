@@ -25,6 +25,8 @@ import { PertenenciaComponent } from './pertenencia/pertenencia.component';
 import { HoraComponent } from './hora/hora.component';
 import { DiferenteComponent } from './diferente/diferente.component';
 import { AbsurdosComponent } from './absurdos/absurdos.component';
+import { CuadroDobleComponent } from './cuadro-doble/cuadro-doble.component';
+import { ConjuntoComponent } from './conjunto/conjunto.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { AbsurdosComponent } from './absurdos/absurdos.component';
     PertenenciaComponent,
     HoraComponent,
     DiferenteComponent,
-    AbsurdosComponent
+    AbsurdosComponent,
+    CuadroDobleComponent,
+    ConjuntoComponent
   ],
   imports: [
     BrowserModule,

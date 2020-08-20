@@ -11,6 +11,16 @@ export class ContabilidadNumericaComponent implements OnInit {
   nivels: any[];
   selectedNivel: string;
   habilitar: number;
+  nivel1: any[];
+  nivel2: any[];
+  nivel3: any[];
+
+  private currentImage: any;
+  private currentImage2: any;
+  private currentImage3: any;
+  private answerImage: any;
+  private answerImage2: any;
+  private answerImage3: any;
 
   javascript() {
     $('.anchor').on('click', function () {
@@ -131,6 +141,69 @@ export class ContabilidadNumericaComponent implements OnInit {
       { nivel: 'Nivel 2', selected: false },
       { nivel: 'Nivel 3', selected: false },
     ];
+
+    this.nivel1 = [
+      { imagen: 'assets/Img/contar_ovejas.png', number: 6 },
+      { imagen: 'assets/Img/contar_ovejas_3.png', number: 3 },
+      { imagen: 'assets/Img/contar_ovejas_5.png', number: 5 },
+      { imagen: 'assets/Img/contar_ovejas_3.png', number: 3 },
+      { imagen: 'assets/Img/contar_ovejas_5.png', number: 5 },
+    ];
+
+    this.nivel2 = [
+      { imagen: 'assets/Img/contar_pajaros.png', number: 8 },
+      { imagen: 'assets/Img/contar_pajaros_4.png', number: 4 },
+      { imagen: 'assets/Img/contar_pajaros_2.png', number: 2 },
+      { imagen: 'assets/Img/contar_pajaros_4.png', number: 4 },
+      { imagen: 'assets/Img/contar_pajaros_2.png', number: 2 },
+    ];
+
+    this.nivel3 = [
+      { imagen: 'assets/Img/contar_peces.png', number: 7 },
+      { imagen: 'assets/Img/contar_peces_5.png', number: 5 },
+      { imagen: 'assets/Img/contar_peces_3.png', number: 3 },
+      { imagen: 'assets/Img/contar_peces_5.png', number: 5 },
+      { imagen: 'assets/Img/contar_peces_3.png', number: 3 },
+    ];
+  }
+
+  updateRandomImage() {
+    const r = Math.floor(Math.random() * (this.nivel1.length - 1)) + 0;
+    return this.nivel1[r];
+  }
+
+  updateRandomImage2() {
+    const p = Math.floor(Math.random() * (this.nivel2.length - 1)) + 0;
+    return this.nivel2[p];
+  }
+
+  updateRandomImage3() {
+    const q = Math.floor(Math.random() * (this.nivel3.length - 1)) + 0;
+    return this.nivel3[q];
+  }
+
+  getImage() {
+    return this.currentImage.imagen;
+  }
+
+  getImage2() {
+    return this.currentImage2.imagen;
+  }
+
+  getImage3() {
+    return this.currentImage3.imagen;
+  }
+
+  getNumberImage() {
+    return this.currentImage.number;
+  }
+
+  getNumberImage2() {
+    return this.currentImage2.number;
+  }
+
+  getNumberImage3() {
+    return this.currentImage3.number;
   }
 
   match(number) {
@@ -152,16 +225,52 @@ export class ContabilidadNumericaComponent implements OnInit {
   }
 
   correctChoice(id) {
-    alert('Respuesta correcta');
-    var numbers = document.getElementById(id);
-    numbers.style.pointerEvents = 'none';
-    numbers.style.opacity = '0.3';
+    if (this.answerImage === id && this.selectedNivel === 'Nivel 1') {
+      alert('Respuesta correcta');
+      var numbers = document.getElementById('numbers');
+      numbers.style.pointerEvents = 'none';
+      numbers.style.opacity = '0.3';
+    } else if (this.answerImage2 === id && this.selectedNivel === 'Nivel 1') {
+      alert('Respuesta correcta');
+      var numbers = document.getElementById('numbers2');
+      numbers.style.pointerEvents = 'none';
+      numbers.style.opacity = '0.3';
+    } else if (this.answerImage3 === id && this.selectedNivel === 'Nivel 1') {
+      alert('Respuesta correcta');
+      var numbers = document.getElementById('numbers3');
+      numbers.style.pointerEvents = 'none';
+      numbers.style.opacity = '0.3';
+    } else {
+      alert('Respuesta incorrecta, vuelve a intentarlo');
+    }
   }
 
   resetear(show) {
     this.answer = 0;
+
+    setTimeout(() => {
+      //cada 5 segundos elegimos una imagen al azar
+      this.currentImage = this.updateRandomImage();
+      this.currentImage2 = this.updateRandomImage2();
+      this.currentImage3 = this.updateRandomImage3();
+      this.answerImage = this.getNumberImage();
+      this.answerImage2 = this.getNumberImage2();
+      this.answerImage3 = this.getNumberImage3();
+    }, 500);
+
     if (show === 'Nivel 1') {
       this.habilitar = 1;
+      var numbers = document.getElementById('numbers');
+      numbers.style.pointerEvents = 'inherit';
+      numbers.style.opacity = '1';
+
+      var numbers2 = document.getElementById('numbers2');
+      numbers2.style.pointerEvents = 'inherit';
+      numbers2.style.opacity = '1';
+
+      var numbers3 = document.getElementById('numbers3');
+      numbers3.style.pointerEvents = 'inherit';
+      numbers3.style.opacity = '1';
     } else if (show === 'Nivel 2') {
       this.habilitar = 0;
 
