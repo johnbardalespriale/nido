@@ -27,6 +27,7 @@ import { DiferenteComponent } from './diferente/diferente.component';
 import { AbsurdosComponent } from './absurdos/absurdos.component';
 import { CuadroDobleComponent } from './cuadro-doble/cuadro-doble.component';
 import { ConjuntoComponent } from './conjunto/conjunto.component';
+import { TrazosComponent } from './trazos/trazos.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ConjuntoComponent } from './conjunto/conjunto.component';
     DiferenteComponent,
     AbsurdosComponent,
     CuadroDobleComponent,
-    ConjuntoComponent
+    ConjuntoComponent,
+    TrazosComponent
   ],
   imports: [
     BrowserModule,
