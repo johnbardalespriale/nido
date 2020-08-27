@@ -1,11 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { MDBBootstrapModule } from  'angular-bootstrap-md';
-import {FormsModule} from '@angular/forms';
-import {MatRadioModule} from '@angular/material/radio';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { FormsModule } from '@angular/forms';
+import { MatRadioModule } from '@angular/material/radio';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { ToastrModule } from 'ngx-toastr';
 
 /*Components*/
 import { AppComponent } from './app/app.component';
@@ -49,20 +50,21 @@ import { TrazosComponent } from './trazos/trazos.component';
     AbsurdosComponent,
     CuadroDobleComponent,
     ConjuntoComponent,
-    TrazosComponent
+    TrazosComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
+    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
     MatRadioModule,
     DragDropModule,
-    MatButtonModule
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {}

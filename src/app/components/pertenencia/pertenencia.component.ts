@@ -4,6 +4,7 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-pertenencia',
@@ -115,7 +116,10 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != 'carnivoro') {
-          alert('Grupo equivocado');
+          Swal.fire({
+            icon: 'error',
+            text: 'Grupo equivocado',
+          });
           cont--;
         } else {
           cont++;
@@ -135,7 +139,10 @@ export class PertenenciaComponent implements OnInit {
         animales.style.opacity = '0.3';
         animales.style.pointerEvents = 'none';
 
-        alert('Juego terminado');
+        Swal.fire({
+          title: 'JUEGO TERMINADO',
+          text: 'Lo lograste',
+        });
       }
     }
   }
@@ -163,7 +170,10 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != 'herbivoro') {
-          alert('Grupo equivocado');
+          Swal.fire({
+            icon: 'error',
+            text: 'Grupo equivocado',
+          });
           cont--;
         } else {
           cont++;
@@ -183,7 +193,10 @@ export class PertenenciaComponent implements OnInit {
         animales.style.opacity = '0.3';
         animales.style.pointerEvents = 'none';
 
-        alert('Juego terminado');
+        Swal.fire({
+          title: 'JUEGO TERMINADO',
+          text: 'Lo lograste',
+        });
       }
     }
   }
@@ -210,7 +223,10 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != '2_patas') {
-          alert('Grupo equivocado');
+          Swal.fire({
+            icon: 'error',
+            text: 'Grupo equivocado',
+          });
           cont--;
         } else {
           cont++;
@@ -230,7 +246,10 @@ export class PertenenciaComponent implements OnInit {
         set3Paws.style.opacity = '0.3';
         set3Paws.style.pointerEvents = 'none';
 
-        alert('Juego terminado');
+        Swal.fire({
+          title: 'JUEGO TERMINADO',
+          text: 'Lo lograste',
+        });
       }
     }
   }
@@ -257,7 +276,10 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != '4_patas') {
-          alert('Grupo equivocado');
+          Swal.fire({
+            icon: 'error',
+            text: 'Grupo equivocado',
+          });
           cont--;
         } else {
           cont++;
@@ -277,7 +299,10 @@ export class PertenenciaComponent implements OnInit {
         set3Paws.style.opacity = '0.3';
         set3Paws.style.pointerEvents = 'none';
 
-        alert('Juego terminado');
+        Swal.fire({
+          title: 'JUEGO TERMINADO',
+          text: 'Lo lograste',
+        });
       }
     }
   }
@@ -305,7 +330,10 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != 'loudSound') {
-          alert('Grupo equivocado');
+          Swal.fire({
+            icon: 'error',
+            text: 'Grupo equivocado',
+          });
           cont--;
         } else {
           cont++;
@@ -325,7 +353,10 @@ export class PertenenciaComponent implements OnInit {
         weakSound.style.opacity = '0.3';
         weakSound.style.pointerEvents = 'none';
 
-        alert('Juego terminado');
+        Swal.fire({
+          title: 'JUEGO TERMINADO',
+          text: 'Lo lograste',
+        });
       }
     }
   }
@@ -353,7 +384,10 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != 'weakSound') {
-          alert('Grupo equivocado');
+          Swal.fire({
+            icon: 'error',
+            text: 'Grupo equivocado',
+          });
           cont--;
         } else {
           cont++;
@@ -373,7 +407,10 @@ export class PertenenciaComponent implements OnInit {
         weakSound.style.opacity = '0.3';
         weakSound.style.pointerEvents = 'none';
 
-        alert('Juego terminado');
+        Swal.fire({
+          title: 'JUEGO TERMINADO',
+          text: 'Lo lograste',
+        });
       }
     }
   }

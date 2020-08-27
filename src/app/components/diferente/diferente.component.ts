@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-diferente',
@@ -78,25 +79,37 @@ export class DiferenteComponent implements OnInit {
     this.mixSet();
 
     if (name === 'llama') {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'Lo encontraste',
+        text: 'Encontraste la figura diferente',
+      });
       var nivel1 = document.getElementById('nivel1');
       nivel1.style.opacity = '0.3';
       nivel1.style.pointerEvents = 'none';
       this.cont++;
     } else if (name === 'cuy') {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'Lo encontraste',
+        text: 'Encontraste la figura diferente',
+      });
       var nivel2 = document.getElementById('nivel2');
       nivel2.style.opacity = '0.3';
       nivel2.style.pointerEvents = 'none';
       this.cont++;
     } else if (name === 'jirafa') {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'Lo encontraste',
+        text: 'Encontraste la figura diferente',
+      });
       var nivel3 = document.getElementById('nivel3');
       nivel3.style.opacity = '0.3';
       nivel3.style.pointerEvents = 'none';
       this.cont++;
     } else if (name === 'oso') {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'Lo encontraste',
+        text: 'Encontraste la figura diferente',
+      });
       var nivel4 = document.getElementById('nivel4');
       nivel4.style.opacity = '0.3';
       nivel4.style.pointerEvents = 'none';
@@ -104,7 +117,10 @@ export class DiferenteComponent implements OnInit {
     }
 
     if (this.cont === 4) {
-      alert('Juegos terminado');
+      Swal.fire({
+        title: 'GANASTE',
+        text: 'Juego terminado',
+      });
     }
   }
 }

@@ -5,6 +5,7 @@ import {
   transferArrayItem,
   CdkDrag,
 } from '@angular/cdk/drag-drop';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-figura-geometrica',
@@ -443,9 +444,6 @@ export class FiguraGeometricaComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(this.done, event.previousIndex, event.currentIndex);
-      console.log(this.done, 'data1');
-      console.log(event.previousIndex, 'data1-index1');
-      console.log(event.currentIndex, 'data1-index2');
       if (
         this.done[0].name === 'cuadrado-rojo' &&
         this.done[1].name === 'triangulo-verde' &&
@@ -454,8 +452,10 @@ export class FiguraGeometricaComponent implements OnInit {
         var figuras = document.getElementById('figuras');
         figuras.style.opacity = '0.3';
         figuras.style.pointerEvents = 'none';
-
-        alert('has ganado');
+        Swal.fire({
+          title: 'GANASTE',
+          text: '!Lo lograste¡',
+        });
       } else if (
         this.done[0].name === 'circulo-verde' &&
         this.done[1].name === 'rectangulo-azul' &&
@@ -466,7 +466,10 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.opacity = '0.3';
         figuras.style.pointerEvents = 'none';
 
-        alert('has ganado');
+        Swal.fire({
+          title: 'GANASTE',
+          text: '!Lo lograste¡',
+        });
       } else if (
         this.done[0].name === 'cuadrado-verde' &&
         this.done[1].name === 'rectangulo-azul' &&
@@ -478,7 +481,10 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.opacity = '0.3';
         figuras.style.pointerEvents = 'none';
 
-        alert('has ganado');
+        Swal.fire({
+          title: 'GANASTE',
+          text: '!Lo lograste¡',
+        });
       }
     } else {
       transferArrayItem(
@@ -487,10 +493,6 @@ export class FiguraGeometricaComponent implements OnInit {
         event.previousIndex,
         event.currentIndex
       );
-      console.log(event.previousContainer.data);
-      console.log(this.done, 'data2');
-      console.log(event.previousIndex, 'data2-index3');
-      console.log(event.currentIndex, 'data2-index4');
       if (
         this.done[0].name === 'cuadrado-rojo' &&
         this.done[1].name === 'triangulo-verde' &&
@@ -500,7 +502,10 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.opacity = '0.3';
         figuras.style.pointerEvents = 'none';
 
-        alert('has ganado');
+        Swal.fire({
+          title: 'GANASTE',
+          text: '!Lo lograste¡',
+        });
       } else if (
         this.done[0].name === 'circulo-verde' &&
         this.done[1].name === 'rectangulo-azul' &&
@@ -511,7 +516,10 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.opacity = '0.3';
         figuras.style.pointerEvents = 'none';
 
-        alert('has ganado');
+        Swal.fire({
+          title: 'GANASTE',
+          text: '!Lo lograste¡',
+        });
       } else if (
         this.done[0].name === 'cuadrado-verde' &&
         this.done[1].name === 'rectangulo-azul' &&
@@ -523,7 +531,10 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.opacity = '0.3';
         figuras.style.pointerEvents = 'none';
 
-        alert('has ganado');
+        Swal.fire({
+          title: 'GANASTE',
+          text: '!Lo lograste¡',
+        });
       }
     }
   }
@@ -533,7 +544,6 @@ export class FiguraGeometricaComponent implements OnInit {
     for (var i in items.data) {
       if (items.data.hasOwnProperty(i)) {
         var answer = items.data[i];
-        console.log(answer, 'respuesta');
       }
     }
 

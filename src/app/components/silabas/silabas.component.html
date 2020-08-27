@@ -1,194 +1,489 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <div class="container" style="margin-top: 25px; margin-bottom: 45px;">
-        <h2>Señala el número de sílabas que posea el nombre de las siguientes imágenes:</h2>
-        <div class="row" style="margin-bottom: inherit;">
-            <div class="col-md-3" *ngFor="let nivel of nivel1">
-                <img [src]="nivel.imagen">
-            </div>
-            <div class="w-100"></div>
-            <div class="col-md-3" style="padding: 0px 0px 0px 29px;" *ngFor="let nivel of nivel1"> 
-                <div class="row">
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(1, nivel.name)">1</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(2, nivel.name)">2</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(3, nivel.name)">3</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(4, nivel.name)">4</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(5, nivel.name)">5</button>
-                    </div>
-                </div>
-            </div>
+      <h2>
+        Señala el número de sílabas que posea el nombre de las siguientes
+        imágenes:
+      </h2>
+      <div class="row" style="margin-bottom: inherit;">
+        <div class="col-md-3" *ngFor="let nivel of nivel1">
+          <img [src]="nivel.imagen" />
         </div>
-        <div class="row" style="margin-bottom: inherit;">
-            <div class="col-md-3" *ngFor="let nivel of nivel2">
-                <img [src]="nivel.imagen">
+        <div class="w-100"></div>
+        <div
+          class="col-md-3"
+          style="padding: 0px 0px 0px 29px;"
+          *ngFor="let nivel of nivel1"
+        >
+          <div class="row">
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(1, nivel.name)"
+              >
+                1
+              </button>
             </div>
-            <div class="w-100"></div>
-            <div class="col-md-3" style="padding: 0px 0px 0px 29px;" *ngFor="let nivel of nivel2"> 
-                <div class="row">
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(1, nivel.name)">1</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(2, nivel.name)">2</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(3, nivel.name)">3</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(4, nivel.name)">4</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(5, nivel.name)">5</button>
-                    </div>
-                </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(2, nivel.name)"
+              >
+                2
+              </button>
             </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(3, nivel.name)"
+              >
+                3
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(4, nivel.name)"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(5, nivel.name)"
+              >
+                5
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="row" style="margin-bottom: inherit;">
-            <div class="col-md-3" *ngFor="let nivel of nivel3">
-                <img [src]="nivel.imagen">
-            </div>
-            <div class="w-100"></div>
-            <div class="col-md-3" style="padding: 0px 0px 0px 29px;" *ngFor="let nivel of nivel3"> 
-                <div class="row">
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(1, nivel.name)">1</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(2, nivel.name)">2</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(3, nivel.name)">3</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(4, nivel.name)">4</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(5, nivel.name)">5</button>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="row" style="margin-bottom: inherit;">
+        <div class="col-md-3" *ngFor="let nivel of nivel2">
+          <img [src]="nivel.imagen" />
         </div>
-        <div class="row" style="margin-bottom: inherit;">
-            <div class="col-md-3" *ngFor="let nivel of nivel4">
-                <img [src]="nivel.imagen">
+        <div class="w-100"></div>
+        <div
+          class="col-md-3"
+          style="padding: 0px 0px 0px 29px;"
+          *ngFor="let nivel of nivel2"
+        >
+          <div class="row">
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(1, nivel.name)"
+              >
+                1
+              </button>
             </div>
-            <div class="w-100"></div>
-            <div class="col-md-3" style="padding: 0px 0px 0px 29px;" *ngFor="let nivel of nivel4"> 
-                <div class="row">
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(1, nivel.name)">1</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(2, nivel.name)">2</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(3, nivel.name)">3</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(4, nivel.name)">4</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(5, nivel.name)">5</button>
-                    </div>
-                </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(2, nivel.name)"
+              >
+                2
+              </button>
             </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(3, nivel.name)"
+              >
+                3
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(4, nivel.name)"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(5, nivel.name)"
+              >
+                5
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="row" style="margin-bottom: inherit;">
-            <div class="col-md-3" *ngFor="let nivel of nivel5">
-                <img [src]="nivel.imagen">
-            </div>
-            <div class="w-100"></div>
-            <div class="col-md-3" style="padding: 0px 0px 0px 29px;" *ngFor="let nivel of nivel5"> 
-                <div class="row">
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(1, nivel.name)">1</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(2, nivel.name)">2</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(3, nivel.name)">3</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(4, nivel.name)">4</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(5, nivel.name)">5</button>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="row" style="margin-bottom: inherit;">
+        <div class="col-md-3" *ngFor="let nivel of nivel3">
+          <img [src]="nivel.imagen" />
         </div>
-        <div class="row" style="margin-bottom: inherit;">
-            <div class="col-md-3" *ngFor="let nivel of nivel6">
-                <img [src]="nivel.imagen">
+        <div class="w-100"></div>
+        <div
+          class="col-md-3"
+          style="padding: 0px 0px 0px 29px;"
+          *ngFor="let nivel of nivel3"
+        >
+          <div class="row">
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(1, nivel.name)"
+              >
+                1
+              </button>
             </div>
-            <div class="w-100"></div>
-            <div class="col-md-3" style="padding: 0px 0px 0px 29px;" *ngFor="let nivel of nivel6"> 
-                <div class="row">
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(1, nivel.name)">1</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(2, nivel.name)">2</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(3, nivel.name)">3</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(4, nivel.name)">4</button>
-                    </div>
-                    <div class="col-sm-2 list-number" style="padding: 0px">
-                        <button class="{{nivel.name}}" type="button" class="btn btn-outline-success btn-sm"
-                        (click)="iniciarJuego(5, nivel.name)">5</button>
-                    </div>
-                </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(2, nivel.name)"
+              >
+                2
+              </button>
             </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(3, nivel.name)"
+              >
+                3
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(4, nivel.name)"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(5, nivel.name)"
+              >
+                5
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="row" style="margin-bottom: inherit;">
+        <div class="col-md-3" *ngFor="let nivel of nivel4">
+          <img [src]="nivel.imagen" />
+        </div>
+        <div class="w-100"></div>
+        <div
+          class="col-md-3"
+          style="padding: 0px 0px 0px 29px;"
+          *ngFor="let nivel of nivel4"
+        >
+          <div class="row">
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(1, nivel.name)"
+              >
+                1
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(2, nivel.name)"
+              >
+                2
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(3, nivel.name)"
+              >
+                3
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(4, nivel.name)"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(5, nivel.name)"
+              >
+                5
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: inherit;">
+        <div class="col-md-3" *ngFor="let nivel of nivel5">
+          <img [src]="nivel.imagen" />
+        </div>
+        <div class="w-100"></div>
+        <div
+          class="col-md-3"
+          style="padding: 0px 0px 0px 29px;"
+          *ngFor="let nivel of nivel5"
+        >
+          <div class="row">
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(1, nivel.name)"
+              >
+                1
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(2, nivel.name)"
+              >
+                2
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(3, nivel.name)"
+              >
+                3
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(4, nivel.name)"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(5, nivel.name)"
+              >
+                5
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-bottom: inherit;">
+        <div class="col-md-3" *ngFor="let nivel of nivel6">
+          <img [src]="nivel.imagen" />
+        </div>
+        <div class="w-100"></div>
+        <div
+          class="col-md-3"
+          style="padding: 0px 0px 0px 29px;"
+          *ngFor="let nivel of nivel6"
+        >
+          <div class="row">
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(1, nivel.name)"
+              >
+                1
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(2, nivel.name)"
+              >
+                2
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(3, nivel.name)"
+              >
+                3
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(4, nivel.name)"
+              >
+                4
+              </button>
+            </div>
+            <div class="col-sm-2 list-number" style="padding: 0px;">
+              <button
+                style="padding: 6px; margin: 5px 1px; border-radius: 15%;"
+                class="{{ nivel.name }}"
+                type="button"
+                mdbBtn
+                color="success"
+                mdbWavesEffect
+                (click)="iniciarJuego(5, nivel.name)"
+              >
+                5
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>

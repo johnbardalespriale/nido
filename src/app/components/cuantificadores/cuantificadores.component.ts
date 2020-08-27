@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cuantificadores',
@@ -67,27 +68,42 @@ export class CuantificadoresComponent implements OnInit {
 
   choice(name) {
     if (name === 'lapices') {
-      alert('respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'respuesta correcta',
+      });
       var nivel = document.getElementById('nivel1');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';
     } else if (name === 'frutas') {
-      alert('respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'respuesta correcta',
+      });
       var nivel = document.getElementById('nivel2');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';
     } else if (name === 'jirafa') {
-      alert('respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'respuesta correcta',
+      });
       var nivel = document.getElementById('nivel3');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';
     } else if (name === 'cesta') {
-      alert('respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'respuesta correcta',
+      });
       var nivel = document.getElementById('nivel4');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';
     } else {
-      alert('respuesta equivocada');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'respuesta correcta',
+      });
     }
   }
 }

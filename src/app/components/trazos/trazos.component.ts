@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-trazos',
@@ -358,8 +359,11 @@ export class TrazosComponent implements OnInit {
             canva.style.display = 'none';
 
             setTimeout(() => {
-              alert('¡Lo lograste, descubriste la figura!');
-            }, 600);
+              Swal.fire({
+                title: 'LO LOGRASTE',
+                text: '¡Descubriste la figura!',
+              });
+            }, 900);
           }
         });
       },

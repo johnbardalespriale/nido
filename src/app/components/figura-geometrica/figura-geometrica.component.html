@@ -1,88 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
     <div class="container">
-        <h2>Arrastra las figuras geométricas que concuerden con el color, forma y en el orden que muestra la 
-            imagen</h2>
-        <div cdkDropListGroup>
-            <div class="example-container" style="margin-top: 4%; width: 200px;">
-                <label style="margin: 8px 15px;text-align: initial;"><b>Escoge el nivel del juego y haz clic en el botón iniciar juego:</b></label>
-                <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group"
+      <h2>
+        Arrastra las figuras geométricas que concuerden con el color, forma y en
+        el orden que muestra la caja.
+      </h2>
+      <div cdkDropListGroup>
+        <div class="example-container" style="margin-top: 4%; width: 337px;">
+          <label style="text-align: initial;"
+            ><b>Escoge el nivel del juego, para empezar a jugar.</b></label
+          >
+          <!--mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group"
                     [(ngModel)]="selectedNivel">
                     <mat-radio-button *ngFor="let nivel of nivels" [value]="nivel.nivel">
                         {{nivel.nivel}}
                     </mat-radio-button>
-                    </mat-radio-group>
-        
-                    <div style="text-align: initial;">
-                        <input style="margin: 0px 15px 15px; height: 30px;" type="button" value="Iniciar Juego" (click)="resetear()"/>
-                    </div>
-            </div>
+                </mat-radio-group-->
 
-            <div class="example-container" style="display: inline-table;">
-                <h2>Figuras Geométricas</h2>
-            
-                <div
-                    cdkDropList
-                    [cdkDropListData]="todo"
-                    class="example-list change-list"
-                    (cdkDropListDropped)="drop($event)"
-                    style="margin: auto;"
-                    *ngIf="selectedNivel == 'Nivel 1'">
-                    <div class="example-box" *ngFor="let item of todo" [cdkDragData]="item" cdkDrag>
-                        <img [src]="item.imagen" alt="" style="display: block; margin: auto;">
-                    </div>
-                </div>
-                
-                <div
-                    cdkDropList
-                    [cdkDropListData]="nivel2"
-                    class="example-list change-list"
-                    (cdkDropListDropped)="drop($event)"
-                    style="margin: auto;"
-                    *ngIf="selectedNivel == 'Nivel 2'">
-                    <div class="example-box" *ngFor="let item of nivel2" [cdkDragData]="item" cdkDrag>
-                        <img [src]="item.imagen" alt="" style="display: block; margin: auto;">
-                    </div>
-                </div>
+          <div class="btn-group" style="margin-bottom: 15px;">
+            <label
+              style="background-color: #2bbbad !important; color: white;"
+              mdbBtn
+              [(ngModel)]="selectedNivel"
+              [mdbRadio]="nivel.nivel"
+              mdbWavesEffect
+              *ngFor="let nivel of nivels"
+              [value]="nivel.nivel"
+              (click)="resetear()"
+            >
+              {{ nivel.nivel }}
+            </label>
+          </div>
 
-                <div
-                    cdkDropList
-                    [cdkDropListData]="nivel3"
-                    class="example-list change-list"
-                    (cdkDropListDropped)="drop($event)"
-                    style="margin: auto;"
-                    *ngIf="selectedNivel == 'Nivel 3'">
-                    <div class="example-box" *ngFor="let item of nivel3" [cdkDragData]="item" cdkDrag>
-                        <img [src]="item.imagen" alt="" style="display: block; margin: auto;">
-                    </div>
-                </div>
-            </div>
-        
-            <div class="example-container">
-            <h2>Canasta</h2>
-
-            <div id="figuras" 
-            [ngStyle]="selectedNivel == 'Nivel 1' ?  {'background-image': 'url(' + 'assets/Img/nivel-figuras.png'  + ')',
-                        'height': 250 + 'px'} : selectedNivel == 'Nivel 2' ? {'background-image': 'url(' + 'assets/Img/nivel2-figuras.png'  + ')',
-                        'height': 330 + 'px'} : {'background-image': 'url(' + 'assets/Img/nivel3-figuras.png'  + ')',
-                        'height': 407 + 'px'}"
-                cdkDropList
-                [cdkDropListData]="done"
-                class="example-list"
-                (cdkDropListDropped)="drop($event)"
-                [cdkDropListEnterPredicate]="evenPredicate">
-                <div class="example-box" *ngFor="let item of done" cdkDrag [cdkDragData]="item" style="background-image: url('assets/Img/canasta.jpg');">
-                    <img [src]="item.imagen" alt="" style="display: block; margin: auto;">
-                </div>
-            </div>
-
-            </div>
+          <div style="text-align: initial;">
+            <input type="button" value="Resetear" (click)="resetear()" />
+          </div>
         </div>
+
+        <div class="example-container" style="display: inline-table;">
+          <h2>Figuras Geométricas</h2>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="todo"
+            class="example-list change-list"
+            (cdkDropListDropped)="drop($event)"
+            style="margin: auto;"
+            *ngIf="selectedNivel == 'Nivel 1'"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of todo"
+              [cdkDragData]="item"
+              cdkDrag
+            >
+              <img
+                [src]="item.imagen"
+                alt=""
+                style="display: block; margin: auto;"
+              />
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="nivel2"
+            class="example-list change-list"
+            (cdkDropListDropped)="drop($event)"
+            style="margin: auto;"
+            *ngIf="selectedNivel == 'Nivel 2'"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of nivel2"
+              [cdkDragData]="item"
+              cdkDrag
+            >
+              <img
+                [src]="item.imagen"
+                alt=""
+                style="display: block; margin: auto;"
+              />
+            </div>
+          </div>
+
+          <div
+            cdkDropList
+            [cdkDropListData]="nivel3"
+            class="example-list change-list"
+            (cdkDropListDropped)="drop($event)"
+            style="margin: auto;"
+            *ngIf="selectedNivel == 'Nivel 3'"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of nivel3"
+              [cdkDragData]="item"
+              cdkDrag
+            >
+              <img
+                [src]="item.imagen"
+                alt=""
+                style="display: block; margin: auto;"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="example-container" style="width: 98px;">
+          <h2>Canasta</h2>
+
+          <div
+            id="figuras"
+            [ngStyle]="
+              selectedNivel == 'Nivel 1'
+                ? {
+                    'background-image':
+                      'url(' + 'assets/Img/nivel-figuras.png' + ')',
+                    height: 250 + 'px'
+                  }
+                : selectedNivel == 'Nivel 2'
+                ? {
+                    'background-image':
+                      'url(' + 'assets/Img/nivel2-figuras.png' + ')',
+                    height: 330 + 'px'
+                  }
+                : {
+                    'background-image':
+                      'url(' + 'assets/Img/nivel3-figuras.png' + ')',
+                    height: 407 + 'px',
+                    width: 80 + 'px'
+                  }
+            "
+            cdkDropList
+            [cdkDropListData]="done"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)"
+            [cdkDropListEnterPredicate]="evenPredicate"
+          >
+            <div
+              class="example-box"
+              *ngFor="let item of done"
+              cdkDrag
+              [cdkDragData]="item"
+            >
+              <img
+                [src]="item.imagen"
+                alt=""
+                style="display: block; margin: auto;"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

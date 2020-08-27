@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-absurdos',
@@ -37,7 +38,9 @@ export class AbsurdosComponent implements OnInit {
   }
 
   answer() {
-    alert('respuesta correcta');
+    Swal.fire({
+      text: 'Enconstraste la figura absurda',
+    });
     this.cont++;
   }
 
@@ -78,7 +81,10 @@ export class AbsurdosComponent implements OnInit {
     }
 
     if (this.cont === 5) {
-      alert('¡Identificaste todos los elementos absurdos!!');
+      Swal.fire({
+        title: 'GANASTE',
+        text: '¡Identificaste todos los elementos absurdos!!',
+      });
       var Nivel1 = document.getElementById('Nivel1');
       Nivel1.style.opacity = '0.3';
       Nivel1.style.pointerEvents = 'none';
@@ -90,6 +96,9 @@ export class AbsurdosComponent implements OnInit {
     this.toAble();
     if (show === 'Nivel 1') {
       this.nivel = 'Nivel 1';
+      var Nivel1 = document.getElementById('Nivel1');
+      Nivel1.style.opacity = '1';
+      Nivel1.style.pointerEvents = 'inherit';
     } else if (show === 'Nivel 2') {
       this.nivel = 'Nivel 2';
     } else {

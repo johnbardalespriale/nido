@@ -4,6 +4,7 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-menor-mayor',
@@ -247,11 +248,13 @@ export class MenorMayorComponent implements OnInit {
           }
         }
         setTimeout(() => {
-          alert(
-            'Tienes ' +
+          Swal.fire({
+            title: 'GANASTE',
+            text:
+              'Tienes ' +
               this.cont +
-              " respuestas correctas, elige otro nivel o presiona 'Iniciar Juego' para volver a jugar"
-          );
+              " respuestas correctas, elige otro nivel o presiona 'Resetear' para volver a jugar",
+          });
         }, 500);
 
         var answers = document.getElementById('answers');

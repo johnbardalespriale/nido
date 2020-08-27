@@ -9,14 +9,14 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-10" style="padding: 0px;">
+        <div class="col-md-8" style="padding: 0px;">
           <label style="margin: 15px 0px; text-align: initial;">
             <b
               >Escoge el nivel del juego y haz clic en el botón iniciar
               juego:</b
             >
           </label>
-          <mat-radio-group
+          <!--mat-radio-group
             aria-labelledby="example-radio-group-label"
             class="radio-group"
             [(ngModel)]="selectedNivel"
@@ -27,12 +27,27 @@
             >
               {{ nivel.nivel }}
             </mat-radio-button>
-          </mat-radio-group>
+          </mat-radio-group-->
+
+          <div class="btn-group" style="margin-bottom: 15px;">
+            <label
+              style="background-color: #2bbbad !important; color: white;"
+              mdbBtn
+              [(ngModel)]="selectedNivel"
+              [mdbRadio]="nivel.nivel"
+              mdbWavesEffect
+              *ngFor="let nivel of nivels"
+              [value]="nivel.nivel"
+              (click)="resetear(selectedNivel)"
+            >
+              {{ nivel.nivel }}
+            </label>
+          </div>
 
           <div style="text-align: initial;">
             <input
               type="button"
-              value="Iniciar Juego"
+              value="Resetear"
               (click)="resetear(selectedNivel)"
             />
           </div>

@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {
-  Mutex,
-  MutexInterface,
-  Semaphore,
-  SemaphoreInterface,
-  withTimeout,
-} from 'async-mutex';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-memoria',
@@ -27,6 +21,7 @@ export class MemoriaComponent implements OnInit {
   nivel1: any;
   nivel2: any;
   nivel3;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -295,7 +290,12 @@ export class MemoriaComponent implements OnInit {
       }
       //Muestra el mensaje de victoria
       if (this.aciertos === 12) {
-        alert('Tuviste ' + this.intentos + ' intentos. ¡Que bien! ganaste ;)');
+        /*this.toastr.success(
+          'Tuviste ' + this.intentos + ' intentos. ¡Que bien! ganaste')*/
+        Swal.fire({
+          title: 'JUEGO TERMINADO',
+          text: 'Tuviste ' + this.intentos + ' intentos. ¡Excelente!',
+        });
       }
     } else {
       //Cuenta cuántos aciertos llevan
@@ -307,7 +307,10 @@ export class MemoriaComponent implements OnInit {
     }
     //Muestra el mensaje de victoria
     if (this.aciertos === 16) {
-      alert('Tuviste ' + this.intentos + ' intentos. ¡Que bien! ganaste ;)');
+      Swal.fire({
+        title: 'GANASTE',
+        text: 'Tuviste ' + this.intentos + ' intentos. ¡Excelente!',
+      });
     }
   }
 

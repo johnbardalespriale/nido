@@ -4,6 +4,7 @@ import {
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cuadro-doble',
@@ -119,8 +120,12 @@ export class CuadroDobleComponent implements OnInit {
   }
 
   mensaje() {
+    console.log('contador', this.cont);
     if (this.done.length === 0 && this.cont >= 8) {
-      alert('Juego Finalizado, lo lograste!!!');
+      Swal.fire({
+        title: 'GANASTE',
+        text: 'Juego Finalizado, lo lograste!!!',
+      });
     }
   }
 
@@ -132,7 +137,9 @@ export class CuadroDobleComponent implements OnInit {
       this.triangulos[2].value === 'triangulo_verde'
     ) {
       if (this.able1 === 'triangulo') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able1 = 'nulo';
       }
       var figuras = document.getElementById('triangulos');
@@ -150,7 +157,9 @@ export class CuadroDobleComponent implements OnInit {
       this.circulos[2].value === 'circulo_verde'
     ) {
       if (this.able2 === 'circulo') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able2 = 'nulo';
       }
       var figuras = document.getElementById('Circulo');
@@ -168,7 +177,9 @@ export class CuadroDobleComponent implements OnInit {
       this.cuadrados[2].value === 'cuadrado_verde'
     ) {
       if (this.able3 === 'cuadrado') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able3 = 'nulo';
       }
       var figuras = document.getElementById('cuadrados');
@@ -186,7 +197,9 @@ export class CuadroDobleComponent implements OnInit {
       this.rectangulos[2].value === 'rectangulo_verde'
     ) {
       if (this.able4 === 'rectangulo') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able4 = 'nulo';
       }
       var figuras = document.getElementById('rectangulos');
@@ -204,7 +217,9 @@ export class CuadroDobleComponent implements OnInit {
       this.rombos[2].value === 'rombo_verde'
     ) {
       if (this.able5 === 'rombo') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able5 = 'nulo';
       }
       var figuras = document.getElementById('rombos');
@@ -222,7 +237,9 @@ export class CuadroDobleComponent implements OnInit {
       this.esferas[2].value === 'esfera_verde'
     ) {
       if (this.able6 === 'esfera') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able6 = 'nulo';
       }
       var figuras = document.getElementById('esferas');
@@ -240,7 +257,9 @@ export class CuadroDobleComponent implements OnInit {
       this.cubos[2].value === 'cubo_verde'
     ) {
       if (this.able7 === 'cubo') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able7 = 'nulo';
       }
       var figuras = document.getElementById('cubos');
@@ -258,7 +277,9 @@ export class CuadroDobleComponent implements OnInit {
       this.sectores[2].value === 'sector_verde'
     ) {
       if (this.able8 === 'sector') {
-        alert('¡Columna completada exitosamente!');
+        Swal.fire({
+          text: '¡Columna completada exitosamente!',
+        });
         this.able8 = 'nulo';
       }
       var figuras = document.getElementById('sectores');

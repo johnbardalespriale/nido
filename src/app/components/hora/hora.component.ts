@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-hora',
@@ -124,69 +125,108 @@ export class HoraComponent implements OnInit {
 
   answerCorrect(hora) {
     if (hora === 12) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var setCard1 = document.getElementById('setCard1');
       setCard1.style.opacity = '0.3';
       setCard1.style.pointerEvents = 'none';
       this.cont++;
     } else if (hora === 6) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var setCard1 = document.getElementById('setCard2');
       setCard1.style.opacity = '0.3';
       setCard1.style.pointerEvents = 'none';
       this.cont++;
     } else if (hora === 9) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var setCard1 = document.getElementById('setCard3');
       setCard1.style.opacity = '0.3';
       setCard1.style.pointerEvents = 'none';
       this.cont++;
     } else if (hora === 2.3) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var set2Card1 = document.getElementById('set2Card1');
       set2Card1.style.opacity = '0.3';
       set2Card1.style.pointerEvents = 'none';
       this.cont2++;
     } else if (hora === 10.3) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var set2Card2 = document.getElementById('set2Card2');
       set2Card2.style.opacity = '0.3';
       set2Card2.style.pointerEvents = 'none';
       this.cont2++;
     } else if (hora === 12.3) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var set2Card3 = document.getElementById('set2Card3');
       set2Card3.style.opacity = '0.3';
       set2Card3.style.pointerEvents = 'none';
       this.cont2++;
     } else if (hora === 4.15) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var set3Card1 = document.getElementById('set3Card1');
       set3Card1.style.opacity = '0.3';
       set3Card1.style.pointerEvents = 'none';
       this.cont3++;
     } else if (hora === 11.15) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var set3Card2 = document.getElementById('set3Card2');
       set3Card2.style.opacity = '0.3';
       set3Card2.style.pointerEvents = 'none';
       this.cont3++;
     } else if (hora === 1.15) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var set3Card3 = document.getElementById('set3Card3');
       set3Card3.style.opacity = '0.3';
       set3Card3.style.pointerEvents = 'none';
       this.cont3++;
     } else {
-      alert('Respuesta incorrecta, vuelva a intentarlo');
+      Swal.fire({
+        icon: 'error',
+        text: 'Respuesta incorrecta, vuelva a intentarlo',
+      });
     }
 
     if (this.cont === 3 && this.selectedNivel === 'Nivel 1') {
-      alert('Lo lograste, terminaste el Nivel 1');
+      Swal.fire({
+        title: 'JUEGO TERMINADO',
+        text: 'Lo lograste, terminaste el Nivel 1',
+      });
     } else if (this.cont2 === 3 && this.selectedNivel === 'Nivel 2') {
-      alert('Lo lograste, terminaste el Nivel 2');
+      Swal.fire({
+        title: 'JUEGO TERMINADO',
+        text: 'Lo lograste, terminaste el Nivel 2',
+      });
     } else if (this.cont3 === 3 && this.selectedNivel === 'Nivel 3') {
-      alert('Lo lograste, terminaste el Nivel 3');
+      Swal.fire({
+        title: 'JUEGO TERMINADO',
+        text: 'Lo lograste, terminaste el Nivel 3',
+      });
     }
   }
 

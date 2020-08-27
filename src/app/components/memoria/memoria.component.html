@@ -41,19 +41,37 @@
           Para empezar escoge el nivel del juego.
         </h2>
 
-        <mat-radio-group
+        <!--mat-radio-group
           aria-labelledby="example-radio-group-label"
           class="radio-group"
           [(ngModel)]="favoriteSeason"
         >
           <mat-radio-button
+            color="primary"
+            mdbRadio="Left"
+            mdbWavesEffect
             *ngFor="let nivel of nivels"
             [value]="nivel.nivel"
             (mouseup)="iniciar()"
           >
             {{ nivel.nivel }}
           </mat-radio-button>
-        </mat-radio-group>
+        </mat-radio-group-->
+
+        <div class="btn-group" style="margin-bottom: 15px;">
+          <label
+            style="background-color: #2bbbad !important; color: white;"
+            mdbBtn
+            [(ngModel)]="favoriteSeason"
+            [mdbRadio]="nivel.nivel"
+            mdbWavesEffect
+            *ngFor="let nivel of nivels"
+            [value]="nivel.nivel"
+            (mouseup)="iniciar()"
+          >
+            {{ nivel.nivel }}
+          </label>
+        </div>
 
         <div>
           <!--input

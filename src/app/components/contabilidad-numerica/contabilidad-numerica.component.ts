@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import 'jqueryui';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contabilidad-numerica',
@@ -212,36 +213,56 @@ export class ContabilidadNumericaComponent implements OnInit {
   }
 
   matchCorrect(answer) {
-    console.log('respuesta', answer);
     if (this.answer === answer) {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
     } else if (this.answer != 0) {
-      alert("Respuesta erronea, vuelva a 'iniciar el juego'");
+      Swal.fire({
+        icon: 'error',
+        text: 'Respuesta erronea, vuelva a iniciar el juego',
+      });
     }
   }
 
   errorChoice() {
-    alert('Respuesta errónea');
+    Swal.fire({
+      icon: 'error',
+      text: 'Respuesta errónea',
+    });
   }
 
   correctChoice(id) {
     if (this.answerImage === id && this.selectedNivel === 'Nivel 1') {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var numbers = document.getElementById('numbers');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';
     } else if (this.answerImage2 === id && this.selectedNivel === 'Nivel 1') {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var numbers = document.getElementById('numbers2');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';
     } else if (this.answerImage3 === id && this.selectedNivel === 'Nivel 1') {
-      alert('Respuesta correcta');
+      Swal.fire({
+        title: 'EXCELENTE',
+        text: 'Respuesta correcta',
+      });
       var numbers = document.getElementById('numbers3');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';
     } else {
-      alert('Respuesta incorrecta, vuelve a intentarlo');
+      Swal.fire({
+        icon: 'error',
+        text: 'Respuesta incorrecta, vuelve a intentarlo',
+      });
     }
   }
 

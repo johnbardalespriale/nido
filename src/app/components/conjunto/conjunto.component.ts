@@ -5,6 +5,7 @@ import {
   transferArrayItem,
   CdkDrag,
 } from '@angular/cdk/drag-drop';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-conjunto',
@@ -82,9 +83,11 @@ export class ConjuntoComponent implements OnInit {
       );
 
       if (this.nivel1.length === 9) {
-        alert(
-          '¡Lo lograste, identificaste el color de los objetos correctamente!'
-        );
+        Swal.fire({
+          title: 'Identicaste el color',
+          text:
+            '¡Lo lograste, identificaste el color de los objetos correctamente!',
+        });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -124,9 +127,11 @@ export class ConjuntoComponent implements OnInit {
       );
 
       if (this.nivel1.length === 9) {
-        alert(
-          '¡Lo lograste, identificaste el color de los objetos correctamente!'
-        );
+        Swal.fire({
+          title: 'Identicaste el color',
+          text:
+            '¡Lo lograste, identificaste el color de los objetos correctamente!',
+        });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -166,9 +171,11 @@ export class ConjuntoComponent implements OnInit {
       );
 
       if (this.nivel1.length === 9) {
-        alert(
-          '¡Lo lograste, identificaste el color de los objetos correctamente!'
-        );
+        Swal.fire({
+          title: 'Identicaste el color',
+          text:
+            '¡Lo lograste, identificaste el color de los objetos correctamente!',
+        });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -208,9 +215,11 @@ export class ConjuntoComponent implements OnInit {
       );
 
       if (this.nivel1.length === 9) {
-        alert(
-          '¡Lo lograste, identificaste el color de los objetos correctamente!'
-        );
+        Swal.fire({
+          title: 'Identicaste el color',
+          text:
+            '¡Lo lograste, identificaste el color de los objetos correctamente!',
+        });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
