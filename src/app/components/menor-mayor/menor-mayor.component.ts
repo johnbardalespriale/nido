@@ -48,21 +48,21 @@ export class MenorMayorComponent implements OnInit {
     this.todo6 = [];
 
     this.done = [
-      { imagen: 'assets/Img/signo_igual.png', value: '=' },
-      { imagen: 'assets/Img/signo_mayor.png', value: '>' },
-      { imagen: 'assets/Img/signo_menor.png', value: '<' },
-      { imagen: 'assets/Img/signo_igual.png', value: '=' },
-      { imagen: 'assets/Img/signo_mayor.png', value: '>' },
-      { imagen: 'assets/Img/signo_menor.png', value: '<' },
-      { imagen: 'assets/Img/signo_igual.png', value: '=' },
-      { imagen: 'assets/Img/signo_mayor.png', value: '>' },
-      { imagen: 'assets/Img/signo_menor.png', value: '<' },
-      { imagen: 'assets/Img/signo_igual.png', value: '=' },
-      { imagen: 'assets/Img/signo_mayor.png', value: '>' },
-      { imagen: 'assets/Img/signo_menor.png', value: '<' },
-      { imagen: 'assets/Img/signo_igual.png', value: '=' },
-      { imagen: 'assets/Img/signo_mayor.png', value: '>' },
-      { imagen: 'assets/Img/signo_menor.png', value: '<' },
+      { imagen: 'assets/Img/signo_igual.png', value: '=', id: '1' },
+      { imagen: 'assets/Img/signo_mayor.png', value: '>', id: '2' },
+      { imagen: 'assets/Img/signo_menor.png', value: '<', id: '3' },
+      { imagen: 'assets/Img/signo_igual.png', value: '=', id: '4' },
+      { imagen: 'assets/Img/signo_mayor.png', value: '>', id: '5' },
+      { imagen: 'assets/Img/signo_menor.png', value: '<', id: '6' },
+      { imagen: 'assets/Img/signo_igual.png', value: '=', id: '7' },
+      { imagen: 'assets/Img/signo_mayor.png', value: '>', id: '8' },
+      { imagen: 'assets/Img/signo_menor.png', value: '<', id: '9' },
+      { imagen: 'assets/Img/signo_igual.png', value: '=', id: '10' },
+      { imagen: 'assets/Img/signo_mayor.png', value: '>', id: '11' },
+      { imagen: 'assets/Img/signo_menor.png', value: '<', id: '12' },
+      { imagen: 'assets/Img/signo_igual.png', value: '=', id: '13' },
+      { imagen: 'assets/Img/signo_mayor.png', value: '>', id: '14' },
+      { imagen: 'assets/Img/signo_menor.png', value: '<', id: '15' },
     ];
 
     this.nivel1 = [
@@ -172,6 +172,20 @@ export class MenorMayorComponent implements OnInit {
     });
   }
 
+  border(i) {
+    console.log('indice', i);
+    var signo = document.getElementById(i);
+    signo.style.border = '8px solid #24ce22';
+    console.log('123', signo);
+  }
+
+  wrong(i) {
+    console.log('error', i);
+    var error = document.getElementById(i);
+    error.style.border = '8px solid rgb(220 8 8)';
+    console.log('objeto', error);
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
@@ -200,16 +214,29 @@ export class MenorMayorComponent implements OnInit {
               this.nivel1[i].number > this.nivel1_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
             } else if (
               this.selectedNivel === 'Nivel 2' &&
               this.nivel2[i].number > this.nivel2_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
             } else if (
               this.selectedNivel === 'Nivel 3' &&
               this.nivel3[i].number > this.nivel3_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
+            } else {
+              setTimeout(() => {
+                this.wrong(i);
+              }, 500);
             }
           } else if (signo === '<') {
             if (
@@ -217,16 +244,29 @@ export class MenorMayorComponent implements OnInit {
               this.nivel1[i].number < this.nivel1_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
             } else if (
               this.selectedNivel === 'Nivel 2' &&
               this.nivel2[i].number < this.nivel2_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
             } else if (
               this.selectedNivel === 'Nivel 3' &&
               this.nivel3[i].number < this.nivel3_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
+            } else {
+              setTimeout(() => {
+                this.wrong(i);
+              }, 500);
             }
           } else if (signo === '=') {
             if (
@@ -234,16 +274,29 @@ export class MenorMayorComponent implements OnInit {
               this.nivel1[i].number === this.nivel1_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
             } else if (
               this.selectedNivel === 'Nivel 2 ' &&
               this.nivel2[i].number === this.nivel2_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
             } else if (
               this.selectedNivel === 'Nivel 3 ' &&
               this.nivel3[i].number === this.nivel3_1[i].number
             ) {
               this.cont++;
+              setTimeout(() => {
+                this.border(i);
+              }, 500);
+            } else {
+              setTimeout(() => {
+                this.wrong(i);
+              }, 500);
             }
           }
         }
@@ -255,10 +308,9 @@ export class MenorMayorComponent implements OnInit {
               this.cont +
               " respuestas correctas, elige otro nivel o presiona 'Resetear' para volver a jugar",
           });
-        }, 500);
+        }, 1000);
 
         var answers = document.getElementById('answers');
-        answers.style.opacity = '0.3';
         answers.style.pointerEvents = 'none';
 
         var signos = document.getElementById('signos');

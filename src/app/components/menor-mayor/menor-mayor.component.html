@@ -9,8 +9,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;">
-          <label style="margin: 15px 0px; text-align: initial;">
+        <div class="col-md-8" style="padding: 0px">
+          <label style="margin: 15px 0px; text-align: initial">
             <b
               >Escoge el nivel del juego y haz clic en el botón iniciar
               juego:</b
@@ -29,9 +29,9 @@
             </mat-radio-button>
           </mat-radio-group-->
 
-          <div class="btn-group" style="margin-bottom: 15px;">
+          <div class="btn-group" style="margin-bottom: 15px">
             <label
-              style="background-color: #2bbbad !important; color: white;"
+              style="background-color: #2bbbad !important; color: white"
               mdbBtn
               [(ngModel)]="selectedNivel"
               [mdbRadio]="nivel.nivel"
@@ -44,7 +44,7 @@
             </label>
           </div>
 
-          <div style="text-align: initial;">
+          <div style="text-align: initial">
             <input
               type="button"
               value="Resetear"
@@ -59,7 +59,7 @@
       <div cdkDropListGroup>
         <div class="row" *ngIf="habilitar == 1">
           <div class="col-md-2"></div>
-          <div class="col-md-3" style="padding: 0px;">
+          <div class="col-md-3" style="padding: 0px">
             <div
               class="movie-block"
               *ngFor="let nivel of nivel1 | slice: 0:6; let i = index"
@@ -68,29 +68,32 @@
                 [src]="nivel.imagen"
                 alt=""
                 width="140px"
-                style="border: 8px solid #292961;"
+                style="border: 8px solid #292961"
               />
             </div>
           </div>
           <div class="col-md-3" id="answers">
             <div
               class="movie-block"
-              style="height: 100%; background-color: white;"
+              style="height: 100%; background-color: white"
             >
               <div
-                style="width: 142px; height: inherit; flex-direction: column;"
+                style="width: 142px; height: inherit; flex-direction: column"
                 cdkDropList
                 [cdkDropListData]="todo1"
                 class="example-list"
                 (cdkDropListDropped)="drop($event)"
               >
-                <div class="example-box" cdkDrag *ngFor="let item of todo1">
+                <div
+                  class="example-box"
+                  cdkDrag
+                  *ngFor="let item of todo1; let i = index"
+                >
                   <img
+                    id="{{ i }}"
                     [src]="item.imagen"
-                    alt=""
                     width="140px"
                     height="128.11px"
-                    style="border: 8px solid #292961;"
                   />
                 </div>
               </div>
@@ -104,9 +107,8 @@
               >
                 <img
                   [src]="nivel.imagen"
-                  alt=""
                   width="140px"
-                  style="border: 8px solid #292961;"
+                  style="border: 8px solid #292961"
                 />
               </div>
             </div>
@@ -115,7 +117,7 @@
 
         <div class="row" *ngIf="habilitar == 2">
           <div class="col-md-2"></div>
-          <div class="col-md-3" style="padding: 0px;">
+          <div class="col-md-3" style="padding: 0px">
             <div
               class="movie-block"
               *ngFor="let nivel of nivel2 | slice: 0:6; let i = index"
@@ -124,29 +126,33 @@
                 [src]="nivel.imagen"
                 alt=""
                 width="140px"
-                style="border: 8px solid #292961;"
+                style="border: 8px solid #292961"
               />
             </div>
           </div>
           <div class="col-md-3" id="answers">
             <div
               class="movie-block"
-              style="height: 100%; background-color: white;"
+              style="height: 100%; background-color: white"
             >
               <div
-                style="width: 142px; height: inherit; flex-direction: column;"
+                style="width: 142px; height: inherit; flex-direction: column"
                 cdkDropList
                 [cdkDropListData]="todo1"
                 class="example-list"
                 (cdkDropListDropped)="drop($event)"
               >
-                <div class="example-box" cdkDrag *ngFor="let item of todo1">
+                <div
+                  class="example-box"
+                  cdkDrag
+                  *ngFor="let item of todo1; let i = index"
+                >
                   <img
+                    id="{{ i }}"
                     [src]="item.imagen"
                     alt=""
                     width="140px"
                     height="128.11px"
-                    style="border: 8px solid #292961;"
                   />
                 </div>
               </div>
@@ -162,7 +168,7 @@
                   [src]="nivel.imagen"
                   alt=""
                   width="140px"
-                  style="border: 8px solid #292961;"
+                  style="border: 8px solid #292961"
                 />
               </div>
             </div>
@@ -171,7 +177,7 @@
 
         <div class="row" *ngIf="habilitar == 3">
           <div class="col-md-2"></div>
-          <div class="col-md-3" style="padding: 0px;">
+          <div class="col-md-3" style="padding: 0px">
             <div
               class="movie-block"
               *ngFor="let nivel of nivel3 | slice: 0:6; let i = index"
@@ -180,29 +186,34 @@
                 [src]="nivel.imagen"
                 alt=""
                 width="140px"
-                style="border: 8px solid #292961;"
+                style="border: 8px solid #292961"
               />
             </div>
           </div>
           <div class="col-md-3" id="answers">
             <div
               class="movie-block"
-              style="height: 100%; background-color: white;"
+              style="height: 100%; background-color: white"
             >
               <div
-                style="width: 142px; height: inherit; flex-direction: column;"
+                style="width: 142px; height: inherit; flex-direction: column"
                 cdkDropList
                 [cdkDropListData]="todo1"
                 class="example-list"
                 (cdkDropListDropped)="drop($event)"
               >
-                <div class="example-box" cdkDrag *ngFor="let item of todo1">
+                <div
+                  class="example-box"
+                  cdkDrag
+                  *ngFor="let item of todo1; let i = index"
+                >
                   <img
+                    id="{{ i }}"
                     [src]="item.imagen"
                     alt=""
                     width="140px"
                     height="128.11px"
-                    style="border: 8px solid #292961;"
+                    style="border: 8px solid #292961"
                   />
                 </div>
               </div>
@@ -218,14 +229,14 @@
                   [src]="nivel.imagen"
                   alt=""
                   width="140px"
-                  style="border: 8px solid #292961;"
+                  style="border: 8px solid #292961"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div id="signos" class="example-container" style="margin-top: 25px;">
+        <div id="signos" class="example-container" style="margin-top: 25px">
           <div
             cdkDropList
             cdkDropListOrientation="horizontal"
