@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
 
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;">
-          <label style="margin: 15px 0px; text-align: initial;">
-            <b
-              >Escoge el nivel del juego y haz clic en el botón iniciar
-              juego:</b
-            >
-          </label>
-          <!--mat-radio-group
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <section style="margin-top: 25px;font-family: math;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+      <div class="container">
+        <h1 class="display-4" style="text-align: center;">Contabilidad numérica</h1>
+        <p class="lead">Cuenta y dale clic al número que corresponda.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;">
+        <label style="margin: 15px 0px; text-align: initial;">
+          <b>Escoge el nivel del juego y haz clic en el botón iniciar
+            juego:</b>
+        </label>
+        <!--mat-radio-group
             aria-labelledby="example-radio-group-label"
             class="radio-group"
             [(ngModel)]="selectedNivel"
@@ -29,385 +37,262 @@
             </mat-radio-button>
           </mat-radio-group-->
 
-          <div class="btn-group" style="margin-bottom: 15px;">
-            <label
-              style="background-color: #2bbbad !important; color: white;"
-              mdbBtn
-              [(ngModel)]="selectedNivel"
-              [mdbRadio]="nivel.nivel"
-              mdbWavesEffect
-              *ngFor="let nivel of nivels"
-              [value]="nivel.nivel"
-              (click)="resetear(selectedNivel)"
-            >
-              {{ nivel.nivel }}
-            </label>
-          </div>
+        <div class="btn-group" style="margin-bottom: 15px;">
+          <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+            [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+            (click)="resetear(selectedNivel)">
+            {{ nivel.nivel }}
+          </label>
+        </div>
 
-          <div style="text-align: initial;">
-            <input
-              type="button"
-              value="Resetear"
-              (click)="resetear(selectedNivel)"
-            />
-          </div>
+        <div style="text-align: initial;">
+          <input type="button" value="Resetear" (click)="resetear(selectedNivel)" />
         </div>
       </div>
     </div>
+  </div>
 
-    <div *ngIf="habilitar === 1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2"></div>
+  <div *ngIf="habilitar === 1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10" style="padding: 0px;">
+          <label style="margin: 15px 0px;">
+            <b style="font-size: 20px;">¿Cuántas ovejas puedes contar en el campo?</b>
+          </label>
+        </div>
+      </div>
+
+      <div class="row" id="numbers">
+        <div class="col-md-2"></div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(9)">
+          <img class="numero" src="assets/Img/numero_9.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(6)">
+          <img class="numero" src="assets/Img/numero_6.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(3)">
+          <img class="numero" src="assets/Img/numero_3.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(5)">
+          <img class="numero" src="assets/Img/numero_5.png" alt="" />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="padding: 0px;">
+          <img [src]="getImage()" alt="" style="width: inherit;" />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10" style="padding: 0px;">
+          <label style="margin: 15px 0px;">
+            <b style="font-size: 20px;">¿Cuántas aves puedes contar en el cielo?</b>
+          </label>
+        </div>
+      </div>
+
+      <div class="row" id="numbers2">
+        <div class="col-md-2"></div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(7)">
+          <img class="numero" src="assets/Img/numero_7.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(4)">
+          <img class="numero" src="assets/Img/numero_4.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(2)">
+          <img class="numero" src="assets/Img/numero_2.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(8)">
+          <img class="numero" src="assets/Img/numero_8.png" alt="" />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="padding: 0px;">
+          <img [src]="getImage2()" alt="" style="width: inherit;" />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-bottom: 45px;">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10" style="padding: 0px;">
+          <label style="margin: 15px 0px;">
+            <b style="font-size: 20px;">¿Cuántas animales puedes contar en el acuario?</b>
+          </label>
+        </div>
+      </div>
+
+      <div class="row" id="numbers3">
+        <div class="col-md-2"></div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(3)">
+          <img class="numero" src="assets/Img/numero_3.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(7)">
+          <img class="numero" src="assets/Img/numero_7.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(1)">
+          <img class="numero" src="assets/Img/numero_1.png" alt="" />
+        </div>
+        <div class="wrapper-numeros col-md-2 view overlay zoom hoverable" (click)="correctChoice(5)">
+          <img class="numero" src="assets/Img/numero_5.png" alt="" />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="padding: 0px;">
+          <img [src]="getImage3()" alt="" style="width: inherit;" />
+        </div>
+        <div class="col-md-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="habilitar === 2">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7" style="padding: 0px;">
+          <label style="margin: 0px 0px 27px;">
+            <b style="font-size: 20px;">Una el <span style="color: #47cf73;">punto verde</span> de cada
+              imagen, con el número que represente la cantidad de elementos
+              que contiene</b>
+          </label>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7" style="padding: 0px; display: flex; flex-direction: row;">
           <div class="col-md-10" style="padding: 0px;">
-            <label style="margin: 15px 0px;">
-              <b style="font-size: 20px;"
-                >¿Cuántas ovejas puedes contar en el campo?</b
-              >
-            </label>
+            <svg id="connector_canvas"></svg>
+            <div class="ui-item item-1" style="display: flex; flex-direction: row; align-items: center;">
+              <img src="assets/Img/contar_moras_15.png" alt="" width="260px" />
+              <div class="con_anchor" (mouseover)="match(15)"></div>
+            </div>
+            <div class="ui-item item-2" style="display: flex; flex-direction: row; align-items: center;">
+              <img src="assets/Img/contar_moras_12.png" alt="" width="260px" />
+              <div class="con_anchor" (mouseover)="match(12)"></div>
+            </div>
+            <div class="ui-item item-3" style="display: flex; flex-direction: row; align-items: center;">
+              <img src="assets/Img/contar_moras_16.png" alt="" width="260px" />
+              <div class="con_anchor" (mouseover)="match(16)"></div>
+            </div>
           </div>
-        </div>
+          <div class="col-md-2" style="display: grid; align-content: space-around; padding: 0px;">
+            <div (mouseover)="matchCorrect(16)">
+              <div class="ui-item item-1" style="pointer-events: none;">
+                <div class="con_anchor"></div>
+                <div>16</div>
+              </div>
+            </div>
+            <div (mouseover)="matchCorrect(15)">
+              <div class="ui-item item-2" style="pointer-events: none;">
+                <div class="con_anchor"></div>
+                <div>15</div>
+              </div>
+            </div>
 
-        <div class="row" id="numbers">
-          <div class="col-md-2"></div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(9)"
-          >
-            <img class="numero" src="assets/Img/numero_9.png" alt="" />
+            <div (mouseover)="matchCorrect(12)">
+              <div class="ui-item item-3" style="pointer-events: none;">
+                <div class="con_anchor"></div>
+                <div>12</div>
+              </div>
+            </div>
           </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(6)"
-          >
-            <img class="numero" src="assets/Img/numero_6.png" alt="" />
-          </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(3)"
-          >
-            <img class="numero" src="assets/Img/numero_3.png" alt="" />
-          </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(5)"
-          >
-            <img class="numero" src="assets/Img/numero_5.png" alt="" />
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8" style="padding: 0px;">
-            <img [src]="getImage()" alt="" style="width: inherit;" />
-          </div>
-          <div class="col-md-2"></div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2"></div>
+  <div *ngIf="habilitar === 3">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7" style="padding: 0px;">
+          <label style="margin: 0px 0px 27px;">
+            <b style="font-size: 20px;">Una el <span style="color: #47cf73;">punto verde</span> de cada
+              imagen, con el número de decenas que represente la cantidad de
+              elementos que contiene</b>
+          </label>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-7" style="padding: 0px; display: flex; flex-direction: row;">
           <div class="col-md-10" style="padding: 0px;">
-            <label style="margin: 15px 0px;">
-              <b style="font-size: 20px;"
-                >¿Cuántas aves puedes contar en el cielo?</b
-              >
-            </label>
-          </div>
-        </div>
+            <svg id="connector_canvas"></svg>
+            <div class="ui-item item-1" style="display: flex; flex-direction: row; align-items: center;">
+              <img src="assets/Img/contar_palos_70.png" alt="" width="260px" />
+              <div class="con_anchor" (mouseover)="match(70)"></div>
+            </div>
+            <div class="ui-item item-2" style="display: flex; flex-direction: row; align-items: center;">
+              <img src="assets/Img/contar_palos_30.png" alt="" width="260px" />
+              <div class="con_anchor" (mouseover)="match(30)"></div>
+            </div>
+            <div class="ui-item item-3" style="display: flex; flex-direction: row; align-items: center;">
+              <img src="assets/Img/contar_palos_50.png" alt="" width="260px" />
+              <div class="con_anchor" (mouseover)="match(50)"></div>
+            </div>
 
-        <div class="row" id="numbers2">
-          <div class="col-md-2"></div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(7)"
-          >
-            <img class="numero" src="assets/Img/numero_7.png" alt="" />
+            <div class="ui-item item-3" style="display: flex; flex-direction: row; align-items: center;">
+              <img src="assets/Img/contar_palos_100.png" alt="" width="260px" />
+              <div class="con_anchor" (mouseover)="match(100)"></div>
+            </div>
           </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(4)"
-          >
-            <img class="numero" src="assets/Img/numero_4.png" alt="" />
-          </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(2)"
-          >
-            <img class="numero" src="assets/Img/numero_2.png" alt="" />
-          </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(8)"
-          >
-            <img class="numero" src="assets/Img/numero_8.png" alt="" />
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8" style="padding: 0px;">
-            <img [src]="getImage2()" alt="" style="width: inherit;" />
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-      </div>
-
-      <div class="container" style="margin-bottom: 45px;">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10" style="padding: 0px;">
-            <label style="margin: 15px 0px;">
-              <b style="font-size: 20px;"
-                >¿Cuántas animales puedes contar en el acuario?</b
-              >
-            </label>
-          </div>
-        </div>
-
-        <div class="row" id="numbers3">
-          <div class="col-md-2"></div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(3)"
-          >
-            <img class="numero" src="assets/Img/numero_3.png" alt="" />
-          </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(7)"
-          >
-            <img class="numero" src="assets/Img/numero_7.png" alt="" />
-          </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(1)"
-          >
-            <img class="numero" src="assets/Img/numero_1.png" alt="" />
-          </div>
-          <div
-            class="wrapper-numeros col-md-2 view overlay zoom hoverable"
-            (click)="correctChoice(5)"
-          >
-            <img class="numero" src="assets/Img/numero_5.png" alt="" />
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8" style="padding: 0px;">
-            <img [src]="getImage3()" alt="" style="width: inherit;" />
-          </div>
-          <div class="col-md-2"></div>
-        </div>
-      </div>
-    </div>
-
-    <div *ngIf="habilitar === 2">
-      <link
-        rel="stylesheet"
-        href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
-      />
-      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-7" style="padding: 0px;">
-            <label style="margin: 0px 0px 27px;">
-              <b style="font-size: 20px;"
-                >Una el <span style="color: #47cf73;">punto verde</span> de cada
-                imagen, con el número que represente la cantidad de elementos
-                que contiene</b
-              >
-            </label>
-          </div>
-          <div class="col-md-3"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div
-            class="col-md-7"
-            style="padding: 0px; display: flex; flex-direction: row;"
-          >
-            <div class="col-md-10" style="padding: 0px;">
-              <svg id="connector_canvas"></svg>
-              <div
-                class="ui-item item-1"
-                style="display: flex; flex-direction: row; align-items: center;"
-              >
-                <img
-                  src="assets/Img/contar_moras_15.png"
-                  alt=""
-                  width="260px"
-                />
-                <div class="con_anchor" (mouseover)="match(15)"></div>
-              </div>
-              <div
-                class="ui-item item-2"
-                style="display: flex; flex-direction: row; align-items: center;"
-              >
-                <img
-                  src="assets/Img/contar_moras_12.png"
-                  alt=""
-                  width="260px"
-                />
-                <div class="con_anchor" (mouseover)="match(12)"></div>
-              </div>
-              <div
-                class="ui-item item-3"
-                style="display: flex; flex-direction: row; align-items: center;"
-              >
-                <img
-                  src="assets/Img/contar_moras_16.png"
-                  alt=""
-                  width="260px"
-                />
-                <div class="con_anchor" (mouseover)="match(16)"></div>
+          <div class="col-md-2" style="display: grid; align-content: space-around; padding: 0px;">
+            <div (mouseover)="matchCorrect(100)">
+              <div class="ui-item item-1" style="pointer-events: none;">
+                <div class="con_anchor"></div>
+                <div>100</div>
               </div>
             </div>
-            <div
-              class="col-md-2"
-              style="display: grid; align-content: space-around; padding: 0px;"
-            >
-              <div (mouseover)="matchCorrect(16)">
-                <div class="ui-item item-1" style="pointer-events: none;">
-                  <div class="con_anchor"></div>
-                  <div>16</div>
-                </div>
-              </div>
-              <div (mouseover)="matchCorrect(15)">
-                <div class="ui-item item-2" style="pointer-events: none;">
-                  <div class="con_anchor"></div>
-                  <div>15</div>
-                </div>
-              </div>
 
-              <div (mouseover)="matchCorrect(12)">
-                <div class="ui-item item-3" style="pointer-events: none;">
-                  <div class="con_anchor"></div>
-                  <div>12</div>
-                </div>
+            <div (mouseover)="matchCorrect(70)">
+              <div class="ui-item item-2" style="pointer-events: none;">
+                <div class="con_anchor"></div>
+                <div>70</div>
+              </div>
+            </div>
+
+            <div (mouseover)="matchCorrect(30)">
+              <div class="ui-item item-3" style="pointer-events: none;">
+                <div class="con_anchor"></div>
+                <div>30</div>
+              </div>
+            </div>
+
+            <div (mouseover)="matchCorrect(50)">
+              <div class="ui-item item-3" style="pointer-events: none;">
+                <div class="con_anchor"></div>
+                <div>50</div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</body>
 
-    <div *ngIf="habilitar === 3">
-      <link
-        rel="stylesheet"
-        href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"
-      />
-      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-      <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-7" style="padding: 0px;">
-            <label style="margin: 0px 0px 27px;">
-              <b style="font-size: 20px;"
-                >Una el <span style="color: #47cf73;">punto verde</span> de cada
-                imagen, con el número de decenas que represente la cantidad de
-                elementos que contiene</b
-              >
-            </label>
-          </div>
-          <div class="col-md-3"></div>
-        </div>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div
-            class="col-md-7"
-            style="padding: 0px; display: flex; flex-direction: row;"
-          >
-            <div class="col-md-10" style="padding: 0px;">
-              <svg id="connector_canvas"></svg>
-              <div
-                class="ui-item item-1"
-                style="display: flex; flex-direction: row; align-items: center;"
-              >
-                <img
-                  src="assets/Img/contar_palos_70.png"
-                  alt=""
-                  width="260px"
-                />
-                <div class="con_anchor" (mouseover)="match(70)"></div>
-              </div>
-              <div
-                class="ui-item item-2"
-                style="display: flex; flex-direction: row; align-items: center;"
-              >
-                <img
-                  src="assets/Img/contar_palos_30.png"
-                  alt=""
-                  width="260px"
-                />
-                <div class="con_anchor" (mouseover)="match(30)"></div>
-              </div>
-              <div
-                class="ui-item item-3"
-                style="display: flex; flex-direction: row; align-items: center;"
-              >
-                <img
-                  src="assets/Img/contar_palos_50.png"
-                  alt=""
-                  width="260px"
-                />
-                <div class="con_anchor" (mouseover)="match(50)"></div>
-              </div>
-
-              <div
-                class="ui-item item-3"
-                style="display: flex; flex-direction: row; align-items: center;"
-              >
-                <img
-                  src="assets/Img/contar_palos_100.png"
-                  alt=""
-                  width="260px"
-                />
-                <div class="con_anchor" (mouseover)="match(100)"></div>
-              </div>
-            </div>
-            <div
-              class="col-md-2"
-              style="display: grid; align-content: space-around; padding: 0px;"
-            >
-              <div (mouseover)="matchCorrect(100)">
-                <div class="ui-item item-1" style="pointer-events: none;">
-                  <div class="con_anchor"></div>
-                  <div>100</div>
-                </div>
-              </div>
-
-              <div (mouseover)="matchCorrect(70)">
-                <div class="ui-item item-2" style="pointer-events: none;">
-                  <div class="con_anchor"></div>
-                  <div>70</div>
-                </div>
-              </div>
-
-              <div (mouseover)="matchCorrect(30)">
-                <div class="ui-item item-3" style="pointer-events: none;">
-                  <div class="con_anchor"></div>
-                  <div>30</div>
-                </div>
-              </div>
-
-              <div (mouseover)="matchCorrect(50)">
-                <div class="ui-item item-3" style="pointer-events: none;">
-                  <div class="con_anchor"></div>
-                  <div>50</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
 </html>

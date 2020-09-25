@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;">
-          <label style="margin: 15px 0px; text-align: initial;">
-            <b
-              >Escoge el nivel del juego y haz clic en el botón iniciar
-              juego:</b
-            >
-          </label>
-          <!--mat-radio-group
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <section style="margin-top: 25px;font-family: math;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+      <div class="container">
+        <h1 class="display-4" style="text-align: center;">Absurdos</h1>
+        <p class="lead">Dale clic a las cosas absurdas.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
+        <label style="margin: 15px 0px; text-align: initial;">
+          <b>Escoge el nivel del juego para empezar a jugar</b>
+        </label>
+        <!--mat-radio-group
             aria-labelledby="example-radio-group-label"
             class="radio-group"
             [(ngModel)]="selectedNivel"
@@ -29,172 +37,205 @@
             </mat-radio-button>
           </mat-radio-group-->
 
-          <div class="btn-group" style="margin-bottom: 15px;">
-            <label
-              style="background-color: #2bbbad !important; color: white;"
-              mdbBtn
-              [(ngModel)]="selectedNivel"
-              [mdbRadio]="nivel.nivel"
-              mdbWavesEffect
-              *ngFor="let nivel of nivels"
-              [value]="nivel.nivel"
-              (click)="resetear(selectedNivel)"
-            >
-              {{ nivel.nivel }}
-            </label>
-          </div>
-
-          <div style="text-align: initial;">
-            <input
-              type="button"
-              value="Resetear"
-              (click)="resetear(selectedNivel)"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      class="container"
-      style="margin-top: 25px; margin-bottom: 50px;"
-      *ngIf="nivel === 'Nivel 1'"
-    >
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="padding: 0px;">
-          <label style="margin: 15px 0px;">
-            <b style="font-size: 20px;"
-              >Haz clic en las cosas absurdas presentes en la imagen</b
-            >
+        <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+          <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+            [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+            (click)="resetear(selectedNivel)">
+            {{ nivel.nivel }}
           </label>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;">
-          <img
-            id="Nivel1"
-            src="assets/Img/absurdos_nivel1.png"
-            alt=""
-            width="520"
-            height="520"
-            usemap="#workmap"
-            style="border: 6px solid #181854;"
-          />
-          <map name="workmap">
-            <area
-              id="carro"
-              shape="rect"
-              coords="250,78,310,130"
-              alt="carro"
-              (click)="errorChoice('carro')"
-            />
-            <area
-              id="gorro"
-              shape="rect"
-              coords="270,210,320,270"
-              alt="gorro"
-              (click)="errorChoice('gorro')"
-            />
-            <area
-              id="cuchara"
-              shape="rect"
-              coords="420,250,480,280"
-              alt="cuchara"
-              (click)="errorChoice('cuchara')"
-            />
-            <area
-              id="cafe"
-              shape="rect"
-              coords="420,380,480,440"
-              alt="cafe"
-              (click)="errorChoice('cafe')"
-            />
-            <area
-              id="zapato"
-              shape="rect"
-              coords="220,400,300,460"
-              alt="zapato"
-              (click)="errorChoice('zapato')"
-            />
-          </map>
-        </div>
-        <div class="col-md-2"></div>
-      </div>
-    </div>
 
-    <div
-      class="container"
-      style="margin-top: 25px; margin-bottom: 50px;"
-      *ngIf="nivel === 'Nivel 2'"
-    >
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="padding: 0px;">
-          <label style="margin: 15px 0px;">
-            <b style="font-size: 20px;"
-              >Haz clic en las cosas absurdas presentes en la imagen</b
-            >
-          </label>
+        <div style="text-align: initial;">
+          <input type="button" value="Resetear" (click)="resetear(selectedNivel)" />
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;">
-          <img
-            id="Nivel1"
-            src="assets/Img/absurdos_nivel2.png"
-            alt=""
-            width="520"
-            height="520"
-            usemap="#workmap"
-            style="border: 6px solid #181854;"
-          />
-          <map name="workmap">
-            <area
-              id="carro"
-              shape="rect"
-              coords="250,78,310,130"
-              alt="carro"
-              style="cursor: pointer;"
-              (click)="errorChoice('carro')"
-            />
-            <area
-              id="gorro"
-              shape="rect"
-              coords="270,210,320,270"
-              alt="gorro"
-              style="cursor: pointer;"
-              (click)="errorChoice('gorro')"
-            />
-            <area
-              id="cuchara"
-              shape="rect"
-              coords="420,250,480,280"
-              alt="cuchara"
-              style="cursor: pointer;"
-              (click)="errorChoice('cuchara')"
-            />
-            <area
-              id="cafe"
-              shape="rect"
-              coords="420,380,480,440"
-              alt="cafe"
-              style="cursor: pointer;"
-              (click)="errorChoice('cafe')"
-            />
-            <area
-              id="zapato"
-              shape="rect"
-              coords="220,400,300,460"
-              alt="zapato"
-              style="cursor: pointer;"
-              (click)="errorChoice('zapato')"
-            />
-          </map>
-        </div>
-        <div class="col-md-2"></div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <div class="container" style="margin-top: 25px; margin-bottom: 50px;" *ngIf="nivel === 'Nivel 1'">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;">
+        <div class="parent" style="background-image: url('assets/Img/absurdos_nivel1.png');height: 467px;
+        width: 568px;border: 6px solid #181854;">
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+            <div id="wrapper-carro" class="col-12 col-md-4" style="text-align:center;">
+              <img id="carro" class="card-img-top" src="assets/Img/absurdos_carro.png"
+                style="width: 53%; margin-top: 33px;" (click)="errorChoice('carro')">
+            </div>
+            <div class="col-6 col-md-4">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+            <div id="wrapper-gorro" class="col-12 col-md-4" style="text-align:center;">
+              <img id="gorro" class="card-img-top" src="assets/Img/absurdos_gorro.png"
+                style="width: 69%;margin-top: 85px;" (click)="errorChoice('gorro')">
+            </div>
+            <div id="wrapper-cuchara" class="col-6 col-md-4">
+              <img id="cuchara" class="card-img-top" src="assets/Img/absurdos_cuchara.png"
+                style="width: 69%;margin-top: 85px;" (click)="errorChoice('cuchara')">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+            <div id="wrapper-zapato" class="col-12 col-md-4" style="text-align:center;">
+              <img id="zapato" class="card-img-top" src="assets/Img/absurdos_zapatos.png"
+                style="width: 58%;margin-top: 85px;" (click)="errorChoice('zapato')">
+            </div>
+            <div id="wrapper-cafe" class="col-6 col-md-4">
+              <img id="cafe" class="card-img-top" src="assets/Img/absurdos_cafe.png"
+                style="margin-left: 20px;width: 37%;margin-top: 85px;" (click)="errorChoice('cafe')">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 25px; margin-bottom: 50px;" *ngIf="nivel === 'Nivel 2'">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;">
+        <div class="parent" style="background-image: url('assets/Img/absurdos_nivel2.png');height: 711px;
+        width: 596px;border: 6px solid #181854;">
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+            <div class="col-12 col-md-4">
+            </div>
+            <div id="wrapper-luna" class="col-6 col-md-4">
+              <img id="luna" class="card-img-top" src="assets/Img/absurdos_luna.png"
+                style="width: 53%; margin-top: 12px;margin-left: 40px;" (click)="errorChoice('luna')">
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="wrapper-conejo" class="col-12 col-md-4" style="text-align:center;">
+              <img id="conejo" class="card-img-top" src="assets/Img/absurdos_conejo.png"
+                style="width: 66%; margin-top: 130px;" (click)="errorChoice('conejo')">
+            </div>
+            <div class="col-12 col-md-4">
+            </div>
+            <div class="col-6 col-md-4">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+            <div id="wrapper-patineta" class="col-12 col-md-4">
+              <img id="patineta" class="card-img-top" src="assets/Img/absurdos_patineta.png"
+                style="margin-left: -52px;width: 90%;margin-top: 137px;" (click)="errorChoice('patineta')">
+            </div>
+            <div id="wrapper-cerdo" class="col-6 col-md-4">
+              <img id="cerdo" class="card-img-top" src="assets/Img/absurdos_cerdo.png"
+                style="margin-left: 3px;width: 95%;margin-top: 65px;" (click)="errorChoice('cerdo')">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+            <div id="wrapper-muneca" class="col-12 col-md-4">
+              <img id="muneca" class="card-img-top" src="assets/Img/absurdos_muñeca.png"
+                style="margin-left: 4px;width: 68%;margin-top: -24px;" (click)="errorChoice('muneca')">
+            </div>
+            <div id="wrapper-gato" class="col-6 col-md-4">
+              <img id="gato" class="card-img-top" src="assets/Img/absurdos_gato.png"
+                style="margin-left: 47px;width: 73%;margin-top: -104px;" (click)="errorChoice('gato')">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 25px; margin-bottom: 50px;" *ngIf="nivel === 'Nivel 3'">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;">
+        <div class="parent" style="background-image: url('assets/Img/absurdos_nivel3.png');height: 546px;
+        width: 813px;border: 6px solid #181854;">
+          <div class="row">
+            <div class="col-12 col-md-4">
+            </div>
+            <div class="col-12 col-md-4">
+            </div>
+            <div class="col-6 col-md-4">
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="wrapper-ardilla" class="col-12 col-md-4" style="text-align:center;">
+              <img id="ardilla" class="card-img-top" src="assets/Img/absurdos_ardilla.png"
+                style="width: 33%; margin-top: 230px;" (click)="errorChoice('ardilla')">
+            </div>
+            <div id="wrapper-patinador" class="col-12 col-md-4">
+              <img id="patinador" class="card-img-top" src="assets/Img/absurdos_patinador.png"
+                style="width: 35%; margin-top: 87px;" (click)="errorChoice('patinador')">
+            </div>
+            <div id="wrapper-esqui" class="col-6 col-md-4">
+              <img id="esqui" class="card-img-top" src="assets/Img/absurdos_esqui.png"
+                style="width: 30%; margin-top: 203px;" (click)="errorChoice('esqui')">
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="wrapper-hielo" class="col-12 col-md-2">
+              <img id="hielo" class="card-img-top" src="assets/Img/absurdos_hielo.png" style="margin-top: 35px;"
+                (click)="errorChoice('hielo')">
+            </div>
+            <div id="wrapper-idrante" class="col-12 col-md-2">
+              <img id="idrante" class="card-img-top" src="assets/Img/absurdos_idrante.png">
+            </div>
+            <div id="wrapper-aspiradora" class="col-12 col-md-2">
+              <img id="aspiradora" class="card-img-top" src="assets/Img/absurdos_aspiradora.png" style="width: 57%;"
+                (click)="errorChoice('aspiradora')">
+            </div>
+            <div id="wrapper-payaso" class="col-12 col-md-2">
+              <img id="payaso" class="card-img-top" src="assets/Img/absurdos_payaso.png"
+                (click)="errorChoice('payaso')">
+            </div>
+            <div id="wrapper-chica" class="col-6 col-md-2">
+              <img id="chica" class="card-img-top" src="assets/Img/absurdos_chica.png" style="width: 86%;"
+                (click)="errorChoice('chica')">
+            </div>
+            <div id="wrapper-bus" class="col-6 col-md-2">
+              <img id="bus" class="card-img-top" src="assets/Img/absurdos_bus.png">
+            </div>
+          </div>
+
+          <div class="row">
+            <div id="wrapper-dormir" class="col-12 col-md-4">
+              <img id="dormir" class="card-img-top" src="assets/Img/absurdos_dormir.png"
+                style="width: 55%;margin-top: -24px;" (click)="errorChoice('dormir')">
+            </div>
+            <div id="wrapper-dona" class="col-12 col-md-4">
+              <img id="dona" class="card-img-top" src="assets/Img/absurdos_dona.png" style="width: 30%;"
+                (click)="errorChoice('dona')">
+            </div>
+            <div id="wrapper-amigos" class="col-6 col-md-4">
+              <img id="amigos" class="card-img-top" src="assets/Img/absurdos_amigos.png"
+                style="margin-left: 117px;width: 47%;margin-top: -65px;" (click)="errorChoice('amigos')">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+</body>
+
 </html>

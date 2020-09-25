@@ -1,214 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container" style="margin-top: 30px;">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <section style="margin-top: 25px;font-family: math;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+      <div class="container">
+        <h1 class="display-4" style="text-align: center;">Figuras geométricas - Cuadro de doble entrada</h1>
+        <p class="lead">Completa el cuadro.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container" style="margin-top: 10px; margin-left: 7%;">
+    <div cdkDropListGroup>
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-10" style="padding: 0px;">
-          <label style="margin: 15px 0px; text-align: initial;">
-            <b
-              >Coloca las figuras geométricas en la ubicación correspondiente</b
-            >
-          </label>
+        <div class="col-md-10 p-0">
+          <img class="card-img-top" src="assets/Img/figuras.png" style="margin: 0px auto; width: fit-content;" />
         </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 p-0">
+          <div class="example-container" style="display: inline-flex;">
+            <div id="animales" style="height: fit-content; border: none !important;" class="example-list">
+              <img class="card-img-top" src="assets/Img/pinturas.png" style="margin: 0px auto;" />
+            </div>
 
-    <div class="container" style="margin-top: 10px; margin-left: 7%;">
-      <div cdkDropListGroup>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0">
-            <img
-              class="card-img-top"
-              src="assets/Img/figuras.png"
-              style="margin: 0px auto; width: fit-content;"
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0">
-            <div class="example-container" style="display: inline-flex;">
-              <div
-                id="animales"
-                style="height: fit-content; border: none !important;"
-                class="example-list"
-              >
-                <img
-                  class="card-img-top"
-                  src="assets/Img/pinturas.png"
-                  style="margin: 0px auto;"
-                />
+            <div id="triangulos" style="height: fit-content; width: 101px;" cdkDropList [cdkDropListData]="triangulos"
+              class="example-list" (cdkDropListDropped)="dropTriangulos($event)">
+              <div class="example-box" *ngFor="let item of triangulos" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
+            </div>
 
-              <div
-                id="triangulos"
-                style="height: fit-content; width: 101px;"
-                cdkDropList
-                [cdkDropListData]="triangulos"
-                class="example-list"
-                (cdkDropListDropped)="dropTriangulos($event)"
-              >
-                <div
-                  class="example-box"
-                  *ngFor="let item of triangulos"
-                  cdkDrag
-                >
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="Circulo" style="height: fit-content; width: 100px;" cdkDropList [cdkDropListData]="circulos"
+              class="example-list" (cdkDropListDropped)="dropCirculo($event)">
+              <div class="example-box" *ngFor="let item of circulos" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
+            </div>
 
-              <div
-                id="Circulo"
-                style="height: fit-content; width: 100px;"
-                cdkDropList
-                [cdkDropListData]="circulos"
-                class="example-list"
-                (cdkDropListDropped)="dropCirculo($event)"
-              >
-                <div class="example-box" *ngFor="let item of circulos" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="cuadrados" style="height: fit-content; width: 100px;" cdkDropList [cdkDropListData]="cuadrados"
+              class="example-list" (cdkDropListDropped)="dropCuadrado($event)">
+              <div class="example-box" *ngFor="let item of cuadrados" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
+            </div>
 
-              <div
-                id="cuadrados"
-                style="height: fit-content; width: 100px;"
-                cdkDropList
-                [cdkDropListData]="cuadrados"
-                class="example-list"
-                (cdkDropListDropped)="dropCuadrado($event)"
-              >
-                <div class="example-box" *ngFor="let item of cuadrados" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="rectangulos" style="height: fit-content; width: 100px;" cdkDropList [cdkDropListData]="rectangulos"
+              class="example-list" (cdkDropListDropped)="dropRectangulo($event)">
+              <div class="example-box" *ngFor="let item of rectangulos" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
+            </div>
 
-              <div
-                id="rectangulos"
-                style="height: fit-content; width: 100px;"
-                cdkDropList
-                [cdkDropListData]="rectangulos"
-                class="example-list"
-                (cdkDropListDropped)="dropRectangulo($event)"
-              >
-                <div
-                  class="example-box"
-                  *ngFor="let item of rectangulos"
-                  cdkDrag
-                >
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="rombos" style="height: fit-content; width: 100px;" cdkDropList [cdkDropListData]="rombos"
+              class="example-list" (cdkDropListDropped)="dropRombo($event)">
+              <div class="example-box" *ngFor="let item of rombos" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
+            </div>
 
-              <div
-                id="rombos"
-                style="height: fit-content; width: 100px;"
-                cdkDropList
-                [cdkDropListData]="rombos"
-                class="example-list"
-                (cdkDropListDropped)="dropRombo($event)"
-              >
-                <div class="example-box" *ngFor="let item of rombos" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="esferas" style="height: fit-content; width: 100px;" cdkDropList [cdkDropListData]="esferas"
+              class="example-list" (cdkDropListDropped)="dropEsfera($event)">
+              <div class="example-box" *ngFor="let item of esferas" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
+            </div>
 
-              <div
-                id="esferas"
-                style="height: fit-content; width: 100px;"
-                cdkDropList
-                [cdkDropListData]="esferas"
-                class="example-list"
-                (cdkDropListDropped)="dropEsfera($event)"
-              >
-                <div class="example-box" *ngFor="let item of esferas" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="cubos" style="height: fit-content; width: 100px;" cdkDropList [cdkDropListData]="cubos"
+              class="example-list" (cdkDropListDropped)="dropCubo($event)">
+              <div class="example-box" *ngFor="let item of cubos" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
+            </div>
 
-              <div
-                id="cubos"
-                style="height: fit-content; width: 100px;"
-                cdkDropList
-                [cdkDropListData]="cubos"
-                class="example-list"
-                (cdkDropListDropped)="dropCubo($event)"
-              >
-                <div class="example-box" *ngFor="let item of cubos" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
-              </div>
-
-              <div
-                id="sectores"
-                style="height: fit-content; width: 100px;"
-                cdkDropList
-                [cdkDropListData]="sectores"
-                class="example-list"
-                (cdkDropListDropped)="dropSector($event)"
-              >
-                <div class="example-box" *ngFor="let item of sectores" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 78%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="sectores" style="height: fit-content; width: 100px;" cdkDropList [cdkDropListData]="sectores"
+              class="example-list" (cdkDropListDropped)="dropSector($event)">
+              <div class="example-box" *ngFor="let item of sectores" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 78%; margin: 0px auto; cursor: pointer;" />
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div id="signos" class="example-container-2" style="margin-top: 25px;">
-          <div></div>
-          <div
-            cdkDropList
-            cdkDropListOrientation="horizontal"
-            [cdkDropListData]="done"
-            class="example-list-2"
-            (cdkDropListDropped)="dropTotal($event)"
-          >
-            <div class="example-box-2" *ngFor="let item of done" cdkDrag>
-              <img [src]="item.imagen" alt="" width="58px" />
-            </div>
+      <div id="signos" class="example-container-2" style="margin-top: 25px;">
+        <div></div>
+        <div cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="done" class="example-list-2"
+          (cdkDropListDropped)="dropTotal($event)">
+          <div class="example-box-2" *ngFor="let item of done" cdkDrag>
+            <img [src]="item.imagen" alt="" width="58px" />
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

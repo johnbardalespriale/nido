@@ -59,8 +59,8 @@ export class ContabilidadNumericaComponent implements OnInit {
                 .attr(
                   'y2',
                   $(this).position().top +
-                    parseInt($(this).css('height')) / 2 +
-                    id * 5
+                  parseInt($(this).css('height')) / 2 +
+                  id * 5
                 );
             }.bind(this)
           );
@@ -209,7 +209,6 @@ export class ContabilidadNumericaComponent implements OnInit {
 
   match(number) {
     this.answer = number;
-    console.log('respuesta', this.answer);
   }
 
   matchCorrect(answer) {
@@ -270,7 +269,6 @@ export class ContabilidadNumericaComponent implements OnInit {
     this.answer = 0;
 
     setTimeout(() => {
-      //cada 5 segundos elegimos una imagen al azar
       this.currentImage = this.updateRandomImage();
       this.currentImage2 = this.updateRandomImage2();
       this.currentImage3 = this.updateRandomImage3();

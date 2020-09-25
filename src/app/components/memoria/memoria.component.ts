@@ -22,7 +22,7 @@ export class MemoriaComponent implements OnInit {
   nivel2: any;
   nivel3;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.nivel1 = [
@@ -144,6 +144,7 @@ export class MemoriaComponent implements OnInit {
   iniciar() {
     setTimeout(() => {
       this.iniciarJuego();
+      this.resetearJuego();
     }, 1000);
   }
 
