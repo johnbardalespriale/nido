@@ -25,11 +25,16 @@ export class FigurasGemoetricasComponent implements OnInit {
   selectedNivel: string;
   nivels: any[];
   cont: number;
+  numberRandom: number;
+  numberRandom2: number;
+  numberRandom3: number;
 
   constructor() { }
 
   ngOnInit(): void {
     this.selectedNivel = 'Nivel 1';
+
+    this.random();
 
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
@@ -82,6 +87,12 @@ export class FigurasGemoetricasComponent implements OnInit {
       { imagen: 'assets/Img/rombo-verde.png', name: 'rombo-verde' }
     ];
 
+  }
+
+  random() {
+    this.numberRandom = Math.floor(Math.random() * 3);
+    this.numberRandom2 = Math.floor(Math.random() * 3);
+    this.numberRandom3 = Math.floor(Math.random() * 3);
   }
 
   dropTotal(event: CdkDragDrop<string[]>) {
@@ -665,6 +676,66 @@ export class FigurasGemoetricasComponent implements OnInit {
     return answer === 'cuadrado-azul';
   }
 
+  evenPredicateTrianguloRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+
+    return answer === 'triangulo-rojo';
+  }
+
+  evenPredicateCuadradoVerde(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+
+    return answer === 'cuadrado-verde';
+  }
+
+  evenPredicateRectanguloAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+
+    return answer === 'rectangulo-azul';
+  }
+
+  evenPredicateRectanguloVerde(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+
+    return answer === 'rectangulo-verde';
+  }
+
+  evenPredicateTrianguloAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+
+    return answer === 'triangulo-azul';
+  }
+
+  evenPredicateCuadradoRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+
+    return answer === 'cuadrado-rojo';
+  }
+
   evenPredicateAmarilloNivel2(item: CdkDrag<any>) {
     for (var i in item.data) {
       if (item.data.hasOwnProperty(i)) {
@@ -702,6 +773,78 @@ export class FigurasGemoetricasComponent implements OnInit {
       }
     }
     return answer === 'cuadrado-verde';
+  }
+
+  evenPredicateNivel2CirculoAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo-azul';
+  }
+
+  evenPredicateNivel2RectanguloVerde(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rectangulo-verde';
+  }
+
+  evenPredicateNivel2CuadradoAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cuadrado-azul';
+  }
+
+  evenPredicateNivel2TrianguloRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'triangulo-rojo';
+  }
+
+  evenPredicateNivel2RectanguloAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rectangulo-azul';
+  }
+
+  evenPredicateNivel2CirculoVerde(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo-verde';
+  }
+
+  evenPredicateNivel2CirculoRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo-rojo';
+  }
+
+  evenPredicateNivel2TrianguloAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'triangulo-azul';
   }
 
   evenPredicateAmarilloNivel3(item: CdkDrag<any>) {
@@ -752,8 +895,91 @@ export class FigurasGemoetricasComponent implements OnInit {
     return answer === 'rombo-verde';
   }
 
+  evenPredicateNivel3CuadradoAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cuadrado-azul';
+  }
+
+  evenPredicateNivel3CirculoRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo-rojo';
+  }
+
+  evenPredicateNivel3TrianguloAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'triangulo-azul';
+  }
+
+  evenPredicateNivel3RomboRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rombo-rojo';
+  }
+
+  evenPredicateNivel3CuadradoVerde(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cuadrado-verde';
+  }
+
+  evenPredicateNivel3TrianguloRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'triangulo-rojo';
+  }
+
+  evenPredicateNivel3CirculoAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo-azul';
+  }
+
+  evenPredicateNivel3CuadradoRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cuadrado-rojo';
+  }
+
+  evenPredicateNivel3RomboAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rombo-azul';
+  }
+
+
 
   resetear() {
+    this.random();
     this.caja_amarilla = [];
     this.caja_verde = [];
     this.caja_naranja = [];

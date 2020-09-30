@@ -91,6 +91,36 @@ export class AbsurdosComponent implements OnInit {
       wrapperZapato.style.pointerEvents = 'none';
     }
 
+    if (element === 'sol') {
+      this.answer(2);
+      var sol = document.getElementById(element);
+      sol.style.opacity = '0.4';
+      sol.style.border = '3px solid black';
+      sol.style.borderRadius = '41px';
+      var wrapperSol = document.getElementById('wrapper-sol');
+      wrapperSol.style.pointerEvents = 'none';
+    }
+
+    if (element === 'pez') {
+      this.answer(2);
+      var pez = document.getElementById(element);
+      pez.style.opacity = '0.4';
+      pez.style.border = '3px solid black';
+      pez.style.borderRadius = '41px';
+      var wrapperPez = document.getElementById('wrapper-pez');
+      wrapperPez.style.pointerEvents = 'none';
+    }
+
+    if (element === 'volador') {
+      this.answer(2);
+      var volador = document.getElementById(element);
+      volador.style.opacity = '0.4';
+      volador.style.border = '3px solid black';
+      volador.style.borderRadius = '41px';
+      var wrapperVolador = document.getElementById('wrapper-volador');
+      wrapperVolador.style.pointerEvents = 'none';
+    }
+
     if (element === 'luna') {
       this.answer(2);
       var luna = document.getElementById(element);
@@ -109,6 +139,16 @@ export class AbsurdosComponent implements OnInit {
       conejo.style.borderRadius = '41px';
       var wrapperConejo = document.getElementById('wrapper-conejo');
       wrapperConejo.style.pointerEvents = 'none';
+    }
+
+    if (element === 'perro') {
+      this.answer(2);
+      var perro = document.getElementById(element);
+      perro.style.opacity = '0.4';
+      perro.style.border = '3px solid black';
+      perro.style.borderRadius = '41px';
+      var wrapperPerro = document.getElementById('wrapper-perro');
+      wrapperPerro.style.pointerEvents = 'none';
     }
 
     if (element === 'patineta') {
@@ -161,6 +201,16 @@ export class AbsurdosComponent implements OnInit {
       wrapperArdilla.style.pointerEvents = 'none';
     }
 
+    if (element === 'buho') {
+      this.answer(3);
+      var buho = document.getElementById(element);
+      buho.style.opacity = '0.4';
+      buho.style.border = '3px solid black';
+      buho.style.borderRadius = '41px';
+      var wrapperBuho = document.getElementById('wrapper-buho');
+      wrapperBuho.style.pointerEvents = 'none';
+    }
+
     if (element === 'patinador') {
       this.answer(3);
       var patinador = document.getElementById(element);
@@ -171,6 +221,16 @@ export class AbsurdosComponent implements OnInit {
       wrapperPatinador.style.pointerEvents = 'none';
     }
 
+    if (element === 'reno') {
+      this.answer(3);
+      var reno = document.getElementById(element);
+      reno.style.opacity = '0.4';
+      reno.style.border = '3px solid black';
+      reno.style.borderRadius = '41px';
+      var wrapperReno = document.getElementById('wrapper-reno');
+      wrapperReno.style.pointerEvents = 'none';
+    }
+
     if (element === 'esqui') {
       this.answer(3);
       var esqui = document.getElementById(element);
@@ -179,6 +239,16 @@ export class AbsurdosComponent implements OnInit {
       esqui.style.borderRadius = '41px';
       var wrapperEsqui = document.getElementById('wrapper-esqui');
       wrapperEsqui.style.pointerEvents = 'none';
+    }
+
+    if (element === 'idrante') {
+      this.answer(3);
+      var idrante = document.getElementById(element);
+      idrante.style.opacity = '0.4';
+      idrante.style.border = '3px solid black';
+      idrante.style.borderRadius = '41px';
+      var wrapperIdrante = document.getElementById('wrapper-idrante');
+      wrapperIdrante.style.pointerEvents = 'none';
     }
 
     if (element === 'hielo') {
@@ -221,6 +291,16 @@ export class AbsurdosComponent implements OnInit {
       wrapperChica.style.pointerEvents = 'none';
     }
 
+    if (element === 'bus') {
+      this.answer(3);
+      var bus = document.getElementById(element);
+      bus.style.opacity = '0.4';
+      bus.style.border = '3px solid black';
+      bus.style.borderRadius = '41px';
+      var wrapperBus = document.getElementById('wrapper-bus');
+      wrapperBus.style.pointerEvents = 'none';
+    }
+
     if (element === 'dormir') {
       this.answer(3);
       var dormir = document.getElementById(element);
@@ -258,14 +338,14 @@ export class AbsurdosComponent implements OnInit {
       });
     }
 
-    if (this.cont2 === 6) {
+    if (this.cont2 === 10) {
       Swal.fire({
         title: 'GANASTE',
         text: '¡Identificaste todos los elementos absurdos!!',
       });
     }
 
-    if (this.cont3 === 10) {
+    if (this.cont3 === 14) {
       Swal.fire({
         title: 'GANASTE',
         text: '¡Identificaste todos los elementos absurdos!!',
@@ -311,12 +391,24 @@ export class AbsurdosComponent implements OnInit {
     } else if (show === 'Nivel 2') {
       this.nivel = 'Nivel 2';
 
+      var sol = document.getElementById('sol');
+      sol.style.opacity = '1';
+      sol.style.border = 'none';
+      var pez = document.getElementById('pez');
+      pez.style.opacity = '1';
+      pez.style.border = 'none';
+      var volador = document.getElementById('volador');
+      volador.style.opacity = '1';
+      volador.style.border = 'none';
       var luna = document.getElementById('luna');
       luna.style.opacity = '1';
       luna.style.border = 'none';
       var conejo = document.getElementById('conejo');
       conejo.style.opacity = '1';
       conejo.style.border = 'none';
+      var perro = document.getElementById('perro');
+      perro.style.opacity = '1';
+      perro.style.border = 'none';
       var patineta = document.getElementById('patineta');
       patineta.style.opacity = '1';
       patineta.style.border = 'none';
@@ -330,10 +422,18 @@ export class AbsurdosComponent implements OnInit {
       gato.style.opacity = '1';
       gato.style.border = 'none';
 
+      var wrapperSol = document.getElementById('wrapper-sol');
+      wrapperSol.style.pointerEvents = 'inherit';
+      var wrapperPez = document.getElementById('wrapper-pez');
+      wrapperPez.style.pointerEvents = 'inherit';
+      var wrapperVolador = document.getElementById('wrapper-volador');
+      wrapperVolador.style.pointerEvents = 'inherit';
       var wrapperLuna = document.getElementById('wrapper-luna');
       wrapperLuna.style.pointerEvents = 'inherit';
       var wrapperConejo = document.getElementById('wrapper-conejo');
       wrapperConejo.style.pointerEvents = 'inherit';
+      var wrapperPerro = document.getElementById('wrapper-perro');
+      wrapperPerro.style.pointerEvents = 'inherit';
       var wrapperPatineta = document.getElementById('wrapper-patineta');
       wrapperPatineta.style.pointerEvents = 'inherit';
       var wrapperCerdo = document.getElementById('wrapper-cerdo');
@@ -348,15 +448,24 @@ export class AbsurdosComponent implements OnInit {
       var ardilla = document.getElementById('ardilla');
       ardilla.style.opacity = '1';
       ardilla.style.border = 'none';
+      var buho = document.getElementById('buho');
+      buho.style.opacity = '1';
+      buho.style.border = 'none';
       var patinador = document.getElementById('patinador');
       patinador.style.opacity = '1';
       patinador.style.border = 'none';
+      var reno = document.getElementById('reno');
+      reno.style.opacity = '1';
+      reno.style.border = 'none';
       var esqui = document.getElementById('esqui');
       esqui.style.opacity = '1';
       esqui.style.border = 'none';
       var hielo = document.getElementById('hielo');
       hielo.style.opacity = '1';
       hielo.style.border = 'none';
+      var idrante = document.getElementById('idrante');
+      idrante.style.opacity = '1';
+      idrante.style.border = 'none';
       var aspiradora = document.getElementById('aspiradora');
       aspiradora.style.opacity = '1';
       aspiradora.style.border = 'none';
@@ -366,6 +475,9 @@ export class AbsurdosComponent implements OnInit {
       var chica = document.getElementById('chica');
       chica.style.opacity = '1';
       chica.style.border = 'none';
+      var bus = document.getElementById('bus');
+      bus.style.opacity = '1';
+      bus.style.border = 'none';
       var dormir = document.getElementById('dormir');
       dormir.style.opacity = '1';
       dormir.style.border = 'none';
@@ -378,18 +490,26 @@ export class AbsurdosComponent implements OnInit {
 
       var wrapperArdilla = document.getElementById('wrapper-ardilla');
       wrapperArdilla.style.pointerEvents = 'inherit';
+      var wrapperBuho = document.getElementById('wrapper-buho');
+      wrapperBuho.style.pointerEvents = 'inherit';
       var wrapperPatinador = document.getElementById('wrapper-patinador');
       wrapperPatinador.style.pointerEvents = 'inherit';
+      var wrapperReno = document.getElementById('wrapper-reno');
+      wrapperReno.style.pointerEvents = 'inherit';
       var wrapperEsqui = document.getElementById('wrapper-esqui');
       wrapperEsqui.style.pointerEvents = 'inherit';
       var wrapperHielo = document.getElementById('wrapper-hielo');
       wrapperHielo.style.pointerEvents = 'inherit';
+      var wrapperIdrante = document.getElementById('wrapper-idrante');
+      wrapperIdrante.style.pointerEvents = 'inherit';
       var wrapperAspiradora = document.getElementById('wrapper-aspiradora');
       wrapperAspiradora.style.pointerEvents = 'inherit';
       var wrapperPayaso = document.getElementById('wrapper-payaso');
       wrapperPayaso.style.pointerEvents = 'inherit';
       var wrapperChica = document.getElementById('wrapper-chica');
       wrapperChica.style.pointerEvents = 'inherit';
+      var wrapperBus = document.getElementById('wrapper-bus');
+      wrapperBus.style.pointerEvents = 'inherit';
       var wrapperDormir = document.getElementById('wrapper-dormir');
       wrapperDormir.style.pointerEvents = 'inherit';
       var wrapperDona = document.getElementById('wrapper-dona');

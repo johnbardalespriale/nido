@@ -108,9 +108,17 @@
         <div class="parent" style="background-image: url('assets/Img/absurdos_nivel2.png');height: 711px;
         width: 596px;border: 6px solid #181854;">
           <div class="row">
-            <div class="col-12 col-md-4">
+            <div id="wrapper-sol" class="col-12 col-md-4">
+              <img id="sol" class="card-img-top" src="assets/Img/absurdos_sol.png"
+                style="width: 28%; margin-top: 27px;margin-left: 39px;" (click)="errorChoice('sol')">
             </div>
-            <div class="col-12 col-md-4">
+            <div id="wrapper-pez" class="col-12 col-md-2">
+              <img id="pez" class="card-img-top" src="assets/Img/absurdos_pez.png" style="width: 75%; margin-top: 12px;"
+                (click)="errorChoice('pez')">
+            </div>
+            <div id="wrapper-volador" class="col-12 col-md-2">
+              <img id="volador" class="card-img-top" src="assets/Img/absurdos_volador.png"
+                style="margin-top: 6px;margin-left: 50px;" (click)="errorChoice('volador')">
             </div>
             <div id="wrapper-luna" class="col-6 col-md-4">
               <img id="luna" class="card-img-top" src="assets/Img/absurdos_luna.png"
@@ -123,7 +131,9 @@
               <img id="conejo" class="card-img-top" src="assets/Img/absurdos_conejo.png"
                 style="width: 66%; margin-top: 130px;" (click)="errorChoice('conejo')">
             </div>
-            <div class="col-12 col-md-4">
+            <div id="wrapper-perro" class="col-12 col-md-4">
+              <img id="perro" class="card-img-top" src="assets/Img/absurdos_perro.png"
+                style="margin-left: 50px; margin-top: 120px;" (click)="errorChoice('perro')">
             </div>
             <div class="col-6 col-md-4">
             </div>
@@ -134,11 +144,11 @@
             </div>
             <div id="wrapper-patineta" class="col-12 col-md-4">
               <img id="patineta" class="card-img-top" src="assets/Img/absurdos_patineta.png"
-                style="margin-left: -52px;width: 90%;margin-top: 137px;" (click)="errorChoice('patineta')">
+                style="margin-left: -52px;width: 90%;margin-top: 108px;" (click)="errorChoice('patineta')">
             </div>
             <div id="wrapper-cerdo" class="col-6 col-md-4">
               <img id="cerdo" class="card-img-top" src="assets/Img/absurdos_cerdo.png"
-                style="margin-left: 3px;width: 95%;margin-top: 65px;" (click)="errorChoice('cerdo')">
+                style="margin-left: 3px;width: 95%;margin-top: 40px;" (click)="errorChoice('cerdo')">
             </div>
           </div>
 
@@ -177,17 +187,28 @@
           </div>
 
           <div class="row">
-            <div id="wrapper-ardilla" class="col-12 col-md-4" style="text-align:center;">
+            <div id="wrapper-ardilla" class="col-12 col-md-2" style="text-align:center;">
               <img id="ardilla" class="card-img-top" src="assets/Img/absurdos_ardilla.png"
-                style="width: 33%; margin-top: 230px;" (click)="errorChoice('ardilla')">
+                style="width: 60%; margin-top: 245px;" (click)="errorChoice('ardilla')">
             </div>
-            <div id="wrapper-patinador" class="col-12 col-md-4">
+            <div id="wrapper-buho" class="col-12 col-md-2" style="text-align:center;">
+              <img id="buho" class="card-img-top" src="assets/Img/absurdos_buho.png"
+                style="width: 62%; margin-top: 5px;" (click)="errorChoice('buho')">
+            </div>
+            <div id="wrapper-patinador" class="col-12 col-md-2">
               <img id="patinador" class="card-img-top" src="assets/Img/absurdos_patinador.png"
-                style="width: 35%; margin-top: 87px;" (click)="errorChoice('patinador')">
+                style="width: 80%; margin-top: 87px;" (click)="errorChoice('patinador')">
             </div>
-            <div id="wrapper-esqui" class="col-6 col-md-4">
+            <div id="wrapper-reno" class="col-12 col-md-2">
+              <img id="reno" class="card-img-top" src="assets/Img/absurdos_reno.png"
+                style="width: 54%; margin-top: 84px; margin-left:14px;" (click)="errorChoice('reno')">
+            </div>
+            <div id="wrapper-esqui" class="col-6 col-md-2">
               <img id="esqui" class="card-img-top" src="assets/Img/absurdos_esqui.png"
-                style="width: 30%; margin-top: 203px;" (click)="errorChoice('esqui')">
+                style="width: 60%; margin-top: 203px;" (click)="errorChoice('esqui')">
+            </div>
+            <div class="col-6 col-md-2">
+              <img class="card-img-top" src="assets/Img/absurdos_conejo1.png" style="width: 40%; margin-top: 226px;">
             </div>
           </div>
 
@@ -197,14 +218,15 @@
                 (click)="errorChoice('hielo')">
             </div>
             <div id="wrapper-idrante" class="col-12 col-md-2">
-              <img id="idrante" class="card-img-top" src="assets/Img/absurdos_idrante.png">
+              <img id="idrante" class="card-img-top" src="assets/Img/absurdos_idrante.png" style="margin-top: 35px;"
+                (click)="errorChoice('idrante')">
             </div>
             <div id="wrapper-aspiradora" class="col-12 col-md-2">
               <img id="aspiradora" class="card-img-top" src="assets/Img/absurdos_aspiradora.png" style="width: 57%;"
                 (click)="errorChoice('aspiradora')">
             </div>
             <div id="wrapper-payaso" class="col-12 col-md-2">
-              <img id="payaso" class="card-img-top" src="assets/Img/absurdos_payaso.png"
+              <img id="payaso" class="card-img-top" src="assets/Img/absurdos_payaso.png" style="width: 75%;"
                 (click)="errorChoice('payaso')">
             </div>
             <div id="wrapper-chica" class="col-6 col-md-2">
@@ -212,22 +234,31 @@
                 (click)="errorChoice('chica')">
             </div>
             <div id="wrapper-bus" class="col-6 col-md-2">
-              <img id="bus" class="card-img-top" src="assets/Img/absurdos_bus.png">
+              <img id="bus" class="card-img-top" src="assets/Img/absurdos_bus.png" (click)="errorChoice('bus')">
             </div>
           </div>
 
           <div class="row">
-            <div id="wrapper-dormir" class="col-12 col-md-4">
+            <div id="wrapper-dormir" class="col-12 col-md-2">
               <img id="dormir" class="card-img-top" src="assets/Img/absurdos_dormir.png"
-                style="width: 55%;margin-top: -24px;" (click)="errorChoice('dormir')">
+                style="width: 125%;margin-top: -24px;" (click)="errorChoice('dormir')">
             </div>
-            <div id="wrapper-dona" class="col-12 col-md-4">
-              <img id="dona" class="card-img-top" src="assets/Img/absurdos_dona.png" style="width: 30%;"
+            <div class="col-12 col-md-2">
+              <img class="card-img-top" src="assets/Img/absurdos_ardilla1.png" style="width: 42%;margin-top: 12px;">
+            </div>
+            <div id="wrapper-dona" class="col-12 col-md-2">
+              <img id="dona" class="card-img-top" src="assets/Img/absurdos_dona.png" style="width: 60%;"
                 (click)="errorChoice('dona')">
             </div>
-            <div id="wrapper-amigos" class="col-6 col-md-4">
+            <div class="col-12 col-md-2">
+              <img class="card-img-top" src="assets/Img/absurdos_niño.png" style="width: 63%;">
+            </div>
+            <div id="wrapper-amigos" class="col-6 col-md-2">
               <img id="amigos" class="card-img-top" src="assets/Img/absurdos_amigos.png"
-                style="margin-left: 117px;width: 47%;margin-top: -65px;" (click)="errorChoice('amigos')">
+                style="width:90%;margin-top: -26px;" (click)="errorChoice('amigos')">
+            </div>
+            <div class="col-6 col-md-2">
+              <img class="card-img-top" src="assets/Img/absurdos_paloma.png" style="width: 55%;">
             </div>
           </div>
         </div>
