@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-silabas',
@@ -96,9 +97,16 @@ export class SilabasComponent implements OnInit {
     });
   }
 
+  answerCorrect() {
+    Swal.fire({
+      title: 'Genial !!!',
+      text: 'El número de sílabas es correcto',
+    });
+  }
+
   iniciarJuego(i, name) {
     if (name === 'taza' && i === 2) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -106,7 +114,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'sol' && i === 1) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -114,7 +122,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'pera' && i === 2) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -122,7 +130,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'zapato' && i === 3) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -130,7 +138,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'canasta' && i === 3) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -138,7 +146,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'falda' && i === 2) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -146,7 +154,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'ventilador' && i === 4) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -154,7 +162,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'bicicleta' && i === 4) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -162,7 +170,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'flor' && i === 1) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -170,7 +178,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'polo' && i === 2) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -178,7 +186,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'camion' && i === 2) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -186,7 +194,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'hipopotamo_2' && i === 5) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -194,7 +202,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'computadora' && i === 5) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -202,7 +210,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'dia' && i === 1) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -210,7 +218,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'pan' && i === 1) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -218,7 +226,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'tren' && i === 1) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -226,7 +234,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'bote' && i === 2) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -234,7 +242,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'carro' && i === 2) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -242,7 +250,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'caballo' && i === 3) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -250,7 +258,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'payaso' && i === 3) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -258,7 +266,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'piñata' && i === 3) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -266,7 +274,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'panadero' && i === 4) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -274,7 +282,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'elefante' && i === 4) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -282,7 +290,7 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else if (name === 'mariposa' && i === 4) {
-      alert('respuesta correcta');
+      this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
         const slide = objeto[i] as HTMLElement;
@@ -290,7 +298,10 @@ export class SilabasComponent implements OnInit {
         slide.style.opacity = '0.3';
       }
     } else {
-      alert('respuesta incorrecta vuelve a intentarlo');
+      Swal.fire({
+        icon: 'error',
+        text: 'Vuelve a intentarlo',
+      });
     }
   }
 }

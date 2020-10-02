@@ -37,11 +37,11 @@ export class DiferenteComponent implements OnInit {
     ];
 
     this.nivel3 = [
-      { imagen: 'assets/Img/oso.png', name: 'oso' },
-      { imagen: 'assets/Img/oso.png', name: 'oso' },
-      { imagen: 'assets/Img/oso.png', name: 'oso' },
-      { imagen: 'assets/Img/oso.png', name: 'oso' },
-      { imagen: 'assets/Img/oso.png', name: 'oso' },
+      { imagen: 'assets/Img/oso.png', name: 'oso_diferente' },
+      { imagen: 'assets/Img/oso.png', name: 'oso_diferente' },
+      { imagen: 'assets/Img/oso.png', name: 'oso_diferente' },
+      { imagen: 'assets/Img/oso.png', name: 'oso_diferente' },
+      { imagen: 'assets/Img/oso.png', name: 'oso_diferente' },
       { imagen: 'assets/Img/jirafa.png', name: 'jirafa' },
     ];
 

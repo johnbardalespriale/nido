@@ -3,6 +3,7 @@ import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
+  CdkDrag,
 } from '@angular/cdk/drag-drop';
 import Swal from 'sweetalert2';
 
@@ -13,13 +14,29 @@ import Swal from 'sweetalert2';
 })
 export class CuadroDobleComponent implements OnInit {
   triangulos: any[];
+  triangulos2: any[];
+  triangulos3: any[];
   circulos: any[];
+  circulos2: any[];
+  circulos3: any[];
   cuadrados: any[];
+  cuadrados2: any[];
+  cuadrados3: any[];
   rectangulos: any[];
+  rectangulos2: any[];
+  rectangulos3: any[];
   rombos: any[];
+  rombos2: any[];
+  rombos3: any[];
   esferas: any[];
+  esferas2: any[];
+  esferas3: any[];
   cubos: any[];
+  cubos2: any[];
+  cubos3: any[];
   sectores: any[];
+  sectores2: any[];
+  sectores3: any[];
   done: any[];
   able1: String;
   able2: String;
@@ -30,7 +47,7 @@ export class CuadroDobleComponent implements OnInit {
   able7: String;
   able8: String;
   cont: number;
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.done = [
@@ -95,15 +112,32 @@ export class CuadroDobleComponent implements OnInit {
         value: 'esfera_amarillo',
       },
     ];
+
     this.cont = 0;
     this.triangulos = [];
+    this.triangulos2 = [];
+    this.triangulos3 = [];
     this.circulos = [];
+    this.circulos2 = [];
+    this.circulos3 = [];
     this.cuadrados = [];
+    this.cuadrados2 = [];
+    this.cuadrados3 = [];
     this.rectangulos = [];
+    this.rectangulos2 = [];
+    this.rectangulos3 = [];
     this.rombos = [];
+    this.rombos2 = [];
+    this.rombos3 = [];
     this.esferas = [];
+    this.esferas2 = [];
+    this.esferas3 = [];
     this.cubos = [];
+    this.cubos2 = [];
+    this.cubos3 = [];
     this.sectores = [];
+    this.sectores2 = [];
+    this.sectores3 = [];
 
     this.able();
   }
@@ -131,10 +165,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionTriangulo() {
     if (
-      this.triangulos.length === 3 &&
       this.triangulos[0].value === 'triangulo_rojo' &&
-      this.triangulos[1].value === 'triangulo_amarillo' &&
-      this.triangulos[2].value === 'triangulo_verde'
+      this.triangulos2[0].value === 'triangulo_amarillo' &&
+      this.triangulos3[0].value === 'triangulo_verde'
     ) {
       if (this.able1 === 'triangulo') {
         Swal.fire({
@@ -151,10 +184,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionCirculo() {
     if (
-      this.circulos.length === 3 &&
       this.circulos[0].value === 'circulo_rojo' &&
-      this.circulos[1].value === 'circulo_amarillo' &&
-      this.circulos[2].value === 'circulo_verde'
+      this.circulos2[0].value === 'circulo_amarillo' &&
+      this.circulos3[0].value === 'circulo_verde'
     ) {
       if (this.able2 === 'circulo') {
         Swal.fire({
@@ -171,10 +203,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionCuadrado() {
     if (
-      this.cuadrados.length === 3 &&
       this.cuadrados[0].value === 'cuadrado_rojo' &&
-      this.cuadrados[1].value === 'cuadrado_amarillo' &&
-      this.cuadrados[2].value === 'cuadrado_verde'
+      this.cuadrados2[0].value === 'cuadrado_amarillo' &&
+      this.cuadrados3[0].value === 'cuadrado_verde'
     ) {
       if (this.able3 === 'cuadrado') {
         Swal.fire({
@@ -191,10 +222,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionRectangulo() {
     if (
-      this.rectangulos.length === 3 &&
       this.rectangulos[0].value === 'rectangulo_rojo' &&
-      this.rectangulos[1].value === 'rectangulo_amarillo' &&
-      this.rectangulos[2].value === 'rectangulo_verde'
+      this.rectangulos2[0].value === 'rectangulo_amarillo' &&
+      this.rectangulos3[0].value === 'rectangulo_verde'
     ) {
       if (this.able4 === 'rectangulo') {
         Swal.fire({
@@ -211,10 +241,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionRombo() {
     if (
-      this.rombos.length === 3 &&
       this.rombos[0].value === 'rombo_rojo' &&
-      this.rombos[1].value === 'rombo_amarillo' &&
-      this.rombos[2].value === 'rombo_verde'
+      this.rombos2[0].value === 'rombo_amarillo' &&
+      this.rombos3[0].value === 'rombo_verde'
     ) {
       if (this.able5 === 'rombo') {
         Swal.fire({
@@ -231,10 +260,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionEsfera() {
     if (
-      this.esferas.length === 3 &&
       this.esferas[0].value === 'esfera_rojo' &&
-      this.esferas[1].value === 'esfera_amarillo' &&
-      this.esferas[2].value === 'esfera_verde'
+      this.esferas2[0].value === 'esfera_amarillo' &&
+      this.esferas3[0].value === 'esfera_verde'
     ) {
       if (this.able6 === 'esfera') {
         Swal.fire({
@@ -251,10 +279,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionCubo() {
     if (
-      this.cubos.length === 3 &&
       this.cubos[0].value === 'cubo_rojo' &&
-      this.cubos[1].value === 'cubo_amarillo' &&
-      this.cubos[2].value === 'cubo_verde'
+      this.cubos2[0].value === 'cubo_amarillo' &&
+      this.cubos3[0].value === 'cubo_verde'
     ) {
       if (this.able7 === 'cubo') {
         Swal.fire({
@@ -271,10 +298,9 @@ export class CuadroDobleComponent implements OnInit {
 
   validacionSector() {
     if (
-      this.sectores.length === 3 &&
       this.sectores[0].value === 'sector_rojo' &&
-      this.sectores[1].value === 'sector_amarillo' &&
-      this.sectores[2].value === 'sector_verde'
+      this.sectores2[0].value === 'sector_amarillo' &&
+      this.sectores3[0].value === 'sector_verde'
     ) {
       if (this.able8 === 'sector') {
         Swal.fire({
@@ -483,5 +509,221 @@ export class CuadroDobleComponent implements OnInit {
       this.validacionSector();
       this.mensaje();
     }
+  }
+
+  evenPredicatetriangulos(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'triangulo_rojo';
+  }
+
+  evenPredicatetriangulos2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'triangulo_amarillo';
+  }
+
+  evenPredicatetriangulos3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'triangulo_verde';
+  }
+
+  evenPredicateCirculos(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo_rojo';
+  }
+
+  evenPredicateCirculos2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo_amarillo';
+  }
+
+  evenPredicateCirculos3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'circulo_verde';
+  }
+
+  evenPredicateCuadrados(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cuadrado_rojo';
+  }
+
+  evenPredicateCuadrados2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cuadrado_amarillo';
+  }
+
+  evenPredicateCuadrados3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cuadrado_verde';
+  }
+
+  evenPredicateRectangulos(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rectangulo_rojo';
+  }
+
+  evenPredicateRectangulos2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rectangulo_amarillo';
+  }
+
+  evenPredicateRectangulos3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rectangulo_verde';
+  }
+
+  evenPredicateRombos(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rombo_rojo';
+  }
+
+  evenPredicateRombos2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rombo_amarillo';
+  }
+
+  evenPredicateRombos3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rombo_verde';
+  }
+
+  evenPredicateEsferas(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'esfera_rojo';
+  }
+
+  evenPredicateEsferas2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'esfera_amarillo';
+  }
+
+  evenPredicateEsferas3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'esfera_verde';
+  }
+
+  evenPredicateCubos(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cubo_rojo';
+  }
+
+  evenPredicateCubos2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cubo_amarillo';
+  }
+
+  evenPredicateCubos3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'cubo_verde';
+  }
+
+  evenPredicateSectores(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'sector_rojo';
+  }
+
+  evenPredicateSectores2(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'sector_amarillo';
+  }
+
+  evenPredicateSectores3(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'sector_verde';
   }
 }

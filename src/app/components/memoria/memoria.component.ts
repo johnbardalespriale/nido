@@ -22,7 +22,7 @@ export class MemoriaComponent implements OnInit {
   nivel2: any;
   nivel3;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.nivel1 = [
@@ -142,21 +142,67 @@ export class MemoriaComponent implements OnInit {
   }
 
   iniciar() {
-    setTimeout(() => {
-      this.iniciarJuego();
-    }, 1000);
+    this.resetearJuego();
+  }
+
+  estiloCarta() {
+    var carta0 = document.getElementById('0');
+    carta0.style.pointerEvents = 'inherit';
+    var carta1 = document.getElementById('1');
+    carta1.style.pointerEvents = 'inherit';
+    var carta2 = document.getElementById('2');
+    carta2.style.pointerEvents = 'inherit';
+    var carta3 = document.getElementById('3');
+    carta3.style.pointerEvents = 'inherit';
+    var carta4 = document.getElementById('4');
+    carta4.style.pointerEvents = 'inherit';
+    var carta5 = document.getElementById('5');
+    carta5.style.pointerEvents = 'inherit';
+    var carta6 = document.getElementById('6');
+    carta6.style.pointerEvents = 'inherit';
+    var carta7 = document.getElementById('7');
+    carta7.style.pointerEvents = 'inherit';
+    var carta8 = document.getElementById('8');
+    carta8.style.pointerEvents = 'inherit';
+    var carta9 = document.getElementById('9');
+    carta9.style.pointerEvents = 'inherit';
+    var carta10 = document.getElementById('10');
+    carta10.style.pointerEvents = 'inherit';
+    var carta11 = document.getElementById('11');
+    carta11.style.pointerEvents = 'inherit';
+    var carta12 = document.getElementById('12');
+    carta12.style.pointerEvents = 'inherit';
+    var carta13 = document.getElementById('13');
+    carta13.style.pointerEvents = 'inherit';
+    var carta14 = document.getElementById('14');
+    carta14.style.pointerEvents = 'inherit';
+    var carta15 = document.getElementById('15');
+    carta15.style.pointerEvents = 'inherit';
+    var carta16 = document.getElementById('16');
+    carta16.style.pointerEvents = 'inherit';
+    var carta17 = document.getElementById('17');
+    carta17.style.pointerEvents = 'inherit';
+    var carta18 = document.getElementById('18');
+    carta18.style.pointerEvents = 'inherit';
+    var carta19 = document.getElementById('19');
+    carta19.style.pointerEvents = 'inherit';
   }
 
   //Reinicia el juego
   resetearJuego() {
     setTimeout(() => {
       this.iniciarJuego();
-    }, 1000);
+      this.estiloCarta();
+    }, 500);
+    setTimeout(() => {
+      this.estiloCarta();
+    }, 1500);
     this.aciertos = 0;
     this.habilitar = 0;
     var juego = document.getElementById('juego');
-    juego.style.opacity = '0.3';
+    juego.style.opacity = '1';
     this.intentos = 0;
+    this.validator = 0;
     this.cartas.sort(function () {
       return Math.random() - 0.5;
     });
@@ -230,6 +276,7 @@ export class MemoriaComponent implements OnInit {
   validarSiLasCartasSonDiferentes() {
     //Verificamos si ya hay 2 cartas seleccionadas y si son iguales
     if (this.valorDeLaJugada1 !== this.valorDeLaJugada2) {
+      this.validator = 0;
       setTimeout(() => {
         this.reemplazarImagenDeLaCarta(
           this.idDeLaJugada1,
@@ -240,12 +287,12 @@ export class MemoriaComponent implements OnInit {
           'assets/Img/Pioneras-00.jpg'
         );
         this.vaciar();
-        this.validator = 0;
       }, 600);
     }
   }
 
   validarSiLasCartasSonIguales() {
+
     if (
       this.valorDeLaJugada1 === this.valorDeLaJugada2 &&
       this.cartas[parseInt(this.idDeLaJugada1)].seleccion === false &&
@@ -253,10 +300,14 @@ export class MemoriaComponent implements OnInit {
     ) {
       this.cartas[parseInt(this.idDeLaJugada1)].seleccion = true;
       this.cartas[parseInt(this.idDeLaJugada2)].seleccion = true;
+
+      var carta1 = document.getElementById(this.idDeLaJugada1);
+      carta1.style.pointerEvents = 'none';
+      var carta2 = document.getElementById(this.idDeLaJugada2);
+      carta2.style.pointerEvents = 'none';
+
       this.vaciar();
-      setTimeout(() => {
-        this.validator = 0;
-      }, 600);
+      this.validator = 0;
     }
   }
 

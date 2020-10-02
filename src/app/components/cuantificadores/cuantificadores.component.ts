@@ -15,7 +15,7 @@ export class CuantificadoresComponent implements OnInit {
   nivel3: any[];
   nivel4: any[];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.nivels = [
@@ -101,8 +101,9 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else {
       Swal.fire({
-        title: 'EXCELENTE',
-        text: 'respuesta correcta',
+        icon: 'error',
+        title: 'Respuesta incorrecta',
+        text: 'Intentalo de nuevo, tu puedes lograrlo!',
       });
     }
   }

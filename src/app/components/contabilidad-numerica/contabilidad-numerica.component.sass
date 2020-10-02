@@ -1,20 +1,22 @@
-.container
- margin-top: 25px
+section
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-evenly
 
 .wrapper-numeros
- text-align: center
- background-color: white
- border: solid 6px #24246f
- cursor: pointer
+  text-align: center
+  background-color: white
+  border: solid 6px #24246f
+  cursor: pointer
 
 .numero
- margin: auto
- width: 50%
- padding: 6px
+  margin: auto
+  width: 50%
+  padding: 6px
 
 .radio-group
- display: flex
- flex-direction: column
+  display: flex
+  flex-direction: column
 
 #ui-browser,#canvas,#property-browser
   height: 100%
@@ -23,21 +25,21 @@
   position: relative
 
 #ui-browser
-  width:20%
-  background-color:#eee
+  width: 20%
+  background-color: #eee
   float: left
   overflow: hidden
 
 #canvas
-  width:60%
+  width: 60%
   right: 2
 
 #property-browser
-  width:20%
-  background-color:#eee
+  width: 20%
+  background-color: #eee
 
 .anchor
-  opacity:0.5
+  opacity: 0.5
   width: 10px
   height: 100%
   background-color: #0ebeff
@@ -54,41 +56,41 @@
 
 .ui-item
   width: 270px
-  background-color:#eef0
+  background-color: #eef0
   top: -2px
   left: -2px
 
 .con_anchor
-    width: 8px
-    height: 8px
-    background-color: #47cf73
-    border-radius: 50%
-    z-index: 5
+  width: 8px
+  height: 8px
+  background-color: #47cf73
+  border-radius: 50%
+  z-index: 5
 
 #connector_canvas
   position: absolute
   width: 100%
   height: 100%
-  stroke:#5c96bc
+  stroke: #5c96bc
   stroke-width: 2
 
 .library
   border-left: 10px solid #5c96bc
   background-color: white
-  color:#0ebeff
+  color: #0ebeff
   padding-bottom: 1px
 
 .library ul
   list-style-type: none
 
 .library .name-title
-  padding-top:5px
+  padding-top: 5px
   text-align: center
 
 .library ul li
   border-bottom: 1px solid #eee
   margin-right: 20px
-  color:#4c4545
+  color: #4c4545
   padding: 5px
   margin-left: 15px
   cursor: pointer
@@ -97,5 +99,5 @@
 .library ul li:hover
   text-align: center
   color: white
-  background-color:#4c4545
+  background-color: #4c4545
   font-size: 1.2em

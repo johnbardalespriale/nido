@@ -1,47 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <title>Nosotros</title>
-  </head>
 
-  <style>
-    .flip-vertical-left {
-      -webkit-animation: flip-vertical-left 0.4s
-        cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-      animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-        both;
+<head>
+  <title>Nosotros</title>
+</head>
+
+<style>
+  .flip-vertical-left {
+    -webkit-animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+    animation: flip-vertical-left 0.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  }
+
+  @-webkit-keyframes flip-vertical-left {
+    0% {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
     }
 
-    @-webkit-keyframes flip-vertical-left {
-      0% {
-        -webkit-transform: rotateY(0);
-        transform: rotateY(0);
-      }
-      100% {
-        -webkit-transform: rotateY(-10deg);
-        transform: rotateY(-180deg);
-      }
+    100% {
+      -webkit-transform: rotateY(-10deg);
+      transform: rotateY(-180deg);
     }
-    @keyframes flip-vertical-left {
-      0% {
-        -webkit-transform: rotateY(0);
-        transform: rotateY(0);
-      }
-      100% {
-        -webkit-transform: rotateY(-180deg);
-        transform: rotateY(-180deg);
-      }
+  }
+
+  @keyframes flip-vertical-left {
+    0% {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
     }
-  </style>
 
-  <body>
-    <section>
-      <article class="article">
-        <h2>
-          Para empezar escoge el nivel del juego.
-        </h2>
+    100% {
+      -webkit-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+    }
+  }
+</style>
 
-        <!--mat-radio-group
+<body>
+  <section style="margin-top: 25px;font-family: math;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+      <div class="container">
+        <h1 class="consigna">MEMORIA</h1>
+        <p class="lead">Haz clic en las tarjetas y empareja.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <article class="article">
+      <h2>
+        Para empezar escoge el nivel del juego.
+      </h2>
+
+      <!--mat-radio-group
           aria-labelledby="example-radio-group-label"
           class="radio-group"
           [(ngModel)]="favoriteSeason"
@@ -58,232 +69,113 @@
           </mat-radio-button>
         </mat-radio-group-->
 
-        <div class="btn-group" style="margin-bottom: 15px;">
-          <label
-            style="background-color: #2bbbad !important; color: white;"
-            mdbBtn
-            [(ngModel)]="favoriteSeason"
-            [mdbRadio]="nivel.nivel"
-            mdbWavesEffect
-            *ngFor="let nivel of nivels"
-            [value]="nivel.nivel"
-            (mouseup)="iniciar()"
-          >
-            {{ nivel.nivel }}
-          </label>
-        </div>
+      <div class="btn-group" style="margin-bottom: 15px;">
+        <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="favoriteSeason"
+          [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+          (mouseup)="iniciar()">
+          {{ nivel.nivel }}
+        </label>
+      </div>
 
-        <div>
-          <!--input
+      <div>
+        <!--input
             style="margin: auto;"
             type="button"
             value="Iniciar juego"
             (click)="iniciarJuego()"
           /-->
-          <input
-            style="margin: 0px;"
-            type="button"
-            value="Resetear"
-            (click)="resetearJuego()"
-          />
-        </div>
-      </article>
-      <article class="article background">
-        <div id="juego">
-          <table>
-            <tr
-              *ngIf="
+        <input style="margin: 0px;" type="button" value="Resetear" (click)="resetearJuego()" />
+      </div>
+    </article>
+    <article class="article background">
+      <div id="juego">
+        <table>
+          <tr *ngIf="
                 favoriteSeason == 'Nivel 1' ||
                 favoriteSeason == 'Nivel 2' ||
                 favoriteSeason == 'Nivel 3'
-              "
-            >
-              <td id="card1">
-                <img
-                  id="0"
-                  (click)="girarCarta('card1')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card2">
-                <img
-                  id="1"
-                  (click)="girarCarta('card2')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card3">
-                <img
-                  id="2"
-                  (click)="girarCarta('card3')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card4">
-                <img
-                  id="3"
-                  (click)="girarCarta('card4')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-            </tr>
-            <tr
-              *ngIf="
+              ">
+            <td id="card1">
+              <img id="0" (click)="girarCarta('card1')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card2">
+              <img id="1" (click)="girarCarta('card2')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card3">
+              <img id="2" (click)="girarCarta('card3')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card4">
+              <img id="3" (click)="girarCarta('card4')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+          </tr>
+          <tr *ngIf="
                 favoriteSeason == 'Nivel 1' ||
                 favoriteSeason == 'Nivel 2' ||
                 favoriteSeason == 'Nivel 3'
-              "
-            >
-              <td id="card5">
-                <img
-                  id="4"
-                  (click)="girarCarta('card5')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card6">
-                <img
-                  id="5"
-                  (click)="girarCarta('card6')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card7">
-                <img
-                  id="6"
-                  (click)="girarCarta('card7')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card8">
-                <img
-                  id="7"
-                  (click)="girarCarta('card8')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-            </tr>
-            <tr
-              *ngIf="
+              ">
+            <td id="card5">
+              <img id="4" (click)="girarCarta('card5')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card6">
+              <img id="5" (click)="girarCarta('card6')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card7">
+              <img id="6" (click)="girarCarta('card7')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card8">
+              <img id="7" (click)="girarCarta('card8')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+          </tr>
+          <tr *ngIf="
                 favoriteSeason == 'Nivel 1' ||
                 favoriteSeason == 'Nivel 2' ||
                 favoriteSeason == 'Nivel 3'
-              "
-            >
-              <td id="card9">
-                <img
-                  id="8"
-                  (click)="girarCarta('card9')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card10">
-                <img
-                  id="9"
-                  (click)="girarCarta('card10')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card11">
-                <img
-                  id="10"
-                  (click)="girarCarta('card11')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card12">
-                <img
-                  id="11"
-                  (click)="girarCarta('card12')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-            </tr>
-            <tr
-              *ngIf="favoriteSeason == 'Nivel 2' || favoriteSeason == 'Nivel 3'"
-            >
-              <td id="card13">
-                <img
-                  id="12"
-                  (click)="girarCarta('card13')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card14">
-                <img
-                  id="13"
-                  (click)="girarCarta('card14')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card15">
-                <img
-                  id="14"
-                  (click)="girarCarta('card15')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card16">
-                <img
-                  id="15"
-                  (click)="girarCarta('card16')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-            </tr>
-            <tr *ngIf="favoriteSeason == 'Nivel 3'">
-              <td id="card17">
-                <img
-                  id="16"
-                  (click)="girarCarta('card17')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card18">
-                <img
-                  id="17"
-                  (click)="girarCarta('card18')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card19">
-                <img
-                  id="18"
-                  (click)="girarCarta('card19')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-              <td id="card20">
-                <img
-                  id="19"
-                  (click)="girarCarta('card20')"
-                  data-valor="valor"
-                  src="assets/Img/Pioneras-00.jpg"
-                />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </article>
-    </section>
-  </body>
+              ">
+            <td id="card9">
+              <img id="8" (click)="girarCarta('card9')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card10">
+              <img id="9" (click)="girarCarta('card10')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card11">
+              <img id="10" (click)="girarCarta('card11')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card12">
+              <img id="11" (click)="girarCarta('card12')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+          </tr>
+          <tr *ngIf="favoriteSeason == 'Nivel 2' || favoriteSeason == 'Nivel 3'">
+            <td id="card13">
+              <img id="12" (click)="girarCarta('card13')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card14">
+              <img id="13" (click)="girarCarta('card14')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card15">
+              <img id="14" (click)="girarCarta('card15')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card16">
+              <img id="15" (click)="girarCarta('card16')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+          </tr>
+          <tr *ngIf="favoriteSeason == 'Nivel 3'">
+            <td id="card17">
+              <img id="16" (click)="girarCarta('card17')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card18">
+              <img id="17" (click)="girarCarta('card18')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card19">
+              <img id="18" (click)="girarCarta('card19')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+            <td id="card20">
+              <img id="19" (click)="girarCarta('card20')" data-valor="valor" src="assets/Img/Pioneras-00.jpg" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </article>
+  </section>
+</body>
+
 </html>
