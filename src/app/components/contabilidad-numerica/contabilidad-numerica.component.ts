@@ -232,8 +232,13 @@ export class ContabilidadNumericaComponent implements OnInit {
     });
   }
 
-  correctChoice(id) {
-    if (this.answerImage === id && this.selectedNivel === 'Nivel 1') {
+  correctChoice(id, opcion) {
+    console.log(this.answerImage, "imagenId");
+    console.log(id, "Id");
+    console.log(this.answerImage2, "imagenId2");
+    console.log(this.answerImage3, "imagenId3");
+
+    if (this.answerImage === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion1') {
       Swal.fire({
         title: 'EXCELENTE',
         text: 'Respuesta correcta',
@@ -241,7 +246,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       var numbers = document.getElementById('numbers');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';
-    } else if (this.answerImage2 === id && this.selectedNivel === 'Nivel 1') {
+    } else if (this.answerImage2 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion2') {
       Swal.fire({
         title: 'EXCELENTE',
         text: 'Respuesta correcta',
@@ -249,7 +254,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       var numbers = document.getElementById('numbers2');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';
-    } else if (this.answerImage3 === id && this.selectedNivel === 'Nivel 1') {
+    } else if (this.answerImage3 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion3') {
       Swal.fire({
         title: 'EXCELENTE',
         text: 'Respuesta correcta',
@@ -275,7 +280,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       this.answerImage = this.getNumberImage();
       this.answerImage2 = this.getNumberImage2();
       this.answerImage3 = this.getNumberImage3();
-    }, 500);
+    }, 1000);
 
     if (show === 'Nivel 1') {
       this.habilitar = 1;

@@ -227,6 +227,7 @@ export class HeaderComponent implements OnInit {
 
   hover(letra) {
     this.deleteHover(letra);
+    console.log(letra, "letra");
 
     if (letra === "e") {
 
@@ -272,7 +273,10 @@ export class HeaderComponent implements OnInit {
   }
 
   clicked(letra) {
-    this.hover(letra);
+    setTimeout(() => {
+      this.hover(letra);
+    }, 200);
+
     var submenu = document.getElementById('submenu');
     submenu.classList.add('visibility');
     setTimeout(() => {
