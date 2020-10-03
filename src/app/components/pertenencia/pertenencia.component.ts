@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
+  CdkDrag,
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
@@ -25,7 +26,7 @@ export class PertenenciaComponent implements OnInit {
   loudSound: any[];
   selectedNivel: string;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.nivels = [

@@ -7,7 +7,6 @@ import { MemoriaComponent } from './memoria/memoria.component';
 import { SecuenciaComponent } from './secuencia/secuencia.component';
 import { SilabasComponent } from './silabas/silabas.component';
 import { IgualDiferenteComponent } from './igual-diferente/igual-diferente.component';
-import { FiguraGeometricaComponent } from './figura-geometrica/figura-geometrica.component';
 import { ContabilidadNumericaComponent } from './contabilidad-numerica/contabilidad-numerica.component';
 import { MenorMayorComponent } from './menor-mayor/menor-mayor.component';
 import { CuantificadoresComponent } from './cuantificadores/cuantificadores.component';
@@ -18,6 +17,7 @@ import { AbsurdosComponent } from './absurdos/absurdos.component';
 import { CuadroDobleComponent } from './cuadro-doble/cuadro-doble.component';
 import { ConjuntoComponent } from './conjunto/conjunto.component';
 import { TrazosComponent } from './trazos/trazos.component';
+import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoetricas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -44,10 +44,6 @@ const routes: Routes = [
   {
     path: 'igual-diferente',
     component: IgualDiferenteComponent,
-  },
-  {
-    path: 'figura-geometrica',
-    component: FiguraGeometricaComponent,
   },
   {
     path: 'contabilidad-numerica',
@@ -89,10 +85,14 @@ const routes: Routes = [
     path: 'trazos',
     component: TrazosComponent,
   },
+  {
+    path: 'figura-geometrica',
+    component: FigurasGemoetricasComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

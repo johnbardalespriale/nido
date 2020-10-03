@@ -1,20 +1,20 @@
+<section style="margin-top: 25px;font-family: math;">
+  <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+    <div class="container">
+      <h1 class="consigna" style="text-align: center;">Ordeno la secuencia temporal</h1>
+      <p class="lead">A ver, a ver, que sucedió antes y qué después.</p>
+    </div>
+  </div>
+</section>
+
 <div class="wrapper">
   <mat-tab-group>
     <div class="container">
       <div class="row">
         <div class="col-md-4" id="peinado" *ngIf="selectedNivel == 'Nivel 1'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="drop($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let peinado of peinados"
-                cdkDrag
-                [cdkDragDisabled]="peinado.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="drop($event)">
+              <div class="movie-block" *ngFor="let peinado of peinados" cdkDrag [cdkDragDisabled]="peinado.disabled">
                 <img [src]="peinado.imagen" alt="" />
               </div>
             </div>
@@ -22,17 +22,8 @@
         </div>
         <div class="col-md-4" id="diente" *ngIf="selectedNivel == 'Nivel 1'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropDientes($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let diente of dientes"
-                cdkDrag
-                [cdkDragDisabled]="diente.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropDientes($event)">
+              <div class="movie-block" *ngFor="let diente of dientes" cdkDrag [cdkDragDisabled]="diente.disabled">
                 <img [src]="diente.imagen" alt="" />
               </div>
             </div>
@@ -40,17 +31,8 @@
         </div>
         <div class="col-md-4" id="ropa" *ngIf="selectedNivel == 'Nivel 1'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropRopas($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let ropa of ropas"
-                cdkDrag
-                [cdkDragDisabled]="ropa.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropRopas($event)">
+              <div class="movie-block" *ngFor="let ropa of ropas" cdkDrag [cdkDragDisabled]="ropa.disabled">
                 <img [src]="ropa.imagen" alt="" />
               </div>
             </div>
@@ -60,61 +42,28 @@
       <div class="row">
         <div class="col-md-4" id="casita" *ngIf="selectedNivel == 'Nivel 2'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropCasita($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let casita of casita"
-                cdkDrag
-                [cdkDragDisabled]="casita.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropCasita($event)">
+              <div class="movie-block" *ngFor="let casita of casita" cdkDrag [cdkDragDisabled]="casita.disabled">
                 <img [src]="casita.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div
-          class="col-md-4"
-          id="resbaladera"
-          *ngIf="selectedNivel == 'Nivel 2'"
-        >
+        <div class="col-md-4" id="resbaladera" *ngIf="selectedNivel == 'Nivel 2'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropResbaladera($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let resbaladera of resbaladera"
-                cdkDrag
-                [cdkDragDisabled]="resbaladera.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropResbaladera($event)">
+              <div class="movie-block" *ngFor="let resbaladera of resbaladera" cdkDrag
+                [cdkDragDisabled]="resbaladera.disabled">
                 <img [src]="resbaladera.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div
-          class="col-md-4"
-          id="levantarse"
-          *ngIf="selectedNivel == 'Nivel 2'"
-        >
+        <div class="col-md-4" id="levantarse" *ngIf="selectedNivel == 'Nivel 2'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropLevantarse($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let levantarse of levantarse"
-                cdkDrag
-                [cdkDragDisabled]="levantarse.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropLevantarse($event)">
+              <div class="movie-block" *ngFor="let levantarse of levantarse" cdkDrag
+                [cdkDragDisabled]="levantarse.disabled">
                 <img [src]="levantarse.imagen" alt="" />
               </div>
             </div>
@@ -124,17 +73,8 @@
       <div class="row">
         <div class="col-md-4" id="insecto" *ngIf="selectedNivel == 'Nivel 3'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropInsecto($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let insecto of insecto"
-                cdkDrag
-                [cdkDragDisabled]="insecto.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropInsecto($event)">
+              <div class="movie-block" *ngFor="let insecto of insecto" cdkDrag [cdkDragDisabled]="insecto.disabled">
                 <img [src]="insecto.imagen" alt="" />
               </div>
             </div>
@@ -142,17 +82,8 @@
         </div>
         <div class="col-md-4" id="vaca" *ngIf="selectedNivel == 'Nivel 3'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropVaca($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let vaca of vaca"
-                cdkDrag
-                [cdkDragDisabled]="vaca.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropVaca($event)">
+              <div class="movie-block" *ngFor="let vaca of vaca" cdkDrag [cdkDragDisabled]="vaca.disabled">
                 <img [src]="vaca.imagen" alt="" />
               </div>
             </div>
@@ -160,17 +91,8 @@
         </div>
         <div class="col-md-4" id="lluvia" *ngIf="selectedNivel == 'Nivel 3'">
           <mat-tab label="Reordering lists">
-            <div
-              cdkDropList
-              class="movie-list"
-              (cdkDropListDropped)="dropLluvia($event)"
-            >
-              <div
-                class="movie-block"
-                *ngFor="let lluvia of lluvia"
-                cdkDrag
-                [cdkDragDisabled]="lluvia.disabled"
-              >
+            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropLluvia($event)">
+              <div class="movie-block" *ngFor="let lluvia of lluvia" cdkDrag [cdkDragDisabled]="lluvia.disabled">
                 <img [src]="lluvia.imagen" alt="" />
               </div>
             </div>
@@ -180,12 +102,9 @@
 
       <div class="row">
         <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;">
+        <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
           <label style="margin: 15px 0px; text-align: initial;">
-            <b style="font-size: initial;"
-              >Escoge el nivel del juego y haz clic en el botón iniciar
-              juego:</b
-            >
+            <b style="font-size: initial;font-family: sans-serif;">Escoge el nivel del juego y empieza a jugar.</b>
           </label>
           <!--mat-radio-group
             aria-labelledby="example-radio-group-label"
@@ -200,27 +119,15 @@
             </mat-radio-button>
           </mat-radio-group-->
 
-          <div class="btn-group" style="margin-bottom: 15px;">
-            <label
-              style="background-color: #2bbbad !important; color: white;"
-              mdbBtn
-              [(ngModel)]="selectedNivel"
-              [mdbRadio]="nivel.nivel"
-              mdbWavesEffect
-              *ngFor="let nivel of nivels"
-              [value]="nivel.nivel"
-            >
+          <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+            <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+              [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel">
               {{ nivel.nivel }}
             </label>
           </div>
 
           <div>
-            <input
-              style="height: 30px;"
-              type="button"
-              value="Resetear"
-              (click)="resetear()"
-            />
+            <input style="height: 30px;" type="button" value="Resetear" (click)="resetear()" />
           </div>
         </div>
       </div>

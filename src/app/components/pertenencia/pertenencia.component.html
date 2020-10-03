@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <div class="container wrapper">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;">
-          <label style="margin: 15px 0px; text-align: initial;">
-            <b
-              >Escoge el nivel del juego y haz clic en el botón iniciar
-              juego:</b
-            >
-          </label>
-          <!--mat-radio-group
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <section style="margin-top: 25px;font-family: math;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+      <div class="container">
+        <h1 class="consigna" style="text-align: center;">Pertenencia</h1>
+        <p class="lead">Ubica los animales según corresponda.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
+        <label style="margin: 15px 0px; text-align: initial;">
+          <b>Escoge el nivel del juego para empezar a jugar</b>
+        </label>
+        <!--mat-radio-group
             aria-labelledby="example-radio-group-label"
             class="radio-group"
             [(ngModel)]="selectedNivel"
@@ -28,311 +36,165 @@
             </mat-radio-button>
           </mat-radio-group-->
 
-          <div class="btn-group" style="margin-bottom: 15px;">
-            <label
-              style="background-color: #2bbbad !important; color: white;"
-              mdbBtn
-              [(ngModel)]="selectedNivel"
-              [mdbRadio]="nivel.nivel"
-              mdbWavesEffect
-              *ngFor="let nivel of nivels"
-              [value]="nivel.nivel"
-              (click)="resetear(selectedNivel)"
-            >
-              {{ nivel.nivel }}
-            </label>
-          </div>
+        <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+          <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+            [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+            (click)="resetear(selectedNivel)">
+            {{ nivel.nivel }}
+          </label>
+        </div>
 
-          <div style="text-align: initial;">
-            <input
-              type="button"
-              value="Resetear"
-              (click)="resetear(selectedNivel)"
-            />
-          </div>
+        <div style="text-align: initial;">
+          <input type="button" value="Resetear" (click)="resetear(selectedNivel)" />
         </div>
       </div>
     </div>
-    <div cdkDropListGroup>
-      <div class="container wrapper" *ngIf="habilitar == 1">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0 mb-2">
-            <label style="margin: 15px 0px; text-align: initial;">
-              <b
-                >Arrastra las imágenes de los animales al grupo al que
-                pertenecen</b
-              >
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0">
-            <div class="example-container" style="display: inline-flex;">
-              <div
-                id="animales"
-                style="margin-right: auto; height: fit-content;"
-                cdkDropList
-                [cdkDropListData]="animales"
-                class="example-list"
-                (cdkDropListDropped)="dropTotal($event)"
-              >
-                <div class="example-box" *ngFor="let item of animales" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="example-container" style="display: inline-flex;">
-              <div
-                id="setCarnivoros"
-                style="
-                  margin-right: auto;
-                  margin-left: auto;
-                  height: fit-content;
-                "
-                cdkDropList
-                [cdkDropListData]="setCarnivoros"
-                class="example-list"
-                (cdkDropListDropped)="dropCarnivoro($event)"
-              >
-                <img
-                  class="card-img-top"
-                  src="assets/Img/letrero_carnivoros.png"
-                  style="width: 125px;"
-                />
-                <div
-                  class="example-box"
-                  *ngFor="let item of setCarnivoros"
-                  cdkDrag
-                >
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
-              </div>
-
-              <div
-                id="setHerbivoros"
-                style="height: fit-content;"
-                cdkDropList
-                [cdkDropListData]="setHerbivoros"
-                class="example-list"
-                (cdkDropListDropped)="dropHerbivoro($event)"
-              >
-                <img
-                  class="card-img-top"
-                  src="assets/Img/letrero_herbivoros.png"
-                  style="width: 125px;"
-                />
-                <div
-                  class="example-box"
-                  *ngFor="let item of setHerbivoros"
-                  cdkDrag
-                >
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+  </div>
+  <div cdkDropListGroup>
+    <div class="container wrapper" *ngIf="habilitar == 1">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 p-0 mb-2">
+          <label style="margin: 15px 0px; text-align: initial;">
+            <b>Arrastra las imágenes de los animales al grupo al que
+              pertenecen</b>
+          </label>
         </div>
       </div>
 
-      <div class="container wrapper" *ngIf="habilitar == 2">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0 mb-2">
-            <label style="margin: 15px 0px; text-align: initial;">
-              <b
-                >Arrastra las imágenes de los animales al grupo al que
-                pertenecen</b
-              >
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0">
-            <div class="example-container" style="display: inline-flex;">
-              <div
-                id="animalesNivel2"
-                style="margin-right: auto; height: fit-content;"
-                cdkDropList
-                [cdkDropListData]="animalesNivel2"
-                class="example-list"
-                (cdkDropListDropped)="dropTotal($event)"
-              >
-                <div
-                  class="example-box"
-                  *ngFor="let item of animalesNivel2"
-                  cdkDrag
-                >
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 p-0">
+          <div class="example-container" style="display: inline-flex;">
+            <div id="animales" style="margin-right: auto; height: fit-content;" cdkDropList [cdkDropListData]="animales"
+              class="example-list" (cdkDropListDropped)="dropTotal($event)">
+              <div class="example-box" *ngFor="let item of animales" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
               </div>
             </div>
+          </div>
 
-            <div class="example-container" style="display: inline-flex;">
-              <div
-                id="set2Paws"
-                style="
+          <div class="example-container" style="display: inline-flex;">
+            <div id="setCarnivoros" style="
                   margin-right: auto;
                   margin-left: auto;
                   height: fit-content;
-                "
-                cdkDropList
-                [cdkDropListData]="set2Paws"
-                class="example-list"
-                (cdkDropListDropped)="drop2Paws($event)"
-              >
-                <img
-                  class="card-img-top"
-                  src="assets/Img/letrero_tienen2Patas.png"
-                  style="width: 125px;"
-                />
-                <div class="example-box" *ngFor="let item of set2Paws" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
-              </div>
-
-              <div
-                id="set3Paws"
-                style="height: fit-content;"
-                cdkDropList
-                [cdkDropListData]="set3Paws"
-                class="example-list"
-                (cdkDropListDropped)="drop4Paws($event)"
-              >
-                <img
-                  class="card-img-top"
-                  src="assets/Img/letrero_tienen4Patas.png"
-                  style="width: 125px;"
-                />
-                <div class="example-box" *ngFor="let item of set3Paws" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container wrapper" *ngIf="habilitar == 3">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0 mb-2">
-            <label style="margin: 15px 0px; text-align: initial;">
-              <b
-                >Arrastra las imágenes de los animales al grupo al que
-                pertenecen</b
-              >
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-10 p-0">
-            <div class="example-container" style="display: inline-flex;">
-              <div
-                id="animalesNivel3"
-                style="margin-right: auto; height: fit-content;"
-                cdkDropList
-                [cdkDropListData]="animalesNivel3"
-                class="example-list"
-                (cdkDropListDropped)="dropTotal($event)"
-              >
-                <div
-                  class="example-box"
-                  *ngFor="let item of animalesNivel3"
-                  cdkDrag
-                >
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+                " cdkDropList [cdkDropListData]="setCarnivoros" class="example-list"
+              (cdkDropListDropped)="dropCarnivoro($event)">
+              <img class="card-img-top" src="assets/Img/letrero_carnivoros.png" style="width: 125px;" />
+              <div class="example-box" *ngFor="let item of setCarnivoros" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
               </div>
             </div>
 
-            <div class="example-container" style="display: inline-flex;">
-              <div
-                id="loudSound"
-                style="
-                  margin-right: auto;
-                  margin-left: auto;
-                  height: fit-content;
-                "
-                cdkDropList
-                [cdkDropListData]="loudSound"
-                class="example-list"
-                (cdkDropListDropped)="dropLoudSound($event)"
-              >
-                <img
-                  class="card-img-top"
-                  src="assets/Img/letrero_sonidoFuerte.png"
-                  style="width: 125px;"
-                />
-                <div class="example-box" *ngFor="let item of loudSound" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
-              </div>
-
-              <div
-                id="weakSound"
-                style="height: fit-content;"
-                cdkDropList
-                [cdkDropListData]="weakSound"
-                class="example-list"
-                (cdkDropListDropped)="dropWeakSound($event)"
-              >
-                <img
-                  class="card-img-top"
-                  src="assets/Img/letrero_sonidoDebil.png"
-                  style="width: 125px;"
-                />
-                <div class="example-box" *ngFor="let item of weakSound" cdkDrag>
-                  <img
-                    class="card-img-top"
-                    [src]="item.imagen"
-                    style="width: 80%; margin: 0px auto; cursor: pointer;"
-                  />
-                </div>
+            <div id="setHerbivoros" style="height: fit-content;" cdkDropList [cdkDropListData]="setHerbivoros"
+              class="example-list" (cdkDropListDropped)="dropHerbivoro($event)">
+              <img class="card-img-top" src="assets/Img/letrero_herbivoros.png" style="width: 125px;" />
+              <div class="example-box" *ngFor="let item of setHerbivoros" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+
+    <div class="container wrapper" *ngIf="habilitar == 2">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 p-0 mb-2">
+          <label style="margin: 15px 0px; text-align: initial;">
+            <b>Arrastra las imágenes de los animales al grupo al que
+              pertenecen</b>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 p-0">
+          <div class="example-container" style="display: inline-flex;">
+            <div id="animalesNivel2" style="margin-right: auto; height: fit-content;" cdkDropList
+              [cdkDropListData]="animalesNivel2" class="example-list" (cdkDropListDropped)="dropTotal($event)">
+              <div class="example-box" *ngFor="let item of animalesNivel2" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
+              </div>
+            </div>
+          </div>
+
+          <div class="example-container" style="display: inline-flex;">
+            <div id="set2Paws" style="
+                  margin-right: auto;
+                  margin-left: auto;
+                  height: fit-content;
+                " cdkDropList [cdkDropListData]="set2Paws" class="example-list"
+              (cdkDropListDropped)="drop2Paws($event)">
+              <img class="card-img-top" src="assets/Img/letrero_tienen2Patas.png" style="width: 125px;" />
+              <div class="example-box" *ngFor="let item of set2Paws" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
+              </div>
+            </div>
+
+            <div id="set3Paws" style="height: fit-content;" cdkDropList [cdkDropListData]="set3Paws"
+              class="example-list" (cdkDropListDropped)="drop4Paws($event)">
+              <img class="card-img-top" src="assets/Img/letrero_tienen4Patas.png" style="width: 125px;" />
+              <div class="example-box" *ngFor="let item of set3Paws" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container wrapper" *ngIf="habilitar == 3">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 p-0 mb-2">
+          <label style="margin: 15px 0px; text-align: initial;">
+            <b>Arrastra las imágenes de los animales al grupo al que
+              pertenecen</b>
+          </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-10 p-0">
+          <div class="example-container" style="display: inline-flex;">
+            <div id="animalesNivel3" style="margin-right: auto; height: fit-content;" cdkDropList
+              [cdkDropListData]="animalesNivel3" class="example-list" (cdkDropListDropped)="dropTotal($event)">
+              <div class="example-box" *ngFor="let item of animalesNivel3" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
+              </div>
+            </div>
+          </div>
+
+          <div class="example-container" style="display: inline-flex;">
+            <div id="loudSound" style="
+                  margin-right: auto;
+                  margin-left: auto;
+                  height: fit-content;
+                " cdkDropList [cdkDropListData]="loudSound" class="example-list"
+              (cdkDropListDropped)="dropLoudSound($event)">
+              <img class="card-img-top" src="assets/Img/letrero_sonidoFuerte.png" style="width: 125px;" />
+              <div class="example-box" *ngFor="let item of loudSound" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
+              </div>
+            </div>
+
+            <div id="weakSound" style="height: fit-content;" cdkDropList [cdkDropListData]="weakSound"
+              class="example-list" (cdkDropListDropped)="dropWeakSound($event)">
+              <img class="card-img-top" src="assets/Img/letrero_sonidoDebil.png" style="width: 125px;" />
+              <div class="example-box" *ngFor="let item of weakSound" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

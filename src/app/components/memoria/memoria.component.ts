@@ -22,7 +22,7 @@ export class MemoriaComponent implements OnInit {
   nivel2: any;
   nivel3;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.nivel1 = [
@@ -142,9 +142,10 @@ export class MemoriaComponent implements OnInit {
   }
 
   iniciar() {
+    this.resetearJuego();
     setTimeout(() => {
       this.iniciarJuego();
-    }, 1000);
+    }, 800);
   }
 
   //Reinicia el juego
@@ -152,10 +153,11 @@ export class MemoriaComponent implements OnInit {
     setTimeout(() => {
       this.iniciarJuego();
     }, 1000);
+    this.validator = 0;
     this.aciertos = 0;
     this.habilitar = 0;
     var juego = document.getElementById('juego');
-    juego.style.opacity = '0.3';
+    juego.style.opacity = '1';
     this.intentos = 0;
     this.cartas.sort(function () {
       return Math.random() - 0.5;

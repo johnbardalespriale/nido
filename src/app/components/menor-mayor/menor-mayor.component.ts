@@ -30,8 +30,14 @@ export class MenorMayorComponent implements OnInit {
   nivel1_1: any[];
   nivel2_1: any[];
   nivel3_1: any[];
+  signo1: any[];
+  signo2: any[];
+  signo3: any[];
+  signo4: any[];
+  signo5: any[];
+  signo6: any[];
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.nivels = [
@@ -46,6 +52,12 @@ export class MenorMayorComponent implements OnInit {
     this.todo4 = [];
     this.todo5 = [];
     this.todo6 = [];
+    this.signo1 = [];
+    this.signo2 = [];
+    this.signo3 = [];
+    this.signo4 = [];
+    this.signo5 = [];
+    this.signo6 = [];
 
     this.done = [
       { imagen: 'assets/Img/signo_igual.png', value: '=', id: '1' },
@@ -172,153 +184,208 @@ export class MenorMayorComponent implements OnInit {
     });
   }
 
+
   border(i) {
-    console.log('indice', i);
     var signo = document.getElementById(i);
     signo.style.border = '8px solid #24ce22';
-    console.log('123', signo);
   }
 
   wrong(i) {
-    console.log('error', i);
     var error = document.getElementById(i);
     error.style.border = '8px solid rgb(220 8 8)';
-    console.log('objeto', error);
   }
 
   drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-    } else {
-      transferArrayItem(
-        event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex
-      );
-      this.cont = 0;
-      if (event.container.data.length === 6) {
-        for (let i in event.container.data) {
+    if (this.signo1.length <= 1 && this.signo2.length <= 1 && this.signo3.length <= 1 && this.signo4.length <= 1
+      && this.signo5.length <= 1 && this.signo6.length <= 1) {
+      if (event.previousContainer === event.container) {
+        moveItemInArray(
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+      } else {
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+
+        if (this.signo1.length >= 2) {
           let valor: any;
-          valor = event.container.data[i];
-          var signo: String;
-          signo = valor.value;
-
-          if (signo === '>') {
-            if (
-              this.selectedNivel === 'Nivel 1' &&
-              this.nivel1[i].number > this.nivel1_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else if (
-              this.selectedNivel === 'Nivel 2' &&
-              this.nivel2[i].number > this.nivel2_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else if (
-              this.selectedNivel === 'Nivel 3' &&
-              this.nivel3[i].number > this.nivel3_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else {
-              setTimeout(() => {
-                this.wrong(i);
-              }, 500);
-            }
-          } else if (signo === '<') {
-            if (
-              this.selectedNivel === 'Nivel 1' &&
-              this.nivel1[i].number < this.nivel1_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else if (
-              this.selectedNivel === 'Nivel 2' &&
-              this.nivel2[i].number < this.nivel2_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else if (
-              this.selectedNivel === 'Nivel 3' &&
-              this.nivel3[i].number < this.nivel3_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else {
-              setTimeout(() => {
-                this.wrong(i);
-              }, 500);
-            }
-          } else if (signo === '=') {
-            if (
-              this.selectedNivel === 'Nivel 1' &&
-              this.nivel1[i].number === this.nivel1_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else if (
-              this.selectedNivel === 'Nivel 2 ' &&
-              this.nivel2[i].number === this.nivel2_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else if (
-              this.selectedNivel === 'Nivel 3 ' &&
-              this.nivel3[i].number === this.nivel3_1[i].number
-            ) {
-              this.cont++;
-              setTimeout(() => {
-                this.border(i);
-              }, 500);
-            } else {
-              setTimeout(() => {
-                this.wrong(i);
-              }, 500);
-            }
-          }
+          valor = this.signo1[1];
+          this.signo1.splice(1, 1);
+          this.done.push(valor);
+        } else if (this.signo2.length >= 2) {
+          let valor: any;
+          valor = this.signo2[1];
+          this.signo2.splice(1, 1);
+          this.done.push(valor);
+        } else if (this.signo3.length >= 2) {
+          let valor: any;
+          valor = this.signo3[1];
+          this.signo3.splice(1, 1);
+          this.done.push(valor);
+        } else if (this.signo4.length >= 2) {
+          let valor: any;
+          valor = this.signo4[1];
+          this.signo4.splice(1, 1);
+          this.done.push(valor);
+        } else if (this.signo5.length >= 2) {
+          let valor: any;
+          valor = this.signo5[1];
+          this.signo5.splice(1, 1);
+          this.done.push(valor);
+        } else if (this.signo6.length >= 2) {
+          let valor: any;
+          valor = this.signo6[1];
+          this.signo6.splice(1, 1);
+          this.done.push(valor);
         }
-        setTimeout(() => {
-          Swal.fire({
-            title: 'GANASTE',
-            text:
-              'Tienes ' +
-              this.cont +
-              " respuestas correctas, elige otro nivel o presiona 'Resetear' para volver a jugar",
-          });
-        }, 1000);
 
-        var answers = document.getElementById('answers');
-        answers.style.pointerEvents = 'none';
+        this.cont = 0;
+        if (this.done.length === 9) {
+          var arrayAnswers = [];
 
-        var signos = document.getElementById('signos');
-        signos.style.opacity = '0.3';
-        signos.style.pointerEvents = 'none';
+          arrayAnswers.push(this.signo1[0]);
+          arrayAnswers.push(this.signo2[0]);
+          arrayAnswers.push(this.signo3[0]);
+          arrayAnswers.push(this.signo4[0]);
+          arrayAnswers.push(this.signo5[0]);
+          arrayAnswers.push(this.signo6[0]);
+
+          setTimeout(() => {
+            for (let index in arrayAnswers) {
+              let valor = arrayAnswers[index];
+              var signo: String;
+              signo = valor.value;
+
+              if (signo === '>') {
+
+                if (
+                  this.selectedNivel === 'Nivel 1' &&
+                  this.nivel1[index].number > this.nivel1_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+                } else if (
+                  this.selectedNivel === 'Nivel 2' &&
+                  this.nivel2[index].number > this.nivel2_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+
+                } else if (
+                  this.selectedNivel === 'Nivel 3' &&
+                  this.nivel3[index].number > this.nivel3_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+
+                } else {
+                  setTimeout(() => {
+                    this.wrong(index);
+                  }, 500);
+                }
+
+              } else if (signo === '<') {
+
+                if (
+                  this.selectedNivel === 'Nivel 1' &&
+                  this.nivel1[index].number < this.nivel1_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+                } else if (
+                  this.selectedNivel === 'Nivel 2' &&
+                  this.nivel2[index].number < this.nivel2_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+                  console.log(this.cont, "cont");
+                } else if (
+                  this.selectedNivel === 'Nivel 3' &&
+                  this.nivel3[index].number < this.nivel3_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+
+                } else {
+                  setTimeout(() => {
+                    this.wrong(index);
+                  }, 500);
+                }
+              } else if (signo === '=') {
+                if (
+                  this.selectedNivel === 'Nivel 1' &&
+                  this.nivel1[index].number === this.nivel1_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+                } else if (
+                  this.selectedNivel === 'Nivel 2' &&
+                  this.nivel2[index].number === this.nivel2_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+                  console.log(this.cont, "cont");
+                } else if (
+                  this.selectedNivel === 'Nivel 3' &&
+                  this.nivel3[index].number === this.nivel3_1[index].number
+                ) {
+                  this.cont++;
+                  setTimeout(() => {
+                    this.border(index);
+                  }, 500);
+
+                } else {
+                  setTimeout(() => {
+                    this.wrong(index);
+                  }, 500);
+                }
+              }
+            }
+          }, 500);
+
+          setTimeout(() => {
+            Swal.fire({
+              title: 'GANASTE',
+              text:
+                'Tienes ' +
+                this.cont +
+                " respuestas correctas, elige otro nivel o presiona 'Resetear' para volver a jugar",
+            });
+          }, 700);
+
+          var answers = document.getElementById('answers');
+          answers.style.pointerEvents = 'none';
+
+          var signos = document.getElementById('signos');
+          signos.style.opacity = '0.3';
+          signos.style.pointerEvents = 'none';
+        }
       }
     }
   }
+
+
 
   resetear(show) {
     this.cont = 0;
@@ -342,54 +409,32 @@ export class MenorMayorComponent implements OnInit {
       { imagen: 'assets/Img/signo_menor.png', value: '<' },
     ];
 
+    this.signo1.pop();
+    this.signo2.pop();
+    this.signo3.pop();
+    this.signo4.pop();
+    this.signo5.pop();
+    this.signo6.pop();
+
+    setTimeout(() => {
+      var answers = document.getElementById('answers');
+      answers.style.opacity = '1';
+      answers.style.pointerEvents = 'inherit';
+
+      var signos = document.getElementById('signos');
+      signos.style.opacity = '1';
+      signos.style.pointerEvents = 'inherit';
+    }, 500);
+
     if (show === 'Nivel 1') {
       this.habilitar = 1;
 
-      while (this.todo1.length > 0) {
-        this.todo1.pop();
-      }
-
-      setTimeout(() => {
-        var answers = document.getElementById('answers');
-        answers.style.opacity = '1';
-        answers.style.pointerEvents = 'inherit';
-
-        var signos = document.getElementById('signos');
-        signos.style.opacity = '1';
-        signos.style.pointerEvents = 'inherit';
-      }, 500);
     } else if (show === 'Nivel 2') {
       this.habilitar = 2;
 
-      while (this.todo1.length > 0) {
-        this.todo1.pop();
-      }
-
-      setTimeout(() => {
-        var answers = document.getElementById('answers');
-        answers.style.opacity = '1';
-        answers.style.pointerEvents = 'inherit';
-
-        var signos = document.getElementById('signos');
-        signos.style.opacity = '1';
-        signos.style.pointerEvents = 'inherit';
-      }, 500);
     } else if (show === 'Nivel 3') {
       this.habilitar = 3;
 
-      while (this.todo1.length > 0) {
-        this.todo1.pop();
-      }
-
-      setTimeout(() => {
-        var answers = document.getElementById('answers');
-        answers.style.opacity = '1';
-        answers.style.pointerEvents = 'inherit';
-
-        var signos = document.getElementById('signos');
-        signos.style.opacity = '1';
-        signos.style.pointerEvents = 'inherit';
-      }, 500);
     }
   }
 }
