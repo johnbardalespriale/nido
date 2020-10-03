@@ -159,6 +159,7 @@ export class MemoriaComponent implements OnInit {
     var juego = document.getElementById('juego');
     juego.style.opacity = '1';
     this.intentos = 0;
+    this.validator = 0;
     this.cartas.sort(function () {
       return Math.random() - 0.5;
     });
@@ -232,6 +233,7 @@ export class MemoriaComponent implements OnInit {
   validarSiLasCartasSonDiferentes() {
     //Verificamos si ya hay 2 cartas seleccionadas y si son iguales
     if (this.valorDeLaJugada1 !== this.valorDeLaJugada2) {
+      this.validator = 0;
       setTimeout(() => {
         this.reemplazarImagenDeLaCarta(
           this.idDeLaJugada1,
@@ -242,12 +244,12 @@ export class MemoriaComponent implements OnInit {
           'assets/Img/Pioneras-00.jpg'
         );
         this.vaciar();
-        this.validator = 0;
       }, 600);
     }
   }
 
   validarSiLasCartasSonIguales() {
+
     if (
       this.valorDeLaJugada1 === this.valorDeLaJugada2 &&
       this.cartas[parseInt(this.idDeLaJugada1)].seleccion === false &&
@@ -255,10 +257,14 @@ export class MemoriaComponent implements OnInit {
     ) {
       this.cartas[parseInt(this.idDeLaJugada1)].seleccion = true;
       this.cartas[parseInt(this.idDeLaJugada2)].seleccion = true;
+
+      var carta1 = document.getElementById(this.idDeLaJugada1);
+      carta1.style.pointerEvents = 'none';
+      var carta2 = document.getElementById(this.idDeLaJugada2);
+      carta2.style.pointerEvents = 'none';
+
       this.vaciar();
-      setTimeout(() => {
-        this.validator = 0;
-      }, 600);
+      this.validator = 0;
     }
   }
 

@@ -262,25 +262,26 @@
           </div>
 
         </div>
-
-        <div class="col-md-3">
-          <div>
-            <div class="movie-block" *ngFor="let nivel of nivel3_1 | slice: 0:6; let i = index">
-              <img [src]="nivel.imagen" alt="" width="140px" style="border: 8px solid #292961" />
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div id="signos" class="example-container" style="margin-top: 25px">
-        <div cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="done" class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of done" cdkDrag>
-            <img [src]="item.imagen" alt="" width="70px" />
+      <div class="col-md-3">
+        <div>
+          <div class="movie-block" *ngFor="let nivel of nivel3_1 | slice: 0:6; let i = index">
+            <img [src]="nivel.imagen" alt="" width="140px" style="border: 8px solid #292961" />
           </div>
         </div>
       </div>
     </div>
+
+    <div id="signos" class="example-container" style="margin-top: 25px">
+      <div cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="done" class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>
+          <img [src]="item.imagen" alt="" width="70px" />
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </body>
 
