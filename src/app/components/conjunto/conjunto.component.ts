@@ -18,9 +18,12 @@ export class ConjuntoComponent implements OnInit {
   caja_verde = [];
   caja_naranja = [];
   caja_morado = [];
+  caja_marron = [];
+  caja_azul = [];
+  caja_rojo = [];
   cont: number;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
     this.nivel1 = [
@@ -82,7 +85,7 @@ export class ConjuntoComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel1.length === 9) {
+      if (this.nivel1.length === 0) {
         Swal.fire({
           title: 'Identicaste el color',
           text:
@@ -107,6 +110,18 @@ export class ConjuntoComponent implements OnInit {
         var cajaMorado = document.getElementById('cajaMorado');
         cajaMorado.style.opacity = '0.3';
         cajaMorado.style.pointerEvents = 'none';
+
+        var cajaMarron = document.getElementById('cajaMarron');
+        cajaMarron.style.opacity = '0.3';
+        cajaMarron.style.pointerEvents = 'none';
+
+        var cajaAzul = document.getElementById('cajaAzul');
+        cajaAzul.style.opacity = '0.3';
+        cajaAzul.style.pointerEvents = 'none';
+
+        var cajaRojo = document.getElementById('cajaRojo');
+        cajaRojo.style.opacity = '0.3';
+        cajaRojo.style.pointerEvents = 'none';
       }
     }
   }
@@ -126,7 +141,7 @@ export class ConjuntoComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel1.length === 9) {
+      if (this.nivel1.length === 0) {
         Swal.fire({
           title: 'Identicaste el color',
           text:
@@ -151,6 +166,18 @@ export class ConjuntoComponent implements OnInit {
         var cajaMorado = document.getElementById('cajaMorado');
         cajaMorado.style.opacity = '0.3';
         cajaMorado.style.pointerEvents = 'none';
+
+        var cajaMarron = document.getElementById('cajaMarron');
+        cajaMarron.style.opacity = '0.3';
+        cajaMarron.style.pointerEvents = 'none';
+
+        var cajaAzul = document.getElementById('cajaAzul');
+        cajaAzul.style.opacity = '0.3';
+        cajaAzul.style.pointerEvents = 'none';
+
+        var cajaRojo = document.getElementById('cajaRojo');
+        cajaRojo.style.opacity = '0.3';
+        cajaRojo.style.pointerEvents = 'none';
       }
     }
   }
@@ -170,7 +197,7 @@ export class ConjuntoComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel1.length === 9) {
+      if (this.nivel1.length === 0) {
         Swal.fire({
           title: 'Identicaste el color',
           text:
@@ -195,6 +222,14 @@ export class ConjuntoComponent implements OnInit {
         var cajaMorado = document.getElementById('cajaMorado');
         cajaMorado.style.opacity = '0.3';
         cajaMorado.style.pointerEvents = 'none';
+
+        var cajaMarron = document.getElementById('cajaMarron');
+        cajaMarron.style.opacity = '0.3';
+        cajaMarron.style.pointerEvents = 'none';
+
+        var cajaAzul = document.getElementById('cajaAzul');
+        cajaAzul.style.opacity = '0.3';
+        cajaAzul.style.pointerEvents = 'none';
       }
     }
   }
@@ -214,7 +249,7 @@ export class ConjuntoComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel1.length === 9) {
+      if (this.nivel1.length === 0) {
         Swal.fire({
           title: 'Identicaste el color',
           text:
@@ -239,6 +274,186 @@ export class ConjuntoComponent implements OnInit {
         var cajaMorado = document.getElementById('cajaMorado');
         cajaMorado.style.opacity = '0.3';
         cajaMorado.style.pointerEvents = 'none';
+
+        var cajaMarron = document.getElementById('cajaMarron');
+        cajaMarron.style.opacity = '0.3';
+        cajaMarron.style.pointerEvents = 'none';
+
+        var cajaAzul = document.getElementById('cajaAzul');
+        cajaAzul.style.opacity = '0.3';
+        cajaAzul.style.pointerEvents = 'none';
+
+        var cajaRojo = document.getElementById('cajaRojo');
+        cajaRojo.style.opacity = '0.3';
+        cajaRojo.style.pointerEvents = 'none';
+      }
+    }
+  }
+
+  dropMarron(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      if (this.nivel1.length === 0) {
+        Swal.fire({
+          title: 'Identicaste el color',
+          text:
+            '¡Lo lograste, identificaste el color de los objetos correctamente!',
+        });
+        var objects = document.getElementById('objects');
+        objects.style.opacity = '0.3';
+        objects.style.pointerEvents = 'none';
+
+        var cajaAmarilla = document.getElementById('cajaAmarilla');
+        cajaAmarilla.style.opacity = '0.3';
+        cajaAmarilla.style.pointerEvents = 'none';
+
+        var cajaVerde = document.getElementById('cajaVerde');
+        cajaVerde.style.opacity = '0.3';
+        cajaVerde.style.pointerEvents = 'none';
+
+        var cajaNaranja = document.getElementById('cajaNaranja');
+        cajaNaranja.style.opacity = '0.3';
+        cajaNaranja.style.pointerEvents = 'none';
+
+        var cajaMorado = document.getElementById('cajaMorado');
+        cajaMorado.style.opacity = '0.3';
+        cajaMorado.style.pointerEvents = 'none';
+
+        var cajaMarron = document.getElementById('cajaMarron');
+        cajaMarron.style.opacity = '0.3';
+        cajaMarron.style.pointerEvents = 'none';
+
+        var cajaAzul = document.getElementById('cajaAzul');
+        cajaAzul.style.opacity = '0.3';
+        cajaAzul.style.pointerEvents = 'none';
+
+        var cajaRojo = document.getElementById('cajaRojo');
+        cajaRojo.style.opacity = '0.3';
+        cajaRojo.style.pointerEvents = 'none';
+      }
+    }
+  }
+
+  dropAzul(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      if (this.nivel1.length === 0) {
+        Swal.fire({
+          title: 'Identicaste el color',
+          text:
+            '¡Lo lograste, identificaste el color de los objetos correctamente!',
+        });
+        var objects = document.getElementById('objects');
+        objects.style.opacity = '0.3';
+        objects.style.pointerEvents = 'none';
+
+        var cajaAmarilla = document.getElementById('cajaAmarilla');
+        cajaAmarilla.style.opacity = '0.3';
+        cajaAmarilla.style.pointerEvents = 'none';
+
+        var cajaVerde = document.getElementById('cajaVerde');
+        cajaVerde.style.opacity = '0.3';
+        cajaVerde.style.pointerEvents = 'none';
+
+        var cajaNaranja = document.getElementById('cajaNaranja');
+        cajaNaranja.style.opacity = '0.3';
+        cajaNaranja.style.pointerEvents = 'none';
+
+        var cajaMorado = document.getElementById('cajaMorado');
+        cajaMorado.style.opacity = '0.3';
+        cajaMorado.style.pointerEvents = 'none';
+
+        var cajaMarron = document.getElementById('cajaMarron');
+        cajaMarron.style.opacity = '0.3';
+        cajaMarron.style.pointerEvents = 'none';
+
+        var cajaAzul = document.getElementById('cajaAzul');
+        cajaAzul.style.opacity = '0.3';
+        cajaAzul.style.pointerEvents = 'none';
+
+        var cajaRojo = document.getElementById('cajaRojo');
+        cajaRojo.style.opacity = '0.3';
+        cajaRojo.style.pointerEvents = 'none';
+      }
+    }
+  }
+
+  dropRojo(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
+
+      if (this.nivel1.length === 0) {
+        Swal.fire({
+          title: 'Identicaste el color',
+          text:
+            '¡Lo lograste, identificaste el color de los objetos correctamente!',
+        });
+        var objects = document.getElementById('objects');
+        objects.style.opacity = '0.3';
+        objects.style.pointerEvents = 'none';
+
+        var cajaAmarilla = document.getElementById('cajaAmarilla');
+        cajaAmarilla.style.opacity = '0.3';
+        cajaAmarilla.style.pointerEvents = 'none';
+
+        var cajaVerde = document.getElementById('cajaVerde');
+        cajaVerde.style.opacity = '0.3';
+        cajaVerde.style.pointerEvents = 'none';
+
+        var cajaNaranja = document.getElementById('cajaNaranja');
+        cajaNaranja.style.opacity = '0.3';
+        cajaNaranja.style.pointerEvents = 'none';
+
+        var cajaMorado = document.getElementById('cajaMorado');
+        cajaMorado.style.opacity = '0.3';
+        cajaMorado.style.pointerEvents = 'none';
+
+        var cajaMarron = document.getElementById('cajaMarron');
+        cajaMarron.style.opacity = '0.3';
+        cajaMarron.style.pointerEvents = 'none';
+
+        var cajaAzul = document.getElementById('cajaAzul');
+        cajaAzul.style.opacity = '0.3';
+        cajaAzul.style.pointerEvents = 'none';
+
+        var cajaRojo = document.getElementById('cajaRojo');
+        cajaRojo.style.opacity = '0.3';
+        cajaRojo.style.pointerEvents = 'none';
       }
     }
   }
@@ -280,5 +495,32 @@ export class ConjuntoComponent implements OnInit {
       }
     }
     return answer === 'morado';
+  }
+
+  evenPredicateMarron(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'marron';
+  }
+
+  evenPredicateAzul(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'celeste';
+  }
+
+  evenPredicateRojo(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'rojo';
   }
 }

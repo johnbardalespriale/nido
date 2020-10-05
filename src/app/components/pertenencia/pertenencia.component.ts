@@ -25,10 +25,13 @@ export class PertenenciaComponent implements OnInit {
   weakSound: any[];
   loudSound: any[];
   selectedNivel: string;
+  able: number;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.able = 0;
+
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
       { nivel: 'Nivel 2', selected: false },
@@ -75,6 +78,25 @@ export class PertenenciaComponent implements OnInit {
     this.animales.sort(function () {
       return Math.random() - 0.5;
     });
+  }
+
+  message1() {
+
+
+    setInterval(() => {
+      console.log(this.able, "holita255");
+      if (this.able === 1) {
+        Swal.fire({
+          icon: 'error',
+          text: 'Grupo equivocado',
+        });
+
+        console.log("holita");
+
+        //this.able = 0;
+      }
+    }, 5000);
+
   }
 
   dropTotal(event: CdkDragDrop<string[]>) {
@@ -414,6 +436,26 @@ export class PertenenciaComponent implements OnInit {
         });
       }
     }
+  }
+
+  evenPredicateCarnivoros(item: CdkDrag<any>) {
+
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+
+    return answer === 'carnivoro';
+  }
+
+  evenPredicateHerbivoro(item: CdkDrag<any>) {
+    for (var i in item.data) {
+      if (item.data.hasOwnProperty(i)) {
+        var answer = item.data[i];
+      }
+    }
+    return answer === 'herbivoro';
   }
 
   resetear(show) {
