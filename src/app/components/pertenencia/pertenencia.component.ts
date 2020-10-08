@@ -25,12 +25,10 @@ export class PertenenciaComponent implements OnInit {
   weakSound: any[];
   loudSound: any[];
   selectedNivel: string;
-  able: number;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.able = 0;
 
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
@@ -80,25 +78,6 @@ export class PertenenciaComponent implements OnInit {
     });
   }
 
-  message1() {
-
-
-    setInterval(() => {
-      console.log(this.able, "holita255");
-      if (this.able === 1) {
-        Swal.fire({
-          icon: 'error',
-          text: 'Grupo equivocado',
-        });
-
-        console.log("holita");
-
-        //this.able = 0;
-      }
-    }, 5000);
-
-  }
-
   dropTotal(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(
@@ -132,13 +111,18 @@ export class PertenenciaComponent implements OnInit {
       );
 
       let cont = 0;
-
       for (let i in event.container.data) {
         let valor: any;
         valor = event.container.data[i];
         var name: String;
         name = valor.name;
         if (name != 'carnivoro') {
+          let animal: any;
+          var index = Number(i);
+          animal = this.setCarnivoros[i];
+          this.setCarnivoros.splice(index, 1);
+          this.animales.push(animal);
+
           Swal.fire({
             icon: 'error',
             text: 'Grupo equivocado',
@@ -193,6 +177,12 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != 'herbivoro') {
+          let animal: any;
+          var index = Number(i);
+          animal = this.setHerbivoros[i];
+          this.setHerbivoros.splice(index, 1);
+          this.animales.push(animal);
+
           Swal.fire({
             icon: 'error',
             text: 'Grupo equivocado',
@@ -246,6 +236,12 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != '2_patas') {
+          let animal: any;
+          var index = Number(i);
+          animal = this.set2Paws[i];
+          this.set2Paws.splice(index, 1);
+          this.animalesNivel2.push(animal);
+
           Swal.fire({
             icon: 'error',
             text: 'Grupo equivocado',
@@ -299,6 +295,12 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != '4_patas') {
+          let animal: any;
+          var index = Number(i);
+          animal = this.set3Paws[i];
+          this.set3Paws.splice(index, 1);
+          this.animalesNivel2.push(animal);
+
           Swal.fire({
             icon: 'error',
             text: 'Grupo equivocado',
@@ -353,6 +355,12 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != 'loudSound') {
+          let animal: any;
+          var index = Number(i);
+          animal = this.loudSound[i];
+          this.loudSound.splice(index, 1);
+          this.animalesNivel3.push(animal);
+
           Swal.fire({
             icon: 'error',
             text: 'Grupo equivocado',
@@ -407,6 +415,11 @@ export class PertenenciaComponent implements OnInit {
         var name: String;
         name = valor.name;
         if (name != 'weakSound') {
+          let animal: any;
+          var index = Number(i);
+          animal = this.weakSound[i];
+          this.weakSound.splice(index, 1);
+          this.animalesNivel3.push(animal);
           Swal.fire({
             icon: 'error',
             text: 'Grupo equivocado',
@@ -436,26 +449,6 @@ export class PertenenciaComponent implements OnInit {
         });
       }
     }
-  }
-
-  evenPredicateCarnivoros(item: CdkDrag<any>) {
-
-    for (var i in item.data) {
-      if (item.data.hasOwnProperty(i)) {
-        var answer = item.data[i];
-      }
-    }
-
-    return answer === 'carnivoro';
-  }
-
-  evenPredicateHerbivoro(item: CdkDrag<any>) {
-    for (var i in item.data) {
-      if (item.data.hasOwnProperty(i)) {
-        var answer = item.data[i];
-      }
-    }
-    return answer === 'herbivoro';
   }
 
   resetear(show) {

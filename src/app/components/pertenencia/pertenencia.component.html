@@ -66,7 +66,7 @@
         <div class="row col-md-8 example-list-2" cdkDropList [cdkDropListData]="animales"
           style="text-align: center; padding: 0px; height: fit-content;margin-right: 20px;"
           (cdkDropListDropped)="dropTotal($event)">
-          <div id="animales" class="example-box col-md-2" *ngFor="let item of animales" [cdkDragData]="item" cdkDrag>
+          <div id="animales" class="example-box col-md-2" *ngFor="let item of animales" cdkDrag>
             <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;" />
           </div>
         </div>
@@ -77,7 +77,7 @@
                   margin-left: auto;
                   height: fit-content;
                 " cdkDropList [cdkDropListData]="setCarnivoros" class="example-list"
-            (cdkDropListDropped)="dropCarnivoro($event)" [cdkDropListEnterPredicate]="evenPredicateCarnivoros">
+            (cdkDropListDropped)="dropCarnivoro($event)">
             <img class="card-img-top" src="assets/Img/letrero_carnivoros.png" style="width: 125px;" />
             <div class="example-box" *ngFor="let item of setCarnivoros" cdkDrag>
               <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
@@ -85,8 +85,7 @@
           </div>
 
           <div id="setHerbivoros" style="height: fit-content;" cdkDropList [cdkDropListData]="setHerbivoros"
-            class="example-list" (cdkDropListDropped)="dropHerbivoro($event)"
-            [cdkDropListEnterPredicate]="evenPredicateHerbivoro">
+            class="example-list" (cdkDropListDropped)="dropHerbivoro($event)">
             <img class="card-img-top" src="assets/Img/letrero_herbivoros.png" style="width: 125px;" />
             <div class="example-box" *ngFor="let item of setHerbivoros" cdkDrag>
               <img class="card-img-top" [src]="item.imagen" style="width: 80%; margin: 0px auto; cursor: pointer;" />
