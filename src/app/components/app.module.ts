@@ -30,6 +30,7 @@ import { CuadroDobleComponent } from './cuadro-doble/cuadro-doble.component';
 import { ConjuntoComponent } from './conjunto/conjunto.component';
 import { TrazosComponent } from './trazos/trazos.component';
 import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoetricas.component';
+import { PuntosComponent } from './puntos/puntos.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoe
     ConjuntoComponent,
     TrazosComponent,
     FigurasGemoetricasComponent,
+    PuntosComponent,
   ],
   imports: [
     BrowserModule,
