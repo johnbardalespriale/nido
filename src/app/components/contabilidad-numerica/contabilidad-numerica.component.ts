@@ -214,7 +214,7 @@ export class ContabilidadNumericaComponent implements OnInit {
   matchCorrect(answer) {
     if (this.answer === answer) {
       Swal.fire({
-        title: 'EXCELENTE',
+        title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
     } else if (this.answer != 0) {
@@ -240,7 +240,7 @@ export class ContabilidadNumericaComponent implements OnInit {
 
     if (this.answerImage === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion1') {
       Swal.fire({
-        title: 'EXCELENTE',
+        title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
       var numbers = document.getElementById('numbers');
@@ -248,7 +248,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else if (this.answerImage2 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion2') {
       Swal.fire({
-        title: 'EXCELENTE',
+        title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
       var numbers = document.getElementById('numbers2');
@@ -256,7 +256,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else if (this.answerImage3 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion3') {
       Swal.fire({
-        title: 'EXCELENTE',
+        title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
       var numbers = document.getElementById('numbers3');

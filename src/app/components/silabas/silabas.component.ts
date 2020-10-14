@@ -99,7 +99,7 @@ export class SilabasComponent implements OnInit {
 
   answerCorrect() {
     Swal.fire({
-      title: 'Genial !!!',
+      title: '¡ Genial !',
       text: 'El número de sílabas es correcto',
     });
   }

@@ -43,8 +43,8 @@ export class IgualDiferenteComponent implements OnInit {
 
     setTimeout(() => {
       Swal.fire({
-        title: 'Lo encontraste',
-        text: 'Felicidades encontraste la figura semejante',
+        title: '¡FELICIDADES!',
+        text: 'Encontraste la figura semejante',
       });
     }, 1000);
   }

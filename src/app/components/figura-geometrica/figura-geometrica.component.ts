@@ -453,8 +453,8 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.opacity = '0.3';
         figuras.style.pointerEvents = 'none';
         Swal.fire({
-          title: 'GANASTE',
-          text: '!Lo lograste¡',
+          title: '¡GANASTE!',
+          text: 'Juego Finalizado',
         });
       } else if (
         this.done[0].name === 'circulo-verde' &&
@@ -467,8 +467,8 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'GANASTE',
-          text: '!Lo lograste¡',
+          title: '¡GANASTE!',
+          text: 'Juego Finalizado',
         });
       } else if (
         this.done[0].name === 'cuadrado-verde' &&
@@ -482,8 +482,8 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'GANASTE',
-          text: '!Lo lograste¡',
+          title: '¡GANASTE!',
+          text: 'Juego Finalizado',
         });
       }
     } else {
@@ -503,8 +503,8 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'GANASTE',
-          text: '!Lo lograste¡',
+          title: '¡GANASTE!',
+          text: 'Juego Finalizado',
         });
       } else if (
         this.done[0].name === 'circulo-verde' &&
@@ -517,8 +517,8 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'GANASTE',
-          text: '!Lo lograste¡',
+          title: '¡GANASTE!',
+          text: 'Juego Finalizado',
         });
       } else if (
         this.done[0].name === 'cuadrado-verde' &&
@@ -532,8 +532,8 @@ export class FiguraGeometricaComponent implements OnInit {
         figuras.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'GANASTE',
-          text: '!Lo lograste¡',
+          title: '¡GANASTE!',
+          text: 'Juego Finalizado',
         });
       }
     }

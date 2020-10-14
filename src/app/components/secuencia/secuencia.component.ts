@@ -223,8 +223,8 @@ export class SecuenciaComponent implements OnInit {
       }
 
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -245,8 +245,8 @@ export class SecuenciaComponent implements OnInit {
       }
 
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -267,8 +267,8 @@ export class SecuenciaComponent implements OnInit {
       }
 
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -289,8 +289,8 @@ export class SecuenciaComponent implements OnInit {
         this.casita[i].disabled = true;
       }
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -311,8 +311,8 @@ export class SecuenciaComponent implements OnInit {
         this.resbaladera[i].disabled = true;
       }
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -333,8 +333,8 @@ export class SecuenciaComponent implements OnInit {
         this.levantarse[i].disabled = true;
       }
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -357,8 +357,8 @@ export class SecuenciaComponent implements OnInit {
         this.insecto[i].disabled = true;
       }
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -381,8 +381,8 @@ export class SecuenciaComponent implements OnInit {
         this.vaca[i].disabled = true;
       }
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }
@@ -405,8 +405,8 @@ export class SecuenciaComponent implements OnInit {
         this.lluvia[i].disabled = true;
       }
       Swal.fire({
-        title: 'ENCONTRASTE LA SECUENCIA',
-        text: '¡Felicidades!',
+        title: 'FELICIDADES',
+        text: 'Encontraste la secuencia',
       });
     }
   }

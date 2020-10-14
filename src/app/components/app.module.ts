@@ -31,6 +31,7 @@ import { ConjuntoComponent } from './conjunto/conjunto.component';
 import { TrazosComponent } from './trazos/trazos.component';
 import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoetricas.component';
 import { PuntosComponent } from './puntos/puntos.component';
+import { MemoriasComponent } from './memorias/memorias.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { PuntosComponent } from './puntos/puntos.component';
     TrazosComponent,
     FigurasGemoetricasComponent,
     PuntosComponent,
+    MemoriasComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,6 +19,7 @@ import { ConjuntoComponent } from './conjunto/conjunto.component';
 import { TrazosComponent } from './trazos/trazos.component';
 import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoetricas.component';
 import { PuntosComponent } from './puntos/puntos.component';
+import { MemoriasComponent } from './memorias/memorias.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -31,7 +32,7 @@ const routes: Routes = [
     component: ActividadesComponent,
   },
   {
-    path: 'memoria',
+    path: 'memoria1',
     component: MemoriaComponent,
   },
   {
@@ -93,6 +94,10 @@ const routes: Routes = [
   {
     path: 'puntos',
     component: PuntosComponent,
+  },
+  {
+    path: 'memoria',
+    component: MemoriasComponent,
   },
 ];
 

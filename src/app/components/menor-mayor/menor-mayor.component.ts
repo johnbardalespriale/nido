@@ -366,7 +366,7 @@ export class MenorMayorComponent implements OnInit {
 
           setTimeout(() => {
             Swal.fire({
-              title: 'JUEGO TERMINADO',
+              title: '¡JUEGO TERMINADO!',
               text:
                 'Tienes ' +
                 this.cont +

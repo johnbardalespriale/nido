@@ -245,7 +245,7 @@ export class MemoriaComponent implements OnInit {
     // Hacer clic y pulsar teclas son eventos.
     var evento = window.event;
     this.validator++;
-    console.log(this.validator, "validador");
+
     if (
       this.habilitar === 1 &&
       (this.validator === 1 || this.validator === 2)
