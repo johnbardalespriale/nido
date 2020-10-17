@@ -1,20 +1,311 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
 
 <body>
-    <section style="margin-top: 25px;font-family: math;">
-        <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
-            <div class="container">
-                <h1 class="consigna" style="text-align: center;">Trazos</h1>
-                <p class="lead">Unir los puntos siguiendo el orden de los números y descubrirás algo maravilloso.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="dotConnect">
-        <iframe class="frame" src="https://www.codeguppy.com/run.html?wNnhDoMB31ndKMf6gDx0" width=800></iframe>
+  <section style="margin-top: 25px;font-family: math;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+      <div class="container">
+        <h1 class="consigna" style="text-align: center;">Trazos</h1>
+        <p class="lead">Unir los puntos siguiendo el orden de los números y descubrirás algo maravilloso.</p>
+      </div>
     </div>
+  </section>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
+        <label style="margin: 15px 0px; text-align: initial;">
+          <b>Escoge el nivel del juego para empezar a jugar</b>
+        </label>
+
+        <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+          <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+            [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+            (click)="resetear(selectedNivel)">
+            {{ nivel.nivel }}
+          </label>
+        </div>
+
+        <div style="text-align: initial;">
+          <input type="button" value="Resetear" (click)="resetear(selectedNivel)" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container" style="margin-top: 25px; margin-bottom: 50px;" *ngIf="selectedNivel === 'Nivel 1'">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;">
+        <div class="parent" style="background-color: white;height: 314px;
+        width: 399px;border: 6px solid #181854;margin: auto;">
+          <div class="row">
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_0.png"
+                style="width: 24px;margin-bottom: 6px;margin-left: 42px;" (click)="prevalues(0)">
+            </div>
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-1">
+         
+            </div>
+            <div class="col-12 col-md-1">
+             
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea.png" *ngIf="punto1 === '0,1'"
+                style="width: 66px;margin-top: -14px;margin-left: -22px;margin-bottom: -12px;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_blanco.png" *ngIf="punto1 === '0'"
+                style="width: 66px;margin-top: -14px;margin-left: -22px;margin-bottom: -12px;visibility: hidden;">
+            </div>
+            <div class="col-12 col-md-1">       
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_9_blanco.png" *ngIf="punto10 === '0'"
+                style="width: 63px;margin-top: -11px;margin-left: -16px;margin-bottom: -23px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_9.png" *ngIf="punto10 === '8,9'"
+                style="width: 63px;margin-top: -11px;margin-left: -16px;margin-bottom: -23px;">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-1">
+                
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_1_blanco.png" *ngIf="punto2 === '0'"
+                style="width: 96px;margin-top: 2px;margin-left: -10px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_1.png" *ngIf="punto2 === '1,2'"
+                style="width: 96px;margin-top: 2px;margin-left: -10px;">
+            </div>
+            <div class="col-12 col-md-1">
+               
+            </div>
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_1.png" *ngIf="punto1 === '0'"
+                style="width: 28px;margin-top: 6px;margin-left: 16px;" (click)="draw(1)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_1.png" *ngIf="punto1 === '0,1'"
+                style="width: 28px;margin-top: 6px;margin-left: 16px;" (click)="prevalues(1)">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_9.png" *ngIf="punto9 === '0'"
+                style="width: 39px;margin-top: -3px;margin-left: 9px;" (click)="draw(9)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_9.png" *ngIf="punto9 === '8,9'"
+                style="width: 39px;margin-top: -3px;margin-left: 9px;" (click)="prevalues(9)">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_8_blanco.png" *ngIf="punto9 === '0'"
+                style="width: 94px;margin-left: -48px;margin-top: 15px;margin-bottom: -16px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_8.png" *ngIf="punto9 === '8,9'"
+                style="width: 94px;margin-left: -48px;margin-top: 15px;margin-bottom: -16px;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_2.png" *ngIf="punto2 === '0'"
+                style="width: 22px;margin-top: -32px;margin-left: 5px;" (click)="draw(2)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_2.png" *ngIf="punto2 === '1,2'"
+                style="width: 22px;margin-top: -32px;margin-left: 5px;" (click)="prevalues(2)">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_8.png" *ngIf="punto8 === '0'"
+                style="width: 29px;margin-left: 44px;margin-top: 4px;" (click)="draw(8)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_8.png" *ngIf="punto8 === '7,8'"
+                style="width: 29px;margin-left: 44px;margin-top: 4px;" (click)="prevalues(8)">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-1">
+              
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_2.png" *ngIf="punto3 === '2,3'"
+                style="width: 122px;margin-left: -34px;margin-top: -21px;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_2_blanco.png" *ngIf="punto3 === '0'"
+                style="width: 122px;margin-left: -34px;margin-top: -21px;visibility: hidden;">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_7_blanco.png" *ngIf="punto8 === '0'"
+                style="width: 113px;margin-top: -5px;margin-left: -65px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_7.png"  *ngIf="punto8 === '7,8'"
+                style="width: 113px;margin-top: -5px;margin-left: -27px;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_3.png" *ngIf="punto3 === '0'"
+                style="width: 32px;margin-top: -31px;margin-left: 17px;" (click)="draw(3)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_3.png" *ngIf="punto3 === '2,3'"
+                style="width: 32px;margin-top: -31px;margin-left: 17px;" (click)="prevalues(3)">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_7.png" *ngIf="punto7 === '0'"
+                style="width: 26px;margin-top: -25px;margin-left: -21px;" (click)="draw(7)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_7.png" *ngIf="punto7 === '6,7'"
+                style="width: 26px;margin-top: -25px;margin-left: -21px;" (click)="prevalues(7)">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_3_blanco.png" *ngIf="punto4 === '0'"
+                style="width: 84px;margin-top: -21px;margin-left: -58px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_3.png" *ngIf="punto4 === '3,4'"
+                style="width: 84px;margin-top: -21px;margin-left: -58px;">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_4_blanco.png" *ngIf="punto5 === '0'"
+                style="width: 110px;margin-top: 20px;margin-left: -63px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_4.png" *ngIf="punto5 === '4,5'"
+                style="width: 110px;margin-top: 20px;margin-left: -63px;">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_5.png" *ngIf="punto5 === '0'"
+                style="width: 12px;margin-left: 8px;margin-top: 11px;" (click)="draw(5)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_5.png" *ngIf="punto5 === '4,5'"
+                style="width: 12px;margin-left: 8px;margin-top: 11px;" (click)="prevalues(5)">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_5_blanco.png" *ngIf="punto6 === '0'"
+                style="width: 72px;margin-top: 29px;margin-left: -17px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_5.png" *ngIf="punto6 === '5,6'"
+                style="width: 72px;margin-top: 29px;margin-left: -17px;">
+            </div>
+            <div class="col-12 col-md-1">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_6_blanco.png" *ngIf="punto7 === '0'"
+                style="width: 16px;margin-top: -15px;margin-left: 13px;visibility: hidden;">
+                <img id="carro" class="card-img-top" src="assets/Img/linea_6.png" *ngIf="punto7 === '6,7'"
+                style="width: 16px;margin-top: -15px;margin-left: 13px;">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_4.png" *ngIf="punto4 === '0'"
+                style="width: 26px;margin-top: -48px;margin-left: 16px;" (click)="draw(4)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_4.png" *ngIf="punto4 === '3,4'"
+                style="width: 26px;margin-top: -48px;margin-left: 16px;" (click)="prevalues(4)">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+            <div class="col-12 col-md-2">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_6.png" *ngIf="punto6 === '0'"
+                style="width: 29px;margin-left: 21px;margin-top: -24px;" (click)="draw(6)">
+                <img id="carro" class="card-img-top" src="assets/Img/punto_6.png" *ngIf="punto6 === '5,6'"
+                style="width: 29px;margin-left: 21px;margin-top: -24px;" (click)="prevalues(6)">
+            </div>
+            <div class="col-12 col-md-1">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+  </div>
+
+ 
 </body>
 
 </html>
