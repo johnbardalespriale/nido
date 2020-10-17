@@ -207,8 +207,7 @@ export class HoraComponent implements OnInit {
       this.cont3++;
     } else {
       Swal.fire({
-        icon: 'error',
-        text: 'Respuesta incorrecta, vuelva a intentarlo',
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Respuesta incorrecta, vuelva a intentarlo</p>",
       });
     }
 

@@ -124,8 +124,7 @@ export class PertenenciaComponent implements OnInit {
           this.animales.push(animal);
 
           Swal.fire({
-            icon: 'error',
-            text: 'Grupo equivocado',
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -184,8 +183,7 @@ export class PertenenciaComponent implements OnInit {
           this.animales.push(animal);
 
           Swal.fire({
-            icon: 'error',
-            text: 'Grupo equivocado',
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -243,8 +241,7 @@ export class PertenenciaComponent implements OnInit {
           this.animalesNivel2.push(animal);
 
           Swal.fire({
-            icon: 'error',
-            text: 'Grupo equivocado',
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -302,8 +299,7 @@ export class PertenenciaComponent implements OnInit {
           this.animalesNivel2.push(animal);
 
           Swal.fire({
-            icon: 'error',
-            text: 'Grupo equivocado',
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -362,8 +358,7 @@ export class PertenenciaComponent implements OnInit {
           this.animalesNivel3.push(animal);
 
           Swal.fire({
-            icon: 'error',
-            text: 'Grupo equivocado',
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -421,8 +416,7 @@ export class PertenenciaComponent implements OnInit {
           this.weakSound.splice(index, 1);
           this.animalesNivel3.push(animal);
           Swal.fire({
-            icon: 'error',
-            text: 'Grupo equivocado',
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {

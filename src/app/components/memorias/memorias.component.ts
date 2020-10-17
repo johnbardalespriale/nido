@@ -56,18 +56,18 @@ function checkForMatch() {
 function mensaje (cont1){
   if(cont1 === 6 && favoriteSeason === 'Nivel 1' ){
     Swal.fire({
-      title: 'JUEGO TERMINADO',
-      text: 'Tuviste ' + intentos + ' intentos. ¡Excelente!',
+      title: 'EXCELENTE',
+      text: 'Tuviste ' + intentos + ' intentos. ¡Juego terminado!',
     });
   }else if(cont2 === 8 && favoriteSeason === 'Nivel 2' ){
     Swal.fire({
-      title: 'JUEGO TERMINADO',
-      text: 'Tuviste ' + intentos + ' intentos. ¡Excelente!',
+      title: 'EXCELENTE',
+      text: 'Tuviste ' + intentos + ' intentos. Juego terminado!',
     });
   }else if(cont3 === 10 && favoriteSeason === 'Nivel 3' ){
     Swal.fire({
-      title: 'JUEGO TERMINADO',
-      text: 'Tuviste ' + intentos + ' intentos. ¡Excelente!',
+      title: 'EXCELENTE',
+      text: 'Tuviste ' + intentos + ' intentos. Juego terminado!',
     });
   }
 }

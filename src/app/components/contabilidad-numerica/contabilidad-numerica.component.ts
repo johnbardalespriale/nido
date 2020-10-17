@@ -219,8 +219,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       });
     } else if (this.answer != 0) {
       Swal.fire({
-        icon: 'error',
-        text: 'Respuesta erronea, vuelva a iniciar el juego',
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Respuesta erronea, vuelva a iniciar el juego</p>",
       });
     }
   }
@@ -264,8 +263,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else {
       Swal.fire({
-        icon: 'error',
-        text: 'Respuesta incorrecta, vuelve a intentarlo',
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Respuesta incorrecta, vuelve a intentarlo</p>",
       });
     }
   }

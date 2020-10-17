@@ -101,9 +101,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else {
       Swal.fire({
-        icon: 'error',
-        title: 'Respuesta incorrecta',
-        text: 'Intentalo de nuevo, ¡tu puedes lograrlo!',
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:10px;'>Intentalo de nuevo, ¡tu puedes lograrlo!</p>",
       });
     }
   }

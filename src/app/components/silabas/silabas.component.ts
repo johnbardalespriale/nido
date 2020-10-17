@@ -299,8 +299,7 @@ export class SilabasComponent implements OnInit {
       }
     } else {
       Swal.fire({
-        icon: 'error',
-        text: 'Vuelve a intentarlo',
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Vuelve a intentarlo</p>",
       });
     }
   }

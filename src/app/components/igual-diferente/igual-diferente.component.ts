@@ -51,7 +51,7 @@ export class IgualDiferenteComponent implements OnInit {
 
   errorChoice() {
     Swal.fire({
-      text: 'Esa no es la figura. ¡Intentalo de nuevo!',
+      html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Esa no es la figura. ¡Intentalo de nuevo!</p>",
     });
   }
 }
