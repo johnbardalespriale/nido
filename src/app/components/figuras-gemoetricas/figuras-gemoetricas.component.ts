@@ -297,7 +297,7 @@ export class FigurasGemoetricasComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel2.length === 6) {
+      if (this.nivel2.length === 8) {
         Swal.fire({
           title: 'Identicaste las figuras',
           text:
@@ -425,7 +425,7 @@ export class FigurasGemoetricasComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel3.length === 8) {
+      if (this.nivel3.length === 10) {
         Swal.fire({
           title: 'Identicaste las figuras',
           text:
@@ -473,7 +473,7 @@ export class FigurasGemoetricasComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel3.length === 6) {
+      if (this.nivel3.length === 10) {
         Swal.fire({
           title: 'Identicaste las figuras',
           text:
@@ -517,7 +517,7 @@ export class FigurasGemoetricasComponent implements OnInit {
         event.currentIndex
       );
 
-      if (this.nivel3.length === 8) {
+      if (this.nivel3.length === 10) {
         Swal.fire({
           title: 'Identicaste las figuras',
           text:

@@ -15,6 +15,7 @@ export class ContabilidadNumericaComponent implements OnInit {
   nivel1: any[];
   nivel2: any[];
   nivel3: any[];
+  win: number;
 
   private currentImage: any;
   private currentImage2: any;
@@ -137,6 +138,8 @@ export class ContabilidadNumericaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.win = 0;
+
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
       { nivel: 'Nivel 2', selected: false },
@@ -217,6 +220,7 @@ export class ContabilidadNumericaComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+
     } else if (this.answer != 0) {
       Swal.fire({
         html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Respuesta erronea, vuelva a iniciar el juego</p>",
@@ -242,6 +246,7 @@ export class ContabilidadNumericaComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+      this.win++;
       var numbers = document.getElementById('numbers');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';
@@ -250,6 +255,7 @@ export class ContabilidadNumericaComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+      this.win++;
       var numbers = document.getElementById('numbers2');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';
@@ -258,6 +264,7 @@ export class ContabilidadNumericaComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+      this.win++;
       var numbers = document.getElementById('numbers3');
       numbers.style.pointerEvents = 'none';
       numbers.style.opacity = '0.3';

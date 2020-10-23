@@ -23,18 +23,6 @@
         <label style="margin: 15px 0px; text-align: initial;">
           <b>Escoge el nivel del juego para empezar a jugar</b>
         </label>
-        <!--mat-radio-group
-            aria-labelledby="example-radio-group-label"
-            class="radio-group"
-            [(ngModel)]="selectedNivel"
-          >
-            <mat-radio-button
-              *ngFor="let nivel of nivels"
-              [value]="nivel.nivel"
-            >
-              {{ nivel.nivel }}
-            </mat-radio-button>
-          </mat-radio-group-->
 
         <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
           <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
@@ -182,6 +170,12 @@
       </div>
     </div>
   </div>
+
+  <div *ngIf="win === 1">
+    <img class="win1" src="assets/Img/fireworks1.gif" style="position: absolute;;width: 56%;top: 425px;right: 0px;background-color: inherit;height: auto;">
+    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 420px;right: 342px;background-color: inherit;height: auto;">
+    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 425px;left: 0px;background-color: inherit;height: auto;">
+</div>
 </body>
 
 </html>

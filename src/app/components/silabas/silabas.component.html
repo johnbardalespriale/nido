@@ -141,6 +141,7 @@
         </div>
       </div>
     </div>
+
     <div class="row" style="margin-bottom: inherit;">
       <div class="col-md-3" *ngFor="let nivel of nivel4">
         <img [src]="nivel.imagen" />
@@ -261,6 +262,13 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div *ngIf="cont === 24">
+    <img class="win1" src="assets/Img/fireworks1.gif" style="position:fixed;width: 56%;top: 105px;right: 0px;background-color: inherit;height: auto;">
+    <img class="win2" src="assets/Img/fireworks3.gif" style="position:fixed;width: 50%;top: 90px;right: 342px;background-color: inherit;height: auto;">
+
+    <img class="win3" src="assets/Img/fireworks2.gif" style="position:fixed;width: 56%;top: 105px;left: 0px;background-color: inherit;height: auto;">
   </div>
 </body>
 

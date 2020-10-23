@@ -8,10 +8,12 @@ import Swal from 'sweetalert2';
 })
 export class MemoriasComponent implements OnInit {
 
+  winner: number;
 
   javascript(favoriteSeason){
-    const cards = document.querySelectorAll('.memory-card')as any as Array<HTMLElement>;
+    
 
+  const cards = document.querySelectorAll('.memory-card')as any as Array<HTMLElement>;
   let hasFlippedCard = false;
   let lockBoard = false;
   let firstCard, secondCard;
@@ -19,6 +21,7 @@ export class MemoriasComponent implements OnInit {
   let cont2 = 0;
   let cont3 = 0;
   let intentos = 0;
+  
 
 function flipCard() {
   if (lockBoard) return;
@@ -59,16 +62,27 @@ function mensaje (cont1){
       title: 'EXCELENTE',
       text: 'Tuviste ' + intentos + ' intentos. ¡Juego terminado!',
     });
+
+    var win = document.getElementById('win');
+    win.style.display = 'inherit';
+
   }else if(cont2 === 8 && favoriteSeason === 'Nivel 2' ){
     Swal.fire({
       title: 'EXCELENTE',
       text: 'Tuviste ' + intentos + ' intentos. Juego terminado!',
     });
+
+    var win = document.getElementById('win');
+    win.style.display = 'inherit';
+    
   }else if(cont3 === 10 && favoriteSeason === 'Nivel 3' ){
     Swal.fire({
       title: 'EXCELENTE',
       text: 'Tuviste ' + intentos + ' intentos. Juego terminado!',
     });
+    var win = document.getElementById('win');
+    win.style.display = 'inherit';
+    
   }
 }
 
@@ -115,6 +129,8 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
   ngOnInit(): void {
 
+    this.winner = 0;
+
     this.nivels = [
       { nivel: 'Nivel 1', selected: true },
       { nivel: 'Nivel 2', selected: false },
@@ -125,6 +141,9 @@ cards.forEach(card => card.addEventListener('click', flipCard));
   }
 
   iniciar() {
+
+    var win = document.getElementById('win');
+    win.style.display = 'none';
 
     setTimeout(() => {
       this.javascript(this.favoriteSeason);
@@ -137,6 +156,5 @@ cards.forEach(card => card.addEventListener('click', flipCard));
     }
 
   }
-
   
 }

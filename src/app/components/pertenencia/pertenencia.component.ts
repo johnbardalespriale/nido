@@ -25,10 +25,13 @@ export class PertenenciaComponent implements OnInit {
   weakSound: any[];
   loudSound: any[];
   selectedNivel: string;
+  win: number;
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.win = 0;
 
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
@@ -133,6 +136,8 @@ export class PertenenciaComponent implements OnInit {
       }
 
       if (this.animales.length === 0 && cont >= 3) {
+        this.win = 1;
+
         var animales = document.getElementById('animales');
         animales.style.opacity = '0.3';
         animales.style.pointerEvents = 'none';
@@ -192,6 +197,8 @@ export class PertenenciaComponent implements OnInit {
       }
 
       if (this.animales.length === 0 && cont >= 4) {
+        this.win = 1;
+
         var animales = document.getElementById('animales');
         animales.style.opacity = '0.3';
         animales.style.pointerEvents = 'none';
@@ -250,6 +257,8 @@ export class PertenenciaComponent implements OnInit {
       }
 
       if (this.animalesNivel2.length === 0 && cont >= 4) {
+        this.win = 1;
+
         var animalesNivel2 = document.getElementById('animalesNivel2');
         animalesNivel2.style.opacity = '0.3';
         animalesNivel2.style.pointerEvents = 'none';
@@ -308,6 +317,8 @@ export class PertenenciaComponent implements OnInit {
       }
 
       if (this.animalesNivel2.length === 0 && cont >= 4) {
+        this.win = 1;
+
         var animalesNivel2 = document.getElementById('animalesNivel2');
         animalesNivel2.style.opacity = '0.3';
         animalesNivel2.style.pointerEvents = 'none';
@@ -367,6 +378,8 @@ export class PertenenciaComponent implements OnInit {
       }
 
       if (this.animalesNivel3.length === 0 && cont >= 3) {
+        this.win = 1;
+
         var animalesNivel3 = document.getElementById('animalesNivel3');
         animalesNivel3.style.opacity = '0.3';
         animalesNivel3.style.pointerEvents = 'none';
@@ -425,6 +438,8 @@ export class PertenenciaComponent implements OnInit {
       }
 
       if (this.animalesNivel3.length === 0 && cont >= 3) {
+        this.win = 1;
+
         var animalesNivel3 = document.getElementById('animalesNivel3');
         animalesNivel3.style.opacity = '0.3';
         animalesNivel3.style.pointerEvents = 'none';
@@ -446,6 +461,7 @@ export class PertenenciaComponent implements OnInit {
   }
 
   resetear(show) {
+    this.win = 0;
     if (show === 'Nivel 1') {
       this.habilitar = 1;
       setTimeout(() => {

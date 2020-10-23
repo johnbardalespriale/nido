@@ -22,10 +22,14 @@ export class ConjuntoComponent implements OnInit {
   caja_azul = [];
   caja_rojo = [];
   cont: number;
+  winner: number;
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.winner = 0;
+
     this.nivel1 = [
       { imagen: 'assets/Img/sandia.png', name: 'verde' },
       { imagen: 'assets/Img/fresa.png', name: 'rojo' },
@@ -91,6 +95,9 @@ export class ConjuntoComponent implements OnInit {
           text:
             '¡Lo lograste, identificaste el color de los objetos correctamente!',
         });
+
+        this.winner = 1;
+
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -147,6 +154,9 @@ export class ConjuntoComponent implements OnInit {
           text:
             '¡Lo lograste, identificaste el color de los objetos correctamente!',
         });
+
+        this.winner = 1;
+        
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -203,6 +213,9 @@ export class ConjuntoComponent implements OnInit {
           text:
             '¡Lo lograste, identificaste el color de los objetos correctamente!',
         });
+
+        this.winner = 1;
+
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -255,6 +268,9 @@ export class ConjuntoComponent implements OnInit {
           text:
             '¡Lo lograste, identificaste el color de los objetos correctamente!',
         });
+
+        this.winner = 1;
+
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -311,6 +327,9 @@ export class ConjuntoComponent implements OnInit {
           text:
             '¡Lo lograste, identificaste el color de los objetos correctamente!',
         });
+
+        this.winner = 1;
+
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -367,6 +386,9 @@ export class ConjuntoComponent implements OnInit {
           text:
             '¡Lo lograste, identificaste el color de los objetos correctamente!',
         });
+
+        this.winner = 1;
+
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';
@@ -423,6 +445,9 @@ export class ConjuntoComponent implements OnInit {
           text:
             '¡Lo lograste, identificaste el color de los objetos correctamente!',
         });
+
+        this.winner = 1;
+        
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
         objects.style.pointerEvents = 'none';

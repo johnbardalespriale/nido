@@ -14,10 +14,13 @@ export class CuantificadoresComponent implements OnInit {
   nivel2: any[];
   nivel3: any[];
   nivel4: any[];
+  cont: number;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.cont = 0;
+
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
       { nivel: 'Nivel 2', selected: false },
@@ -72,6 +75,7 @@ export class CuantificadoresComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+      this.cont++;
       var nivel = document.getElementById('nivel1');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';
@@ -80,6 +84,7 @@ export class CuantificadoresComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+      this.cont++;
       var nivel = document.getElementById('nivel2');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';
@@ -88,6 +93,7 @@ export class CuantificadoresComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+      this.cont++;
       var nivel = document.getElementById('nivel3');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';
@@ -96,6 +102,7 @@ export class CuantificadoresComponent implements OnInit {
         title: '¡EXCELENTE!',
         text: 'Respuesta correcta',
       });
+      this.cont++;
       var nivel = document.getElementById('nivel4');
       nivel.style.pointerEvents = 'none';
       nivel.style.opacity = '0.3';

@@ -36,6 +36,7 @@ export class MenorMayorComponent implements OnInit {
   signo4: any[];
   signo5: any[];
   signo6: any[];
+  win:number;
 
   constructor() { }
 
@@ -58,6 +59,7 @@ export class MenorMayorComponent implements OnInit {
     this.signo4 = [];
     this.signo5 = [];
     this.signo6 = [];
+    this.win = 0;
 
     this.done = [
       { imagen: 'assets/Img/signo_igual.png', value: '=', id: '1' },
@@ -372,6 +374,8 @@ export class MenorMayorComponent implements OnInit {
                 this.cont +
                 " respuestas correctas, elige otro nivel o presiona 'Resetear' para volver a jugar",
             });
+
+            this.win = 1;
           }, 700);
 
           var answers = document.getElementById('answers');
@@ -389,6 +393,7 @@ export class MenorMayorComponent implements OnInit {
 
   resetear(show) {
     this.cont = 0;
+    this.win = 0;
     this.mixNumbers();
 
     this.done = [

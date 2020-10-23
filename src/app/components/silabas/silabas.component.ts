@@ -102,7 +102,18 @@ export class SilabasComponent implements OnInit {
       title: '¡ Genial !',
       text: 'El número de sílabas es correcto',
     });
+
+    this.cont++;
+
+    if (this.cont === 24){
+      Swal.fire({
+        title: '¡ Lo lograste !',
+        text: 'Juego terminado.',
+      });
+  
+    }
   }
+
 
   iniciarJuego(i, name) {
     if (name === 'taza' && i === 2) {

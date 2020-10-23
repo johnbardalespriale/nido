@@ -14,9 +14,12 @@ export class IgualDiferenteComponent implements OnInit {
   habilitar4: string;
   choice: boolean;
   nivel2: any;
+  cont:number;
   constructor() {}
 
   ngOnInit(): void {
+    this.cont = 0;
+    
     this.choice = false;
   }
 
@@ -46,6 +49,7 @@ export class IgualDiferenteComponent implements OnInit {
         title: '¡FELICIDADES!',
         text: 'Encontraste la figura semejante',
       });
+      this.cont++;
     }, 1000);
   }
 

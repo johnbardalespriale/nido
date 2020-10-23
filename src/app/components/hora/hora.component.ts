@@ -22,6 +22,7 @@ export class HoraComponent implements OnInit {
   horaNivel3_2: any[];
   horaNivel3_3: any[];
   habilitar: number;
+  win:number;
 
   constructor() {}
 
@@ -29,6 +30,7 @@ export class HoraComponent implements OnInit {
     this.cont = 0;
     this.cont2 = 0;
     this.cont3 = 0;
+    this.win = 0;
 
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
@@ -216,20 +218,24 @@ export class HoraComponent implements OnInit {
         title: 'JUEGO TERMINADO',
         text: 'Lo lograste, terminaste el Nivel 1',
       });
+      this.win = 1;
     } else if (this.cont2 === 3 && this.selectedNivel === 'Nivel 2') {
       Swal.fire({
         title: 'JUEGO TERMINADO',
         text: 'Lo lograste, terminaste el Nivel 2',
       });
+      this.win = 1;
     } else if (this.cont3 === 3 && this.selectedNivel === 'Nivel 3') {
       Swal.fire({
         title: 'JUEGO TERMINADO',
         text: 'Lo lograste, terminaste el Nivel 3',
       });
+      this.win = 1;
     }
   }
 
   resetear(show) {
+    this.win = 0;
     this.mixHours();
     if (show === 'Nivel 1') {
       this.habilitar = 1;

@@ -20,9 +20,17 @@ export class SecuenciaComponent implements OnInit {
   insecto: any[];
   vaca: any[];
   lluvia: any[];
+  cont1: number;
+  cont2: number;
+  cont3: number;
   constructor() {}
 
   ngOnInit(): void {
+
+    this.cont1 = 0;
+    this.cont2 = 0;
+    this.cont3 = 0;
+
     this.nivels = [
       { nivel: 'Nivel 1', selected: false },
       { nivel: 'Nivel 2', selected: false },
@@ -127,6 +135,9 @@ export class SecuenciaComponent implements OnInit {
   }
 
   resetear() {
+    this.cont1 = 0;
+    this.cont2 = 0;
+    this.cont3 = 0;
     this.peinados.sort(function () {
       return Math.random() - 0.5;
     });
@@ -226,6 +237,8 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+
+      this.cont1++;
     }
   }
 
@@ -248,6 +261,8 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+
+      this.cont1++;
     }
   }
 
@@ -270,6 +285,8 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+
+      this.cont1++;
     }
   }
 
@@ -292,6 +309,7 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+      this.cont2++;
     }
   }
 
@@ -314,6 +332,7 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+      this.cont2++;
     }
   }
 
@@ -336,6 +355,7 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+      this.cont2++;
     }
   }
 
@@ -360,6 +380,8 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+
+      this.cont3++;
     }
   }
 
@@ -384,6 +406,7 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+      this.cont3++;
     }
   }
 
@@ -408,6 +431,7 @@ export class SecuenciaComponent implements OnInit {
         title: 'FELICIDADES',
         text: 'Encontraste la secuencia',
       });
+      this.cont3++;
     }
   }
 }

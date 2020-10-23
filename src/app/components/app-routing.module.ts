@@ -20,12 +20,17 @@ import { TrazosComponent } from './trazos/trazos.component';
 import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoetricas.component';
 import { PuntosComponent } from './puntos/puntos.component';
 import { MemoriasComponent } from './memorias/memorias.component';
+import { AgrupacionComponent } from './agrupacion/agrupacion.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
   {
     path: 'home',
     component: HeaderComponent,
+  },
+  {
+    path: 'agrupaciones',
+    component: AgrupacionComponent,
   },
   {
     path: 'actividades',

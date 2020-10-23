@@ -154,7 +154,7 @@
       </div>
   </section>
 
-  <section class="memory-game" *ngIf="favoriteSeason == 'Nivel 3'">
+  <section class="memory-game" style="width: 800px;" *ngIf="favoriteSeason == 'Nivel 3'">
     <div class="memory-card" data-framework="aurelia" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
       <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
       <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
@@ -245,6 +245,13 @@
         <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
       </div>
   </section>
+
+  <div id="win" style="display: none;">
+    <img class="win1" src="assets/Img/fireworks1.gif" style="position:absolute;width: 70%;top: 314px;right: 0px;">
+    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 329px;right: 342px;">
+
+    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 314px;left: 0px;">
+  </div>
 
 </body>
 </html>

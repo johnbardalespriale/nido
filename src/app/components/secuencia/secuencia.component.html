@@ -100,6 +100,27 @@
         </div>
       </div>
 
+      <div *ngIf="cont1 === 3">
+        <img class="win1" src="assets/Img/fireworks1.gif" style="position:absolute;width: 70%;top: 314px;right: 0px;">
+        <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 329px;right: 342px;">
+    
+        <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 314px;left: 0px;">
+      </div>
+  
+      <div *ngIf="cont2 === 3">
+        <img class="win1" src="assets/Img/fireworks1.gif" style="position:absolute;width: 70%;top: 314px;right: 0px;">
+        <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 329px;right: 342px;">
+    
+        <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 314px;left: 0px;">
+      </div>
+
+      <div *ngIf="cont3 === 3">
+        <img class="win1" src="assets/Img/fireworks1.gif" style="position:absolute;width: 70%;top: 314px;right: 0px;">
+        <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 329px;right: 342px;">
+    
+        <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 314px;left: 0px;">
+      </div>
+
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
@@ -121,7 +142,7 @@
 
           <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
             <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
-              [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel">
+              [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel" (mouseup)="resetear()">
               {{ nivel.nivel }}
             </label>
           </div>
@@ -132,5 +153,7 @@
         </div>
       </div>
     </div>
+
+    
   </mat-tab-group>
 </div>
