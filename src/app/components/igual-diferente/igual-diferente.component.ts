@@ -46,8 +46,7 @@ export class IgualDiferenteComponent implements OnInit {
 
     setTimeout(() => {
       Swal.fire({
-        title: '¡FELICIDADES!',
-        text: 'Encontraste la figura semejante',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la figura semejante "
       });
       this.cont++;
     }, 1000);

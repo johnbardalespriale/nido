@@ -99,16 +99,14 @@ export class SilabasComponent implements OnInit {
 
   answerCorrect() {
     Swal.fire({
-      title: '¡ Genial !',
-      text: 'El número de sílabas es correcto',
+      html: "<h1 style='color:#1db31d;'>¡GENIAL!</h1> <br> El número de sílabas es correcto "
     });
 
     this.cont++;
 
     if (this.cont === 24){
       Swal.fire({
-        title: '¡ Lo lograste !',
-        text: 'Juego terminado.',
+        html: "<h1 style='color:#1db31d;'>¡LO LOGRASTE!</h1> <br> Juego terminado "
       });
   
     }

@@ -72,8 +72,7 @@ export class CuantificadoresComponent implements OnInit {
   choice(name) {
     if (name === 'lapices') {
       Swal.fire({
-        title: '¡EXCELENTE!',
-        text: 'Respuesta correcta',
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel1');
@@ -81,8 +80,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else if (name === 'frutas') {
       Swal.fire({
-        title: '¡EXCELENTE!',
-        text: 'Respuesta correcta',
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel2');
@@ -90,8 +88,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else if (name === 'jirafa') {
       Swal.fire({
-        title: '¡EXCELENTE!',
-        text: 'Respuesta correcta',
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel3');
@@ -99,8 +96,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else if (name === 'cesta') {
       Swal.fire({
-        title: '¡EXCELENTE!',
-        text: 'Respuesta correcta',
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel4');

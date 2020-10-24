@@ -234,8 +234,7 @@ export class SecuenciaComponent implements OnInit {
       }
 
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
 
       this.cont1++;
@@ -258,8 +257,7 @@ export class SecuenciaComponent implements OnInit {
       }
 
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
 
       this.cont1++;
@@ -282,8 +280,7 @@ export class SecuenciaComponent implements OnInit {
       }
 
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
 
       this.cont1++;
@@ -306,8 +303,7 @@ export class SecuenciaComponent implements OnInit {
         this.casita[i].disabled = true;
       }
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
       this.cont2++;
     }
@@ -329,8 +325,7 @@ export class SecuenciaComponent implements OnInit {
         this.resbaladera[i].disabled = true;
       }
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
       this.cont2++;
     }
@@ -352,8 +347,7 @@ export class SecuenciaComponent implements OnInit {
         this.levantarse[i].disabled = true;
       }
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
       this.cont2++;
     }
@@ -377,8 +371,7 @@ export class SecuenciaComponent implements OnInit {
         this.insecto[i].disabled = true;
       }
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
 
       this.cont3++;
@@ -403,8 +396,7 @@ export class SecuenciaComponent implements OnInit {
         this.vaca[i].disabled = true;
       }
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
       this.cont3++;
     }
@@ -428,8 +420,7 @@ export class SecuenciaComponent implements OnInit {
         this.lluvia[i].disabled = true;
       }
       Swal.fire({
-        title: 'FELICIDADES',
-        text: 'Encontraste la secuencia',
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la secuencia "
       });
       this.cont3++;
     }

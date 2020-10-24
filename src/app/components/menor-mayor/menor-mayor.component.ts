@@ -368,11 +368,7 @@ export class MenorMayorComponent implements OnInit {
 
           setTimeout(() => {
             Swal.fire({
-              title: '¡JUEGO TERMINADO!',
-              text:
-                'Tienes ' +
-                this.cont +
-                " respuestas correctas, elige otro nivel o presiona 'Resetear' para volver a jugar",
+                html: "<h1 style='color:#1db31d;'>¡JUEGO TERMINADO!</h1> <br> Tienes " + this.cont + " respuestas correctas, elige otro nivel o presiona 'Resetear' para volver a jugar"
             });
 
             this.win = 1;

@@ -151,8 +151,7 @@ export class PertenenciaComponent implements OnInit {
         animales.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'JUEGO TERMINADO',
-          text: 'Lo lograste',
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
         });
       }
     }
@@ -212,8 +211,7 @@ export class PertenenciaComponent implements OnInit {
         animales.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'JUEGO TERMINADO',
-          text: 'Lo lograste',
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
         });
       }
     }
@@ -272,8 +270,7 @@ export class PertenenciaComponent implements OnInit {
         set3Paws.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'JUEGO TERMINADO',
-          text: 'Lo lograste',
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
         });
       }
     }
@@ -332,8 +329,7 @@ export class PertenenciaComponent implements OnInit {
         set3Paws.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'JUEGO TERMINADO',
-          text: 'Lo lograste',
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
         });
       }
     }
@@ -393,8 +389,7 @@ export class PertenenciaComponent implements OnInit {
         weakSound.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'JUEGO TERMINADO',
-          text: 'Lo lograste',
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
         });
       }
     }
@@ -453,8 +448,7 @@ export class PertenenciaComponent implements OnInit {
         weakSound.style.pointerEvents = 'none';
 
         Swal.fire({
-          title: 'JUEGO TERMINADO',
-          text: 'Lo lograste',
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
         });
       }
     }

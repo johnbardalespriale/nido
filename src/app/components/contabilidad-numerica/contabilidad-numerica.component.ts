@@ -236,15 +236,9 @@ export class ContabilidadNumericaComponent implements OnInit {
   }
 
   correctChoice(id, opcion) {
-    console.log(this.answerImage, "imagenId");
-    console.log(id, "Id");
-    console.log(this.answerImage2, "imagenId2");
-    console.log(this.answerImage3, "imagenId3");
-
     if (this.answerImage === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion1') {
       Swal.fire({
-        title: '¡EXCELENTE!',
-        text: 'Respuesta correcta',
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Identificaste la cantidad de elementos correctamente"
       });
       this.win++;
       var numbers = document.getElementById('numbers');
@@ -252,8 +246,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else if (this.answerImage2 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion2') {
       Swal.fire({
-        title: '¡EXCELENTE!',
-        text: 'Respuesta correcta',
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Identificaste la cantidad de elementos correctamente"
       });
       this.win++;
       var numbers = document.getElementById('numbers2');
@@ -261,8 +254,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else if (this.answerImage3 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion3') {
       Swal.fire({
-        title: '¡EXCELENTE!',
-        text: 'Respuesta correcta',
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Identificaste la cantidad de elementos correctamente"
       });
       this.win++;
       var numbers = document.getElementById('numbers3');
