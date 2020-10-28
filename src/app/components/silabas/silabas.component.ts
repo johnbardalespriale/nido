@@ -99,14 +99,14 @@ export class SilabasComponent implements OnInit {
 
   answerCorrect() {
     Swal.fire({
-      html: "<h1 style='color:#1db31d;'>¡GENIAL!</h1> <br> El número de sílabas es correcto "
+      html: "<h1 style='color:#1db31d;'>¡GENIAL!</h1> El número de sílabas es correcto "
     });
 
     this.cont++;
 
     if (this.cont === 24){
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡LO LOGRASTE!</h1> <br> Juego terminado "
+        html: "<h1 style='color:#1db31d;'>¡LO LOGRASTE!</h1> Juego terminado "
       });
   
     }
@@ -308,7 +308,7 @@ export class SilabasComponent implements OnInit {
       }
     } else {
       Swal.fire({
-        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Vuelve a intentarlo</p>",
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Vuelve a intentarlo</p>",
       });
     }
   }

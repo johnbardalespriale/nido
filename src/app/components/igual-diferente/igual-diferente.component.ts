@@ -46,7 +46,7 @@ export class IgualDiferenteComponent implements OnInit {
 
     setTimeout(() => {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> <br> Encontraste la figura semejante "
+        html: "<h1 style='color:#1db31d;'>¡FELICIDADES!</h1> Encontraste la figura semejante "
       });
       this.cont++;
     }, 1000);
@@ -54,7 +54,7 @@ export class IgualDiferenteComponent implements OnInit {
 
   errorChoice() {
     Swal.fire({
-      html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Esa no es la figura. ¡Intentalo de nuevo!</p>",
+      html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Esa no es la figura. ¡Intentalo de nuevo!</p>",
     });
   }
 }

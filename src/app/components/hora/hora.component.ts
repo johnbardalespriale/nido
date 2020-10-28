@@ -128,7 +128,7 @@ export class HoraComponent implements OnInit {
   answerCorrect(hora) {
     if (hora === 12) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var setCard1 = document.getElementById('setCard1');
       setCard1.style.opacity = '0.3';
@@ -136,7 +136,7 @@ export class HoraComponent implements OnInit {
       this.cont++;
     } else if (hora === 6) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var setCard1 = document.getElementById('setCard2');
       setCard1.style.opacity = '0.3';
@@ -144,7 +144,7 @@ export class HoraComponent implements OnInit {
       this.cont++;
     } else if (hora === 9) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var setCard1 = document.getElementById('setCard3');
       setCard1.style.opacity = '0.3';
@@ -152,7 +152,7 @@ export class HoraComponent implements OnInit {
       this.cont++;
     } else if (hora === 2.3) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var set2Card1 = document.getElementById('set2Card1');
       set2Card1.style.opacity = '0.3';
@@ -160,7 +160,7 @@ export class HoraComponent implements OnInit {
       this.cont2++;
     } else if (hora === 10.3) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var set2Card2 = document.getElementById('set2Card2');
       set2Card2.style.opacity = '0.3';
@@ -168,7 +168,7 @@ export class HoraComponent implements OnInit {
       this.cont2++;
     } else if (hora === 12.3) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var set2Card3 = document.getElementById('set2Card3');
       set2Card3.style.opacity = '0.3';
@@ -176,7 +176,7 @@ export class HoraComponent implements OnInit {
       this.cont2++;
     } else if (hora === 4.15) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var set3Card1 = document.getElementById('set3Card1');
       set3Card1.style.opacity = '0.3';
@@ -184,7 +184,7 @@ export class HoraComponent implements OnInit {
       this.cont3++;
     } else if (hora === 11.15) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var set3Card2 = document.getElementById('set3Card2');
       set3Card2.style.opacity = '0.3';
@@ -192,7 +192,7 @@ export class HoraComponent implements OnInit {
       this.cont3++;
     } else if (hora === 1.15) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       var set3Card3 = document.getElementById('set3Card3');
       set3Card3.style.opacity = '0.3';
@@ -200,23 +200,23 @@ export class HoraComponent implements OnInit {
       this.cont3++;
     } else {
       Swal.fire({
-        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Respuesta incorrecta, vuelva a intentarlo</p>",
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Respuesta incorrecta, vuelva a intentarlo</p>",
       });
     }
 
     if (this.cont === 3 && this.selectedNivel === 'Nivel 1') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
       });
       this.win = 1;
     } else if (this.cont2 === 3 && this.selectedNivel === 'Nivel 2') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
       });
       this.win = 1;
     } else if (this.cont3 === 3 && this.selectedNivel === 'Nivel 3') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
       });
       this.win = 1;
     }

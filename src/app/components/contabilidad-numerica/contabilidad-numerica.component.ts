@@ -223,7 +223,7 @@ export class ContabilidadNumericaComponent implements OnInit {
 
     } else if (this.answer != 0) {
       Swal.fire({
-        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Respuesta erronea, vuelva a iniciar el juego</p>",
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Respuesta erronea, vuelva a iniciar el juego</p>",
       });
     }
   }
@@ -238,7 +238,7 @@ export class ContabilidadNumericaComponent implements OnInit {
   correctChoice(id, opcion) {
     if (this.answerImage === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion1') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Identificaste la cantidad de elementos correctamente"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Identificaste la cantidad de elementos correctamente"
       });
       this.win++;
       var numbers = document.getElementById('numbers');
@@ -246,7 +246,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else if (this.answerImage2 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion2') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Identificaste la cantidad de elementos correctamente"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Identificaste la cantidad de elementos correctamente"
       });
       this.win++;
       var numbers = document.getElementById('numbers2');
@@ -254,7 +254,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else if (this.answerImage3 === id && this.selectedNivel === 'Nivel 1' && opcion === 'opcion3') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Identificaste la cantidad de elementos correctamente"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Identificaste la cantidad de elementos correctamente"
       });
       this.win++;
       var numbers = document.getElementById('numbers3');
@@ -262,7 +262,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       numbers.style.opacity = '0.3';
     } else {
       Swal.fire({
-        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Respuesta incorrecta, vuelve a intentarlo</p>",
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Respuesta incorrecta, vuelve a intentarlo</p>",
       });
     }
   }

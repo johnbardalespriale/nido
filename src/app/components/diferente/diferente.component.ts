@@ -80,7 +80,7 @@ export class DiferenteComponent implements OnInit {
 
     if (name === 'llama') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> <br> Encontraste la figura diferente "
+        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> Encontraste la figura diferente "
       });
       var nivel1 = document.getElementById('nivel1');
       nivel1.style.opacity = '0.3';
@@ -88,7 +88,7 @@ export class DiferenteComponent implements OnInit {
       this.cont++;
     } else if (name === 'cuy') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> <br> Encontraste la figura diferente "
+        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> Encontraste la figura diferente "
       });
       var nivel2 = document.getElementById('nivel2');
       nivel2.style.opacity = '0.3';
@@ -96,7 +96,7 @@ export class DiferenteComponent implements OnInit {
       this.cont++;
     } else if (name === 'jirafa') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> <br> Encontraste la figura diferente "
+        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> Encontraste la figura diferente "
       });
       var nivel3 = document.getElementById('nivel3');
       nivel3.style.opacity = '0.3';
@@ -104,7 +104,7 @@ export class DiferenteComponent implements OnInit {
       this.cont++;
     } else if (name === 'oso') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> <br> Encontraste la figura diferente "
+        html: "<h1 style='color:#1db31d;'>¡LO ENCONTRASTE!</h1> Encontraste la figura diferente "
       });
       var nivel4 = document.getElementById('nivel4');
       nivel4.style.opacity = '0.3';
@@ -114,7 +114,7 @@ export class DiferenteComponent implements OnInit {
 
     if (this.cont === 4) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado "
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado "
       });
     }
   }

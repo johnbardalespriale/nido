@@ -148,7 +148,7 @@ export class ConjuntoComponent implements OnInit {
 
       if (this.nivel1.length === 0) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste el color de los objetos correctamente"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste el color de los objetos correctamente"
         });
 
         this.winner = 1;
@@ -205,7 +205,7 @@ export class ConjuntoComponent implements OnInit {
 
       if (this.nivel1.length === 0) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste el color de los objetos correctamente"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste el color de los objetos correctamente"
         });
 
         this.winner = 1;
@@ -258,7 +258,7 @@ export class ConjuntoComponent implements OnInit {
 
       if (this.nivel1.length === 0) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste el color de los objetos correctamente"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste el color de los objetos correctamente"
         });
 
         this.winner = 1;
@@ -315,7 +315,7 @@ export class ConjuntoComponent implements OnInit {
 
       if (this.nivel1.length === 0) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste el color de los objetos correctamente"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste el color de los objetos correctamente"
         });
 
         this.winner = 1;
@@ -372,7 +372,7 @@ export class ConjuntoComponent implements OnInit {
 
       if (this.nivel1.length === 0) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste el color de los objetos correctamente"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste el color de los objetos correctamente"
         });
 
         this.winner = 1;
@@ -429,7 +429,7 @@ export class ConjuntoComponent implements OnInit {
 
       if (this.nivel1.length === 0) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste el color de los objetos correctamente"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste el color de los objetos correctamente"
         });
 
         this.winner = 1;

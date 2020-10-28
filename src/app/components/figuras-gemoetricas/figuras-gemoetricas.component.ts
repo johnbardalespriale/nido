@@ -131,7 +131,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel1.length === 6) {
         Swal.fire({
-            html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+            html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -169,7 +169,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel1.length === 6) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -207,7 +207,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel1.length === 6) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -245,7 +245,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel2.length === 8) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -287,7 +287,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel2.length === 8) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -325,7 +325,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel2.length === 8) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -367,7 +367,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel2.length === 8) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -409,7 +409,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel3.length === 10) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -455,7 +455,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel3.length === 10) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -497,7 +497,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel3.length === 10) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -543,7 +543,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel3.length === 10) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';
@@ -589,7 +589,7 @@ export class FigurasGemoetricasComponent implements OnInit {
 
       if (this.nivel3.length === 10) {
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste la figuras geométricas correctamente "
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste la figuras geométricas correctamente "
         });
         var objects = document.getElementById('objects');
         objects.style.opacity = '0.3';

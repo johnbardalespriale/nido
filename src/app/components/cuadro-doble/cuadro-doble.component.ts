@@ -157,7 +157,7 @@ export class CuadroDobleComponent implements OnInit {
     console.log('contador', this.cont);
     if (this.done.length === 0 && this.cont >= 8) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado "
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado "
       });
     }
   }

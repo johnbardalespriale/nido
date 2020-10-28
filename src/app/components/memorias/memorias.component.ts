@@ -59,7 +59,7 @@ function checkForMatch() {
 function mensaje (cont1){
   if(cont1 === 6 && favoriteSeason === 'Nivel 1' ){
     Swal.fire({
-      html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Tuviste " + intentos + ' intentos. Juego terminado!',
+      html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Tuviste " + intentos + ' intentos. Juego terminado!',
     });
 
     var win = document.getElementById('win');
@@ -67,7 +67,7 @@ function mensaje (cont1){
 
   }else if(cont2 === 8 && favoriteSeason === 'Nivel 2' ){
     Swal.fire({
-      html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Tuviste " + intentos + ' intentos. Juego terminado!',
+      html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Tuviste " + intentos + ' intentos. Juego terminado!',
     });
 
     var win = document.getElementById('win');
@@ -75,7 +75,7 @@ function mensaje (cont1){
     
   }else if(cont3 === 10 && favoriteSeason === 'Nivel 3' ){
     Swal.fire({
-      html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Tuviste " + intentos + ' intentos. Juego terminado!',
+      html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Tuviste " + intentos + ' intentos. Juego terminado!',
     });
     var win = document.getElementById('win');
     win.style.display = 'inherit';

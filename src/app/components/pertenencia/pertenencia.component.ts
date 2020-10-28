@@ -127,7 +127,7 @@ export class PertenenciaComponent implements OnInit {
           this.animales.push(animal);
 
           Swal.fire({
-            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -151,7 +151,7 @@ export class PertenenciaComponent implements OnInit {
         animales.style.pointerEvents = 'none';
 
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
         });
       }
     }
@@ -187,7 +187,7 @@ export class PertenenciaComponent implements OnInit {
           this.animales.push(animal);
 
           Swal.fire({
-            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -211,7 +211,7 @@ export class PertenenciaComponent implements OnInit {
         animales.style.pointerEvents = 'none';
 
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
         });
       }
     }
@@ -246,7 +246,7 @@ export class PertenenciaComponent implements OnInit {
           this.animalesNivel2.push(animal);
 
           Swal.fire({
-            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -270,7 +270,7 @@ export class PertenenciaComponent implements OnInit {
         set3Paws.style.pointerEvents = 'none';
 
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
         });
       }
     }
@@ -305,7 +305,7 @@ export class PertenenciaComponent implements OnInit {
           this.animalesNivel2.push(animal);
 
           Swal.fire({
-            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -329,7 +329,7 @@ export class PertenenciaComponent implements OnInit {
         set3Paws.style.pointerEvents = 'none';
 
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
         });
       }
     }
@@ -365,7 +365,7 @@ export class PertenenciaComponent implements OnInit {
           this.animalesNivel3.push(animal);
 
           Swal.fire({
-            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -389,7 +389,7 @@ export class PertenenciaComponent implements OnInit {
         weakSound.style.pointerEvents = 'none';
 
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
         });
       }
     }
@@ -424,7 +424,7 @@ export class PertenenciaComponent implements OnInit {
           this.weakSound.splice(index, 1);
           this.animalesNivel3.push(animal);
           Swal.fire({
-            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:25px;'>Grupo equivocado</p>",
+            html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Grupo equivocado</p>",
           });
           cont--;
         } else {
@@ -448,7 +448,7 @@ export class PertenenciaComponent implements OnInit {
         weakSound.style.pointerEvents = 'none';
 
         Swal.fire({
-          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Juego terminado"
+          html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado"
         });
       }
     }

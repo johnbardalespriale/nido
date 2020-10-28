@@ -333,19 +333,19 @@ export class AbsurdosComponent implements OnInit {
 
     if (this.cont === 5) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste todos los elementos absurdos "
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste todos los elementos absurdos "
       });
     }
 
     if (this.cont2 === 10) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste todos los elementos absurdos "
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste todos los elementos absurdos "
       });
     }
 
     if (this.cont3 === 14) {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> <br> Identificaste todos los elementos absurdos "
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Identificaste todos los elementos absurdos "
       });
     }
   }

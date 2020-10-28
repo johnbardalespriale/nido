@@ -72,7 +72,7 @@ export class CuantificadoresComponent implements OnInit {
   choice(name) {
     if (name === 'lapices') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel1');
@@ -80,7 +80,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else if (name === 'frutas') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel2');
@@ -88,7 +88,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else if (name === 'jirafa') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel3');
@@ -96,7 +96,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else if (name === 'cesta') {
       Swal.fire({
-        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> <br> Respuesta correcta"
+        html: "<h1 style='color:#1db31d;'>¡EXCELENTE!</h1> Respuesta correcta"
       });
       this.cont++;
       var nivel = document.getElementById('nivel4');
@@ -104,7 +104,7 @@ export class CuantificadoresComponent implements OnInit {
       nivel.style.opacity = '0.3';
     } else {
       Swal.fire({
-        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <br> <p style='margin-top:10px;'>Intentalo de nuevo, ¡tu puedes lograrlo!</p>",
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:10px;'>Intentalo de nuevo, ¡tu puedes lograrlo!</p>",
       });
     }
   }
