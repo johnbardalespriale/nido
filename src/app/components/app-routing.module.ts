@@ -21,6 +21,7 @@ import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoe
 import { PuntosComponent } from './puntos/puntos.component';
 import { MemoriasComponent } from './memorias/memorias.component';
 import { AgrupacionComponent } from './agrupacion/agrupacion.component';
+import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -103,6 +104,10 @@ const routes: Routes = [
   {
     path: 'memoria',
     component: MemoriasComponent,
+  },
+  {
+    path: 'adivinanza',
+    component: AhorcadoComponent,
   },
 ];
 

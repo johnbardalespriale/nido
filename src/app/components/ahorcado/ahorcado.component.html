@@ -1,0 +1,101 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+ </head>
+
+<section style="margin-top: 25px;font-family: math;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+      <div class="container">
+        <h1 class="consigna" style="text-align: center;">Adivina la palabra</h1>
+        <p class="lead">Intenta adivinar la palabra antes que la soga llegue al muñeco.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
+        <label style="margin: 15px 0px; text-align: initial; font-size: 17px;">
+          <b>Escoge el nivel del juego para empezar a jugar</b>
+        </label>
+
+        <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+          <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+            [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel" (click)="limpiar()">
+            {{ nivel.nivel }}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container" style="margin-bottom: 80px">
+    <div class="row" style="margin-top: 20px">
+    
+     <div class="column"></div>
+ <div class="column" style="text-align:center; " >
+     <h1 style="font-family: Kanit; font-size: 22px;">
+        {{mensaje}} {{ mascara }}
+     </h1>
+
+     <img
+         width="250"
+         alt="image"
+         src={{vidaImagen}}
+     >
+ </div>
+
+</div>
+
+ <div class="row" style="text-align:center" *ngIf="selectedNivel != 'Nivel 0'">
+
+     <div
+         class="column"
+         style="min-width: 50%; max-height: 80px"
+     >
+         <label style="margin-right: 10px; margin-bottom: 20px;font-family: Kanit;font-size: 18px;">Seleccione una letra</label>
+
+         <select
+             [(ngModel)]="selectedLetter"
+             
+         >
+
+             <option
+                 style="text-align: center"
+                 *ngFor="let obj of abecedario"
+                 [value]="obj"
+             >{{obj}}</option>
+         </select>
+
+         <br>
+
+         <button
+             *ngIf="juegoOn"            
+             (click)="game(selectedLetter)"
+             class="btn btn-primary"
+             role="button"
+             style="margin-right: 5px;font-size: 18px;"
+         >probar suerte</button>
+
+         <button
+         *ngIf="juegoOff" 
+         (click)="reload()"
+         class="btn btn-primary"
+         role="button"
+         style="margin-right: 5px;font-size: 18px;"
+     >volver a intentarlo</button>
+     </div>
+
+
+
+     <div
+         class="column"
+         style="min-width: 50%; text-align: left; max-height: 80px"
+     >
+         <h4 style="font-family: Kanit;font-size: 18px;">Letras utilizadas: {{letrasUsadas}}</h4>
+     </div>
+ </div>
+</div>

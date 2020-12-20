@@ -7,6 +7,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatButtonModule } from '@angular/material/button';
 import { ToastrModule } from 'ngx-toastr';
+import { HttpClientModule } from '@angular/common/http';
 
 /*Components*/
 import { AppComponent } from './app/app.component';
@@ -32,6 +33,7 @@ import { TrazosComponent } from './trazos/trazos.component';
 import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoetricas.component';
 import { PuntosComponent } from './puntos/puntos.component';
 import { MemoriasComponent } from './memorias/memorias.component';
+import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 
 @NgModule({
   declarations: [
@@ -57,9 +59,11 @@ import { MemoriasComponent } from './memorias/memorias.component';
     FigurasGemoetricasComponent,
     PuntosComponent,
     MemoriasComponent,
+    AhorcadoComponent,
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     ToastrModule.forRoot(),
