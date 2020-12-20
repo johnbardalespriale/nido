@@ -12,7 +12,7 @@ export class AhorcadoComponent implements OnInit {
   URL_IMAGENES_PRE = "assets/Img/"
   URL_IMAGENES_EXT = ".jpg"  
   
-    nivel1 = ['perro', 'loro', 'gato', 'hamster', 'tortuga'];
+    nivel1 = ['perro', 'loro', 'gato', 'conejo', 'tortuga'];
     nivel2 = ['pera', 'manzana', 'papaya', 'chirimoya', 'ciruela'];
     nivel3 = ['pepino', 'poro', 'apio', 'brocoli', 'coliflor'];
     constructor(
@@ -147,7 +147,7 @@ export class AhorcadoComponent implements OnInit {
         //Numero aleatorio que usa la longitud de la consulta para elaborar una posicion en el array
             //let aleatorio = (Math.floor(Math.random() * (words.length - 0 + 1)) + 0); 
             let aleatorio1 = Math.floor(Math.random() * (6 - 0)) + 0;
-            this.mensaje = "El nombre de la mascota es: ";
+            this.mensaje = "El animal doméstico es un: ";
             palabraElegida = this.nivel1[aleatorio1];
             
             this.dibujarJuego(palabraElegida); //Al iniciar, ejecutamos el metodo dibujar  
