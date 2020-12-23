@@ -136,6 +136,24 @@ export class AhorcadoComponent implements OnInit {
       this.lifes();
       this.getPalabras();
     }
+
+   /* getInitPalabras(){
+      var palabraElegida: string;
+
+      this.servicioPalabras.getPost().subscribe((
+        words: string[] )=> {
+  
+      //Numero aleatorio que usa la longitud de la consulta para elaborar una posicion en el array
+          //let aleatorio = (Math.floor(Math.random() * (words.length - 0 + 1)) + 0); 
+          let aleatorio1 = Math.floor(Math.random() * (6 - 0)) + 0;
+          this.mensaje = "";
+          palabraElegida = this.nivel1[aleatorio1];
+          
+          this.dibujarJuego(palabraElegida); //Al iniciar, ejecutamos el metodo dibujar  
+             
+        }      
+      )
+    }*/
   
     getPalabras() {
       var palabraElegida: string;
@@ -149,8 +167,9 @@ export class AhorcadoComponent implements OnInit {
             let aleatorio1 = Math.floor(Math.random() * (6 - 0)) + 0;
             this.mensaje = "El animal doméstico es un: ";
             palabraElegida = this.nivel1[aleatorio1];
-            
-            this.dibujarJuego(palabraElegida); //Al iniciar, ejecutamos el metodo dibujar  
+            setTimeout(() => {
+              this.dibujarJuego(palabraElegida);
+            }, 10);
                
           }      
         )
@@ -164,7 +183,9 @@ export class AhorcadoComponent implements OnInit {
             this.mensaje = "El nombre de la fruta es: ";
             palabraElegida = this.nivel2[aleatorio1];
             
-            this.dibujarJuego(palabraElegida); //Al iniciar, ejecutamos el metodo dibujar  
+            setTimeout(() => {
+              this.dibujarJuego(palabraElegida);
+            }, 10);
                
           }      
         )
@@ -178,7 +199,9 @@ export class AhorcadoComponent implements OnInit {
             this.mensaje = "El nombre del vegetal es: ";
             palabraElegida = this.nivel3[aleatorio1];
             
-            this.dibujarJuego(palabraElegida); //Al iniciar, ejecutamos el metodo dibujar  
+            setTimeout(() => {
+              this.dibujarJuego(palabraElegida);
+            }, 10); 
                
           }      
         )

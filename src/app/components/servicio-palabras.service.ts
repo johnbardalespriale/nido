@@ -9,8 +9,9 @@ export class ServicioPalabrasService {
   constructor(private http: HttpClient) { }
 
   getPost() {
-    return this.http.get('https://raw.githubusercontent.com/words/an-array-of-spanish-words/master/index.json')
+    return this.http.get('../../assets/json/palabras.json')
   }
 }
 
 
+//https://raw.githubusercontent.com/johnbardalespriale/nido/master/src/assets/json/palabras.json

@@ -108,7 +108,7 @@ const routes: Routes = [
   {
     path: 'adivinanza',
     component: AhorcadoComponent,
-  },
+  }
 ];
 
 @NgModule({
