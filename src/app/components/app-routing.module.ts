@@ -22,6 +22,7 @@ import { PuntosComponent } from './puntos/puntos.component';
 import { MemoriasComponent } from './memorias/memorias.component';
 import { AgrupacionComponent } from './agrupacion/agrupacion.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { PruebaComponent } from './prueba/prueba.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/actividades', pathMatch: 'full' },
@@ -108,6 +109,10 @@ const routes: Routes = [
   {
     path: 'adivinanza',
     component: AhorcadoComponent,
+  },
+  {
+    path: 'prueba',
+    component: PruebaComponent,
   }
 ];
 

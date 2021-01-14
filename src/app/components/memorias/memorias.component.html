@@ -7,244 +7,258 @@
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <section style="margin-top: 25px;display: grid;">
-        <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
-          <div class="container">
-            <h1 class="consigna">Memoria</h1>
-            <p class="lead">Haz clic en las tarjetas y empareja.</p>
-          </div>
+    
+      <div class="row">
+        <div class="col-sm-4">
+          <section style="margin-top: 25px;">
+            <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+              <div class="container">
+                <h1 class="consigna">Memoria</h1>
+                <p class="lead">Haz clic en las tarjetas y empareja.</p>
+              </div>
+            </div>
+            
+            <div class="btn-group" style="margin-top: 25px;flex-direction: column;">
+                <label style="background-color: #2bbbad !important; color: white;font-weight: bold;font-size: inherit;margin-bottom: 40px;" mdbBtn [(ngModel)]="favoriteSeason"
+                  [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+                  (mouseup)="iniciar(nivel.nivel)">
+                  {{ nivel.nivel }}
+                </label>
+              </div>
+          </section>
         </div>
 
-        <div class="btn-group" style="margin-top: 25px;margin-bottom: 15px;">
-            <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="favoriteSeason"
-              [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
-              (mouseup)="iniciar()">
-              {{ nivel.nivel }}
-            </label>
-          </div>
-      </section>
-
-  <section class="memory-game" *ngIf="favoriteSeason == 'Nivel 1'">
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-  </section>
-
-  <section class="memory-game" *ngIf="favoriteSeason == 'Nivel 2'">
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="aurelia">
-      <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="vue">
-      <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="angular">
-      <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="ember">
-      <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="backbone">
-      <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="react">
-      <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="leon">
-        <img class="front-face" src="assets/Img/leon.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+        
+        <div class="col-sm-8">
+          <section class="memory-game" *ngIf="favoriteSeason == 'Nivel 1'">
+            <div class="memory-card" data-framework="aurelia">
+              <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
+              <img id="pet1" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="aurelia">
+              <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
+              <img id="pet2" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="vue">
+              <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
+              <img id="pet3" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="vue">
+              <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
+              <img id="pet4" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="angular">
+              <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
+              <img id="pet5" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="angular">
+              <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
+              <img id="pet6" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="ember">
+              <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
+              <img id="pet7" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="ember">
+              <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
+              <img id="pet8" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="backbone">
+              <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
+              <img id="pet9" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="backbone">
+              <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
+              <img id="pet10" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="react">
+              <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
+              <img id="pet11" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="react">
+              <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
+              <img id="pet12" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+          </section>
+        
+          <section class="memory-game" *ngIf="favoriteSeason == 'Nivel 2'">
+            <div class="memory-card" data-framework="aurelia">
+              <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
+              <img id="pet13" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="aurelia">
+              <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
+              <img id="pet14" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="vue">
+              <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
+              <img id="pet15" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="vue">
+              <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
+              <img id="pet16" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="angular">
+              <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
+              <img id="pet17" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="angular">
+              <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
+              <img id="pet18" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="ember">
+              <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
+              <img id="pet19" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="ember">
+              <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
+              <img id="pet20" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="backbone">
+              <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
+              <img id="pet21" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="backbone">
+              <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
+              <img id="pet22" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="react">
+              <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
+              <img id="pet23" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="react">
+              <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
+              <img id="pet24" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="leon">
+                <img class="front-face" src="assets/Img/leon.png" alt="React" />
+                <img id="pet25" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+              <div class="memory-card" data-framework="leon">
+                <img class="front-face" src="assets/Img/leon.png" alt="React" />
+                <img id="pet26" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+        
+              <div class="memory-card" data-framework="perro">
+                <img class="front-face" src="assets/Img/perro.png" alt="React" />
+                <img id="pet27" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+              <div class="memory-card" data-framework="perro">
+                <img class="front-face" src="assets/Img/perro.png" alt="React" />
+                <img id="pet28" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+          </section>
+        
+          <section class="memory-game" style="width: 800px;" *ngIf="favoriteSeason == 'Nivel 3'">
+            <div class="memory-card" data-framework="aurelia" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
+              <img id="pet29" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="aurelia" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
+              <img id="pet30" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="vue" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
+              <img id="pet31" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="vue" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
+              <img id="pet32" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="angular" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
+              <img id="pet33" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="angular" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
+              <img id="pet34" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="ember" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
+              <img id="pet35" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="ember" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
+              <img id="pet36" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="backbone" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
+              <img id="pet37" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="backbone" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
+              <img id="pet38" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="react" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
+              <img id="pet39" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+            <div class="memory-card" data-framework="react" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+              <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
+              <img id="pet40" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+            </div>
+        
+            <div class="memory-card" data-framework="leon" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/leon.png" alt="React" />
+                <img id="pet41" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+              <div class="memory-card" data-framework="leon" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/leon.png" alt="React" />
+                <img id="pet42" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+        
+              <div class="memory-card" data-framework="perro" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/perro.png" alt="React" />
+                <img id="pet43" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+              <div class="memory-card" data-framework="perro" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/perro.png" alt="React" />
+                <img id="pet44" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+        
+              <div class="memory-card" data-framework="hipopotamo" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/hipopotamo.png" alt="React" />
+                <img id="pet45" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+              <div class="memory-card" data-framework="hipopotamo" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/hipopotamo.png" alt="React" />
+                <img id="pet46" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+        
+              <div class="memory-card" data-framework="elefante" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/elefante.png" alt="React" />
+                <img id="pet47" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+              <div class="memory-card" data-framework="elefante" style="width: calc(21% - 31px);height: calc(33.333% - 21px);">
+                <img class="front-face" src="assets/Img/elefante.png" alt="React" />
+                <img id="pet48" class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+              </div>
+          </section>
+        </div>
       </div>
-      <div class="memory-card" data-framework="leon">
-        <img class="front-face" src="assets/Img/leon.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
+
+      <div>
+
       </div>
 
-      <div class="memory-card" data-framework="perro">
-        <img class="front-face" src="assets/Img/perro.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-      <div class="memory-card" data-framework="perro">
-        <img class="front-face" src="assets/Img/perro.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-  </section>
-
-  <section class="memory-game" style="width: 800px;" *ngIf="favoriteSeason == 'Nivel 3'">
-    <div class="memory-card" data-framework="aurelia" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="aurelia" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/oso.png" alt="Aurelia" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="vue" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="vue" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/mono.png" alt="Vue" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="angular" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="angular" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/cuy.png" alt="Angular" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="ember" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="ember" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/gato.png" alt="Ember" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="backbone" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="backbone" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/loro.png" alt="Backbone" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="react" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-    <div class="memory-card" data-framework="react" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-      <img class="front-face" src="assets/Img/alpaca.png" alt="React" />
-      <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-    </div>
-
-    <div class="memory-card" data-framework="leon" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/leon.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-      <div class="memory-card" data-framework="leon" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/leon.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-
-      <div class="memory-card" data-framework="perro" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/perro.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-      <div class="memory-card" data-framework="perro" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/perro.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-
-      <div class="memory-card" data-framework="hipopotamo" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/hipopotamo.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-      <div class="memory-card" data-framework="hipopotamo" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/hipopotamo.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-
-      <div class="memory-card" data-framework="elefante" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/elefante.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-      <div class="memory-card" data-framework="elefante" style="width: calc(21% - 21px);height: calc(33.333% - 10px);">
-        <img class="front-face" src="assets/Img/elefante.png" alt="React" />
-        <img class="back-face" src="assets/Img/Pioneras-00.jpg" alt="JS Badge" />
-      </div>
-  </section>
+  
 
   <div id="win" style="display: none;">
     <img class="win1" src="assets/Img/fireworks1.gif" style="position:absolute;width: 70%;top: 314px;right: 0px;">

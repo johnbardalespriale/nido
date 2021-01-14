@@ -17,7 +17,7 @@
     </div>
   </section>
 
-  <div class="container">
+  <div class="container" style="margin-bottom: 30px;">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-8" style="padding: 0px;">
@@ -148,62 +148,31 @@
     </div>
   </div>
 
-  <div *ngIf="habilitar === 2">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+  <div *ngIf="habilitar === 2" style="margin-bottom: 30px;">
     <div class="container">
-      <div class="row">
+      <div class="row" style="width:1142px;">
         <div class="col-md-2"></div>
-        <div class="col-md-7" style="padding: 0px;">
-          <label style="margin: 0px 0px 27px;">
-            <b style="font-size: 20px;">Una el <span style="color: #47cf73;">punto verde</span> de cada
-              imagen, con el número que represente la cantidad de elementos
-              que contiene:</b>
-          </label>
+        <div class="col-md-3" style="padding: 0px;">
+          <img src="assets/Img/contar_moras_12.png" alt="" width="302px" />
+          <img src="assets/Img/contar_moras_15.png" alt="" width="302px" />
+          <img src="assets/Img/contar_moras_16.png" alt="" width="302px" />
         </div>
-        <div class="col-md-3"></div>
-      </div>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-7" style="padding: 0px; display: flex; flex-direction: row;">
-          <div class="col-md-10" style="padding: 0px;">
-            <svg id="connector_canvas"></svg>
-            <div class="ui-item item-1" style="display: flex; flex-direction: row; align-items: center;">
-              <img src="assets/Img/contar_moras_15.png" alt="" width="260px" />
-              <div class="con_anchor" (mouseover)="match(15)"></div>
-            </div>
-            <div class="ui-item item-2" style="display: flex; flex-direction: row; align-items: center;">
-              <img src="assets/Img/contar_moras_12.png" alt="" width="260px" />
-              <div class="con_anchor" (mouseover)="match(12)"></div>
-            </div>
-            <div class="ui-item item-3" style="display: flex; flex-direction: row; align-items: center;">
-              <img src="assets/Img/contar_moras_16.png" alt="" width="260px" />
-              <div class="con_anchor" (mouseover)="match(16)"></div>
-            </div>
-          </div>
-          <div class="col-md-2" style="display: grid; align-content: space-around; padding: 0px;">
-            <div (mouseover)="matchCorrect(16)">
-              <div class="ui-item item-1" style="pointer-events: none;">
-                <div class="con_anchor"></div>
-                <div>16</div>
-              </div>
-            </div>
-            <div (mouseover)="matchCorrect(15)">
-              <div class="ui-item item-2" style="pointer-events: none;">
-                <div class="con_anchor"></div>
-                <div>15</div>
-              </div>
-            </div>
-
-            <div (mouseover)="matchCorrect(12)">
-              <div class="ui-item item-3" style="pointer-events: none;">
-                <div class="con_anchor"></div>
-                <div>12</div>
-              </div>
-            </div>
-          </div>
+        <canvas id="drawContainer" width="250" height="300" style="border: 1px solid #333; position: relative;z-index: 1;">
+        <div class="col-md-3" style="padding: 0px;">
+          
+        </div>
+      </canvas>
+      <img src="assets/Img/linea_15.png" alt="" width="auto" style="margin-left: 464px;margin-top: 113px;position: absolute;transform: rotate(27deg);
+      z-index:1;"/>
+      <img src="assets/Img/linea_12.png" alt="" width="auto" style="margin-left: 466px;margin-top: 112px;position: absolute;transform: rotate(-26deg);
+      z-index:1;"/>
+      <img src="assets/Img/linea_16.png" alt="" width="auto" style="margin-left: 485px;margin-top: 285px;position: absolute;
+      z-index:1;"/>
+        <div class="col-md-1" style="padding: 0px;display: flex; justify-content: space-around; flex-direction: column;
+        position: relative; z-index: 0;margin-left: -28px;">
+          <img src="assets/Img/unir_15.png" alt="" width="80px" />
+          <img src="assets/Img/unir_12.png" alt="" width="80px" />
+          <img src="assets/Img/unir_16.png" alt="" width="80px" />
         </div>
       </div>
     </div>

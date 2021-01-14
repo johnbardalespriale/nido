@@ -16,7 +16,6 @@ export class ContabilidadNumericaComponent implements OnInit {
   nivel2: any[];
   nivel3: any[];
   win: number;
-
   private currentImage: any;
   private currentImage2: any;
   private currentImage3: any;
@@ -25,111 +24,58 @@ export class ContabilidadNumericaComponent implements OnInit {
   private answerImage3: any;
 
   javascript() {
-    $('.anchor').on('click', function () {
-      var width = parseInt($(this).parent().css('width'));
-      if (width == 10) {
-        $(this).parent().css('width', '20%');
-        $('#canvas').css('width', '60%');
-      } else {
-        $(this).parent().css('width', '10px');
-        $('#canvas').css('width', 'calc( 80% - 10px)');
-      }
-    });
 
-    (<any>$('.ui-item')).draggable({
-      drag: function (event, ui) {
-        var lines = $(this).data('lines');
-        var con_item = $(this).data('connected-item');
-        var con_lines = $(this).data('connected-lines');
+    const canvasEle =  <HTMLCanvasElement> document.getElementById('drawContainer');
+    const context = canvasEle.getContext('2d');
+    let startPosition = {x: 0, y: 0};
+    let lineCoordinates = {x: 0, y: 0};
+    let isDrawStart = false;
+    
+    const getClientOffset = (event) => {
+        const {pageX, pageY} = event.touches ? event.touches[0] : event;
+        const resto = ((pageY-600)*0.125) + 460;
+        const x = pageX - 549;
+        const y = pageY - resto;
+        return {
+           x,
+           y
+        } 
+    }
+    
+    const drawLine = () => {
+      context.beginPath();
+      context.moveTo(startPosition.x, startPosition.y);
+      context.lineTo(lineCoordinates.x, lineCoordinates.y);
+      context.stroke();
+    }
+    
+    const mouseDownListener = (event) => {
+       startPosition = getClientOffset(event);
+       isDrawStart = true;
+    }
+    
+    const mouseMoveListener = (event) => {
+      if(!isDrawStart) return;
+      lineCoordinates = getClientOffset(event);
+      clearCanvas();
+      drawLine();
+    }
+    
+    const mouseupListener = (event) => {
+      isDrawStart = false;
+    }
+    
+    const clearCanvas = () => {
+       context.clearRect(0, 0, canvasEle.width, canvasEle.height);
+    }
 
-        if (lines) {
-          lines.forEach(
-            function (line, id) {
-              $(line)
-                .attr('x1', $(this).position().left)
-                .attr('y1', $(this).position().top + 1);
-            }.bind(this)
-          );
-        }
+    canvasEle.addEventListener('mousedown', mouseDownListener);
+    canvasEle.addEventListener('mousemove', mouseMoveListener);
+    canvasEle.addEventListener('mouseup', mouseupListener);
 
-        if (con_lines) {
-          con_lines.forEach(
-            function (con_line, id) {
-              $(con_line)
-                .attr('x2', $(this).position().left)
-                .attr(
-                  'y2',
-                  $(this).position().top +
-                  parseInt($(this).css('height')) / 2 +
-                  id * 5
-                );
-            }.bind(this)
-          );
-        }
-      },
-    });
-
-    (<any>$('.ui-item')).droppable({
-      accept: '.con_anchor',
-      drop: function (event, ui) {
-        var item = ui.draggable.closest('.ui-item');
-        $(this).data('connected-item', item);
-        ui.draggable.css({ top: -2, left: -2 });
-        item.data('lines').push(item.data('line'));
-
-        if ($(this).data('connected-lines')) {
-          $(this).data('connected-lines').push(item.data('line'));
-
-          var y2_ = parseInt(item.data('line').attr('y2'));
-          item
-            .data('line')
-            .attr('y2', y2_ + $(this).data('connected-lines').length * 5);
-        } else $(this).data('connected-lines', [item.data('line')]);
-
-        item.data('line', null);
-        console.log('dropped');
-      },
-    });
-
-    (<any>$('.con_anchor')).draggable({
-      drag: function (event, ui) {
-        var _end = $(event.target).parent().position();
-        var end = $(event.target).position();
-        if (_end && end)
-          $(event.target)
-            .parent()
-            .data('line')
-            .attr('x2', end.left + _end.left + 5)
-            .attr('y2', end.top + _end.top + 2);
-      },
-      stop: function (event, ui) {
-        if (!ui.helper.closest('.ui-item').data('line')) return;
-        ui.helper.css({ top: -2, left: -2 });
-        ui.helper.closest('.ui-item').data('line').remove();
-        ui.helper.closest('.ui-item').data('line', null);
-        console.log('stopped');
-      },
-    });
-
-    $('.con_anchor').on('mousedown', function (e) {
-      var cur_ui_item = $(this).closest('.ui-item');
-      var connector = $('#connector_canvas');
-      var cur_con;
-
-      if (!$(cur_ui_item).data('lines')) $(cur_ui_item).data('lines', []);
-
-      if (!$(cur_ui_item).data('line')) {
-        cur_con = $(
-          document.createElementNS('http://www.w3.org/2000/svg', 'line')
-        );
-        cur_ui_item.data('line', cur_con);
-      } else cur_con = cur_ui_item.data('line');
-
-      connector.append(cur_con);
-      var start = cur_ui_item.position();
-      cur_con.attr('x1', start.left + 200).attr('y1', start.top + 33);
-      cur_con.attr('x2', start.left + 200).attr('y2', start.top + 33);
-    });
+    /*canvasEle.addEventListener('touchstart', mouseDownListener);
+    canvasEle.addEventListener('touchmove', mouseMoveListener);
+    canvasEle.addEventListener('touchend', mouseupListener);*/
   }
 
   answer: number;
@@ -171,7 +117,7 @@ export class ContabilidadNumericaComponent implements OnInit {
     ];
   }
 
-  updateRandomImage() {
+   updateRandomImage() {
     const r = Math.floor(Math.random() * (this.nivel1.length - 1)) + 0;
     return this.nivel1[r];
   }
@@ -302,6 +248,7 @@ export class ContabilidadNumericaComponent implements OnInit {
       setTimeout(() => {
         this.javascript();
       }, 1000);
+
     } else {
       this.habilitar = 0;
       setTimeout(() => {

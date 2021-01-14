@@ -948,6 +948,53 @@ export class FigurasGemoetricasComponent implements OnInit {
     return answer === 'rombo-azul';
   }
 
+  restoreBoxes(){
+    this.nivel1 = [
+      { imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul' },
+      { imagen: 'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde' },
+      { imagen: 'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo' },
+      { imagen: 'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo' },
+      { imagen: 'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul' },
+      { imagen: 'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde' },
+      { imagen: 'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo' },
+      { imagen: 'assets/Img/triangulo-verde.png', name: 'triangulo-verde' },
+      { imagen: 'assets/Img/triangulo-azul.png', name: 'triangulo-azul' }
+    ];
+
+    this.nivel2 = [
+      { imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul' },
+      { imagen: 'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde' },
+      { imagen: 'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo' },
+      { imagen: 'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo' },
+      { imagen: 'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul' },
+      { imagen: 'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde' },
+      { imagen: 'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo' },
+      { imagen: 'assets/Img/triangulo-verde.png', name: 'triangulo-verde' },
+      { imagen: 'assets/Img/triangulo-azul.png', name: 'triangulo-azul' },
+      { imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul' },
+      { imagen: 'assets/Img/circulo-verde.png', name: 'circulo-verde' },
+      { imagen: 'assets/Img/circulo-rojo.png', name: 'circulo-rojo' }
+    ];
+
+    this.nivel3 = [
+      { imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul' },
+      { imagen: 'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde' },
+      { imagen: 'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo' },
+      { imagen: 'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo' },
+      { imagen: 'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul' },
+      { imagen: 'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde' },
+      { imagen: 'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo' },
+      { imagen: 'assets/Img/triangulo-verde.png', name: 'triangulo-verde' },
+      { imagen: 'assets/Img/triangulo-azul.png', name: 'triangulo-azul' },
+      { imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul' },
+      { imagen: 'assets/Img/circulo-verde.png', name: 'circulo-verde' },
+      { imagen: 'assets/Img/circulo-rojo.png', name: 'circulo-rojo' },
+      { imagen: 'assets/Img/rombo-rojo.png', name: 'rombo-rojo' },
+      { imagen: 'assets/Img/rombo-azul.png', name: 'rombo-azul' },
+      { imagen: 'assets/Img/rombo-verde.png', name: 'rombo-verde' }
+    ];
+  }
+
 
 
   resetear() {
@@ -958,19 +1005,11 @@ export class FigurasGemoetricasComponent implements OnInit {
     this.caja_morado = [];
     this.caja_rosada = [];
 
+
+
     if (this.selectedNivel === 'Nivel 1') {
 
-      this.nivel1 = [
-        { imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul' },
-        { imagen: 'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde' },
-        { imagen: 'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo' },
-        { imagen: 'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo' },
-        { imagen: 'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul' },
-        { imagen: 'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde' },
-        { imagen: 'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo' },
-        { imagen: 'assets/Img/triangulo-verde.png', name: 'triangulo-verde' },
-        { imagen: 'assets/Img/triangulo-azul.png', name: 'triangulo-azul' }
-      ];
+      this.restoreBoxes();
 
       var objects = document.getElementById('objects');
       objects.style.opacity = '1';
@@ -988,20 +1027,7 @@ export class FigurasGemoetricasComponent implements OnInit {
       cajaNaranja.style.opacity = '1';
       cajaNaranja.style.pointerEvents = 'inherit';
     } else if (this.selectedNivel === 'Nivel 2') {
-      this.nivel2 = [
-        { imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul' },
-        { imagen: 'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde' },
-        { imagen: 'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo' },
-        { imagen: 'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo' },
-        { imagen: 'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul' },
-        { imagen: 'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde' },
-        { imagen: 'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo' },
-        { imagen: 'assets/Img/triangulo-verde.png', name: 'triangulo-verde' },
-        { imagen: 'assets/Img/triangulo-azul.png', name: 'triangulo-azul' },
-        { imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul' },
-        { imagen: 'assets/Img/circulo-verde.png', name: 'circulo-verde' },
-        { imagen: 'assets/Img/circulo-rojo.png', name: 'circulo-rojo' }
-      ];
+      this.restoreBoxes();
 
       var objects = document.getElementById('objects');
       objects.style.opacity = '1';
@@ -1023,23 +1049,7 @@ export class FigurasGemoetricasComponent implements OnInit {
       cajaMorado.style.opacity = '1';
       cajaMorado.style.pointerEvents = 'inherit';
     } else if (this.selectedNivel === 'Nivel 3') {
-      this.nivel3 = [
-        { imagen: 'assets/Img/cuadrado-azul.png', name: 'cuadrado-azul' },
-        { imagen: 'assets/Img/cuadrado-verde.png', name: 'cuadrado-verde' },
-        { imagen: 'assets/Img/cuadrado-rojo.png', name: 'cuadrado-rojo' },
-        { imagen: 'assets/Img/rectangulo-rojo.png', name: 'rectangulo-rojo' },
-        { imagen: 'assets/Img/rectangulo-azul.png', name: 'rectangulo-azul' },
-        { imagen: 'assets/Img/rectangulo-verde.png', name: 'rectangulo-verde' },
-        { imagen: 'assets/Img/triangulo-rojo.png', name: 'triangulo-rojo' },
-        { imagen: 'assets/Img/triangulo-verde.png', name: 'triangulo-verde' },
-        { imagen: 'assets/Img/triangulo-azul.png', name: 'triangulo-azul' },
-        { imagen: 'assets/Img/circulo-azul.png', name: 'circulo-azul' },
-        { imagen: 'assets/Img/circulo-verde.png', name: 'circulo-verde' },
-        { imagen: 'assets/Img/circulo-rojo.png', name: 'circulo-rojo' },
-        { imagen: 'assets/Img/rombo-rojo.png', name: 'rombo-rojo' },
-        { imagen: 'assets/Img/rombo-azul.png', name: 'rombo-azul' },
-        { imagen: 'assets/Img/rombo-verde.png', name: 'rombo-verde' }
-      ];
+      this.restoreBoxes();
 
       var objects = document.getElementById('objects');
       objects.style.opacity = '1';

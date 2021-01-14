@@ -16,14 +16,15 @@ section
 .memory-game
   width: 599px
   height: 459px
-  margin: auto
+  margin-top: 16px
+  margin-bottom: 180px
   display: flex
   flex-wrap: wrap
   perspective: 1000px
 
 .memory-card 
-  width: calc(25% - 10px)
-  height: calc(33.333% - 10px)
+  width: calc(25% - 19px)
+  height: calc(33.333% - 19px)
   margin: 5px
   position: relative
   transform: scale(1)
@@ -45,7 +46,6 @@ section
   padding: 20px
   position: absolute
   background: #e9b901
-  backface-visibility: hidden
 
 .front-face
   transform: rotateY(180deg)

@@ -34,6 +34,7 @@ import { FigurasGemoetricasComponent } from './figuras-gemoetricas/figuras-gemoe
 import { PuntosComponent } from './puntos/puntos.component';
 import { MemoriasComponent } from './memorias/memorias.component';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { PruebaComponent } from './prueba/prueba.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { AhorcadoComponent } from './ahorcado/ahorcado.component';
     PuntosComponent,
     MemoriasComponent,
     AhorcadoComponent,
+    PruebaComponent,
   ],
   imports: [
     BrowserModule,
