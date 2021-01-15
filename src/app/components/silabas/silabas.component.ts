@@ -32,49 +32,50 @@ export class SilabasComponent implements OnInit {
     ];
 
     this.nivel1 = [
-      { imagen: 'assets/Img/taza.png', silabas: 1, name: 'taza' },
-      { imagen: 'assets/Img/sol.png', silabas: 1, name: 'sol' },
-      { imagen: 'assets/Img/pera.png', silabas: 2, name: 'pera' },
-      { imagen: 'assets/Img/zapato.png', silabas: 3, name: 'zapato' },
+      { imagen: 'assets/Img/taza.png', silabas: 2, name: 'taza', descompongo: 'ta-za' },
+      { imagen: 'assets/Img/sol.png', silabas: 1, name: 'sol', descompongo: 'sol' },
+      { imagen: 'assets/Img/pera.png', silabas: 2, name: 'pera', descompongo: 'pe-ra' },
+      { imagen: 'assets/Img/zapato.png', silabas: 3, name: 'zapato', descompongo: 'za-pa-to' },
     ];
 
     this.nivel2 = [
-      { imagen: 'assets/Img/canasta.png', silabas: 3, name: 'canasta' },
-      { imagen: 'assets/Img/falda.png', silabas: 2, name: 'falda' },
-      { imagen: 'assets/Img/ventilador.png', silabas: 4, name: 'ventilador' },
-      { imagen: 'assets/Img/bicicleta.png', silabas: 4, name: 'bicicleta' },
+      { imagen: 'assets/Img/canasta.png', silabas: 3, name: 'canasta', descompongo: 'ca-nas-ta' },
+      { imagen: 'assets/Img/falda.png', silabas: 2, name: 'falda', descompongo: 'fal-da' },
+      { imagen: 'assets/Img/ventilador.png', silabas: 4, name: 'ventilador', descompongo: 'ven-ti-la-dor' },
+      { imagen: 'assets/Img/bicicleta.png', silabas: 4, name: 'bicicleta', descompongo: 'bi-ci-cle-ta' },
     ];
 
     this.nivel3 = [
-      { imagen: 'assets/Img/flor.png', silabas: 1, name: 'flor' },
-      { imagen: 'assets/Img/polo.png', silabas: 2, name: 'polo' },
-      { imagen: 'assets/Img/camion.png', silabas: 2, name: 'camion' },
+      { imagen: 'assets/Img/flor.png', silabas: 1, name: 'flor', descompongo: 'flor' },
+      { imagen: 'assets/Img/polo.png', silabas: 2, name: 'polo', descompongo: 'po-lo' },
+      { imagen: 'assets/Img/camion.png', silabas: 2, name: 'camion', descompongo: 'ca-mion' },
       {
         imagen: 'assets/Img/hipopotamo_2.png',
         silabas: 5,
         name: 'hipopotamo_2',
+        descompongo: 'hi-po-po-ta-mo'
       },
     ];
 
     this.nivel4 = [
-      { imagen: 'assets/Img/computadora.png', silabas: 5, name: 'computadora' },
-      { imagen: 'assets/Img/dia.png', silabas: 1, name: 'dia' },
-      { imagen: 'assets/Img/pan.png', silabas: 1, name: 'pan' },
-      { imagen: 'assets/Img/tren.png', silabas: 1, name: 'tren' },
+      { imagen: 'assets/Img/computadora.png', silabas: 5, name: 'computadora', descompongo: 'com-pu-ta-do-ra' },
+      { imagen: 'assets/Img/miel.png', silabas: 1, name: 'miel', descompongo: 'miel' },
+      { imagen: 'assets/Img/pan.png', silabas: 1, name: 'pan', descompongo: 'pan' },
+      { imagen: 'assets/Img/tren.png', silabas: 1, name: 'tren', descompongo: 'tren' },
     ];
 
     this.nivel5 = [
-      { imagen: 'assets/Img/bote.png', silabas: 2, name: 'bote' },
-      { imagen: 'assets/Img/carro.png', silabas: 2, name: 'carro' },
-      { imagen: 'assets/Img/caballo.png', silabas: 3, name: 'caballo' },
-      { imagen: 'assets/Img/payaso.png', silabas: 3, name: 'payaso' },
+      { imagen: 'assets/Img/bote.png', silabas: 2, name: 'bote', descompongo: 'bo-te' },
+      { imagen: 'assets/Img/carro.png', silabas: 2, name: 'carro', descompongo: 'ca-rro' },
+      { imagen: 'assets/Img/caballo.png', silabas: 3, name: 'caballo', descompongo: 'ca-ba-llo' },
+      { imagen: 'assets/Img/payaso.png', silabas: 3, name: 'payaso', descompongo: 'pa-ya-so' },
     ];
 
     this.nivel6 = [
-      { imagen: 'assets/Img/piñata.png', silabas: 3, name: 'piñata' },
-      { imagen: 'assets/Img/panadero.png', silabas: 4, name: 'panadero' },
-      { imagen: 'assets/Img/elefante_1.png', silabas: 4, name: 'elefante' },
-      { imagen: 'assets/Img/mariposa.png', silabas: 4, name: 'mariposa' },
+      { imagen: 'assets/Img/piñata.png', silabas: 3, name: 'piñata', descompongo: 'pi-ña-ta' },
+      { imagen: 'assets/Img/panadero.png', silabas: 4, name: 'panadero', descompongo: 'pa-na-de-ro' },
+      { imagen: 'assets/Img/elefante_1.png', silabas: 4, name: 'elefante', descompongo: 'e-le-fan-te' },
+      { imagen: 'assets/Img/mariposa.png', silabas: 4, name: 'mariposa', descompongo: 'ma-ri-po-sa' },
     ];
 
     this.nivel1.sort(function () {
@@ -113,7 +114,7 @@ export class SilabasComponent implements OnInit {
   }
 
 
-  iniciarJuego(i, name) {
+  iniciarJuego(i, name, silabas, descompongo) {
     if (name === 'taza' && i === 2) {
       this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
@@ -218,7 +219,7 @@ export class SilabasComponent implements OnInit {
         slide.style.pointerEvents = 'none';
         slide.style.opacity = '0.3';
       }
-    } else if (name === 'dia' && i === 1) {
+    } else if (name === 'miel' && i === 1) {
       this.answerCorrect();
       let objeto = document.getElementsByClassName(name);
       for (let i = 0; i < objeto.length; i++) {
@@ -308,7 +309,7 @@ export class SilabasComponent implements OnInit {
       }
     } else {
       Swal.fire({
-        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin-top:25px;'>Vuelve a intentarlo</p>",
+        html: "<img src='assets/Img/carita_triste.jpg' style='width:100px;'> <p style='margin: 5px;'>La palabra es: </p> <b>"+ descompongo +"</b> <p style='margin: 5px;'>Vuelve a intentarlo</p>",
       });
     }
   }
