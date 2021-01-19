@@ -10,7 +10,7 @@
 
 <body>
   <section style="margin-top: 25px;font-family: math;">
-    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;margin: 0px;">
       <div class="container">
         <h1 class="consigna" style="text-align: center;">¿Sabes qué hora es?</h1>
         <p class="lead">¿Qué hora marca el reloj?</p>
@@ -34,205 +34,153 @@
           </label>
         </div>
 
-        <div style="text-align: initial;">
+        <!--div style="text-align: initial;">
           <input type="button" value="Resetear" (click)="resetear(selectedNivel)" />
-        </div>
+        </div-->
       </div>
     </div>
     <div *ngIf="habilitar == 1">
-      <div id="setCard2" class="row" style="margin-top: 25px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_6.png" style="width: 13%;" />
+      <div class="row" style="margin-bottom: 80px;">
+        <div id="setCard2" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel1_2">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 85%;border-radius: 9%; cursor: pointer;"
+                  (click)="answerCorrect(hora.answer)" />
+              </div>
+            </section>
           </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel1_2">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
-                (click)="answerCorrect(hora.answer)" />
-            </div>
+          <div class="col-md-6">
+              <img class="card-img-top img-main" src="assets/Img/reloj_6.png"/>
           </div>
-          <div class="col-sm"></div>
         </div>
-      </div>
-      <div id="setCard1" class="row" style="margin-top: 25px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_12.png" style="width: 13%; margin: 0px auto;" />
-          </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel1_1">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
+
+        <div id="setCard1" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel1_1">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 80%; border-radius: 4%; cursor: pointer;"
                 (click)="answerCorrect(hora.answer)" />
-            </div>
+              </div>
+            </section>
           </div>
-          <div class="col-sm"></div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_12.png"/>
+          </div>
         </div>
-      </div>
-      <div id="setCard3" class="row" style="margin-top: 25px; margin-bottom: 35px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_9.png" style="width: 13%;" />
-          </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel1_3">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
+
+        <div id="setCard3" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel1_3">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 80%; border-radius: 9%; cursor: pointer;"
                 (click)="answerCorrect(hora.answer)" />
-            </div>
+              </div>
+            </section>
           </div>
-          <div class="col-sm"></div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_9.png"/>
+          </div>
         </div>
+        
       </div>
     </div>
     <div *ngIf="habilitar === 2">
-      <div id="set2Card1" class="row" style="margin-top: 25px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_media_2.png"
-              style="width: 13%; margin: 0px auto;" />
+      <div class="row" style="margin-bottom: 80px;">
+        <div id="set2Card1" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel2_1">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 85%;border-radius: 9%; cursor: pointer;"
+                  (click)="answerCorrect(hora.answer)" />
+              </div>
+            </section>
           </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel2_1">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
-                (click)="answerCorrect(hora.answer)" />
-            </div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_media_2.png">
           </div>
-          <div class="col-sm"></div>
         </div>
-      </div>
-      <div id="set2Card2" class="row" style="margin-top: 25px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_media_10.png" style="width: 13%;" />
+
+        <div id="set2Card2" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel2_2">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 85%;border-radius: 9%; cursor: pointer;"
+                  (click)="answerCorrect(hora.answer)" />
+              </div>
+            </section>
           </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel2_2">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
-                (click)="answerCorrect(hora.answer)" />
-            </div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_media_10.png">
           </div>
-          <div class="col-sm"></div>
         </div>
-      </div>
-      <div id="set2Card3" class="row" style="margin-top: 25px; margin-bottom: 35px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_media_12.png" style="width: 13%;" />
+
+        <div id="set2Card3" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel2_3">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 85%;border-radius: 9%; cursor: pointer;"
+                  (click)="answerCorrect(hora.answer)" />
+              </div>
+            </section>
           </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel2_3">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
-                (click)="answerCorrect(hora.answer)" />
-            </div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_media_12.png">
           </div>
-          <div class="col-sm"></div>
         </div>
       </div>
     </div>
     <div *ngIf="habilitar === 3">
-      <div id="set3Card1" class="row" style="margin-top: 25px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_cuarto_4.png"
-              style="width: 13%; margin: 0px auto;" />
+      <div class="row" style="margin-bottom: 80px;">
+        <div id="set3Card1" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel3_1">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 85%;border-radius: 9%; cursor: pointer;"
+                  (click)="answerCorrect(hora.answer)" />
+              </div>
+            </section>
           </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel3_1">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
-                (click)="answerCorrect(hora.answer)" />
-            </div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_cuarto_4.png">
           </div>
-          <div class="col-sm"></div>
         </div>
-      </div>
-      <div id="set3Card2" class="row" style="margin-top: 25px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_cuarto_11.png" style="width: 13%;" />
+
+        <div id="set3Card2" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel3_2">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 85%;border-radius: 9%; cursor: pointer;"
+                  (click)="answerCorrect(hora.answer)" />
+              </div>
+            </section>
           </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel3_2">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
-                (click)="answerCorrect(hora.answer)" />
-            </div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_cuarto_11.png">
           </div>
-          <div class="col-sm"></div>
         </div>
-      </div>
-      <div id="set3Card3" class="row" style="margin-top: 25px; margin-bottom: 35px;">
-        <div class="col-md-2"></div>
-        <div class="col-md-10" style="
-              background-color: #0093b6;
-              padding: 15px;
-              border: 5px solid #0d184e;
-            ">
-          <div class="col-sm"></div>
-          <div class="col-sm" style="text-align: center;">
-            <img class="card-img-top img-main" src="assets/Img/reloj_cuarto_1.png" style="width: 13%;" />
+
+        <div id="set3Card3" class="col-sm-4" style="display: flex; margin-top: 25px;background-color: #0093b6;padding: 15px;border: 5px solid #0d184e;">
+          <div class="col-sm-6" style="display: flex;">
+            <section style="align-content: space-between;">
+              <div class="zoom" *ngFor="let hora of horaNivel3_3">
+                <img class="card-img-top" [src]="hora.imagen" style="width: 85%;border-radius: 9%; cursor: pointer;"
+                  (click)="answerCorrect(hora.answer)" />
+              </div>
+            </section>
           </div>
-          <div class="row" style="text-align: center; margin-top: 25px;">
-            <div class="col-md-4 zoom" *ngFor="let hora of horaNivel3_3">
-              <img class="card-img-top" [src]="hora.imagen" style="width: 40%; border-radius: 4%; cursor: pointer;"
-                (click)="answerCorrect(hora.answer)" />
-            </div>
+          <div class="col-md-6">
+            <img class="card-img-top img-main" src="assets/Img/reloj_cuarto_1.png">
           </div>
-          <div class="col-sm"></div>
         </div>
       </div>
     </div>
   </div>
 
   <div *ngIf="win === 1">
-    <img class="win1" src="assets/Img/fireworks1.gif" style="position: absolute;;width: 56%;top: 425px;right: 0px;background-color: inherit;height: auto;">
-    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 420px;right: 342px;background-color: inherit;height: auto;">
-    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 425px;left: 0px;background-color: inherit;height: auto;">
+    <img class="win1" src="assets/Img/fireworks1.gif" style="position: absolute;;width: 43%;top: 376px;right: 0px;background-color: inherit;height: auto;">
+    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 33%;top: 332px;right: 450px;background-color: inherit;height: auto;">
+    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 41%;top: 373px;left: 0px;background-color: inherit;height: auto;">
 </div>
 </body>
 

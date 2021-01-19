@@ -224,40 +224,49 @@ export class HoraComponent implements OnInit {
 
   resetear(show) {
     this.win = 0;
+    this.cont = 0;
+    this.cont2 = 0;
+    this.cont3 = 0;
     this.mixHours();
     if (show === 'Nivel 1') {
       this.habilitar = 1;
-      var setCard1 = document.getElementById('setCard1');
-      setCard1.style.opacity = '1';
-      setCard1.style.pointerEvents = 'inherit';
-      var setCard1 = document.getElementById('setCard2');
-      setCard1.style.opacity = '1';
-      setCard1.style.pointerEvents = 'inherit';
-      var setCard1 = document.getElementById('setCard3');
-      setCard1.style.opacity = '1';
-      setCard1.style.pointerEvents = 'inherit';
+      setTimeout(() => {
+        var setCard1 = document.getElementById('setCard1');
+        setCard1.style.opacity = '1';
+        setCard1.style.pointerEvents = 'inherit';
+        var setCard1 = document.getElementById('setCard2');
+        setCard1.style.opacity = '1';
+        setCard1.style.pointerEvents = 'inherit';
+        var setCard1 = document.getElementById('setCard3');
+        setCard1.style.opacity = '1';
+        setCard1.style.pointerEvents = 'inherit';
+      }, 500);
     } else if (show === 'Nivel 2') {
       this.habilitar = 2;
-      var set2Card1 = document.getElementById('set2Card1');
-      set2Card1.style.opacity = '1';
-      set2Card1.style.pointerEvents = 'inherit';
-      var set2Card2 = document.getElementById('set2Card2');
-      set2Card2.style.opacity = '1';
-      set2Card2.style.pointerEvents = 'inherit';
-      var set2Card3 = document.getElementById('set2Card3');
-      set2Card3.style.opacity = '1';
-      set2Card3.style.pointerEvents = 'inherit';
+      setTimeout(() => {
+        var set2Card1 = document.getElementById('set2Card1');
+        set2Card1.style.opacity = '1';
+        set2Card1.style.pointerEvents = 'inherit';
+        var set2Card2 = document.getElementById('set2Card2');
+        set2Card2.style.opacity = '1';
+        set2Card2.style.pointerEvents = 'inherit';
+        var set2Card3 = document.getElementById('set2Card3');
+        set2Card3.style.opacity = '1';
+        set2Card3.style.pointerEvents = 'inherit';
+      }, 500);
     } else if (show === 'Nivel 3') {
       this.habilitar = 3;
-      var set3Card1 = document.getElementById('set3Card1');
-      set3Card1.style.opacity = '1';
-      set3Card1.style.pointerEvents = 'inherit';
-      var set3Card2 = document.getElementById('set3Card2');
-      set3Card2.style.opacity = '1';
-      set3Card2.style.pointerEvents = 'inherit';
-      var set3Card3 = document.getElementById('set3Card3');
-      set3Card3.style.opacity = '1';
-      set3Card3.style.pointerEvents = 'inherit';
+      setTimeout(() => {
+        var set3Card1 = document.getElementById('set3Card1');
+        set3Card1.style.opacity = '1';
+        set3Card1.style.pointerEvents = 'inherit';
+        var set3Card2 = document.getElementById('set3Card2');
+        set3Card2.style.opacity = '1';
+        set3Card2.style.pointerEvents = 'inherit';
+        var set3Card3 = document.getElementById('set3Card3');
+        set3Card3.style.opacity = '1';
+        set3Card3.style.pointerEvents = 'inherit';
+      }, 500);
     } else {
       this.habilitar = 3;
     }
