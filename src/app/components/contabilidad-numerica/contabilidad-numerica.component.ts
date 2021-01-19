@@ -215,6 +215,7 @@ export class ContabilidadNumericaComponent implements OnInit {
 
   resetear(show) {
     this.answer = 0;
+    this.win = 0;
 
     setTimeout(() => {
       this.currentImage = this.updateRandomImage();

@@ -8,31 +8,71 @@
   </div>
 </section>
 
+<div class="container">
+  <div class="row" style="margin-bottom: 18px;">
+    <div class="col-md-1"></div>
+    <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
+      <label style="margin: 15px 0px; text-align: initial;">
+        <b style="font-size: initial;font-family: sans-serif;">Escoge el nivel del juego y empieza a jugar.</b>
+      </label>
+  
+      <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+        <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+          [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel" (mouseup)="resetear(nivel.nivel);">
+          {{ nivel.nivel }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="wrapper">
   <mat-tab-group>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4" id="peinado" *ngIf="selectedNivel == 'Nivel 1'">
+    <div class="container" style="margin-bottom: 50px;">
+      <div class="row" style="margin-left: 46px;">
+        <div class="col-md-11" id="peinado" *ngIf="selectedNivel == 'Nivel 1' && validador == 1">
+
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="drop($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" style="display: flex;flex-direction: row;" (cdkDropListDropped)="drop($event)">
               <div class="movie-block" *ngFor="let peinado of peinados" cdkDrag [cdkDragDisabled]="peinado.disabled">
                 <img [src]="peinado.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div class="col-md-4" id="diente" *ngIf="selectedNivel == 'Nivel 1'">
+        <div class="col-md-11" id="diente" *ngIf="selectedNivel == 'Nivel 1' && validador == 2">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropDientes($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropDientes($event)">
               <div class="movie-block" *ngFor="let diente of dientes" cdkDrag [cdkDragDisabled]="diente.disabled">
                 <img [src]="diente.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div class="col-md-4" id="ropa" *ngIf="selectedNivel == 'Nivel 1'">
+        <div class="col-md-11" id="ropa" *ngIf="selectedNivel == 'Nivel 1' && validador == 3">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropRopas($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropRopas($event)">
               <div class="movie-block" *ngFor="let ropa of ropas" cdkDrag [cdkDragDisabled]="ropa.disabled">
                 <img [src]="ropa.imagen" alt="" />
               </div>
@@ -41,60 +81,103 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4" id="casita" *ngIf="selectedNivel == 'Nivel 2'">
+        <div class="col-md-11" id="casita" *ngIf="selectedNivel == 'Nivel 2' && validador == 1">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropCasita($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropCasita($event)">
               <div class="movie-block" *ngFor="let casita of casita" cdkDrag [cdkDragDisabled]="casita.disabled">
-                <img [src]="casita.imagen" alt="" />
+                <img style="width: 252px;" [src]="casita.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div class="col-md-4" id="resbaladera" *ngIf="selectedNivel == 'Nivel 2'">
+
+        <div class="col-md-11" id="resbaladera" *ngIf="selectedNivel == 'Nivel 2' && validador == 2">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropResbaladera($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropResbaladera($event)">
               <div class="movie-block" *ngFor="let resbaladera of resbaladera" cdkDrag
                 [cdkDragDisabled]="resbaladera.disabled">
-                <img [src]="resbaladera.imagen" alt="" />
+                <img style="width: 252px;" [src]="resbaladera.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div class="col-md-4" id="levantarse" *ngIf="selectedNivel == 'Nivel 2'">
+        <div class="col-md-11" id="levantarse" *ngIf="selectedNivel == 'Nivel 2' && validador == 3">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropLevantarse($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropLevantarse($event)">
               <div class="movie-block" *ngFor="let levantarse of levantarse" cdkDrag
                 [cdkDragDisabled]="levantarse.disabled">
-                <img [src]="levantarse.imagen" alt="" />
+                <img style="width: 252px;" [src]="levantarse.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4" id="insecto" *ngIf="selectedNivel == 'Nivel 3'">
+        <div class="col-md-12" id="insecto" *ngIf="selectedNivel == 'Nivel 3' && validador == 1" style="padding: 0px;">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropInsecto($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropInsecto($event)">
               <div class="movie-block" *ngFor="let insecto of insecto" cdkDrag [cdkDragDisabled]="insecto.disabled">
-                <img [src]="insecto.imagen" alt="" />
+                <img style="width: 190px;height: max-content;" [src]="insecto.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div class="col-md-4" id="vaca" *ngIf="selectedNivel == 'Nivel 3'">
+        <div class="col-md-12" id="vaca" *ngIf="selectedNivel == 'Nivel 3' && validador == 2" style="padding: 0px;">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropVaca($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropVaca($event)">
               <div class="movie-block" *ngFor="let vaca of vaca" cdkDrag [cdkDragDisabled]="vaca.disabled">
-                <img [src]="vaca.imagen" alt="" />
+                <img style="width: 190px;height: max-content;" [src]="vaca.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
         </div>
-        <div class="col-md-4" id="lluvia" *ngIf="selectedNivel == 'Nivel 3'">
+        <div class="col-md-12" id="lluvia" *ngIf="selectedNivel == 'Nivel 3' && validador == 3" style="padding: 0px;">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+            <div class="container">
+              <p style="margin: 0px;" class="lead">{{ texto }}</p>
+            </div>
+          </div>
+
           <mat-tab label="Reordering lists">
-            <div cdkDropList class="movie-list" (cdkDropListDropped)="dropLluvia($event)">
+            <div cdkDropList cdkDropListOrientation="horizontal" class="example-list" (cdkDropListDropped)="dropLluvia($event)">
               <div class="movie-block" *ngFor="let lluvia of lluvia" cdkDrag [cdkDragDisabled]="lluvia.disabled">
-                <img [src]="lluvia.imagen" alt="" />
+                <img style="width: 190px;height: max-content;" [src]="lluvia.imagen" alt="" />
               </div>
             </div>
           </mat-tab>
@@ -122,37 +205,7 @@
         <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 314px;left: 0px;">
       </div>
 
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="padding: 0px;display: flex;flex-direction: column;">
-          <label style="margin: 15px 0px; text-align: initial;">
-            <b style="font-size: initial;font-family: sans-serif;">Escoge el nivel del juego y empieza a jugar.</b>
-          </label>
-          <!--mat-radio-group
-            aria-labelledby="example-radio-group-label"
-            class="radio-group"
-            [(ngModel)]="selectedNivel"
-          >
-            <mat-radio-button
-              *ngFor="let nivel of nivels"
-              [value]="nivel.nivel"
-            >
-              {{ nivel.nivel }}
-            </mat-radio-button>
-          </mat-radio-group-->
-
-          <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
-            <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
-              [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel" (mouseup)="resetear()">
-              {{ nivel.nivel }}
-            </label>
-          </div>
-
-          <div>
-            <input style="height: 30px;" type="button" value="Resetear" (click)="resetear()" />
-          </div>
-        </div>
-      </div>
+      
     </div>
 
     

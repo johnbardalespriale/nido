@@ -23,10 +23,13 @@ export class SecuenciaComponent implements OnInit {
   cont1: number;
   cont2: number;
   cont3: number;
+  texto: String;
+  validador: number;
   constructor() {}
 
   ngOnInit(): void {
-
+    this.texto = "";
+    this.validador = 0;
     this.cont1 = 0;
     this.cont2 = 0;
     this.cont3 = 0;
@@ -40,9 +43,9 @@ export class SecuenciaComponent implements OnInit {
     //this.selectedNivel = 'Nivel 1';
 
     this.peinados = [
-      { imagen: 'assets/Img/peinado-1.png', posicion: 0, disabled: false },
-      { imagen: 'assets/Img/peinado-2.png', posicion: 1, disabled: false },
-      { imagen: 'assets/Img/peinado-3.png', posicion: 2, disabled: false },
+      { imagen: 'assets/Img/peinado-1.png', posicion: 0, disabled: false, valor: 'peinado'},
+      { imagen: 'assets/Img/peinado-2.png', posicion: 1, disabled: false, valor: 'peinado'},
+      { imagen: 'assets/Img/peinado-3.png', posicion: 2, disabled: false, valor: 'peinado'},
     ];
 
     this.dientes = [
@@ -134,7 +137,13 @@ export class SecuenciaComponent implements OnInit {
     });
   }
 
-  resetear() {
+  randomValidator(){
+   this.validador = Math.floor(Math.random() * (4 - 1)) + 1;
+   console.log(this.validador);
+  }
+
+  resetear(nivel) {
+    
     this.cont1 = 0;
     this.cont2 = 0;
     this.cont3 = 0;
@@ -166,15 +175,25 @@ export class SecuenciaComponent implements OnInit {
       return Math.random() - 0.5;
     });
 
-    if (this.selectedNivel === 'Nivel 1') {
+    this.randomValidator();
+
+    if (nivel === 'Nivel 1') {
+      setTimeout(() => {
       var peinado = document.getElementById('peinado');
-      peinado.style.opacity = '1';
-
       var diente = document.getElementById('diente');
-      diente.style.opacity = '1';
-
       var ropa = document.getElementById('ropa');
-      ropa.style.opacity = '1';
+
+      if(peinado != null){
+        peinado.style.opacity = '1';
+        this.texto = "El niño está en la peluquería cortándose el cabello."
+      } else if(diente != null){
+        diente.style.opacity = '1';
+        this.texto = "La niña está cepillándose los dientes."
+      }else if( ropa != null){
+        ropa.style.opacity = '1';
+        this.texto = "El niño está poniéndose su ropa."
+      }
+      }, 300);
 
       for (let i in this.peinados) {
         this.peinados[i].disabled = false;
@@ -183,15 +202,24 @@ export class SecuenciaComponent implements OnInit {
       }
     }
 
-    if (this.selectedNivel === 'Nivel 2') {
-      var casita = document.getElementById('casita');
-      casita.style.opacity = '1';
-
-      var resbaladera = document.getElementById('resbaladera');
-      resbaladera.style.opacity = '1';
-
-      var levantarse = document.getElementById('levantarse');
-      levantarse.style.opacity = '1';
+    if (nivel === 'Nivel 2') {
+      
+      setTimeout(() => {
+        var casita = document.getElementById('casita');
+        var resbaladera = document.getElementById('resbaladera');
+        var levantarse = document.getElementById('levantarse');
+  
+        if(casita != null){
+          casita.style.opacity = '1';
+          this.texto = "La niña arma una casita para aves."
+        } else if(resbaladera != null){
+          resbaladera.style.opacity = '1';
+          this.texto = "El niño baja por la resbaladilla."
+        }else if( levantarse != null){
+          levantarse.style.opacity = '1';
+          this.texto = "El niño se alista para tomar su desayuno."
+        }
+        }, 300);
 
       for (let i in this.casita) {
         this.casita[i].disabled = false;
@@ -200,15 +228,24 @@ export class SecuenciaComponent implements OnInit {
       }
     }
 
-    if (this.selectedNivel === 'Nivel 3') {
-      var casita = document.getElementById('insecto');
-      casita.style.opacity = '1';
+    if (nivel === 'Nivel 3') {
 
-      var resbaladera = document.getElementById('vaca');
-      resbaladera.style.opacity = '1';
-
-      var levantarse = document.getElementById('lluvia');
-      levantarse.style.opacity = '1';
+      setTimeout(() => {
+        var insecto = document.getElementById('insecto');
+        var vaca = document.getElementById('vaca');
+        var lluvia = document.getElementById('lluvia');
+  
+        if(insecto != null){
+          insecto.style.opacity = '1';
+          this.texto = "El ave rescata a su amiga la hormiga."
+        } else if(vaca != null){
+          vaca.style.opacity = '1';
+          this.texto = "El proceso de la leche de vaca."
+        }else if( lluvia != null){
+          lluvia.style.opacity = '1';
+          this.texto = "El viento vuela el sombrero del señor hasta un lago."
+        }
+        }, 300);
 
       for (let i in this.insecto) {
         this.insecto[i].disabled = false;
