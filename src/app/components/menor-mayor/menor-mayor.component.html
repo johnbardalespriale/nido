@@ -9,15 +9,29 @@
 </head>
 
 <body>
-  <section style="margin-top: 25px;font-family: math;">
-    <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
-      <div class="container">
-        <h1 class="consigna" style="text-align: center;">Menor que, Mayor que</h1>
-        <p class="lead">Arrastra el signo > < <span>ó </span> = según corresponda.</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2"></div>
+        <div class="col-md-5" style="margin-top: 25px;font-family: math;padding: 0px;display: initial;">
+          <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
+            <div class="container">
+              <h1 class="consigna" style="text-align: center;">Menor que, Mayor que</h1>
+              <p class="lead">Arrastra el signo > < <span>ó </span> = según corresponda.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="margin-top: 25px;font-family: math;">
+          <div class="jumbotron jumbotron-fluid" style="padding: 10px; border-radius: 10px;width: fit-content;">
+            <div class="container">
+              <p class="lead" style="margin: 0px;">> mayor</p>
+              <p class="lead" style="margin: 0px;">< menor</p>
+              <p class="lead" style="margin: 0px;">= igual</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
-
+  
   <div class="container">
     <div class="row">
       <div class="col-md-2"></div>
@@ -46,23 +60,23 @@
           </label>
         </div>
 
-        <div style="text-align: initial; margin-bottom: 15px;">
+        <!--div style="text-align: initial; margin-bottom: 15px;">
           <input type="button" value="Resetear" (click)="resetear(selectedNivel)" />
-        </div>
+        </div-->
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" style="margin-bottom: 50px;margin-top: 30px;">
     <div cdkDropListGroup>
       <div class="row" *ngIf="habilitar == 1">
         <div class="col-md-2"></div>
-        <div class="col-md-3" style="padding: 0px">
+        <div class="col-md-2" style="padding: 0px">
           <div class="movie-block" *ngFor="let nivel of nivel1 | slice: 0:6; let i = index">
             <img [src]="nivel.imagen" alt="" width="140px" style="border: 8px solid #292961" />
           </div>
         </div>
-        <div class="col-md-3" id="answers">
+        <div class="col-md-2" id="answers" style="padding: 0px">
           <div class="movie-block" style="height: 130px; background-color: white">
             <div style="width: 142px; height: 100%; flex-direction: column" cdkDropList [cdkDropListData]="signo1"
               class="example-list" (cdkDropListDropped)="drop($event)">
@@ -117,23 +131,30 @@
             </div>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2" style="padding: 0px">
           <div>
             <div class="movie-block" *ngFor="let nivel of nivel1_1 | slice: 0:6; let i = index">
               <img [src]="nivel.imagen" width="140px" style="border: 8px solid #292961" />
             </div>
           </div>
         </div>
+
+        <div id="signos" class="row col-md-3 example-list" cdkDropList [cdkDropListData]="done"
+style="text-align: center; padding: 0px; height: fit-content;"(cdkDropListDropped)="drop($event)">
+              <div class="example-box col-md-6" *ngFor="let item of done" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;width: 75%;" />
+              </div>
+          </div>
       </div>
 
       <div class="row" *ngIf="habilitar == 2">
         <div class="col-md-2"></div>
-        <div class="col-md-3" style="padding: 0px">
+        <div class="col-md-2" style="padding: 0px">
           <div class="movie-block" *ngFor="let nivel of nivel2 | slice: 0:6; let i = index">
             <img [src]="nivel.imagen" alt="" width="140px" style="border: 8px solid #292961" />
           </div>
         </div>
-        <div class="col-md-3" id="answers">
+        <div class="col-md-2" id="answers" style="padding: 0px">
           <div class="movie-block" style="height: 130px; background-color: white">
             <div style="width: 142px; height: 100%; flex-direction: column" cdkDropList [cdkDropListData]="signo1"
               class="example-list" (cdkDropListDropped)="drop($event)">
@@ -189,24 +210,31 @@
           </div>
 
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2" style="padding: 0px">
           <div>
             <div class="movie-block" *ngFor="let nivel of nivel2_1 | slice: 0:6; let i = index">
               <img [src]="nivel.imagen" alt="" width="140px" style="border: 8px solid #292961" />
             </div>
           </div>
         </div>
+
+        <div id="signos" class="row col-md-3 example-list" cdkDropList [cdkDropListData]="done"
+style="text-align: center; padding: 0px; height: fit-content;"(cdkDropListDropped)="drop($event)">
+              <div class="example-box col-md-6" *ngFor="let item of done" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;width: 75%;" />
+              </div>
+         </div>
       </div>
 
       <div class="row" *ngIf="habilitar == 3">
         <div class="col-md-2"></div>
-        <div class="col-md-3" style="padding: 0px">
+        <div class="col-md-2" style="padding: 0px">
           <div class="movie-block" *ngFor="let nivel of nivel3 | slice: 0:6; let i = index">
             <img [src]="nivel.imagen" alt="" width="140px" style="border: 8px solid #292961" />
           </div>
         </div>
 
-        <div class="col-md-3" id="answers">
+        <div class="col-md-2" id="answers" style="padding: 0px">
 
           <div class="movie-block" style="height: 130px; background-color: white">
             <div style="width: 142px; height: 100%; flex-direction: column" cdkDropList [cdkDropListData]="signo1"
@@ -264,23 +292,22 @@
 
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-2" style="padding: 0px">
           <div>
             <div class="movie-block" *ngFor="let nivel of nivel3_1 | slice: 0:6; let i = index">
               <img [src]="nivel.imagen" alt="" width="140px" style="border: 8px solid #292961" />
             </div>
           </div>
         </div>
+
+        <div id="signos" class="row col-md-3 example-list" cdkDropList [cdkDropListData]="done"
+style="text-align: center; padding: 0px; height: fit-content;"(cdkDropListDropped)="drop($event)">
+              <div class="example-box col-md-6" *ngFor="let item of done" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;width: 75%;" />
+              </div>
+         </div>
       </div>
 
-      <div id="signos" class="example-container" style="margin-top: 25px">
-        <div cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="done" class="example-list"
-          (cdkDropListDropped)="drop($event)">
-          <div class="example-box" *ngFor="let item of done" cdkDrag>
-            <img [src]="item.imagen" alt="" width="70px" />
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
