@@ -27,7 +27,7 @@
         </label>
 
         <div class="btn-group" style="margin-bottom: 15px;">
-          <label style="background-color: #2bbbad !important; color: white;" mdbBtn [(ngModel)]="selectedNivel"
+          <label style="background-color: #2bbbad !important; color: white;font-weight: bold;font-size: 16px;font-family: sans-serif;" mdbBtn [(ngModel)]="selectedNivel"
             [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
             (click)="resetear(selectedNivel)">
             {{ nivel.nivel }}

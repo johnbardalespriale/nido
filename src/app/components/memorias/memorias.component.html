@@ -19,12 +19,12 @@
             </div>
             
             <div class="btn-group" style="margin-top: 25px;flex-direction: column;">
-                <label style="background-color: #2bbbad !important; color: white;font-weight: bold;font-size: inherit;margin-bottom: 40px;" mdbBtn [(ngModel)]="favoriteSeason"
+                <label style="background-color: #2bbbad !important; color: white;font-weight: bold;font-size: 16px;font-family: sans-serif;margin-bottom: 40px;" mdbBtn [(ngModel)]="favoriteSeason"
                   [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
                   (mouseup)="iniciar(nivel.nivel)">
                   {{ nivel.nivel }}
                 </label>
-              </div>
+            </div>
           </section>
         </div>
 

@@ -39,21 +39,9 @@
         <label style="margin: 15px 0px; text-align: initial">
           <b>Escoge el nivel del juego para empezar a jugar</b>
         </label>
-        <!--mat-radio-group
-            aria-labelledby="example-radio-group-label"
-            class="radio-group"
-            [(ngModel)]="selectedNivel"
-          >
-            <mat-radio-button
-              *ngFor="let nivel of nivels"
-              [value]="nivel.nivel"
-            >
-              {{ nivel.nivel }}
-            </mat-radio-button>
-          </mat-radio-group-->
 
         <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
-          <label style="background-color: #2bbbad !important; color: white" mdbBtn [(ngModel)]="selectedNivel"
+          <label style="background-color: #2bbbad !important; color: white;font-weight: bold;font-size: 16px;font-family: sans-serif;" mdbBtn [(ngModel)]="selectedNivel"
             [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
             (click)="resetear(selectedNivel)">
             {{ nivel.nivel }}
