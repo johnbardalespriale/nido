@@ -237,13 +237,13 @@ export class SecuenciaComponent implements OnInit {
   
         if(insecto != null){
           insecto.style.opacity = '1';
-          this.texto = "El ave rescata a su amiga la hormiga."
+          this.texto = "El proceso del agua embotellada."
         } else if(vaca != null){
           vaca.style.opacity = '1';
-          this.texto = "El proceso de la leche de vaca."
+          this.texto = "El proceso de la miel de aveja."
         }else if( lluvia != null){
           lluvia.style.opacity = '1';
-          this.texto = "El viento vuela el sombrero del señor hasta un lago."
+          this.texto = "El proceso de la harina de trigo."
         }
         }, 300);
 
