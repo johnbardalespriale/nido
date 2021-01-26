@@ -110,10 +110,10 @@ export class ContabilidadNumericaComponent implements OnInit {
 
     this.nivel3 = [
       { imagen: 'assets/Img/contar_peces.png', number: 7 },
-      { imagen: 'assets/Img/contar_peces_5.png', number: 5 },
+      { imagen: 'assets/Img/contar_peces_5.png', number: 6 },
       { imagen: 'assets/Img/contar_peces_3.png', number: 3 },
       { imagen: 'assets/Img/contar_peces_5.png', number: 5 },
-      { imagen: 'assets/Img/contar_peces_3.png', number: 3 },
+      { imagen: 'assets/Img/contar_peces_3.png', number: 6 },
     ];
   }
 
