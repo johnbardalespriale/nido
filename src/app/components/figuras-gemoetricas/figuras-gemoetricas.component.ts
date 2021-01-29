@@ -32,7 +32,7 @@ export class FigurasGemoetricasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.selectedNivel = 'Nivel 1';
+    this.selectedNivel = 'Nivel 0';
 
     this.random();
 

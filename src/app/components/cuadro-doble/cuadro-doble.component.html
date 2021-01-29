@@ -13,21 +13,286 @@
     <div class="jumbotron jumbotron-fluid" style="padding:10px;border-radius: 10px;">
       <div class="container">
         <h1 class="consigna" style="text-align: center;">Figuras geométricas - Cuadro de doble entrada</h1>
-        <p class="lead">Completa el cuadro.</p>
+        <p class="lead">Completa el cuadro con la figura del color correspondiente.</p>
       </div>
     </div>
   </section>
+  <div class="container">
+    <div class="example-container" style="display: flex;flex-direction: column;margin-bottom: 25px;">
+      <label style="text-align: initial;"><b>Escoge el nivel del juego, para empezar a jugar.</b></label>
 
-  <div class="container" style="margin-top: 10px; margin-left: 7%;">
+      <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+          <label style="background-color: #2bbbad !important; color: white;font-weight: bold;font-size: 16px;font-family: sans-serif;" mdbBtn [(ngModel)]="selectedNivel"
+              [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+              (click)="resetear()">
+              {{ nivel.nivel }}
+          </label>
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="container" style="margin-top: 10px; margin-left: 7%; margin-bottom: 50px;">
     <div cdkDropListGroup>
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-10 p-0">
-          <img class="card-img-top" src="assets/Img/figuras.png" style="margin: 0px auto; width: fit-content;" />
+        <div [ngClass]="columna" class="p-0">
+          <img *ngIf="selectedNivel == 'Nivel 1'" class="card-img-top" src="assets/Img/figuras_nivel1.png" style="margin: 0px auto; width: fit-content;" />
+          <img *ngIf="selectedNivel == 'Nivel 2'" class="card-img-top" src="assets/Img/figuras_nivel2.png" style="margin: 0px auto; width: fit-content;" />
+          <img *ngIf="selectedNivel == 'Nivel 3'" class="card-img-top" src="assets/Img/figuras.png" style="margin: 0px auto; width: fit-content;" />
+
+          <div class="example-container" style="display: inline-flex;">
+            <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="animales" style="height: fit-content; border: none !important;" class="example-list">
+              <img class="card-img-top" src="assets/Img/pinturas.png" style="margin: 0px auto;" />
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="triangulos" style="height: fit-content; width: 101px;">
+
+              <div cdkDropList [cdkDropListData]="triangulos" class="example-list"
+                (cdkDropListDropped)="dropTriangulos($event)" [cdkDropListEnterPredicate]="evenPredicatetriangulos">
+                <div class="example-box" *ngFor="let item of triangulos" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="triangulos2" class="example-list"
+                (cdkDropListDropped)="dropTriangulos($event)" [cdkDropListEnterPredicate]="evenPredicatetriangulos2">
+                <div class="example-box" *ngFor="let item of triangulos2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="triangulos3" class="example-list"
+                (cdkDropListDropped)="dropTriangulos($event)" [cdkDropListEnterPredicate]="evenPredicatetriangulos3">
+                <div class="example-box" *ngFor="let item of triangulos3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="Circulo" style="height: fit-content; width: 100px;">
+
+              <div cdkDropList [cdkDropListData]="circulos" class="example-list"
+                (cdkDropListDropped)="dropCirculo($event)" [cdkDropListEnterPredicate]="evenPredicateCirculos">
+                <div class="example-box" *ngFor="let item of circulos" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="circulos2" class="example-list"
+                (cdkDropListDropped)="dropCirculo($event)" [cdkDropListEnterPredicate]="evenPredicateCirculos2">
+                <div class="example-box" *ngFor="let item of circulos2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="circulos3" class="example-list"
+                (cdkDropListDropped)="dropCirculo($event)" [cdkDropListEnterPredicate]="evenPredicateCirculos3">
+                <div class="example-box" *ngFor="let item of circulos3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="cuadrados" style="height: fit-content; width: 100px;">
+
+              <div cdkDropList [cdkDropListData]="cuadrados" class="example-list"
+                (cdkDropListDropped)="dropCuadrado($event)" [cdkDropListEnterPredicate]="evenPredicateCuadrados">
+                <div class="example-box" *ngFor="let item of cuadrados" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="cuadrados2" class="example-list"
+                (cdkDropListDropped)="dropCuadrado($event)" [cdkDropListEnterPredicate]="evenPredicateCuadrados2">
+                <div class="example-box" *ngFor="let item of cuadrados2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="cuadrados3" class="example-list"
+                (cdkDropListDropped)="dropCuadrado($event)" [cdkDropListEnterPredicate]="evenPredicateCuadrados3">
+                <div class="example-box" *ngFor="let item of cuadrados3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="rectangulos" style="height: fit-content; width: 97px;">
+
+              <div cdkDropList [cdkDropListData]="rectangulos" class="example-list"
+                (cdkDropListDropped)="dropRectangulo($event)" [cdkDropListEnterPredicate]="evenPredicateRectangulos">
+                <div class="example-box" *ngFor="let item of rectangulos" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="rectangulos2" class="example-list"
+                (cdkDropListDropped)="dropRectangulo($event)" [cdkDropListEnterPredicate]="evenPredicateRectangulos2">
+                <div class="example-box" *ngFor="let item of rectangulos2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+
+              <div cdkDropList [cdkDropListData]="rectangulos3" class="example-list"
+                (cdkDropListDropped)="dropRectangulo($event)" [cdkDropListEnterPredicate]="evenPredicateRectangulos3">
+                <div class="example-box" *ngFor="let item of rectangulos3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="rombos" style="height: fit-content; width: 100px;">
+
+              <div cdkDropList [cdkDropListData]="rombos" class="example-list" (cdkDropListDropped)="dropRombo($event)"
+                [cdkDropListEnterPredicate]="evenPredicateRombos">
+                <div class="example-box" *ngFor="let item of rombos" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="rombos2" class="example-list" (cdkDropListDropped)="dropRombo($event)"
+                [cdkDropListEnterPredicate]="evenPredicateRombos2">
+                <div class="example-box" *ngFor="let item of rombos2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="rombos3" class="example-list" (cdkDropListDropped)="dropRombo($event)"
+                [cdkDropListEnterPredicate]="evenPredicateRombos3">
+                <div class="example-box" *ngFor="let item of rombos3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 3'" id="esferas" style="height: fit-content; width: 100px;">
+
+              <div cdkDropList [cdkDropListData]="esferas" class="example-list"
+                (cdkDropListDropped)="dropEsfera($event)" [cdkDropListEnterPredicate]="evenPredicateEsferas">
+                <div class="example-box" *ngFor="let item of esferas" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="esferas2" class="example-list"
+                (cdkDropListDropped)="dropEsfera($event)" [cdkDropListEnterPredicate]="evenPredicateEsferas2">
+                <div class="example-box" *ngFor="let item of esferas2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="esferas3" class="example-list"
+                (cdkDropListDropped)="dropEsfera($event)" [cdkDropListEnterPredicate]="evenPredicateEsferas3">
+                <div class="example-box" *ngFor="let item of esferas3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 3'" id="cubos" style="height: fit-content; width: 100px;">
+
+              <div cdkDropList [cdkDropListData]="cubos" class="example-list" (cdkDropListDropped)="dropCubo($event)"
+                [cdkDropListEnterPredicate]="evenPredicateCubos">
+                <div class="example-box" *ngFor="let item of cubos" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="cubos2" class="example-list" (cdkDropListDropped)="dropCubo($event)"
+                [cdkDropListEnterPredicate]="evenPredicateCubos2">
+                <div class="example-box" *ngFor="let item of cubos2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="cubos3" class="example-list" (cdkDropListDropped)="dropCubo($event)"
+                [cdkDropListEnterPredicate]="evenPredicateCubos3">
+                <div class="example-box" *ngFor="let item of cubos3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="sectores" style="height: fit-content; width: 98px;">
+
+              <div cdkDropList [cdkDropListData]="sectores" class="example-list"
+                (cdkDropListDropped)="dropSector($event)" [cdkDropListEnterPredicate]="evenPredicateSectores">
+                <div class="example-box" *ngFor="let item of sectores" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="sectores2" class="example-list"
+                (cdkDropListDropped)="dropSector($event)" [cdkDropListEnterPredicate]="evenPredicateSectores2">
+                <div class="example-box" *ngFor="let item of sectores2" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+              <div cdkDropList [cdkDropListData]="sectores3" class="example-list"
+                (cdkDropListDropped)="dropSector($event)" [cdkDropListEnterPredicate]="evenPredicateSectores3">
+                <div class="example-box" *ngFor="let item of sectores3" [cdkDragData]="item" cdkDrag>
+                  <img class="card-img-top" [src]="item.imagen"
+                    style="width: 78%; margin: 0px auto; cursor: pointer;" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-0" *ngIf="selectedNivel == 'Nivel 1'">
+          <div id="signos" class="row lista" cdkDropList [cdkDropListData]="nivel_1"
+          style="text-align: center; padding: 0px; height: fit-content;"(cdkDropListDropped)="dropTotal($event)">
+              <div class="boxing col-md-4" *ngFor="let item of nivel_1" [cdkDragData]="item" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;width:90px;" />
+              </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 p-0" *ngIf="selectedNivel == 'Nivel 2'">
+          <div id="signos" class="row lista" cdkDropList [cdkDropListData]="nivel_2"
+          style="text-align: center; padding: 0px; height: fit-content;"(cdkDropListDropped)="dropTotal($event)">
+              <div class="boxing col-md-3" *ngFor="let item of nivel_2" [cdkDragData]="item" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;width:85px;" />
+              </div>
+          </div>
+        </div>
+
+        <div class="col-md-2 p-0" *ngIf="selectedNivel == 'Nivel 3'">
+          <div id="signos" class="row lista" cdkDropList [cdkDropListData]="done"
+          style="text-align: center; padding: 0px; height: fit-content;"(cdkDropListDropped)="dropTotal($event)">
+              <div class="boxing col-md-6" *ngFor="let item of done" [cdkDragData]="item" cdkDrag>
+                <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;width:60px;" />
+              </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2"></div>
+      <!--div class="row">
         <div class="col-md-10 p-0">
           <div class="example-container" style="display: inline-flex;">
             <div id="animales" style="height: fit-content; border: none !important;" class="example-list">
@@ -254,9 +519,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div-->
 
-      <div id="signos" class="example-container-2" style="margin-top: 25px;">
+      <!--div id="signos" class="example-container-2" style="margin-top: 25px;">
         <div></div>
         <div cdkDropList cdkDropListOrientation="horizontal" [cdkDropListData]="done" class="example-list-2"
           (cdkDropListDropped)="dropTotal($event)">
@@ -264,15 +529,25 @@
             <img [src]="item.imagen" alt="" width="58px" />
           </div>
         </div>
-      </div>
+      </div-->
     </div>
   </div>
 
-  <div *ngIf="this.done.length === 0 && this.cont >= 8">
-    <img class="win1" src="assets/Img/fireworks1.gif" style="position: absolute;;width: 56%;top: 266px;right: 0px;background-color: inherit;height: auto;">
-    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 232px;right: 342px;background-color: inherit;height: auto;">
-    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 266px;left: 0px;background-color: inherit;height: auto;">
-</div>
+  <div *ngIf="this.nivel_1.length === 0 && this.win === 1;">
+    <img class="win1" src="assets/Img/fireworks1.gif" style="position: absolute;;width: 56%;top: 344px;right: 0px;background-color: inherit;height: auto;">
+    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 48%;top: 347px;right: 342px;background-color: inherit;height: auto;">
+    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 55%;top: 347px;left: 0px;background-color: inherit;height: auto;">
+  </div>
+  <div *ngIf="this.nivel_2.length === 0 && this.win === 1;">
+    <img class="win1" src="assets/Img/fireworks1.gif" style="position: absolute;;width: 56%;top: 344px;right: 0px;background-color: inherit;height: auto;">
+    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 48%;top: 347px;right: 342px;background-color: inherit;height: auto;">
+    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 55%;top: 347px;left: 0px;background-color: inherit;height: auto;">
+  </div>
+  <div *ngIf="this.done.length === 0 && this.win === 1;">
+    <img class="win1" src="assets/Img/fireworks1.gif" style="position: absolute;;width: 56%;top: 344px;right: 0px;background-color: inherit;height: auto;">
+    <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 48%;top: 347px;right: 342px;background-color: inherit;height: auto;">
+    <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 55%;top: 347px;left: 0px;background-color: inherit;height: auto;">
+  </div>
 </body>
 
 </html>

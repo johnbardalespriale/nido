@@ -13,6 +13,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./cuadro-doble.component.sass'],
 })
 export class CuadroDobleComponent implements OnInit {
+  nivels: any[];
+  selectedNivel: string;
   triangulos: any[];
   triangulos2: any[];
   triangulos3: any[];
@@ -38,6 +40,8 @@ export class CuadroDobleComponent implements OnInit {
   sectores2: any[];
   sectores3: any[];
   done: any[];
+  nivel_1: any[];
+  nivel_2: any[];
   able1: String;
   able2: String;
   able3: String;
@@ -47,9 +51,116 @@ export class CuadroDobleComponent implements OnInit {
   able7: String;
   able8: String;
   cont: number;
+  columna: String;
+  win: number;
   constructor() { }
 
   ngOnInit(): void {
+    this.nivels = [
+      { nivel: 'Nivel 1', selected: false },
+      { nivel: 'Nivel 2', selected: false },
+      { nivel: 'Nivel 3', selected: false },
+    ];
+
+    this.selectedNivel = '';
+
+    this.nivel_1 = [
+
+      { imagen: 'assets/Img/doble_circulo_rojo.png', value: 'circulo_rojo' },
+      { imagen: 'assets/Img/doble_circulo_verde.png', value: 'circulo_verde' },
+      {
+        imagen: 'assets/Img/doble_circulo_amarillo.png',
+        value: 'circulo_amarillo',
+      },
+      { imagen: 'assets/Img/doble_cuadrado_rojo.png', value: 'cuadrado_rojo' },
+      {
+        imagen: 'assets/Img/doble_cuadrado_verde.png',
+        value: 'cuadrado_verde',
+      },
+      {
+        imagen: 'assets/Img/doble_cuadrado_amarillo.png',
+        value: 'cuadrado_amarillo',
+      },
+      {
+        imagen: 'assets/Img/doble_rectangulo_rojo.png',
+        value: 'rectangulo_rojo',
+      },
+      {
+        imagen: 'assets/Img/doble_rectangulo_verde.png',
+        value: 'rectangulo_verde',
+      },
+      {
+        imagen: 'assets/Img/doble_rectangulo_amarillo.png',
+        value: 'rectangulo_amarillo',
+      },
+      {
+        imagen: 'assets/Img/doble_triangulo_rojo.png',
+        value: 'triangulo_rojo',
+      },
+      {
+        imagen: 'assets/Img/doble_triangulo_verde.png',
+        value: 'triangulo_verde',
+      },
+      {
+        imagen: 'assets/Img/doble_triangulo_amarillo.png',
+        value: 'triangulo_amarillo',
+      }
+    ];
+
+    this.nivel_2 = [
+      { imagen: 'assets/Img/doble_sector_verde.png', value: 'sector_verde' },
+      {
+        imagen: 'assets/Img/doble_sector_amarillo.png',
+        value: 'sector_amarillo',
+      },
+      { imagen: 'assets/Img/doble_sector_rojo.png', value: 'sector_rojo' },
+      { imagen: 'assets/Img/doble_circulo_rojo.png', value: 'circulo_rojo' },
+      { imagen: 'assets/Img/doble_circulo_verde.png', value: 'circulo_verde' },
+      {
+        imagen: 'assets/Img/doble_circulo_amarillo.png',
+        value: 'circulo_amarillo',
+      },
+      { imagen: 'assets/Img/doble_cuadrado_rojo.png', value: 'cuadrado_rojo' },
+      {
+        imagen: 'assets/Img/doble_cuadrado_verde.png',
+        value: 'cuadrado_verde',
+      },
+      {
+        imagen: 'assets/Img/doble_cuadrado_amarillo.png',
+        value: 'cuadrado_amarillo',
+      },
+      {
+        imagen: 'assets/Img/doble_rectangulo_rojo.png',
+        value: 'rectangulo_rojo',
+      },
+      {
+        imagen: 'assets/Img/doble_rectangulo_verde.png',
+        value: 'rectangulo_verde',
+      },
+      {
+        imagen: 'assets/Img/doble_rectangulo_amarillo.png',
+        value: 'rectangulo_amarillo',
+      },
+      {
+        imagen: 'assets/Img/doble_triangulo_rojo.png',
+        value: 'triangulo_rojo',
+      },
+      {
+        imagen: 'assets/Img/doble_triangulo_verde.png',
+        value: 'triangulo_verde',
+      },
+      {
+        imagen: 'assets/Img/doble_triangulo_amarillo.png',
+        value: 'triangulo_amarillo',
+      },
+      { imagen: 'assets/Img/doble_rombo_rojo.png', value: 'rombo_rojo' },
+      { imagen: 'assets/Img/doble_rombo_verde.png', value: 'rombo_verde' },
+      {
+        imagen: 'assets/Img/doble_rombo_amarillo.png',
+        value: 'rombo_amarillo',
+      },
+    ];
+    
     this.done = [
       { imagen: 'assets/Img/doble_sector_verde.png', value: 'sector_verde' },
       {
@@ -138,7 +249,7 @@ export class CuadroDobleComponent implements OnInit {
     this.sectores = [];
     this.sectores2 = [];
     this.sectores3 = [];
-
+    this.win = 0;
     this.able();
   }
 
@@ -153,12 +264,276 @@ export class CuadroDobleComponent implements OnInit {
     this.able8 = 'sector';
   }
 
+  resetear(){
+    this.able();
+    this.win = 0;
+    this.triangulos = [];
+    this.triangulos2 = [];
+    this.triangulos3 = [];
+    this.circulos = [];
+    this.circulos2 = [];
+    this.circulos3 = [];
+    this.cuadrados = [];
+    this.cuadrados2 = [];
+    this.cuadrados3 = [];
+    this.rectangulos = [];
+    this.rectangulos2 = [];
+    this.rectangulos3 = [];
+    this.rombos = [];
+    this.rombos2 = [];
+    this.rombos3 = [];
+    this.esferas = [];
+    this.esferas2 = [];
+    this.esferas3 = [];
+    this.cubos = [];
+    this.cubos2 = [];
+    this.cubos3 = [];
+    this.sectores = [];
+    this.sectores2 = [];
+    this.sectores3 = [];
+
+    if (this.selectedNivel === 'Nivel 1') {
+      this.columna = "col-md-6";
+      this.nivel_1 = [
+
+        { imagen: 'assets/Img/doble_circulo_rojo.png', value: 'circulo_rojo' },
+        { imagen: 'assets/Img/doble_circulo_verde.png', value: 'circulo_verde' },
+        {
+          imagen: 'assets/Img/doble_circulo_amarillo.png',
+          value: 'circulo_amarillo',
+        },
+        { imagen: 'assets/Img/doble_cuadrado_rojo.png', value: 'cuadrado_rojo' },
+        {
+          imagen: 'assets/Img/doble_cuadrado_verde.png',
+          value: 'cuadrado_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_cuadrado_amarillo.png',
+          value: 'cuadrado_amarillo',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_rojo.png',
+          value: 'rectangulo_rojo',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_verde.png',
+          value: 'rectangulo_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_amarillo.png',
+          value: 'rectangulo_amarillo',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_rojo.png',
+          value: 'triangulo_rojo',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_verde.png',
+          value: 'triangulo_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_amarillo.png',
+          value: 'triangulo_amarillo',
+        }
+      ];
+
+      var triangulos = document.getElementById('triangulos');
+      triangulos.style.opacity = '1';
+      triangulos.style.pointerEvents = 'inherit';
+      var Circulo = document.getElementById('Circulo');
+      Circulo.style.opacity = '1';
+      Circulo.style.pointerEvents = 'inherit';
+      var cuadrados = document.getElementById('cuadrados');
+      cuadrados.style.opacity = '1';
+      cuadrados.style.pointerEvents = 'inherit';
+      var rectangulos = document.getElementById('rectangulos');
+      rectangulos.style.opacity = '1';
+      rectangulos.style.pointerEvents = 'inherit';
+      this.nivel_1.sort(function () { return Math.random() - 0.5;});
+    } else if(this.selectedNivel === 'Nivel 2'){
+      this.columna = "col-md-8";
+      this.nivel_2 = [
+        { imagen: 'assets/Img/doble_sector_verde.png', value: 'sector_verde' },
+        {
+          imagen: 'assets/Img/doble_sector_amarillo.png',
+          value: 'sector_amarillo',
+        },
+        { imagen: 'assets/Img/doble_sector_rojo.png', value: 'sector_rojo' },
+        { imagen: 'assets/Img/doble_circulo_rojo.png', value: 'circulo_rojo' },
+        { imagen: 'assets/Img/doble_circulo_verde.png', value: 'circulo_verde' },
+        {
+          imagen: 'assets/Img/doble_circulo_amarillo.png',
+          value: 'circulo_amarillo',
+        },
+        { imagen: 'assets/Img/doble_cuadrado_rojo.png', value: 'cuadrado_rojo' },
+        {
+          imagen: 'assets/Img/doble_cuadrado_verde.png',
+          value: 'cuadrado_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_cuadrado_amarillo.png',
+          value: 'cuadrado_amarillo',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_rojo.png',
+          value: 'rectangulo_rojo',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_verde.png',
+          value: 'rectangulo_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_amarillo.png',
+          value: 'rectangulo_amarillo',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_rojo.png',
+          value: 'triangulo_rojo',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_verde.png',
+          value: 'triangulo_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_amarillo.png',
+          value: 'triangulo_amarillo',
+        },
+        { imagen: 'assets/Img/doble_rombo_rojo.png', value: 'rombo_rojo' },
+        { imagen: 'assets/Img/doble_rombo_verde.png', value: 'rombo_verde' },
+        {
+          imagen: 'assets/Img/doble_rombo_amarillo.png',
+          value: 'rombo_amarillo',
+        },
+      ];
+
+      var triangulos = document.getElementById('triangulos');
+      triangulos.style.opacity = '1';
+      triangulos.style.pointerEvents = 'inherit';
+      var Circulo = document.getElementById('Circulo');
+      Circulo.style.opacity = '1';
+      Circulo.style.pointerEvents = 'inherit';
+      var cuadrados = document.getElementById('cuadrados');
+      cuadrados.style.opacity = '1';
+      cuadrados.style.pointerEvents = 'inherit';
+      var rectangulos = document.getElementById('rectangulos');
+      rectangulos.style.opacity = '1';
+      rectangulos.style.pointerEvents = 'inherit';
+      var rombos = document.getElementById('rombos');
+      rombos.style.opacity = '1';
+      rombos.style.pointerEvents = 'inherit';
+      var sectores = document.getElementById('sectores');
+      sectores.style.opacity = '1';
+      sectores.style.pointerEvents = 'inherit';
+      this.nivel_2.sort(function () { return Math.random() - 0.5;});
+    } else if(this.selectedNivel === 'Nivel 3'){
+      this.columna = "col-md-10";
+      this.done = [
+        { imagen: 'assets/Img/doble_sector_verde.png', value: 'sector_verde' },
+        {
+          imagen: 'assets/Img/doble_sector_amarillo.png',
+          value: 'sector_amarillo',
+        },
+        { imagen: 'assets/Img/doble_sector_rojo.png', value: 'sector_rojo' },
+        { imagen: 'assets/Img/doble_circulo_rojo.png', value: 'circulo_rojo' },
+        { imagen: 'assets/Img/doble_circulo_verde.png', value: 'circulo_verde' },
+        {
+          imagen: 'assets/Img/doble_circulo_amarillo.png',
+          value: 'circulo_amarillo',
+        },
+        { imagen: 'assets/Img/doble_cuadrado_rojo.png', value: 'cuadrado_rojo' },
+        {
+          imagen: 'assets/Img/doble_cuadrado_verde.png',
+          value: 'cuadrado_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_cuadrado_amarillo.png',
+          value: 'cuadrado_amarillo',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_rojo.png',
+          value: 'rectangulo_rojo',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_verde.png',
+          value: 'rectangulo_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_rectangulo_amarillo.png',
+          value: 'rectangulo_amarillo',
+        },
+        { imagen: 'assets/Img/doble_cubo_rojo.png', value: 'cubo_rojo' },
+        { imagen: 'assets/Img/doble_cubo_verde.png', value: 'cubo_verde' },
+        { imagen: 'assets/Img/doble_cubo_amarillo.png', value: 'cubo_amarillo' },
+        {
+          imagen: 'assets/Img/doble_triangulo_rojo.png',
+          value: 'triangulo_rojo',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_verde.png',
+          value: 'triangulo_verde',
+        },
+        {
+          imagen: 'assets/Img/doble_triangulo_amarillo.png',
+          value: 'triangulo_amarillo',
+        },
+        { imagen: 'assets/Img/doble_rombo_rojo.png', value: 'rombo_rojo' },
+        { imagen: 'assets/Img/doble_rombo_verde.png', value: 'rombo_verde' },
+        {
+          imagen: 'assets/Img/doble_rombo_amarillo.png',
+          value: 'rombo_amarillo',
+        },
+        { imagen: 'assets/Img/doble_esfera_rojo.png', value: 'esfera_rojo' },
+        { imagen: 'assets/Img/doble_esfera_verde.png', value: 'esfera_verde' },
+        {
+          imagen: 'assets/Img/doble_esfera_amarillo.png',
+          value: 'esfera_amarillo',
+        },
+      ];
+
+      var triangulos = document.getElementById('triangulos');
+      triangulos.style.opacity = '1';
+      triangulos.style.pointerEvents = 'inherit';
+      var Circulo = document.getElementById('Circulo');
+      Circulo.style.opacity = '1';
+      Circulo.style.pointerEvents = 'inherit';
+      var cuadrados = document.getElementById('cuadrados');
+      cuadrados.style.opacity = '1';
+      cuadrados.style.pointerEvents = 'inherit';
+      var rectangulos = document.getElementById('rectangulos');
+      rectangulos.style.opacity = '1';
+      rectangulos.style.pointerEvents = 'inherit';
+      var rombos = document.getElementById('rombos');
+      rombos.style.opacity = '1';
+      rombos.style.pointerEvents = 'inherit';
+      var esferas = document.getElementById('esferas');
+      esferas.style.opacity = '1';
+      esferas.style.pointerEvents = 'inherit';
+      var cubos = document.getElementById('cubos');
+      cubos.style.opacity = '1';
+      cubos.style.pointerEvents = 'inherit';
+      var sectores = document.getElementById('sectores');
+      sectores.style.opacity = '1';
+      sectores.style.pointerEvents = 'inherit';
+      this.done.sort(function () { return Math.random() - 0.5;});
+    }
+  }
+
   mensaje() {
-    console.log('contador', this.cont);
-    if (this.done.length === 0 && this.cont >= 8) {
+    if (this.done.length === 0) {
       Swal.fire({
         html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado "
       });
+      this.win = 1;
+    } else if(this.nivel_2.length === 0){
+      Swal.fire({
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado "
+      });
+      this.win = 1;
+    } else if (this.nivel_1.length === 0){
+      Swal.fire({
+        html: "<h1 style='color:#1db31d;'>¡GANASTE!</h1> Juego terminado "
+      });
+      this.win = 1;
     }
   }
 
