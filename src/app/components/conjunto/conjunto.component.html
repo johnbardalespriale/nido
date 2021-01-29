@@ -18,20 +18,46 @@
     </div>
   </section>
 
-  <div class="container">
-    <div cdkDropListGroup>
+  <div class="container" style="margin-bottom: 50px;">
+    <div class="example-container" style="display: flex;flex-direction: column;margin-bottom: 25px;">
+      <label style="text-align: initial;"><b>Escoge el nivel del juego, para empezar a jugar.</b></label>
+
+      <div class="btn-group" style="margin-bottom: 15px;width: fit-content;">
+          <label style="background-color: #2bbbad !important; color: white;font-weight: bold;font-size: 16px;font-family: sans-serif;" mdbBtn [(ngModel)]="selectedNivel"
+              [mdbRadio]="nivel.nivel" mdbWavesEffect *ngFor="let nivel of nivels" [value]="nivel.nivel"
+              (click)="resetear()">
+              {{ nivel.nivel }}
+          </label>
+      </div>
+    </div>
+
+    <div cdkDropListGroup >
 
       <div class="row">
-        <div id="objects" class="row col-md-7 example-list" cdkDropList [cdkDropListData]="nivel1"
+        <div *ngIf="selectedNivel == 'Nivel 1'"  id="objects" class="row col-md-7 example-list" cdkDropList [cdkDropListData]="nivel1"
           style="text-align: center; padding: 0px; height: fit-content;" (cdkDropListDropped)="dropTotal($event)">
           <div class="example-box col-md-2" *ngFor="let item of nivel1" [cdkDragData]="item" cdkDrag>
+            <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;" />
+          </div>
+        </div>
+
+        <div *ngIf="selectedNivel == 'Nivel 2'"  id="objects" class="row col-md-7 example-list" cdkDropList [cdkDropListData]="nivel2"
+          style="text-align: center; padding: 0px; height: fit-content;" (cdkDropListDropped)="dropTotal($event)">
+          <div class="example-box col-md-2" *ngFor="let item of nivel2" [cdkDragData]="item" cdkDrag>
+            <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;" />
+          </div>
+        </div>
+
+        <div *ngIf="selectedNivel == 'Nivel 3'"  id="objects" class="row col-md-7 example-list" cdkDropList [cdkDropListData]="nivel3"
+          style="text-align: center; padding: 0px; height: fit-content;" (cdkDropListDropped)="dropTotal($event)">
+          <div class="example-box col-md-2" *ngFor="let item of nivel3" [cdkDragData]="item" cdkDrag>
             <img class="card-img-top" [src]="item.imagen" style="margin: 0px auto; cursor: pointer;" />
           </div>
         </div>
         <div class="col-md-1"></div>
 
         <div class="col-md-2" style="padding: 0px;">
-          <div id="cajaAmarilla" class="example-list-2" cdkDropList [cdkDropListData]="caja_amarilla"
+          <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 3'" id="cajaAmarilla" class="example-list-2" cdkDropList [cdkDropListData]="caja_amarilla"
             (cdkDropListDropped)="dropAmarillo($event)" [cdkDropListEnterPredicate]="evenPredicateAmarillo" style="
                 background-image: url('assets/Img/caja_amarillo_conjunto.png');
                 height: 169px;
@@ -42,7 +68,7 @@
             </div>
           </div>
 
-          <div id="cajaVerde" class="example-list-2" cdkDropList [cdkDropListData]="caja_verde"
+          <div *ngIf="selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="cajaVerde" class="example-list-2" cdkDropList [cdkDropListData]="caja_verde"
             (cdkDropListDropped)="dropVerde($event)" [cdkDropListEnterPredicate]="evenPredicateVerde" style="
                 background-image: url('assets/Img/caja_verde_conjunto.png');
                 height: 169px;
@@ -53,7 +79,7 @@
             </div>
           </div>
 
-          <div id="cajaNaranja" class="example-list-2" cdkDropList [cdkDropListData]="caja_naranja"
+          <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 3'" id="cajaNaranja" class="example-list-2" cdkDropList [cdkDropListData]="caja_naranja"
             (cdkDropListDropped)="dropNaranja($event)" [cdkDropListEnterPredicate]="evenPredicateNaranja" style="
                 background-image: url('assets/Img/caja_naranja_conjunto.png');
                 height: 169px;
@@ -64,7 +90,7 @@
             </div>
           </div>
 
-          <div id="cajaMorado" class="example-list-2" cdkDropList [cdkDropListData]="caja_morado"
+          <div *ngIf="selectedNivel == 'Nivel 2'" id="cajaMorado" class="example-list-2" cdkDropList [cdkDropListData]="caja_morado"
             (cdkDropListDropped)="dropMorado($event)" [cdkDropListEnterPredicate]="evenPredicateMorado" style="
                 background-image: url('assets/Img/caja_morado.png');
                 height: 169px;
@@ -76,7 +102,7 @@
           </div>
         </div>
         <div class="col-md-2" style="padding: 0px;">
-          <div id="cajaMarron" class="example-list-2" cdkDropList [cdkDropListData]="caja_marron"
+          <div *ngIf="selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="cajaMarron" class="example-list-2" cdkDropList [cdkDropListData]="caja_marron"
             (cdkDropListDropped)="dropMarron($event)" [cdkDropListEnterPredicate]="evenPredicateMarron" style="
                 background-image: url('assets/Img/caja_marron_conjunto.png');
                 height: 169px;
@@ -87,7 +113,7 @@
             </div>
           </div>
 
-          <div id="cajaAzul" class="example-list-2" cdkDropList [cdkDropListData]="caja_azul"
+          <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 2' || selectedNivel == 'Nivel 3'" id="cajaAzul" class="example-list-2" cdkDropList [cdkDropListData]="caja_azul"
             (cdkDropListDropped)="dropAzul($event)" [cdkDropListEnterPredicate]="evenPredicateAzul" style="
                 background-image: url('assets/Img/caja_azul_conjunto.png');
                 height: 169px;
@@ -98,7 +124,7 @@
             </div>
           </div>
 
-          <div id="cajaRojo" class="example-list-2" cdkDropList [cdkDropListData]="caja_rojo"
+          <div *ngIf="selectedNivel == 'Nivel 1' || selectedNivel == 'Nivel 3'" id="cajaRojo" class="example-list-2" cdkDropList [cdkDropListData]="caja_rojo"
             (cdkDropListDropped)="dropRojo($event)" [cdkDropListEnterPredicate]="evenPredicateRojo" style="
               background-image: url('assets/Img/caja_rojo_conjunto.png');
               height: 169px;
@@ -112,10 +138,9 @@
       </div>
 
       <div *ngIf="winner === 1">
-        <img class="win1" src="assets/Img/fireworks1.gif" style="position:absolute;width: 70%;top: 314px;right: 0px;">
-        <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 329px;right: 342px;">
-
-        <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 314px;left: 0px;">
+        <img class="win1" src="assets/Img/fireworks1.gif" style="position:absolute;width: 70%;top: 346px;right: 0px;">
+        <img class="win2" src="assets/Img/fireworks3.gif" style="position:absolute;width: 50%;top: 346px;right: 342px;">
+        <img class="win3" src="assets/Img/fireworks2.gif" style="position:absolute;width: 56%;top: 347px;left: 0px;">
       </div>
 
       
